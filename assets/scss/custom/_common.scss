@@ -49,3 +49,106 @@
     transform: translatey(0);
     opacity: 1;
 }
+
+/* ------------------ Hover Image Zoom ------------------------- */
+.hover-image {
+    overflow: hidden;
+    cursor: pointer;
+    img {
+        transition: all .6s ease;
+    }
+
+    &:hover {
+        img {
+            transform: scale3d(1.1, 1.1, 1);
+        }
+    }
+}
+
+/* ------------------ Hover Link ------------------------- */
+.hover-link {
+    background-image: linear-gradient(to right, #6A5AF9, #6A5AF9 50%, #000000 50%);
+    background-size: 200% 100%;
+    background-position: -100%;
+    display: inline-flex;
+    padding: 5px 0;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+
+    &--headerTop {
+        background-image: linear-gradient(
+            to right,
+            stencilColor("header_top_text_colorHover"),
+            stencilColor("header_top_text_colorHover") 50%,
+            stencilColor("header_top_text_color") 50%
+        );
+    }
+
+    &--footer {
+        background-image: linear-gradient(
+            to right,
+            stencilColor("footer-text-colorHover"),
+            stencilColor("footer-text-colorHover") 50%,
+            stencilColor("footer-text-color") 50%
+        );
+    }
+
+    &:before {
+        content: "";
+        background: #6A5AF9;
+        display: block;
+        position: absolute;
+        bottom: 4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    &--menu {
+        &::before {
+            bottom: 10px;
+        }
+    }
+
+    &--subMenu {
+        &::before {
+            bottom: 6px;
+        }
+    }
+
+    &:hover {
+        background-position: 0;
+
+        &:before {
+            width: 100%;
+        }
+    }
+}
+
+/* Grid Layout */
+.row {
+    --f-col: var(--rowDesktop);
+    --f-gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(var(--f-gap) / -2);
+    margin-right: calc(var(--f-gap) / -2);
+
+    @include smax-m {
+        --f-col: var(--rowTablet);
+    }
+
+    @include smax-s {
+        --f-col: var(--rowMobile);
+    }
+
+    .col {
+        padding-left: calc(var(--f-gap) / 2);
+        padding-right: calc(var(--f-gap) / 2);
+        flex: 0 0 calc(100% / var(--f-col));
+        max-width: calc(100% / var(--f-col));
+    }
+}

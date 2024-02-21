@@ -1,5 +1,5 @@
 {
-  "name": "Cornerstone Done Setup Button",
+  "name": "Cornerstone Done Setup Default",
   "version": "6.12.0",
   "template_engine": "handlebars_v4",
   "meta": {
