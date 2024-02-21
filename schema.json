@@ -51,6 +51,11 @@
         "id": "body-font",
         "options": [
           {
+            "group": "Poppins",
+            "label": "Poppins Light",
+            "value": "Google_Poppins_400"
+          },
+          {
             "group": "Karla",
             "label": "Karla",
             "value": "Google_Karla_400"
@@ -138,6 +143,16 @@
         "label": "Heading Font Family",
         "id": "headings-font",
         "options": [
+          {
+            "group": "Poppins",
+            "label": "Poppins Light",
+            "value": "Google_Poppins_400"
+          },
+          {
+            "group": "Poppins",
+            "label": "Poppins Bold",
+            "value": "Google_Poppins_700"
+          },
           {
             "group": "Montserrat",
             "label": "Montserrat Light",
@@ -2213,6 +2228,16 @@
         "id": "optimizedCheckout-headingPrimary-font",
         "options": [
           {
+            "group": "Poppins",
+            "label": "Poppins Light",
+            "value": "Google_Poppins_400"
+          },
+          {
+            "group": "Poppins",
+            "label": "Poppins Bold",
+            "value": "Google_Poppins_700"
+          },
+          {
             "group": "OpenSans",
             "label": "Open Sans",
             "value": "Google_Open+Sans_400"
@@ -2264,6 +2289,16 @@
         "label": "Heading2FontFamily",
         "id": "optimizedCheckout-headingSecondary-font",
         "options": [
+          {
+            "group": "Poppins",
+            "label": "Poppins Light",
+            "value": "Google_Poppins_400"
+          },
+          {
+            "group": "Poppins",
+            "label": "Poppins Bold",
+            "value": "Google_Poppins_700"
+          },
           {
             "group": "OpenSans",
             "label": "Open Sans",
@@ -2335,6 +2370,16 @@
         "id": "optimizedCheckout-contentPrimary-font",
         "options": [
           {
+            "group": "Poppins",
+            "label": "Poppins Light",
+            "value": "Google_Poppins_400"
+          },
+          {
+            "group": "Poppins",
+            "label": "Poppins",
+            "value": "Google_Poppins_500"
+          },
+          {
             "group": "OpenSans",
             "label": "Open Sans",
             "value": "Google_Open+Sans_400"
@@ -2387,6 +2432,16 @@
         "id": "optimizedCheckout-contentSecondary-font",
         "options": [
           {
+            "group": "Poppins",
+            "label": "Poppins Light",
+            "value": "Google_Poppins_400"
+          },
+          {
+            "group": "Poppins",
+            "label": "Poppins",
+            "value": "Google_Poppins_500"
+          },
+          {
             "group": "OpenSans",
             "label": "Open Sans",
             "value": "Google_Open+Sans_400"
@@ -2438,6 +2493,16 @@
         "label": "Link Font Family",
         "id": "optimizedCheckout-link-font",
         "options": [
+          {
+            "group": "Poppins",
+            "label": "Poppins Light",
+            "value": "Google_Poppins_400"
+          },
+          {
+            "group": "Poppins",
+            "label": "Poppins",
+            "value": "Google_Poppins_500"
+          },
           {
             "group": "OpenSans",
             "label": "Open Sans",
@@ -2499,6 +2564,16 @@
         "label": "Button Text Font Family",
         "id": "optimizedCheckout-buttonPrimary-font",
         "options": [
+          {
+            "group": "Poppins",
+            "label": "Poppins Light",
+            "value": "Google_Poppins_400"
+          },
+          {
+            "group": "Poppins",
+            "label": "Poppins",
+            "value": "Google_Poppins_500"
+          },
           {
             "group": "OpenSans",
             "label": "Open Sans",
@@ -2610,6 +2685,16 @@
         "label": "Button Text Font Family",
         "id": "optimizedCheckout-buttonSecondary-font",
         "options": [
+          {
+            "group": "Poppins",
+            "label": "Poppins Light",
+            "value": "Google_Poppins_400"
+          },
+          {
+            "group": "Poppins",
+            "label": "Poppins",
+            "value": "Google_Poppins_500"
+          },
           {
             "group": "OpenSans",
             "label": "Open Sans",

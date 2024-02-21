@@ -26,9 +26,6 @@ blog:
     {{/each}}
 
 <div class="main full">
-    <a href="#" class="button button--primary">Show now</a>
-    <a href="#" class="button button--secondary">Show now</a>
-    <a href="#" class="button button--transparent button--full">Show now</a>
     {{#if products.featured}}
         {{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
     {{/if}}
