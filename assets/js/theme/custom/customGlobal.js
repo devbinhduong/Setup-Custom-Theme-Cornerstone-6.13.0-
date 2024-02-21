@@ -40,6 +40,9 @@ export default function(context) {
                     }
                 }
             }
+
+            /* Load Section when scroll */
+            sectionLoad();
         });
 
         /* Load when scroll */
@@ -86,6 +89,48 @@ export default function(context) {
 
         backgroundOverlay.addEventListener('click', (e) => {
             hideAllSidebar();
+        });
+    }
+
+    /* Custom Animate */
+    function customAnimate(section) {
+        if(section.matches('.animate-loaded')) return;
+
+        section.classList.add('animate-loaded');
+
+        section.classList.add('animated');
+    }
+
+    function sectionLoad() {
+        const handler = (entries, observer) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    const section = entry.target;
+                    const sectionType = section.getAttribute('data-section-load');
+
+                    switch(sectionType) {
+                        case 'animation':
+                            customAnimate(section);
+                            break;
+                        
+                        default:
+                            break;
+                    }
+                }
+            });
+        }
+
+        const sections = document.querySelectorAll('[data-section-load]'),
+        options = {
+            threshold: .05
+        };
+
+        if(!sections) return;
+
+        const observer = new IntersectionObserver(handler, options);
+
+        sections.forEach(section => {
+            observer.observe(section);
         });
     }
 
