@@ -1,5 +1,5 @@
 {
-  "name": "Cornerstone Done Setup Default",
+  "name": "Cornerstone Done Header Top",
   "version": "6.12.0",
   "template_engine": "handlebars_v4",
   "meta": {
@@ -757,7 +757,19 @@
         "amazon-button-color": "Gold",
         "masterpass-button-color": "black",
         "paymentbuttons-provider-sorting": [],
-        "customMegamenu": true
+        "customMegamenu": true,
+        "header_top_bg": "#003A63",
+        "header_top_text_color": "#ffffff",
+        "header_top_text_colorHover": "#ffffff",
+        "header_top_center_text": "Ships today! Order by 5:00 PM PST M-F (Expedited cutoff 12:30 PM)",
+        "header_right_item1_text": "About us",
+        "header_right_item1_link": "/about-us/",
+        "header_right_item2_text": "Blog",
+        "header_right_item2_link": "/blog/",
+        "header_right_item3_text": "Help",
+        "header_right_item3_link": "#",
+        "header_right_item4_text": "Live Chat",
+        "header_right_item4_link": "#"
       }
     }
   ]

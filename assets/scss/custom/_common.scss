@@ -67,64 +67,28 @@
 
 /* ------------------ Hover Link ------------------------- */
 .hover-link {
-    background-image: linear-gradient(to right, #6A5AF9, #6A5AF9 50%, #000000 50%);
-    background-size: 200% 100%;
-    background-position: -100%;
-    display: inline-flex;
-    padding: 5px 0;
+    color: #18272F;
     position: relative;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transition: all 0.3s ease-in-out;
+    text-decoration: none;
 
-    &--headerTop {
-        background-image: linear-gradient(
-            to right,
-            stencilColor("header_top_text_colorHover"),
-            stencilColor("header_top_text_colorHover") 50%,
-            stencilColor("header_top_text_color") 50%
-        );
-    }
-
-    &--footer {
-        background-image: linear-gradient(
-            to right,
-            stencilColor("footer-text-colorHover"),
-            stencilColor("footer-text-colorHover") 50%,
-            stencilColor("footer-text-color") 50%
-        );
-    }
-
-    &:before {
-        content: "";
-        background: #6A5AF9;
-        display: block;
+    &::before {
+        content: '';
         position: absolute;
-        bottom: 4px;
-        left: 0;
-        width: 0;
+        width: 100%;
         height: 2px;
-        transition: all 0.3s ease-in-out;
+        border-radius: 4px;
+        background-color: #ffffff;
+        background-color: var(--underlineColor);
+        bottom: -4px;
+        left: 0;
+        transform-origin: right;
+        transform: scaleX(0);
+        transition: transform .3s ease-in-out;
     }
-
-    &--menu {
-        &::before {
-            bottom: 10px;
-        }
-    }
-
-    &--subMenu {
-        &::before {
-            bottom: 6px;
-        }
-    }
-
-    &:hover {
-        background-position: 0;
-
-        &:before {
-            width: 100%;
-        }
+      
+    &:hover::before {
+        transform-origin: left;
+        transform: scaleX(1);
     }
 }
 

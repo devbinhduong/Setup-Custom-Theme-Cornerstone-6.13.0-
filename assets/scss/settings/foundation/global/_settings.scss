@@ -102,3 +102,9 @@ $cursor-text-value:             text;
 
 
 $figure-margin:                 0 0 spacing("single");
+
+
+/* Custom Default Underline Color */
+:root {
+    --underlineColor: #000000;
+}
