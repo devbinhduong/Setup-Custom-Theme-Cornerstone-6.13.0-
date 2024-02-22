@@ -95,3 +95,48 @@
 .search-nav {
     position: relative;
 }
+
+
+/* Custom start */
+@include smax-m {
+    #quickSearch {
+        > .container {
+            padding: 15px;
+        }
+
+        .form {
+            position: relative;
+            margin-bottom: 0;
+        }
+
+        .form-field {
+            margin-bottom: 0;
+
+            .form-input {
+                border-color: #afafaf;
+                border-radius: 8px;
+                padding-right: 50px;
+
+                &::placeholder {
+                    color: #8C8C8C;
+                }
+            }
+        }
+
+        .search-header-button {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            padding: 0;
+
+            .icon {
+                width: 24px;
+                height: 24px;
+                svg {
+                    fill: transparent;
+                }
+            }
+        }
+    }
+}

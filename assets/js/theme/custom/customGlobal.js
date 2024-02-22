@@ -16,12 +16,17 @@ export default function(context) {
     function loadFunction () {
         if(check_JS_load) {
             check_JS_load = false;
+            const wWidth = window.innerWidth;
             console.log("JS is loaded");
 
             /* Add global function here */
             closeSidebar();
             clickOverlay();
             searchFormMobile();
+
+            if (wWidth <= 1024) {
+                searchMobileClick();
+            }
         }
     }
 
@@ -63,12 +68,23 @@ export default function(context) {
 
     /* Hide all Sidebar */
     function hideAllSidebar() {
-        const body = document.body;
+        const body = document.body,
+            menuMobileIcon = document.querySelector('.mobileMenu-toggle'),
+            searchMobileButton = document.querySelector("[data-search='quickSearch']"),
+            pageSidebar = document.querySelector('.page-sidebar'),
+            pageSidebarMobile = document.querySelector('.page-sidebar-mobile');
 
         /* Hide menu sidebar */
         if(body.classList.contains('has-activeNavPages')) {
-            body.classList.remove('has-activeNavPages');
+            menuMobileIcon.click();
         }
+
+        searchMobileButton.classList.remove('is-open');
+        body.classList.remove('openSearchMobile');
+        body.classList.remove('openSidebar');
+        pageSidebar?.classList.remove('is-open');
+        pageSidebarMobile?.classList.remove('is-open');
+
     }
 
     /* Close sidebar */
@@ -153,4 +169,21 @@ export default function(context) {
         }
     }
 
+    function searchMobileClick() {
+        const body = document.body,
+            searchMobileButton = document.querySelector("[data-search='quickSearch']");
+
+        if(!searchMobileButton) return;
+
+        searchMobileButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            if(searchMobileButton.classList.contains('is-open')) {
+                body.classList.remove('openSearchMobile');
+                searchMobileButton.classList.remove('is-open');
+            } else {
+                body.classList.add('openSearchMobile');
+                searchMobileButton.classList.add('is-open');
+            }
+        });
+    }
 }
