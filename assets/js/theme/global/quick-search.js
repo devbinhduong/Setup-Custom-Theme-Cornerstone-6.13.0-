@@ -31,6 +31,12 @@ export default function () {
         }
     };
 
+    /* Custom Start */
+    $(document).on('click', '.quickResults-close', (e) => {
+        e.preventDefault();
+        $quickSearchResults.removeClass('is-open');
+    });
+
     // stagger searching for 1200ms after last input
     const debounceWaitTime = 1200;
     const doSearch = _.debounce((searchQuery) => {
@@ -38,8 +44,9 @@ export default function () {
             if (err) {
                 return false;
             }
-
-            $quickSearchResults.html(response);
+            /* Custom Start */
+            $quickSearchResults.html(response).addClass('is-open');
+            
             const $quickSearchResultsCurrent = $quickSearchResults.filter(':visible');
 
             const $noResultsMessage = $quickSearchResultsCurrent.find('.quickSearchMessage');

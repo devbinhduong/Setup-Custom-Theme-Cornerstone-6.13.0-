@@ -21,6 +21,7 @@ export default function(context) {
             /* Add global function here */
             closeSidebar();
             clickOverlay();
+            searchFormMobile();
         }
     }
 
@@ -132,6 +133,24 @@ export default function(context) {
         sections.forEach(section => {
             observer.observe(section);
         });
+    }
+
+    /* Search Mobile */
+    function searchFormMobile() {
+        const quickSearchForm = document.getElementById("quickSearch"),
+            hasOnDesktop = document.querySelector('.item--quicksearch #quickSearch'),
+            searchSidebarDesktop = document.querySelector('.item--quicksearch'),
+            searchSidebarMobile = document.querySelector('#custom-search-mobile .custom-sidebar-wrapper');
+
+        if(window.innerWidth <= 1024) {
+            if(hasOnDesktop) {
+                searchSidebarMobile.appendChild(quickSearchForm);
+            } 
+        } else {
+            if(!hasOnDesktop) {
+                searchSidebarDesktop.appendChild(quickSearchForm);
+            }
+        }
     }
 
 }

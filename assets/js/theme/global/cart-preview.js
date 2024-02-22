@@ -13,6 +13,10 @@ export default function (secureBaseUrl, cartId) {
     const $cartDropdown = $('#cart-preview-dropdown');
     const $cartLoading = $('<div class="loadingOverlay"></div>');
 
+     /* Custom Start */
+     const $cart2 = $('[data-cart-preview2]');
+     const $cartDropdown2 = $('#custom-cart-sidebar .custom-sidebar-wrapper');
+
     const $body = $('body');
 
     if (window.ApplePaySession) {
@@ -36,35 +40,67 @@ export default function (secureBaseUrl, cartId) {
         }
     });
 
-    $cart.on('click', event => {
-        const options = {
-            template: 'common/cart-preview',
-        };
-
-        // Redirect to full cart page
-        //
-        // https://developer.mozilla.org/en-US/docs/Browser_detection_using_the_user_agent
-        // In summary, we recommend looking for the string 'Mobi' anywhere in the User Agent to detect a mobile device.
-        if (/Mobi/i.test(navigator.userAgent)) {
-            return event.stopPropagation();
-        }
-
-        event.preventDefault();
-
-        $cartDropdown
-            .addClass(loadingClass)
-            .html($cartLoading);
-        $cartLoading
-            .show();
-
-        utils.api.cart.getContent(options, (err, response) => {
+     /* Custom Start */
+     if (!$('body').hasClass('page-type-cart')) {
+        $cart.on('click', event => {
+            const options = {
+                template: 'common/cart-preview',
+            };
+    
+            // Redirect to full cart page
+            //
+            // https://developer.mozilla.org/en-US/docs/Browser_detection_using_the_user_agent
+            // In summary, we recommend looking for the string 'Mobi' anywhere in the User Agent to detect a mobile device.
+            if (/Mobi/i.test(navigator.userAgent)) {
+                return event.stopPropagation();
+            }
+    
+            event.preventDefault();
+    
+            /* Custom Start */
+            $body.toggleClass('openCartDropdown');
+            $cartDropdown2.empty();
+    
             $cartDropdown
-                .removeClass(loadingClass)
-                .html(response);
+                .addClass(loadingClass)
+                .html($cartLoading);
             $cartLoading
-                .hide();
+                .show();
+    
+            utils.api.cart.getContent(options, (err, response) => {
+                $cartDropdown
+                    .removeClass(loadingClass)
+                    .html(response);
+                $cartLoading
+                    .hide();
+            });
         });
-    });
+
+        $cart2.on('click', event => {
+            const options = {
+                template: 'common/cart-preview',
+            };
+            event.preventDefault();
+    
+            $body.toggleClass('openCartSidebar');
+    
+            $cartDropdown.empty();
+    
+            $cartDropdown2
+                .addClass(loadingClass)
+                .html($cartLoading);
+            $cartLoading
+                .show();
+    
+            utils.api.cart.getContent(options, (err, response) => {
+                $cartDropdown2
+                    .removeClass(loadingClass)
+                    .html(response);
+                $cartLoading
+                    .hide();
+            });
+        });
+    }
 
     let quantity = 0;
 
@@ -100,4 +136,24 @@ export default function (secureBaseUrl, cartId) {
     } else {
         $body.trigger('cart-quantity-update', quantity);
     }
+
+
+     /* Custom Start */
+     $(document).on('click', event => {
+        if (($(event.target).closest('[data-cart-preview]').length === 0) && ($(event.target).closest('#cart-preview-dropdown').length === 0) && ($(event.target).closest('#modal').length === 0) && ($(event.target).closest('[data-cart-edit-item-remove]').length === 0)){
+            $('body').removeClass('openCartDropdown');
+        }
+    });
+    
+    $(document).on('click', event => {
+        if (($(event.target).closest('[data-cart-preview2]').length === 0) && ($(event.target).closest('#custom-cart-sidebar').length === 0) && ($(event.target).closest('#modal').length === 0) && ($(event.target).closest('[data-cart-edit-item-remove]').length === 0)){
+            $('body').removeClass('openCartSidebar');
+        }
+    });
+
+    $(document).on('click','#custom-cart-sidebar .custom-sidebar-close', (event) => {
+        event.preventDefault();
+
+        $('body').removeClass('openCartSidebar');
+    });
 }

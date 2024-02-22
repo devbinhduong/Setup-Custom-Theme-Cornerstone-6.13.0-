@@ -1,6 +1,6 @@
 {
-  "name": "Cornerstone Done Header Top",
-  "version": "6.12.0",
+  "name": "Cornerstone Done Middle Part 1",
+  "version": "6.13.0",
   "template_engine": "handlebars_v4",
   "meta": {
     "price": 0,
@@ -465,7 +465,7 @@
         "show_product_swatch_names": true,
         "product_list_display_mode": "grid",
         "logo-position": "center",
-        "logo_size": "250x100",
+        "logo_size": "244x60",
         "logo_fontSize": 28,
         "brand_size": "190x250",
         "gallery_size": "300x300",

@@ -636,7 +636,7 @@
         "force_reload": true,
         "options": [
           {
-            "value": "250x100",
+            "value": "244x60",
             "label": "Optimized For Theme"
           },
           {
@@ -2186,7 +2186,7 @@
       },
       {
         "type": "optimizedCheckout-image",
-        "label": "250X100px  Recommended",
+        "label": "244x60px  Recommended",
         "reference": "optimizedCheckout-show-logo",
         "reference_default": "none",
         "force_reload": true,
@@ -2202,7 +2202,7 @@
         "force_reload": true,
         "options": [
           {
-            "value": "250x100",
+            "value": "244x60",
             "label": "Optimized For Theme"
           },
           {
