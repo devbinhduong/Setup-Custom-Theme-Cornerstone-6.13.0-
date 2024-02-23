@@ -78,9 +78,7 @@
                 margin-top: 12px;
                 .button {
                     padding: 0;
-                    height: 50px;
                     font-size: 14px;
-                    line-height: 50px;
                 }
             }
         }
@@ -351,11 +349,12 @@
         display: flex;
         align-items: center;
         transition: unset;
-
+        text-decoration: none;
+        
         svg {
-            width: 12px;
-            height: 12px;
-            margin: 0 10px 0 0;
+            width: 20px;
+            height: 20px;
+            margin: 0 4px 0 0;
             transition: unset;
         }
 
@@ -438,27 +437,10 @@
 
         .previewCartAction-viewCart {
             margin: 15px 0 0 0;
-
-            .button {
-                .home-layout-2 & {
-                    color: $card-figcaption-button-color;
-                    border-color: $buttonStyle-default-borderColor;
-                    background-color: $color-white;
-
-                    @media (min-width: 1025px) {
-                        &:hover {
-                            background: $buttonStyle-primary-backgroundColor;
-                            border-color: $buttonStyle-primary-backgroundColor;
-                            color: $color-white;
-                        }
-                    }
-                }
-            }
         }
 
         a {
             margin: 0;
-            padding: 0;
             width: 100%;
             text-align: center;
 
@@ -466,18 +448,6 @@
                 background: $header-font-color;
                 border-color: $header-font-color;
                 color: $color-white;
-
-                .home-layout-2 & {
-                    border-color: $buttonStyle-primary-backgroundColor;
-                    background-color: $buttonStyle-primary-backgroundColor;
-
-                    @media(min-width: 1025px) {
-                        &:hover {
-                            color: $buttonStyle-primary-colorHover;
-                            background-color: $buttonStyle-primary-backgroundColorHover;
-                        }
-                    }
-                }
             }
         }
     }
@@ -497,7 +467,7 @@
             bottom: 0;
             height: 36px;
             left: 145px;
-            width: calc(100% - 145px);
+            width: fit-content;
             line-height: 20px;
             display: flex;
             align-items: center;
@@ -518,9 +488,6 @@
 
                 span {
                     color: #ce2b1e;
-                    background-image: linear-gradient(transparent 97%, #ce2b1e 3%);
-                    background-repeat: repeat-x;
-                    background-position-y: 0;
                 }
             }
         }
@@ -1067,6 +1034,195 @@
     }
 }
 
+.product-edit-info {
+    overflow-y: auto;
+
+    .product-edit-change {
+        min-width: 700px;
+    }
+
+    table {
+        margin: 0;
+        width: 100%;
+    }
+
+    thead {
+        display: none;
+
+        th {
+            border: 0;
+            font-size: $fontSize-root - 2px;
+            font-weight: $fontWeight-bold;
+            line-height: 25px;
+            padding: 7px;
+            color: $color-textBase;
+            background-color: #fafafa;
+            text-transform: uppercase;
+            text-align: left;
+
+            &:first-child {
+                padding-left: 30px;
+            }
+
+            &.text-right {
+                text-align: right;
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            border-bottom: 1px solid #e2e2e7;
+        }
+
+        td {
+            border: 0;
+            padding: 15px 7px;
+            font-weight: 400;
+            min-width: 140px;
+
+            &:first-child {
+                padding-left: 20px;
+                min-width: 150px;
+            }
+
+            &:last-child {
+                padding-right: 20px;
+                min-width: 0;
+            }
+
+            &[data-cart-edit-item-price] {
+                min-width: 90px;
+            }
+
+            .form-field {
+                margin-bottom: 0;
+
+                &[data-product-attribute="date"] {
+                    min-width: 255px;
+                }
+
+                &[data-product-attribute="input-file"] {
+                    text-align: left;
+
+                    .form-fileDescription {
+                        display: none;
+                    }
+
+                    label {
+                        display: block;
+
+                        input {
+                            margin-left: 8px;
+                        }
+                    }
+                }
+
+                &[data-product-attribute="input-checkbox"] {
+                    min-width: 165px;
+                }
+
+                &[data-product-attribute="textarea"] {
+                    min-width: 200px;
+
+                    .form-input {
+                        min-height: 65px;
+                        max-height: 65px;
+                    }
+                }
+            }
+
+            .form-select {
+                border-color: #c5c5cf;
+                color: $color-textBase;
+                font-size: $fontSize-root;
+                font-weight: $fontWeight-normal;
+                line-height: normal;
+            }
+        }
+    }
+
+    .form {
+        margin: 0;
+    }
+
+    .form-increment {
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        width: 120px;
+
+        .form-input--incrementTotal {
+            width: 100%;
+            padding: 0 36px;
+            border: 1px solid #cbcbcb;
+            height: 40px;
+            padding: 0 10px;
+            font-size: $fontSize-root;
+            font-weight: 400;
+        }
+    }
+
+    .cart-edit-row {
+        .form-select {
+            padding: 0 12px;
+        }
+    }
+
+    .cart-edit-price {
+        .price {
+            display: block;
+            min-width: 80px;
+        }
+    }
+
+    .cart-edit-remove {
+        a {
+            font-size: 28px;
+            margin: 0;
+            position: relative;
+            top: 4px;
+            line-height: 20px;
+            width: 20px;
+            height: 20px;
+            color: $color-textBase;
+            font-weight: 200;
+            display: inline-block;
+            text-decoration: none;
+        }
+    }
+
+    .product-edit-change {
+        &:nth-child(1) {
+            thead {
+                display: table-header-group;
+            }
+
+            .cart-edit-remove {
+                a {
+                    opacity: 0;
+                    visibility: hidden;
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+
+    @media (min-width: 1025px) {
+        tbody {
+            td {
+                &:first-child {
+                    padding-left: 30px;
+                }
+
+                &:last-child {
+                    padding-right: 30px;
+                }
+            }
+        }
+    }
+}
+
 .product-edit-action {
     .product-add-more {
         margin: 15px 0 0 0;
@@ -1082,29 +1238,7 @@
             margin: 0 0 0 20px;
             color: $header-font-color;
             transition: unset;
-
-            &:before {
-                content: "";
-                position: absolute;
-                top: 10px;
-                width: 9px;
-                height: 1px;
-                right: calc(100% + 6px);
-                display: block;
-                background-color: #000000;
-            }
-
-            &:after {
-                content: "";
-                top: 50%;
-                width: 1px;
-                height: 10px;
-                right: calc(100% + 10px);
-                display: block;
-                position: absolute;
-                background-color: #000000;
-                transform: translateY(-50%);
-            }
+            text-decoration: none;
         }
     }
 
@@ -1140,22 +1274,7 @@
             }
         }
     }
-
-    @media (min-width: 1025px) {
-        .product-add-more {
-            .product-addmore-button {
-                &:hover {
-                    color: $color-textLink-hover;
-                    background-image: linear-gradient(transparent 97%, $color-textLink-hover 3%);
-                    background-repeat: repeat-x;
-                    background-position-y: 0;
-
-                    &:after,
-                    &:before {
-                        background: $color-textLink-hover;
-                    }
-                }
-            }
-        }
-    }
 }
+
+
+

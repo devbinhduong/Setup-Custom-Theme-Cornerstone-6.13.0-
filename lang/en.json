@@ -56,12 +56,16 @@
             "subtotal": "Subtotal",
             "enter_code": "Coupon code / Gift certificate",
             "gift_wrapping": "Gift wrapping",
+            "unit_price": "Unit Price",
             "shipping": "Shipping",
             "grand_total": "Grand total",
             "select": "Select",
-            "update": "Update shipping cost"
+            "remove": "Remove",
+            "update": "Update shipping cost",
+            "add_more": "Add more"
         },
         "preview": {
+            "title": "Review your cart",
             "checkout_now": "Check out now",
             "checkout_multiple": "or check out with multiple addresses",
             "view_cart": "View Cart"

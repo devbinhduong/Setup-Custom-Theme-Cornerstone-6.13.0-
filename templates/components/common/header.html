@@ -102,14 +102,14 @@
                             <svg class="icon" aria-hidden="true"><use xlink:href="#icon-cart-header"></use></svg>
                         </span>
                     </a>
-                    <span class="countPill{{#if cart.items}} countPill--positive{{/if}} cart-quantity hide-on-tablet">{{cart.quantity}}</span>
+                    <span class="countPill{{#if cart.items}} countPill--positive{{/if}} cart-quantity hide-on-tablet header-countPill">{{cart.quantity}}</span>
                     <div class="dropdown-cart" id="cart-preview-dropdown" aria-hidden="true"></div>
 
                     <!-- Cart Icon for Mobile -->
                     <a class="navUser-action cartMobile hide-on-desktop" data-cart-preview2 href="/cart.php" aria-label="{{lang 'cart.nav_aria_label'}}">
                         <span class="navUser-icon navUser-item-cartIcon">
                             <svg class="icon" aria-hidden="true"><use xlink:href="#icon-cart-header"></use></svg>
-                            <span class="countPill cart-quantity">{{#if cart.items}}{{cart.quantity}}{{else}}0{{/if}}</span>
+                            <span class="countPill cart-quantity header-countPill">{{#if cart.items}}{{cart.quantity}}{{else}}0{{/if}}</span>
                         </span>
                     </a>
                 </div>

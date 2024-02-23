@@ -549,6 +549,7 @@ $card-preview-zoom-bottom-offset:       6rem;
 .previewCartWrapper {
     max-height: calc(100vh - #{$card-preview-zoom-bottom-offset});
     overflow: auto;
+    padding: 0 25px 30px 25px;
 }
 
 .previewCartList {

@@ -60,46 +60,49 @@
     opacity: 1;
 }
 
-/* ------------------ Hover Image Zoom ------------------------- */
-.hover-image {
-    overflow: hidden;
-    cursor: pointer;
-    img {
-        transition: all .6s ease;
-    }
-
-    &:hover {
+@include smin-m {
+    /* ------------------ Hover Image Zoom ------------------------- */
+    .hover-image {
+        overflow: hidden;
+        cursor: pointer;
         img {
-            transform: scale3d(1.1, 1.1, 1);
+            transition: all .6s ease;
+        }
+    
+        &:hover {
+            img {
+                transform: scale3d(1.1, 1.1, 1);
+            }
+        }
+    }
+    
+    /* ------------------ Hover Link ------------------------- */
+    .hover-link {
+        color: #444444;
+        position: relative;
+        text-decoration: none;
+    
+        &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            border-radius: 4px;
+            background-color: var(--underlineColor);
+            bottom: var(--underlineBottom);
+            left: 0;
+            transform-origin: right;
+            transform: scaleX(0);
+            transition: transform .3s ease-in-out;
+        }
+          
+        &:hover::before {
+            transform-origin: left;
+            transform: scaleX(1);
         }
     }
 }
 
-/* ------------------ Hover Link ------------------------- */
-.hover-link {
-    color: #444444;
-    position: relative;
-    text-decoration: none;
-
-    &::before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 2px;
-        border-radius: 4px;
-        background-color: var(--underlineColor);
-        bottom: -4px;
-        left: 0;
-        transform-origin: right;
-        transform: scaleX(0);
-        transition: transform .3s ease-in-out;
-    }
-      
-    &:hover::before {
-        transform-origin: left;
-        transform: scaleX(1);
-    }
-}
 
 /* ----------------- Grid Layout ----------------- */
 .row {
