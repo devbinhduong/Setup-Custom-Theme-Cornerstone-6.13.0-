@@ -4,6 +4,7 @@
             <div class="form-field">
                 <label class="is-srOnly" for="{{name}}">{{lang "search.quick_search.input_label"}}</label>
                 <input class="form-input"
+                        id="search_query"
                        data-search-quick
                        name="{{name}}"
                        id="{{name}}"
@@ -21,10 +22,23 @@
             </span>
         </button>
     </form>
-    <section class="quickSearchResults" data-bind="html: results"></section>
-    <p role="status"
-       aria-live="polite"
-       class="aria-description--hidden"
-       data-search-aria-message-predefined-text="{{{lang 'search.results.quick_count_live'}}}"
-    ></p>
+    <section class="quickSearchResults customQuickSearchResults" data-bind="html: results"></section>
+
+    <!-- Custom Start -->
+    {{#if theme_settings.beforeQuickSearch}}
+        <div class="customQuickSearchResults quickSearchResultsCustom">
+            <div class="container">
+                <button class="quickResults-close" type="button" title="Close">
+                    <span class="aria-description--hidden">Close</span>
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="container">
+                {{> components/custom/custom-before-quick-results  productsnew=products.new }}
+            </div>
+        </div>
+    {{/if}}
+    
+    {{~inject 'quickSearchBefore' theme_settings.beforeQuickSearch}}
+
 </div>

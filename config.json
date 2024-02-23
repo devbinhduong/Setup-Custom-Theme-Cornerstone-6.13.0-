@@ -770,7 +770,19 @@
         "header_right_item3_link": "#",
         "header_right_item4_text": "Live Chat",
         "header_right_item4_link": "#",
-        "quickEditCart": true
+        "quickEditCart": true,
+        "beforeQuickSearch": true,
+        "beforeQuickSearch-trending-now": true,
+        "beforeQuickSearch-trending-now-title": "Trending Now",
+        "beforeQuickSearch-trending-now-1": "Annie's Garden",
+        "beforeQuickSearch-trending-now-2": "Tomorrow",
+        "beforeQuickSearch-trending-now-3": "Lorem",
+        "beforeQuickSearch-trending-now-4": "Daventry Meers",
+        "beforeQuickSearch-trending-now-5": "Garden",
+        "beforeQuickSearch-popular": true,
+        "beforeQuickSearch-popular-title": "Most Popular",
+        "beforeQuickSearch-popular-id": "2407,2408,2409",
+        "beforeQuickSearch-limit": "3"
       }
     }
   ]

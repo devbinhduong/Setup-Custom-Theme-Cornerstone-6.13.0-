@@ -19,7 +19,7 @@ export default class Global extends PageManager {
     onReady() {
         const { cartId, secureBaseUrl } = this.context;
         cartPreview(secureBaseUrl, cartId, this.context);
-        quickSearch();
+        quickSearch(this.context);
         currencySelector(cartId);
         foundation($(document));
         quickView(this.context);
