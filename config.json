@@ -758,6 +758,7 @@
         "masterpass-button-color": "black",
         "paymentbuttons-provider-sorting": [],
         "customMegamenu": true,
+        "customMegamenu_type": "Editor",
         "header_top_bg": "#003A63",
         "header_top_text_color": "#ffffff",
         "header_top_text_colorHover": "#ffffff",
