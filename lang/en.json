@@ -294,7 +294,7 @@
     },
     "account": {
         "title": "Log In",
-        "Logged": "My Account",
+        "logged": "My Account",
         "breadcrumb": "Your Account",
         "nav": {
             "overview": "Overview",

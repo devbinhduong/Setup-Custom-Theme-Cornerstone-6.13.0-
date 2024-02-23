@@ -204,6 +204,10 @@
                 > .navUser-action {
                     text-transform: none;
                     padding: 0;
+
+                    &.navUser-action--logged {
+                        padding: 15px 35px;
+                    }
                 }
 
                 &.item--searchMobile {

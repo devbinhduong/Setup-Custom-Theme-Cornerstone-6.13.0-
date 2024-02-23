@@ -71,7 +71,7 @@
             <div class="headerMiddle_item headerMiddle_item--right text-right">
                 <div class="items item--account">
                     {{#if customer}}
-                        <a class="navUser-action navUser-action--logged flex-center-y hover-link hide-on-tablet" href="{{urls.account.index}}" aria-label="{{customer.name}}" data-login-form>
+                        <a class="navUser-action navUser-action--logged button button--transparent flex-center-y hover-link hide-on-tablet" href="{{urls.account.index}}" aria-label="{{customer.name}}" data-login-form>
                             {{lang 'account.logged'}}
                         </a>
 
@@ -117,8 +117,11 @@
         </div>
     </div>
 
-    <div class="navPages-container" id="menu" data-menu>
-        {{> components/common/navigation-menu}}
+    <!-- Header Bottom -->
+    <div class="headerBottom">
+        <div class="navPages-container" id="menu" data-menu>
+            {{> components/common/navigation-menu}}
+        </div>
     </div>
     {{{region name="header_navigation_bottom--global"}}}
 </header>
