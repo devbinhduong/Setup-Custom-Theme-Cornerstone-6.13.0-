@@ -68,7 +68,7 @@
 }
 
 .js .custom-fadeInLeft {
-    opacity: 0;
+    // opacity: 0;
 
     @for $i from 0 through 100 {
         &[data-step-animate="#{$i}"] {
@@ -133,6 +133,32 @@
         &:hover::before {
             transform-origin: left;
             transform: scaleX(1);
+        }
+    }
+}
+
+/* ------------------ Banner Hover Effect -------------- */
+.hover-banner {
+    &:before {
+        content: "";
+        width: 0;
+        height: 100%;
+        top: 0;
+        left: 0;
+        left: auto;
+        bottom: auto;
+        z-index: 2;
+        -webkit-transform: none;
+        transform: none;
+        position: absolute;
+        -webkit-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        background-color: rgba(246, 246, 246, 0.2);
+    }
+
+    @include smin-m {
+        &:hover:before {
+            width: 100%;
         }
     }
 }

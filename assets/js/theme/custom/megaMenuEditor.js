@@ -8,9 +8,10 @@ export default function (context) {
 	    var megaMenuFunction = new window.megaMenuFunction();
 	    const urlStoreHash = $('.custom-global-block').data('store-hash-image');
 
-	    var mega_menu_style1_item = parseInt(settings.mega_menu_style1_item),
-	        mega_menu_style2_item = parseInt(settings.mega_menu_style2_item),
-	        mega_menu_style3_item = parseInt(settings.mega_menu_style3_item);
+		var mega_menu_styleCustom_item1 = parseInt(settings.mega_menu_styleCustom_item1),
+			mega_menu_styleCustom_item2 = parseInt(settings.mega_menu_styleCustom_item2),
+			mega_menu_styleCustom_item3 = parseInt(settings.mega_menu_styleCustom_item3),
+			mega_menu_styleCustom_item4 = parseInt(settings.mega_menu_styleCustom_item4);
 
 	    function SetItemMegaMenu(){
 	        $('.navPages-list-megamenu > li:not(.navPages-item-toggle)').mouseover(event => {
@@ -26,208 +27,143 @@ export default function (context) {
 
 	            if (!$(event.currentTarget).parent().hasClass('has-megamenu')) {
 	                LoadMegaMenu(numberItem);
-
-                    console.log("load mega menu");
 	            }
 	        });
 	    }
 	        
 	    function LoadMegaMenu(numberItem){
-			let mega_menu_style1_img1 = '',
-				mega_menu_style1_img2 = '',
-				mega_menu_style1_img3 = '',
-				mega_menu_style1_img4 = '',
-				mega_menu_style1_img5 = '',
-				mega_menu_style1_bottom = '',
-				mega_menu_style2_img = '',
-				mega_menu_style2_products = '',
-				mega_menu_style3_img1 = '',
-				mega_menu_style3_img2 = '',
-				mega_menu_style3_img3 = '',
-				mega_menu_style3_img4 = '',
-				mega_menu_style3_img5 = '',
-				mega_menu_style3_img6 = '',
-				mega_menu_style3_img7 = '',
-				mega_menu_style3_img8 = '',
-				mega_menu_style3_img9 = '',
-				mega_menu_style3_img10 = '',
-				mega_menu_style3_bottom = '';
+			let mega_menu_styleCustom_bottom = '',
+				mega_menu_styleCustom_img_1 = '',
+				mega_menu_styleCustom_img_2 = '',
+				mega_menu_styleCustom_img_3 = '',
+				mega_menu_styleCustom_img_4 = '',
+				mega_menu_styleCustom_img_5 = '',
+				mega_menu_styleCustom_img_6 = '',
+				mega_menu_styleCustom_img_7 = '',
+				mega_menu_styleCustom_img_8 = '';
 
-			if (settings.mega_menu_style1_img1 != '') {
-				mega_menu_style1_img1 = 
-				'<a class="image banner-effect-slidebg" href="'+settings.mega_menu_style1_link1+'" aria-label="'+settings.mega_menu_style1_img1+'">\
-					<img src="'+urlStoreHash+settings.mega_menu_style1_img1+'" alt="'+settings.mega_menu_style1_img1+'"/>\
-				</a>'
+			if (settings.mega_menu_styleCustom_img1 != '') {
+				mega_menu_styleCustom_img_1 = `
+					<a class="image hover-banner" href="${settings.mega_menu_styleCustom_link1}" aria-label="${settings.mega_menu_styleCustom_img1}">
+						<img src="${urlStoreHash}${settings.mega_menu_styleCustom_img1}" alt="${settings.mega_menu_styleCustom_img1}">
+					</a>
+				`
 			}
 
-			if (settings.mega_menu_style1_img2 != '') {
-				mega_menu_style1_img2 = 
-				'<a class="image banner-effect-slidebg" href="'+settings.mega_menu_style1_link2+'" aria-label="'+settings.mega_menu_style1_img2+'">\
-					<img src="'+urlStoreHash+settings.mega_menu_style1_img2+'" alt="'+settings.mega_menu_style1_img2+'"/>\
-				</a>'
+			if (settings.mega_menu_styleCustom_img2 != '') {
+				mega_menu_styleCustom_img_2 = `
+					<a class="image hover-banner" href="${settings.mega_menu_styleCustom_link2}" aria-label="${settings.mega_menu_styleCustom_img2}">
+						<img src="${urlStoreHash}${settings.mega_menu_styleCustom_img2}" alt="${settings.mega_menu_styleCustom_img2}">
+					</a>
+				`
 			}
 
-			if (settings.mega_menu_style1_img3 != '') {
-				mega_menu_style1_img3 = 
-				'<a class="image banner-effect-slidebg" href="'+settings.mega_menu_style1_link3+'" aria-label="'+settings.mega_menu_style1_img3+'">\
-					<img src="'+urlStoreHash+settings.mega_menu_style1_img3+'" alt="'+settings.mega_menu_style1_img3+'"/>\
-				</a>'
+			if (settings.mega_menu_styleCustom_img3 != '') {
+				mega_menu_styleCustom_img_3 = `
+					<a class="image hover-banner" href="${settings.mega_menu_styleCustom_link3}" aria-label="${settings.mega_menu_styleCustom_img3}">
+						<img src="${urlStoreHash}${settings.mega_menu_styleCustom_img3}" alt="${settings.mega_menu_styleCustom_img3}">
+					</a>
+				`
 			}
 
-			if (settings.mega_menu_style1_img4 != '') {
-				mega_menu_style1_img4 = 
-				'<a class="image banner-effect-slidebg" href="'+settings.mega_menu_style1_link4+'" aria-label="'+settings.mega_menu_style1_img4+'">\
-					<img src="'+urlStoreHash+settings.mega_menu_style1_img4+'" alt="'+settings.mega_menu_style1_img4+'"/>\
-				</a>'
+			if (settings.mega_menu_styleCustom_img4 != '') {
+				mega_menu_styleCustom_img_4 = `
+					<a class="image hover-banner" href="${settings.mega_menu_styleCustom_link4}" aria-label="${settings.mega_menu_styleCustom_img4}">
+						<img src="${urlStoreHash}${settings.mega_menu_styleCustom_img4}" alt="${settings.mega_menu_styleCustom_img4}">
+					</a>
+				`
 			}
 
-			if (settings.mega_menu_style1_img5 != '') {
-				mega_menu_style1_img5 = 
-				'<a class="image banner-effect-slidebg" href="'+settings.mega_menu_style1_link5+'" aria-label="'+settings.mega_menu_style1_img5+'">\
-					<img src="'+urlStoreHash+settings.mega_menu_style1_img5+'" alt="'+settings.mega_menu_style1_img5+'"/>\
-				</a>'
+			if (settings.mega_menu_styleCustom_img5 != '') {
+				mega_menu_styleCustom_img_5 = `
+					<a class="image hover-banner" href="${settings.mega_menu_styleCustom_link5}" aria-label="${settings.mega_menu_styleCustom_img5}">
+						<img src="${urlStoreHash}${settings.mega_menu_styleCustom_img5}" alt="${settings.mega_menu_styleCustom_img5}">
+					</a>
+				`
 			}
 
-			if (settings.mega_menu_style1_bottom != '') {
-				mega_menu_style1_bottom = 
-				'<div class="container">'+settings.mega_menu_style1_bottom+'</div>'
+			if (settings.mega_menu_styleCustom_img6 != '') {
+				mega_menu_styleCustom_img_6 = `
+					<a class="image hover-banner" href="${settings.mega_menu_styleCustom_link6}" aria-label="${settings.mega_menu_styleCustom_img6}">
+						<img src="${urlStoreHash}${settings.mega_menu_styleCustom_img6}" alt="${settings.mega_menu_styleCustom_img6}">
+					</a>
+				`
 			}
 
-			if (settings.mega_menu_style2_img != '') {
-				mega_menu_style2_img = 
-				'<a class="image banner-effect-slidebg" href="'+settings.mega_menu_style2_link+'" aria-label="'+settings.mega_menu_style2_img+'">\
-					<img src="'+urlStoreHash+settings.mega_menu_style2_img+'" alt="'+settings.mega_menu_style2_img+'"/>\
-				</a>'
+			if (settings.mega_menu_styleCustom_img7 != '') {
+				mega_menu_styleCustom_img_7 = `
+					<a class="image hover-banner" href="${settings.mega_menu_styleCustom_link7}" aria-label="${settings.mega_menu_styleCustom_img7}">
+						<img src="${urlStoreHash}${settings.mega_menu_styleCustom_img7}" alt="${settings.mega_menu_styleCustom_img7}">
+					</a>
+				`
 			}
 
-			if (settings.mega_menu_style2_prodTitle != '' && settings.mega_menu_style2_prodID != '') {
-				mega_menu_style2_products = '<h3 class="megamenu-title">'+settings.mega_menu_style2_prodTitle+'</h3><div class="megamenu-slider"></div>'
+			if (settings.mega_menu_styleCustom_img8 != '') {
+				mega_menu_styleCustom_img_8 = `
+					<a class="image hover-banner" href="${settings.mega_menu_styleCustom_link8}" aria-label="${settings.mega_menu_styleCustom_img8}">
+						<img src="${urlStoreHash}${settings.mega_menu_styleCustom_img8}" alt="${settings.mega_menu_styleCustom_img8}">
+					</a>
+				`
 			}
 
-			if (settings.mega_menu_style3_img1 != '') {
-				mega_menu_style3_img1 = 
-				'<a class="image banner-effect-slidebg" href="'+settings.mega_menu_style3_link1+'" aria-label="'+settings.mega_menu_style3_img1+'">\
-					<img src="'+urlStoreHash+settings.mega_menu_style3_img1+'" alt="'+settings.mega_menu_style3_img1+'"/>\
-				</a>'
+			if (settings.mega_menu_styleCustom_bottom != '') {
+				mega_menu_styleCustom_bottom = 
+				`<div class="container">${settings.mega_menu_styleCustom_bottom}</div>`
 			}
 
-			if (settings.mega_menu_style3_img2 != '') {
-				mega_menu_style3_img2 = 
-				'<a class="image banner-effect-slidebg" href="'+settings.mega_menu_style3_link2+'" aria-label="'+settings.mega_menu_style3_img2+'">\
-					<img src="'+urlStoreHash+settings.mega_menu_style3_img2+'" alt="'+settings.mega_menu_style3_img2+'"/>\
-				</a>'
-			}
-
-			if (settings.mega_menu_style3_img3 != '') {
-				mega_menu_style3_img3 = 
-				'<a class="image banner-effect-slidebg" href="'+settings.mega_menu_style3_link3+'" aria-label="'+settings.mega_menu_style3_img3+'">\
-					<img src="'+urlStoreHash+settings.mega_menu_style3_img3+'" alt="'+settings.mega_menu_style3_img3+'"/>\
-				</a>'
-			}
-
-			if (settings.mega_menu_style3_img4 != '') {
-				mega_menu_style3_img4 = 
-				'<a class="image banner-effect-slidebg" href="'+settings.mega_menu_style3_link4+'" aria-label="'+settings.mega_menu_style3_img4+'">\
-					<img src="'+urlStoreHash+settings.mega_menu_style3_img4+'" alt="'+settings.mega_menu_style3_img4+'"/>\
-				</a>'
-			}
-
-			if (settings.mega_menu_style3_img5 != '') {
-				mega_menu_style3_img5 = 
-				'<a class="image banner-effect-slidebg" href="'+settings.mega_menu_style3_link5+'" aria-label="'+settings.mega_menu_style3_img5+'">\
-					<img src="'+urlStoreHash+settings.mega_menu_style3_img5+'" alt="'+settings.mega_menu_style3_img5+'"/>\
-				</a>'
-			}
-
-			if (settings.mega_menu_style3_img6 != '') {
-				mega_menu_style3_img6 = 
-				'<a class="image banner-effect-slidebg" href="'+settings.mega_menu_style3_link6+'" aria-label="'+settings.mega_menu_style3_img6+'">\
-					<img src="'+urlStoreHash+settings.mega_menu_style3_img6+'" alt="'+settings.mega_menu_style3_img6+'"/>\
-				</a>'
-			}
-
-			if (settings.mega_menu_style3_img7 != '') {
-				mega_menu_style3_img7 = 
-				'<a class="image banner-effect-slidebg" href="'+settings.mega_menu_style3_link7+'" aria-label="'+settings.mega_menu_style3_img7+'">\
-					<img src="'+urlStoreHash+settings.mega_menu_style3_img7+'" alt="'+settings.mega_menu_style3_img7+'"/>\
-				</a>'
-			}
-
-			if (settings.mega_menu_style3_img8 != '') {
-				mega_menu_style3_img8 = 
-				'<a class="image banner-effect-slidebg" href="'+settings.mega_menu_style3_link8+'" aria-label="'+settings.mega_menu_style3_img8+'">\
-					<img src="'+urlStoreHash+settings.mega_menu_style3_img8+'" alt="'+settings.mega_menu_style3_img8+'"/>\
-				</a>'
-			}
-
-			if (settings.mega_menu_style3_img9 != '') {
-				mega_menu_style3_img9 = 
-				'<a class="image banner-effect-slidebg" href="'+settings.mega_menu_style3_link9+'" aria-label="'+settings.mega_menu_style3_img9+'">\
-					<img src="'+urlStoreHash+settings.mega_menu_style3_img9+'" alt="'+settings.mega_menu_style3_img9+'"/>\
-				</a>'
-			}
-
-			if (settings.mega_menu_style3_img10 != '') {
-				mega_menu_style3_img10 = 
-				'<a class="image banner-effect-slidebg" href="'+settings.mega_menu_style3_link10+'" aria-label="'+settings.mega_menu_style3_img10+'">\
-					<img src="'+urlStoreHash+settings.mega_menu_style3_img10+'" alt="'+settings.mega_menu_style3_img10+'"/>\
-				</a>'
-			}
-
-			if (settings.mega_menu_style3_img6 != '' || settings.mega_menu_style3_img7 != '' || settings.mega_menu_style3_img8 != '' || settings.mega_menu_style3_img9 != '' || settings.mega_menu_style3_img10 != '') {
-				mega_menu_style3_bottom = 
-				'<div class="container brand-image custom-fadeInLeft" data-step-animate="0">\
-					'+mega_menu_style3_img6+'\
-					'+mega_menu_style3_img7+'\
-					'+mega_menu_style3_img8+'\
-					'+mega_menu_style3_img9+'\
-					'+mega_menu_style3_img10+'\
-					<a class="image banner-effect-slidebg" href="'+settings.mega_menu_style3_textLink+'" aria-label="'+settings.mega_menu_style3_text+'">\
-						<span>'+settings.mega_menu_style3_text+'</span>\
-					</a>\
-				</div>'
-			}
-
-	        if (mega_menu_style1_item == numberItem) {
-	            megaMenuFunction.menuItem(mega_menu_style1_item).setMegaMenu({
-	                style: 'style 1',
-	                imageAreaWidth: settings.mega_menu_style1_imgWidth,
-	                cateAreaWidth: settings.mega_menu_style1_cateWidth,
-	                cateColumns: settings.mega_menu_style1_col,
-					imagesTop: [
-						mega_menu_style1_img1,
-						mega_menu_style1_img2,
-						mega_menu_style1_img3,
-						mega_menu_style1_img4,
-						mega_menu_style1_img5
-					],
-					bottomMegamenu: mega_menu_style1_bottom
-	            });
-	        } else if (mega_menu_style2_item == numberItem){
-	            megaMenuFunction.menuItem(mega_menu_style2_item).setMegaMenu({
-	                style: 'style 2',
-	                imageAreaWidth: settings.mega_menu_style2_imgWidth,
-	                cateAreaWidth: settings.mega_menu_style2_cateWidth,
-	                cateColumns: settings.mega_menu_style2_col,
-					productId: settings.mega_menu_style2_prodID,
-					products: mega_menu_style2_products,
-					imagesRight: mega_menu_style2_img
-	            });
-	        } else if (mega_menu_style3_item == numberItem){
-	            megaMenuFunction.menuItem(mega_menu_style3_item).setMegaMenu({
-	                style: 'style 3',
-	                imageAreaWidth: settings.mega_menu_style3_imgWidth,
-	                cateAreaWidth: settings.mega_menu_style3_cateWidth,
-	                cateColumns: settings.mega_menu_style3_col,
+	        if (mega_menu_styleCustom_item1 == numberItem) {
+	            megaMenuFunction.menuItem(mega_menu_styleCustom_item1).setMegaMenu({
+	                style: 'style custom',
+	                imageAreaWidth: settings.mega_menu_styleCustom_item1_imgWidth,
+	                cateAreaWidth: settings.mega_menu_styleCustom_item1_cateWidth,
+	                cateColumns: settings.mega_menu_styleCustom_item1_col,
 					imagesRight: 
-						''+mega_menu_style3_img1+'\
-						'+mega_menu_style3_img2+'\
-						'+mega_menu_style3_img3+'\
-						'+mega_menu_style3_img4+'\
-						'+mega_menu_style3_img5+'',
-					bottomMegamenu: mega_menu_style3_bottom
+						`
+						${mega_menu_styleCustom_img_1}
+						${mega_menu_styleCustom_img_2}
+						`,
+					bottomMegamenu: mega_menu_styleCustom_bottom
 	            });
-	        } else {
+	        } else if (mega_menu_styleCustom_item2 == numberItem) {
+	            megaMenuFunction.menuItem(mega_menu_styleCustom_item2).setMegaMenu({
+	                style: 'style custom',
+	                imageAreaWidth: settings.mega_menu_styleCustom_item2_imgWidth,
+	                cateAreaWidth: settings.mega_menu_styleCustom_item2_cateWidth,
+	                cateColumns: settings.mega_menu_styleCustom_item2_col,
+					imagesRight: 
+						`
+						${mega_menu_styleCustom_img_3}
+						${mega_menu_styleCustom_img_4}
+						`,
+					bottomMegamenu: mega_menu_styleCustom_bottom
+	            });
+	        } else if (mega_menu_styleCustom_item3 == numberItem) {
+	            megaMenuFunction.menuItem(mega_menu_styleCustom_item3).setMegaMenu({
+	                style: 'style custom',
+	                imageAreaWidth: settings.mega_menu_styleCustom_item3_imgWidth,
+	                cateAreaWidth: settings.mega_menu_styleCustom_item3_cateWidth,
+	                cateColumns: settings.mega_menu_styleCustom_item3_col,
+					imagesRight: 
+						`
+						${mega_menu_styleCustom_img_5}
+						${mega_menu_styleCustom_img_6}
+						`,
+					bottomMegamenu: mega_menu_styleCustom_bottom
+	            });
+	        } else if (mega_menu_styleCustom_item4 == numberItem) {
+	            megaMenuFunction.menuItem(mega_menu_styleCustom_item4).setMegaMenu({
+	                style: 'style custom',
+	                imageAreaWidth: settings.mega_menu_styleCustom_item4_imgWidth,
+	                cateAreaWidth: settings.mega_menu_styleCustom_item4_cateWidth,
+	                cateColumns: settings.mega_menu_styleCustom_item4_col,
+					imagesRight: 
+						`
+						${mega_menu_styleCustom_img_7}
+						${mega_menu_styleCustom_img_8}
+						`,
+					bottomMegamenu: mega_menu_styleCustom_bottom
+	            });
+			} else {
 	            return;
 	        }
 	    }

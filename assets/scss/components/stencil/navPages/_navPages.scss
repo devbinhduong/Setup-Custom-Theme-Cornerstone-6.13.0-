@@ -88,6 +88,10 @@
         list-style: none;
     }
 
+    a {
+        text-decoration: none;
+    }
+
     .navPage-subMenu-list {
         border-left: 0;
         list-style: none;
@@ -196,14 +200,6 @@
     text-transform: capitalize;
     margin-bottom: 0;
 
-    &.navPages-action-lv1 {
-        @include smin-m {
-            &:hover {
-                background-color: #5d6673;
-            }
-        }
-    }
-
     &.navPages-action-lv1:not(.has-subMenu) {
         padding: 15px 15px 14px;
     }
@@ -271,8 +267,13 @@
 
     &.navPages-action-lv2 {
         span:not(.navPages-action-moreIcon) {
-            font-size: $fontSize-root;
+            font-size: $fontSize-root - 2px;
             color: stencilColor("navPages-lv2-color");
+            font-weight: 400;
+
+            @include smin-m {
+                font-weight: 500;
+            }
         }
 
         svg {
@@ -283,46 +284,13 @@
 
     &.navPages-action-lv3 {
         span:not(.navPages-action-moreIcon) {
-            font-size: $fontSize-root;
+            font-size: $fontSize-root - 2px;
             color: stencilColor("navPages-lv3-color");
         }
 
         svg {
             fill: stencilColor("navPages-lv2-color");
             stroke: stencilColor("navPages-lv2-color");
-        }
-    }
-
-    @include smin-m {
-        &:hover {
-            span:not(.navPages-label) {
-                color: stencilColor("navPages-color-hover");
-
-                svg {
-                    fill: stencilColor("navPages-lv2-color-hover");
-                    stroke: stencilColor("navPages-lv2-color-hover");
-                }
-            }
-        }
-
-        &.navPages-action-lv2 {
-            &:hover {
-                span:not(.navPages-action-moreIcon) {
-                    color: stencilColor("navPages-lv2-color-hover");
-                    text-decoration: underline;
-                    text-underline-position: under;
-                }
-            }
-        }
-
-        &.navPages-action-lv3 {
-            &:hover {
-                span:not(.navPages-action-moreIcon) {
-                    color: stencilColor("navPages-lv3-color-hover");
-                    text-decoration: underline;
-                    text-underline-position: under;
-                }
-            }
         }
     }
 
@@ -440,6 +408,7 @@
     .navPages-list:not(.navPages-list-depth-max) .navPages-action.has-subMenu+& {
         .navPage-subMenu-list {
             margin-right: 0;
+            margin-bottom: 20px;
 
             @include smin-m {
                 margin-right: auto;
@@ -1002,7 +971,7 @@
             top: -10px;
 
             >.navPage-subMenu-item-child {
-                padding-bottom: 16px !important;
+                padding-bottom: 12px !important;
 
                 >.image {
                     padding: 7px 0;
@@ -1083,12 +1052,10 @@
             >.navPage-subMenu-item-child {
                 >.navPage-subMenu-action {
                     font-size: $fontSize-root;
-                    font-weight: fontWeight("semibold");
+                    font-weight: 400;
                     padding-left: 0;
-                    border-bottom: 1px dotted #cccccc;
-                    margin-bottom: 8px;
 
-                    >.text {
+                    >.text:not(.hover-link) {
                         &:before {
                             display: none !important;
                         }
@@ -1193,6 +1160,27 @@
         }
     }
 
+    .style-custom {
+        .imageArea {
+            .megamenu-right-item {
+                width: 100%;
+                display: flex;
+                margin-left: -8px;
+                margin-right: -8px;
+
+                .image {
+                    position: relative;
+                    height: fit-content;
+                    padding: 0 8px;
+
+                    + .image {
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+    }
+
     .style-1 {
         .cateArea {
             >.navPage-subMenu-list {
@@ -1249,9 +1237,9 @@
 }
 
 .bottomMegamenu {
-    padding: 29px 0;
-    font-size: $fontSize-root;
-    font-weight: $fontWeight-bold;
+    padding: 12px 0;
+    font-size: $fontSize-root - 2px;
+    font-weight: $fontWeight-medium;
     text-align: center;
     color: stencilColor("color-textHeading");
     background-color: #fafafa;
@@ -1403,7 +1391,7 @@
 
             >.navPage-subMenu-item-child {
                 >.navPages-action {
-                    font-weight: $fontWeight-medium;
+                    font-weight: $fontWeight-normal;
                 }
 
                 >.image {
@@ -1506,7 +1494,7 @@
             justify-content: space-between;
             line-height: 45px;
             letter-spacing: $letterSpacing-base;
-            font-weight: $fontWeight-bold;
+            font-weight: $fontWeight-normal;
 
             .text {
                 display: flex;
@@ -1595,9 +1583,10 @@
         }
 
         >.navPages-action {
-            font-size: $fontSize-root + 2;
+            font-size: $fontSize-root - 2;
             font-weight: $fontWeight-bold;
             line-height: 40px;
+            font-weight: 500;
             text-transform: capitalize;
 
             .text {
@@ -1643,7 +1632,7 @@
 
             .navPages-action {
                 border-bottom: 1px solid stencilColor('navPages-subMenu-separatorColor');
-                font-size: $fontSize-root;
+                font-size: $fontSize-root - 2px;
             }
         }
 
@@ -1670,7 +1659,7 @@
                 }
 
                 .text {
-                    font-weight: $fontWeight-bold;
+                    font-weight: 500;
                     max-width: calc(100% - 70px);
                     white-space: nowrap;
                     overflow: hidden;
@@ -1775,5 +1764,28 @@
 
     .is-hidden {
         display: none !important;
+    }
+}
+
+@include smax-m {
+    .style-custom {
+        .imageArea {
+            padding-left: 15px;
+            padding-right: 15px;
+            max-width: 100% !important;
+
+            .image  {
+                & + .image {
+                    margin-top: 20px;
+                    display: block;
+                }
+            }
+        }
+
+        .bottomMegamenu {
+            padding-left: 15px;
+            padding-right: 15px;
+            margin-top: 24px;
+        }
     }
 }

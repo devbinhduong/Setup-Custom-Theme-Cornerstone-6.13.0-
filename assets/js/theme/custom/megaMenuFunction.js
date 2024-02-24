@@ -27,7 +27,7 @@ export default class megaMenuFunction {
                     imagesRight: ''
                 }, param);
 
-                var $scope = $('.navPages-list-megamenu > li:nth-child('+num+')');
+                var $scope = $('.navPages-list-custom > li:nth-child('+num+')');
 
                 if(!$scope.hasClass('navPages-item-toggle')){
                     if (param.disabled === false) {
@@ -104,6 +104,37 @@ export default class megaMenuFunction {
                         if(param.style === 'style 3') {
                             if(!$scope.hasClass('has-megamenu')){
                                 $scope.addClass('has-megamenu style-3 fullWidth');
+
+                                if(!subMegaMenu.find('.cateArea').length){
+                                    subMegaMenu.find('.container > .navPage-subMenu-list').wrap('<div class="cateArea columns-'+param.cateColumns+'"></div>');
+                                }
+
+                                if(!subMegaMenu.find('.imageArea').length){
+                                    subMegaMenu.find('.container').append('<div class="imageArea"><div class="megamenu-right-item custom-fadeInLeft" data-step-animate="0">'+param.imagesRight+'</div></div>');
+                                }
+
+                                subMegaMenu.find('.imageArea').css({
+                                    'width': '100%',
+                                    'max-width': param.imageAreaWidth
+                                });
+
+                                subMegaMenu.find('.cateArea').css({
+                                    'width': '100%',
+                                    'max-width': param.cateAreaWidth
+                                });
+
+                                if (!subMegaMenu.find('.bottomMegamenu').length) {
+                                    subMegaMenu.append('<div class="bottomMegamenu custom-fadeInLeft" data-step-animate="0">' + param.bottomMegamenu + '</div>');
+                                }
+
+                                subMegaMenu.addClass('customScrollbar');
+                            }
+                        }
+
+                        /* Custom Mega Menu Style By Mint */
+                        if(param.style === 'style custom') {
+                            if(!$scope.hasClass('has-megamenu')){
+                                $scope.addClass('has-megamenu style-custom fullWidth');
 
                                 if(!subMegaMenu.find('.cateArea').length){
                                     subMegaMenu.find('.container > .navPage-subMenu-list').wrap('<div class="cateArea columns-'+param.cateColumns+'"></div>');
