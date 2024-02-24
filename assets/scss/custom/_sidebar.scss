@@ -69,5 +69,14 @@
     .custom-menu-mobile {
         left: 0;
         z-index: 103;
+
+        .navPages-container {
+            display: block;
+            padding-bottom: 60px;
+
+            .navPages {
+                background: transparent;
+            }
+        }
     }
 }

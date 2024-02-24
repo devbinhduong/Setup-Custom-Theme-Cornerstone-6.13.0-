@@ -6,21 +6,16 @@
                 {{> components/common/navigation-list}}
             {{/if}}
             {{#if ../theme_settings.navigation_design '===' 'alternate'}}
-                {{> components/common/navigation-list-alternate}}
+                {{> components/common/navigation-list-alternate type = 'category'}}
             {{/if}}
             </li>
         {{/each}}
         {{#unless theme_settings.hide_content_navigation}}
             {{#each pages}}
-                 <li class="navPages-item navPages-item-page{{#if children}} has-dropdown{{/if}}">
-                     <a class="navPages-action{{#if name '==' ../page.title}} activePage{{/if}}"
-                        href="{{url}}"
-                        aria-label="{{name}}"
-                     >
-                         {{name}}
-                     </a>
-                 </li>
-             {{/each}}
+                <li class="navPages-item navPages-item-page{{#if children}} has-dropdown{{/if}}">
+                    {{> components/common/navigation-list-alternate page = ../page type = 'page'}}
+                </li>
+            {{/each}}
         {{/unless}}
     </ul>
 </nav>

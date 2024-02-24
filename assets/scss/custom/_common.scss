@@ -55,9 +55,43 @@
     }
 }
 
+/* Fade In left Animation */
+
 .js .animated.custom-animation {
     transform: translatey(0);
     opacity: 1;
+}
+
+.no-js .custom-fadeInLeft {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.js .custom-fadeInLeft {
+    opacity: 0;
+
+    @for $i from 0 through 100 {
+        &[data-step-animate="#{$i}"] {
+            animation-delay: .15s + $i*0.1 !important;
+        }
+    }
+}
+
+.js .animated .custom-fadeInLeft,
+.js .slick-active .custom-fadeInLeft {
+    animation: fadeInLeft .25s cubic-bezier(0, 0, .3, 1) forwards;
+}
+
+@keyframes fadeInLeft {
+    from {
+        transform: translateX(-20px);
+        opacity: 0.01;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 @include smin-m {
@@ -126,5 +160,26 @@
         padding-right: calc(var(--f-gap) / 2);
         flex: 0 0 calc(100% / var(--f-col));
         max-width: calc(100% / var(--f-col));
+    }
+}
+
+/* ----------------- Custom Scrollbar ----------------- */
+.customScrollbar {
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #f5f5f5;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #000000;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: #555555;
     }
 }

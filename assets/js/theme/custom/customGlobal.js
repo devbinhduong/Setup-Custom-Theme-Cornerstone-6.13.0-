@@ -4,6 +4,8 @@ import { load } from 'webfontloader';
 import event from '../global/jquery-migrate/event';
 import { forEach } from 'lodash';
 
+import megaMenuEditor from './megaMenuEditor';
+
 export default function(context) {
     const themeSettings = context.themeSettings;
 
@@ -27,6 +29,11 @@ export default function(context) {
             if (wWidth <= 1024) {
                 searchMobileClick();
             }
+
+            /* Mega Menu Editor */
+            megaMenuEditor(context);
+            activeMenuMobile();
+            hoverMenu();
         }
     }
 
@@ -185,5 +192,43 @@ export default function(context) {
                 searchMobileButton.classList.add('is-open');
             }
         });
+    }
+
+    function activeMenuMobile() {
+        var menuPc = document.querySelector('#menu .navPages-list:not(.navPages-list--user)'),
+            menuMobile = document.querySelector('#custom-menu-mobile .navPages-list:not(.navPages-list--user)'),
+            menuMobileToggle = document.querySelector('.mobileMenu-toggle');
+
+        if (window.innerWidth <= 1024) {
+            menuMobileToggle.addEventListener('click', function(event) {
+                if (menuPc) {
+                    if (!menuMobile.children.length) {
+                        while (menuPc.children.length > 0) {
+                            menuMobile.appendChild(menuPc.children[0]);
+                        }
+                    }
+                }
+            });
+        }
+
+    }
+
+
+    function hoverMenu () {
+        const menuItemList = document.querySelectorAll('.navPages-list:not(.navPages-list--user) > .navPages-item.has-dropdown');
+
+        if(window.innerWidth > 1024 && menuItemList.length) {
+            menuItemList.forEach(menuItem => {
+                menuItem.addEventListener('mouseover', (e) => {
+                    document.body.classList.add('openMenuPC');
+                    menuItem.classList.add('animated');
+                });
+
+                menuItem.addEventListener('mouseleave', (e) => {
+                    document.body.classList.remove('openMenuPC');
+                    menuItem.classList.remove('animated');
+                });
+            });
+        }
     }
 }
