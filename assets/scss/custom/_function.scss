@@ -60,8 +60,8 @@
         top: -2px;
 
         .form-label {
-            font-size: $fontSize-root;
-            font-weight: $fontWeight-bold;
+            font-size: $fontSize-root - 2px;
+            font-weight: $fontWeight-medium;
             line-height: 25px;
             color: $header-font-color;
 
@@ -81,6 +81,9 @@
         .form-input {
             margin-bottom: 0;
             height: 46px;
+            &::placeholder {
+                font-size: 14px;
+            }
         }
 
         .form-actions {
@@ -93,12 +96,6 @@
         .button {
             width: 100%;
             margin: 0;
-
-            &.create-account {
-                background: $header-font-color;
-                border-color: $header-font-color;
-                color: $color-white;
-            }
         }
 
         .forgot-password {
@@ -122,7 +119,7 @@
                 0.9
             );
             background-image: url(../img/loading.svg);
-            background-size: 200px;
+            background-size: 50px;
             background-repeat: no-repeat;
             background-position: center center;
             position: absolute;
@@ -151,18 +148,6 @@
             .form-field {
                 + .form-field {
                     margin-top: 19px;
-                }
-            }
-
-            .forgot-password {
-                &:hover {
-                    color: $color-textLink-hover;
-                    background-image: linear-gradient(
-                        transparent 97%,
-                        $color-textLink-hover 3%
-                    );
-                    background-repeat: repeat-x;
-                    background-position-y: -3px;
                 }
             }
         }
@@ -194,11 +179,10 @@
         .account-action {
             width: 100%;
             color: stencilColor('navPages-color');
-            font-size: $fontSize-root;
+            font-size: $fontSize-root - 2px;
             font-weight: $fontWeight-normal;
             padding: 0;
             margin: 0;
-            line-height: 45px;
             text-transform: capitalize;
             transition: $anchor-transition;
             text-decoration: none;
@@ -247,6 +231,25 @@
                 display: inherit;
                 padding: 0;
             }
+        }
+    }
+}
+
+// Header Sticky
+// -----------------------------------------------------------------------------
+.header {
+    &.is-sticky {
+        position: fixed;
+        top: 0;
+        z-index: 99;
+        width: 100%;
+        padding: 0;
+        animation-duration: 0.25s;
+        animation-name: "fadeInDown";
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+        .headerTop {
+            display: none;
         }
     }
 }

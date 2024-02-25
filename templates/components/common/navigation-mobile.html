@@ -44,6 +44,59 @@
                 </a>
             </li>
         {{/if}}
+        
+        {{#if theme_settings.header_right_item1_text}}
+            <li class="navPages-item navPages-item-user">
+                <a class="navPages-action navPages-action-end" href="{{theme_settings.header_right_item1_link}}" aria-label="{{theme_settings.header_right_item1_text}}">
+                    <span class="text">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-about-us"></use>
+                        </svg>
+                        {{theme_settings.header_right_item1_text}}
+                    </span>
+                </a>
+            </li>
+        {{/if}}
+
+        {{#if theme_settings.header_right_item2_text}}
+            <li class="navPages-item navPages-item-user">
+                <a class="navPages-action navPages-action-end" href="{{theme_settings.header_right_item2_link}}" aria-label="{{theme_settings.header_right_item2_text}}">
+                    <span class="text">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-blog"></use>
+                        </svg>
+                        {{theme_settings.header_right_item2_text}}
+                    </span>
+                </a>
+            </li>
+        {{/if}}
+
+        {{#if theme_settings.header_right_item3_text}}
+            <li class="navPages-item navPages-item-user">
+                <a class="navPages-action navPages-action-end" href="{{theme_settings.header_right_item3_link}}" aria-label="{{theme_settings.header_right_item3_text}}">
+                    <span class="text">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-help2"></use>
+                        </svg>
+                        {{theme_settings.header_right_item3_text}}
+                    </span>
+                </a>
+            </li>
+        {{/if}}
+
+        {{#if theme_settings.header_right_item4_text}}
+            <li class="navPages-item navPages-item-user">
+                <a class="navPages-action navPages-action-end" href="{{theme_settings.header_right_item4_link}}" aria-label="{{theme_settings.header_right_item4_text}}">
+                    <span class="text">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-chat2"></use>
+                        </svg>
+                        {{theme_settings.header_right_item4_text}}
+                    </span>
+                </a>
+            </li>
+        {{/if}}
+
         {{#if currency_selector.currencies.length '>' 1}}
             <li class="navPages-item navPages-item-user has-dropdown">
                 <p class="navPages-action navPages-action-depth-max has-subMenu is-root">

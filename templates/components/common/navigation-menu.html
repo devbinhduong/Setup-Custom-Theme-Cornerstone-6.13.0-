@@ -10,6 +10,12 @@
             {{/if}}
             </li>
         {{/each}}
+        <div class="navPages-item">
+            <a class="navPages-action navPages-action-lv1 no-subMenu navPages-action-end" data-label="/brands/" href="/brands/" aria-label="Brands">
+                <span class="text hover-link">Brands</span>
+            </a>
+        </div>
+        
         {{#unless theme_settings.hide_content_navigation}}
             {{#each pages}}
                 <li class="navPages-item navPages-item-page{{#if children}} has-dropdown{{/if}}">

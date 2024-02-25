@@ -1,5 +1,5 @@
 {
-  "name": "Cornerstone Done Mega Menu Style Custom",
+  "name": "Cornerstone Done Header Full Function",
   "version": "6.13.0",
   "template_engine": "handlebars_v4",
   "meta": {
@@ -816,7 +816,8 @@
         "beforeQuickSearch-popular": true,
         "beforeQuickSearch-popular-title": "Most Popular",
         "beforeQuickSearch-popular-id": "2407,2408,2409",
-        "beforeQuickSearch-limit": "3"
+        "beforeQuickSearch-limit": "3",
+        "show_sticky_header": true
       }
     }
   ]

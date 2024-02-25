@@ -272,6 +272,7 @@
         "recaptcha_title": "Google recaptcha"
     },
     "login": {
+        "title": "Log In",
         "heading": "Sign in",
         "field_email": "Email Address:",
         "field_password": "Password:",

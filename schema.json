@@ -536,6 +536,11 @@
         "content": "Header"
       },
       {
+        "type": "checkbox",
+        "label": "Enable Header Sticky",
+        "id": "show_sticky_header"
+      },
+      {
         "type": "color",
         "label": "Header Background",
         "id": "header-backgroundColor"
@@ -983,6 +988,138 @@
         "label": "Show Klarna",
         "force_reload": true,
         "id": "show_accept_klarna"
+      }
+    ]
+  },
+  {
+    "name": "Mega Menu",
+    "settings":[
+      {
+        "type": "heading",
+        "content": "Mega Menu"
+      },
+      {
+        "type": "checkbox",
+        "label": "Enable Mega Menu",
+        "id": "customMegamenu"
+      },
+      {
+        "type": "select",
+        "id": "customMegamenuType",
+        "force_reload": true,
+        "label": "Edit MegaMenu",
+        "options": [
+          {
+            "value": "Editor",
+            "label": "Theme Editor"
+          },
+          {
+            "value": "Source",
+            "label": "Theme Source"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "label": "Mega Menu Item 1 Position",
+        "id": "mega_menu_styleCustom_item1"
+      },
+      {
+        "type": "text",
+        "label": "Mega Menu Item 1 Image-1",
+        "id": "mega_menu_styleCustom_img1"
+      },
+      {
+        "type": "text",
+        "label": "Mega Menu Item 1 Image-1 Link",
+        "id": "mega_menu_styleCustom_link1"
+      },
+      {
+        "type": "text",
+        "label": "Mega Menu Item 1 Image-2",
+        "id": "mega_menu_styleCustom_img2"
+      },
+      {
+        "type": "text",
+        "label": "Mega Menu Item 1 Image-2 Link",
+        "id": "mega_menu_styleCustom_link2"
+      },
+      {
+        "type": "text",
+        "label": "Mega Menu Item 2 Position",
+        "id": "mega_menu_styleCustom_item2"
+      },
+      {
+        "type": "text",
+        "label": "Mega Menu Item 2 Image-1",
+        "id": "mega_menu_styleCustom_img3"
+      },
+      {
+        "type": "text",
+        "label": "Mega Menu Item 2 Image-1 Link",
+        "id": "mega_menu_styleCustom_link3"
+      },
+      {
+        "type": "text",
+        "label": "Mega Menu Item 2 Image-2",
+        "id": "mega_menu_styleCustom_img4"
+      },
+      {
+        "type": "text",
+        "label": "Mega Menu Item 2 Image-2 Link",
+        "id": "mega_menu_styleCustom_link4"
+      },
+      {
+        "type": "text",
+        "label": "Mega Menu Item 3 Position",
+        "id": "mega_menu_styleCustom_item3"
+      },
+      {
+        "type": "text",
+        "label": "Mega Menu Item 3 Image-1",
+        "id": "mega_menu_styleCustom_img5"
+      },
+      {
+        "type": "text",
+        "label": "Mega Menu Item 3 Image-1 Link",
+        "id": "mega_menu_styleCustom_link5"
+      },
+      {
+        "type": "text",
+        "label": "Mega Menu Item 3 Image-2",
+        "id": "mega_menu_styleCustom_img6"
+      },
+      {
+        "type": "text",
+        "label": "Mega Menu Item 3 Image-2 Link",
+        "id": "mega_menu_styleCustom_link6"
+      },
+      
+
+      {
+        "type": "text",
+        "label": "Mega Menu Item 4 Position",
+        "id": "mega_menu_styleCustom_item4"
+      },
+      {
+        "type": "text",
+        "label": "Mega Menu Item 4 Image-1",
+        "id": "mega_menu_styleCustom_img7"
+      },
+      {
+        "type": "text",
+        "label": "Mega Menu Item 4 Image-1 Link",
+        "id": "mega_menu_styleCustom_link7"
+      },
+      {
+        "type": "text",
+        "label": "Mega Menu Item 4 Image-2",
+        "id": "mega_menu_styleCustom_img8"
+      },
+      {
+        "type": "text",
+        "label": "Mega Menu Item 4 Image-2 Link",
+        "id": "mega_menu_styleCustom_link8"
       }
     ]
   },

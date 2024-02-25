@@ -10,9 +10,6 @@ import loginPopup from './loginPopup';
 export default function(context) {
     const themeSettings = context.themeSettings;
 
-    /* Scroll position */
-    var scroll_position = window.scrollY;
-
     var check_JS_load = true;
 
     /* Contains all functions  that are needed to be executed after JS is loaded */
@@ -35,6 +32,9 @@ export default function(context) {
             megaMenuEditor(context);
             activeMenuMobile();
             hoverMenu();
+            setTimeout(() => {
+                handleDropdownMenu();
+            }, 1000);
 
             /* Logion  / Register Modal */
             authPopup();
@@ -68,7 +68,11 @@ export default function(context) {
         });
 
         /* Load when scroll */
-        window.addEventListener('scroll', (e) => {});
+        window.addEventListener('scroll', debounceFn((e) => {
+            if(themeSettings.show_sticky_header) {
+                headerSticky();
+            }
+        }, 100));
 
         /* Load when user action on site */
         ['keydown', 'mousemove', 'touchstart'].forEach(event => {
@@ -78,9 +82,36 @@ export default function(context) {
         });
 
         /* Load when resize */
-        window.addEventListener('resize', (e) => {});
+        window.addEventListener('resize', (e) => {
+            searchFormMobile();
+            activeMenuMobile();
+            handleDropdownMenu();
+        });
     }
     eventLoad();
+
+    /* Debounce Function */
+    function debounceFn(func, wait, immediate) {
+        let timeout;
+    
+        return function () {
+            let context = this,
+                args = arguments;
+    
+            let later = function () {
+                timeout = null;
+                if (!immediate) func.apply(context, args);
+            };
+    
+            let callNow = immediate && !timeout;
+    
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+    
+            if (callNow) func.apply(context, args);
+        }
+    }
+    
 
     /* Hide all Sidebar */
     function hideAllSidebar() {
@@ -221,6 +252,14 @@ export default function(context) {
                     }
                 }
             });
+        }else {
+            if (menuPc) {
+                if (!menuPc.children.length) {
+                    while (menuMobile.children.length > 0) {
+                        menuPc.appendChild(menuMobile.children[0]);
+                    }
+                }
+            }
         }
 
     }
@@ -241,6 +280,42 @@ export default function(context) {
                     menuItem.classList.remove('animated');
                 });
             });
+        }
+    }
+
+    /* Handle when dropdown menu overflow the viewport */
+    function handleDropdownMenu() {
+        /* Handle For Level 2 Dropdown */
+        const dropdownListLv2 = document.querySelectorAll(
+            '.navPages-item.has-dropdown:not(.hasMegamenu) > .navPage-subMenu-horizontal'
+        );
+
+        for (let dropdown2 of dropdownListLv2) {
+            if (dropdown2) {
+                const dropdownOffset = dropdown2.getBoundingClientRect();
+
+                const isDropdownOverflow =
+                    dropdownOffset.right > window.innerWidth;
+                if (isDropdownOverflow) {
+                    dropdown2.style.left = '-100%';
+                }
+            }
+        }
+
+        /* Handle For Level 3 Dropdown */
+        const dropdownList = document.querySelectorAll(
+            '.navPages-item.has-dropdown:not(.hasMegamenu) .navPage-subMenu-item-child .navPage-subMenu-horizontal'
+        );
+        for (let dropdown of dropdownList) {
+            if (dropdown) {
+                const dropdownOffset = dropdown.getBoundingClientRect();
+                const isDropdownOverflow =
+                    dropdownOffset.right > window.innerWidth;
+
+                if (isDropdownOverflow) {
+                    dropdown.style.left = '-100%';
+                }
+            }
         }
     }
 
@@ -307,5 +382,18 @@ export default function(context) {
                 );
             }
         })
+    }
+
+    function headerSticky() {
+        const header = document.querySelector('header.header'),
+            scrollY = window.pageYOffset;
+
+        if (scrollY >= header.offsetHeight) {
+            header && header.classList.add('is-sticky');
+            document.body.style.paddingTop = `${header.offsetHeight}px`;
+        } else {
+            header && header.classList.remove('is-sticky');
+            document.body.style.paddingTop = '0';
+        }
     }
 }

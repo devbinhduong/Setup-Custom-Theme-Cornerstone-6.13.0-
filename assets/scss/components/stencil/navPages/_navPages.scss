@@ -193,8 +193,8 @@
 .navPages-action {
     color: stencilColor("navPages-color");
     display: block;
+    font-weight: $fontWeight-medium;
     font-size: fontSize("smaller");
-    font-weight: fontWeight("bold");
     padding: spacing("half") 0;
     text-decoration: none;
     text-transform: capitalize;
@@ -248,6 +248,7 @@
     @include smin-m {
         display: inline-block;
         padding: 0;
+        font-weight: fontWeight("bold");
 
         &.is-open {
             background-color: $navPage-subMenu-item--is-highlighted-background;
