@@ -31,37 +31,26 @@
 }
 
 .footer-info {
-    @include grid-row($behavior: nest);
-    font-size: 0; // 1
-}
+    margin-left: -40px;
+    margin-right: -40px;
 
-.footer-info-col {
-    @include grid-column(12);
-    color: stencilColor("color-textSecondary");
-    display: inline-block;
-    float: none;
-    font-size: fontSize("base"); // 2
-    margin-bottom: spacing("double");
-    overflow-wrap: break-word;
-    text-align: center;
-    vertical-align: top;
-    // TODO: specifically use vendor only for IE11 since overflow-wrap is not supported here
-    -ms-word-break: break-all;
-    @include breakpoint("small") {
-        text-align: left;
-        width: width("6/12");
+    &--left {
+        width: 100%;
+        max-width: 60%;
+        padding-left: 40px;
+        padding-right: 40px;
+
+        .footerLeft__bottom {
+            // border-top: 1px solid #ffffff;
+            // margin-top: 20px;
+        }
     }
 
-    @include breakpoint("medium") {
-        width: width("4/12");
-    }
-
-    > :first-child {
-        margin-top: 0;
-    }
-
-    > :last-child {
-        margin-bottom: 0;
+    &--right {
+        width: 100%;
+        max-width: 40%;
+        padding-left: 40px;
+        padding-right: 40px;
     }
 }
 
