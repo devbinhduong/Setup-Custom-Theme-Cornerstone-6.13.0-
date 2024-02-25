@@ -5,6 +5,7 @@ import event from '../global/jquery-migrate/event';
 import { forEach } from 'lodash';
 
 import megaMenuEditor from './megaMenuEditor';
+import loginPopup from './loginPopup';
 
 export default function(context) {
     const themeSettings = context.themeSettings;
@@ -34,6 +35,14 @@ export default function(context) {
             megaMenuEditor(context);
             activeMenuMobile();
             hoverMenu();
+
+            /* Logion  / Register Modal */
+            authPopup();
+            authSidebarMobile();
+
+            if (!document.body.classList.contains('page-type-login')) {
+                loginPopup();
+            }
         }
     }
 
@@ -79,7 +88,8 @@ export default function(context) {
             menuMobileIcon = document.querySelector('.mobileMenu-toggle'),
             searchMobileButton = document.querySelector("[data-search='quickSearch']"),
             pageSidebar = document.querySelector('.page-sidebar'),
-            pageSidebarMobile = document.querySelector('.page-sidebar-mobile');
+            pageSidebarMobile = document.querySelector('.page-sidebar-mobile'),
+            authSidebarMobile = document.querySelector('.custom-auth-sidebar');
 
         /* Hide menu sidebar */
         if(body.classList.contains('has-activeNavPages')) {
@@ -89,6 +99,8 @@ export default function(context) {
         searchMobileButton.classList.remove('is-open');
         body.classList.remove('openSearchMobile');
         body.classList.remove('openSidebar');
+        body.classList.remove('openAuthSidebar');
+        authSidebarMobile?.classList.remove('is-open');
         pageSidebar?.classList.remove('is-open');
         pageSidebarMobile?.classList.remove('is-open');
 
@@ -230,5 +242,70 @@ export default function(context) {
                 });
             });
         }
+    }
+
+    function authPopup() {
+        let authButton = document.querySelector("[data-login-form]");
+
+        if(!authButton) return;
+
+        authButton.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            const target = e.currentTarget;
+
+            if (!document.body.classList.contains('page-type-login')) {
+                target.nextElementSibling.classList.toggle('is-open'); 
+            } else {
+                $('html, body').animate(
+                    {
+                        scrollTop: $('.login').offset().top,
+                    },
+                    700
+                );
+            }
+        });
+
+        document.addEventListener('click', (event) => {
+            const customAuthPopup = document.querySelector('.custom-auth-popup');
+        
+            if (customAuthPopup.classList.contains('is-open')) {
+                if (
+                    !event.target.closest('.custom-auth-popup') &&
+                    !event.target.closest('[data-login-form]')
+                ) {
+                    customAuthPopup.classList.remove('is-open');
+                }
+            }
+        });
+    }
+    
+    function authSidebarMobile() {
+        const loginMobileButton = document.querySelector("[data-login-form-mobile]"),
+            authSidebar = document.querySelector('.custom-auth-sidebar');
+
+        if(!loginMobileButton || !authSidebar) return;
+
+        loginMobileButton.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            if (!document.body.classList.contains('page-type-login')) {
+                if(authSidebar.classList.contains('is-open')) {
+                    authSidebar.classList.remove('is-open');
+                    document.body.classList.remove('openAuthSidebar');
+                } else {
+                    authSidebar.classList.add('is-open');
+                    document.body.classList.add('openAuthSidebar');
+                }
+                
+            } else {
+                $('html, body').animate(
+                    {
+                        scrollTop: $('.login').offset().top,
+                    },
+                    700
+                );
+            }
+        })
     }
 }

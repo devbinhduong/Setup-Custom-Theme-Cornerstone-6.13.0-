@@ -276,6 +276,7 @@
                 }
 
                 &.item--account {
+                    position: relative;
                     @include smax-m {
                         .navUser-icon {
                             .icon {
