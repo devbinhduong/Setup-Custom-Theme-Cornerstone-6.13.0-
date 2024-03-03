@@ -10,6 +10,12 @@ import loginPopup from './loginPopup';
 export default function(context) {
     const themeSettings = context.themeSettings;
 
+    var $header = $('header.header'),
+        height_header = $header.outerHeight(),
+        height_top = height_header + $('.headerTop').outerHeight();
+
+    var scroll_position = $(window).scrollTop();
+
     var check_JS_load = true;
 
     /* Contains all functions  that are needed to be executed after JS is loaded */
@@ -43,6 +49,8 @@ export default function(context) {
             if (!document.body.classList.contains('page-type-login')) {
                 loginPopup();
             }
+
+            toogleFooterMobile();
         }
     }
 
@@ -70,9 +78,15 @@ export default function(context) {
         /* Load when scroll */
         window.addEventListener('scroll', debounceFn((e) => {
             if(themeSettings.show_sticky_header) {
-                headerSticky();
             }
-        }, 100));
+        }, 50));
+
+        $(window).on('scroll', debounceFn((e) => {
+            const $target = $(e.currentTarget);
+            const tScroll = $target.scrollTop();
+
+            headerSticky(tScroll);
+        }, 50));
 
         /* Load when user action on site */
         ['keydown', 'mousemove', 'touchstart'].forEach(event => {
@@ -285,35 +299,37 @@ export default function(context) {
 
     /* Handle when dropdown menu overflow the viewport */
     function handleDropdownMenu() {
-        /* Handle For Level 2 Dropdown */
-        const dropdownListLv2 = document.querySelectorAll(
-            '.navPages-item.has-dropdown:not(.hasMegamenu) > .navPage-subMenu-horizontal'
-        );
+        if(window.innerWidth > 1024) {
+            /* Handle For Level 2 Dropdown */
+            const dropdownListLv2 = document.querySelectorAll(
+                '.navPages-item.has-dropdown:not(.hasMegamenu) > .navPage-subMenu-horizontal'
+            );
 
-        for (let dropdown2 of dropdownListLv2) {
-            if (dropdown2) {
-                const dropdownOffset = dropdown2.getBoundingClientRect();
+            for (let dropdown2 of dropdownListLv2) {
+                if (dropdown2) {
+                    const dropdownOffset = dropdown2.getBoundingClientRect();
 
-                const isDropdownOverflow =
-                    dropdownOffset.right > window.innerWidth;
-                if (isDropdownOverflow) {
-                    dropdown2.style.left = '-100%';
+                    const isDropdownOverflow =
+                        dropdownOffset.right > window.innerWidth;
+                    if (isDropdownOverflow) {
+                        dropdown2.style.left = '-100%';
+                    }
                 }
             }
-        }
 
-        /* Handle For Level 3 Dropdown */
-        const dropdownList = document.querySelectorAll(
-            '.navPages-item.has-dropdown:not(.hasMegamenu) .navPage-subMenu-item-child .navPage-subMenu-horizontal'
-        );
-        for (let dropdown of dropdownList) {
-            if (dropdown) {
-                const dropdownOffset = dropdown.getBoundingClientRect();
-                const isDropdownOverflow =
-                    dropdownOffset.right > window.innerWidth;
+            /* Handle For Level 3 Dropdown */
+            const dropdownList = document.querySelectorAll(
+                '.navPages-item.has-dropdown:not(.hasMegamenu) .navPage-subMenu-item-child .navPage-subMenu-horizontal'
+            );
+            for (let dropdown of dropdownList) {
+                if (dropdown) {
+                    const dropdownOffset = dropdown.getBoundingClientRect();
+                    const isDropdownOverflow =
+                        dropdownOffset.right > window.innerWidth;
 
-                if (isDropdownOverflow) {
-                    dropdown.style.left = '-100%';
+                    if (isDropdownOverflow) {
+                        dropdown.style.left = '-100%';
+                    }
                 }
             }
         }
@@ -384,16 +400,50 @@ export default function(context) {
         })
     }
 
-    function headerSticky() {
-        const header = document.querySelector('header.header'),
-            scrollY = window.pageYOffset;
+    function headerSticky(tScroll) {
+        if (themeSettings.show_sticky_header) {
+            if (tScroll > height_top && tScroll < scroll_position) {
+                if (!$('.header-height').length) {
+                    $header.before(
+                        '<div class="header-height" style="height: ' +
+                            height_header +
+                            'px"></div>'
+                    );
+                }
+                $header.addClass('is-sticky');
+                $header.css('animation-name', 'fadeInDown');
+            } else {
+                $header.removeClass('is-sticky');
+                $('.header-height').remove();
 
-        if (scrollY >= header.offsetHeight) {
-            header && header.classList.add('is-sticky');
-            document.body.style.paddingTop = `${header.offsetHeight}px`;
-        } else {
-            header && header.classList.remove('is-sticky');
-            document.body.style.paddingTop = '0';
+                $header.css('animation-name', '');
+            }
+
+            scroll_position = tScroll;
         }
+    }
+
+    function toogleFooterMobile() {
+        const $footerHeadingToggle = $('.footer-info-heading--toggle');
+
+        $footerHeadingToggle.on('click', (e) => {
+            e.preventDefault();
+            const wWidth = window.innerWidth;
+
+            if (wWidth < 768) {
+                const $target = $(e.currentTarget);
+                const $thisFooterInfo = $target.parents('.footer-info-col');
+                const $thisFooterInfo_list = $thisFooterInfo.find('.footer-info-list');
+
+                $thisFooterInfo.toggleClass('open-dropdown');
+
+                if ($thisFooterInfo.hasClass('open-dropdown')) {
+                    $thisFooterInfo_list.slideDown(400);
+                }
+                else {
+                    $thisFooterInfo_list.slideUp(400);
+                }
+            }
+        });
     }
 }

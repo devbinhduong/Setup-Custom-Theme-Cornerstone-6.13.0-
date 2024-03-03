@@ -107,7 +107,7 @@
 @keyframes fadeInDown {
     from {
         transform: translateY(-80px);
-        opacity: 0.5;
+        opacity: 0.7;
     }
 
     to {
@@ -116,6 +116,29 @@
     }
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0.01;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.js .fadeInLoad.is-sticky {
+    opacity: 0;
+
+    @for $i from 0 through 100 {
+        &[data-step-animate='#{$i}'] {
+            animation-delay: 0.1s + $i * 0.1 !important;
+        }
+    }
+}
+
+.js .fadeInLoad.is-sticky {
+    animation: fadeIn 0.4s cubic-bezier(0, 0, 0.3, 1) forwards;
+}
 @include smin-m {
     /* ------------------ Hover Image Zoom ------------------------- */
     .hover-image {
@@ -189,7 +212,7 @@
 /* ----------------- Grid Layout ----------------- */
 .row {
     --f-col: var(--rowDesktop);
-    --f-gap: 20px;
+    --f-gap: var(--gapDesktop);
     display: flex;
     flex-wrap: wrap;
     margin-left: calc(var(--f-gap) / -2);
@@ -197,10 +220,12 @@
 
     @include smax-m {
         --f-col: var(--rowTablet);
+        --f-gap: var(--gapTablet);
     }
 
     @include smax-s {
         --f-col: var(--rowMobile);
+        --f-gap: var(--gapMobile);
     }
 
     .col {
@@ -208,6 +233,7 @@
         padding-right: calc(var(--f-gap) / 2);
         flex: 0 0 calc(100% / var(--f-col));
         max-width: calc(100% / var(--f-col));
+        width: 100%;
     }
 }
 

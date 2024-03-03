@@ -106,6 +106,15 @@ $figure-margin:                 0 0 spacing("single");
 
 /* Custom Default Underline Color */
 :root {
+    /* For hover Effect */
     --underlineColor: #444444;
     --underlineBottom: -4px;
+
+    /* For Grid Layout */
+    --rowDesktop: 4;
+    --rowTablet: 2;
+    --rowMobile: 1;
+    --gapDesktop: 20px;
+    --gapTablet: 15px;
+    --gapMobile: 0;
 }
