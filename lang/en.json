@@ -732,6 +732,7 @@
         "file_option_set": "Currently: <a href=\"{url}\" target=\"_blank\">{name}</a>",
         "new": "New Products",
         "warranty": "Warranty Information",
+        "quick_shop": "Shop Now",
         "reviews": {
             "hide": "Hide Reviews",
             "new": "Write a Review",

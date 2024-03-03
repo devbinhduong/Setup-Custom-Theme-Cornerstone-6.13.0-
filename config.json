@@ -435,7 +435,7 @@
         "shop_by_price_visibility": true,
         "brandpage_products_per_page": 12,
         "searchpage_products_per_page": 12,
-        "show_product_quick_view": true,
+        "show_product_quick_view": false,
         "show_copyright_footer": true,
         "show_product_details_tabs": true,
         "show_product_reviews": true,
@@ -882,7 +882,9 @@
         "footer_col8_text3": "Return Policy",
         "footer_col8_link1": "#",
         "footer_col8_link2": "#",
-        "footer_col8_link3": "#"
+        "footer_col8_link3": "#",
+        "custom_quick_shop": true,
+        "custom_card_image_swap": true
       }
     }
   ]

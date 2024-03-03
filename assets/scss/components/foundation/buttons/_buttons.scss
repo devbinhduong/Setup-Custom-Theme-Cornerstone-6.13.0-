@@ -142,7 +142,8 @@
     }
 
     /* Disable */
-    &.button--disabled {
+    &.button--disabled,
+    &.button--outOfStock {
         pointer-events: none;
         color: $buttonStyle-disabled-color;
         background-color: $buttonStyle-disabled-backgroundColor;
