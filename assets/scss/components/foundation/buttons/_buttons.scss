@@ -135,7 +135,7 @@
 
         &:focus,
         &:active {
-            color: $buttonStyle-primary-colorActive;
+            color: $buttonStyle-primary-color;
             border-color: $buttonStyle-primary-borderColorActive;
             background-color: $buttonStyle-primary-backgroundColorActive;
         }

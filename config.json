@@ -884,7 +884,8 @@
         "footer_col8_link2": "#",
         "footer_col8_link3": "#",
         "custom_quick_shop": true,
-        "custom_card_image_swap": true
+        "custom_card_image_swap": true,
+        "custom_add_to_cart_popup": "mini"
       }
     }
   ]

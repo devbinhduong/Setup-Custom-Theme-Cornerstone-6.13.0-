@@ -6,6 +6,7 @@ import { forEach } from 'lodash';
 
 import megaMenuEditor from './megaMenuEditor';
 import loginPopup from './loginPopup';
+import ajaxAddToCart from './ajaxAddToCart';
 
 export default function(context) {
     const themeSettings = context.themeSettings;
@@ -45,6 +46,7 @@ export default function(context) {
             /* Logion  / Register Modal */
             authPopup();
             authSidebarMobile();
+            ajaxAddToCart(context);
 
             if (!document.body.classList.contains('page-type-login')) {
                 loginPopup();
