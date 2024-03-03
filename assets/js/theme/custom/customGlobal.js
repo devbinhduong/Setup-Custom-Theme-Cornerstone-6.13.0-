@@ -7,6 +7,7 @@ import { forEach } from 'lodash';
 import megaMenuEditor from './megaMenuEditor';
 import loginPopup from './loginPopup';
 import ajaxAddToCart from './ajaxAddToCart';
+import quickShop from './quickShop';
 
 export default function(context) {
     const themeSettings = context.themeSettings;
@@ -47,6 +48,7 @@ export default function(context) {
             authPopup();
             authSidebarMobile();
             ajaxAddToCart(context);
+            quickShop(context);
 
             if (!document.body.classList.contains('page-type-login')) {
                 loginPopup();
