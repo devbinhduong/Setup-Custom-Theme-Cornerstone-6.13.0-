@@ -1,5 +1,5 @@
 {
-  "name": "Cornerstone Done Setup Default",
+  "name": "Cornerstone Home Section Product Banner Part 1",
   "version": "6.13.0",
   "template_engine": "handlebars_v4",
   "meta": {
@@ -885,7 +885,10 @@
         "footer_col8_link3": "#",
         "custom_quick_shop": true,
         "custom_card_image_swap": true,
-        "custom_add_to_cart_popup": "mini"
+        "custom_add_to_cart_popup": "mini",
+        "custom_product_block_special_id1": "2413",
+        "custom_product_block_special_id2": "2414",
+        "custom_product_block_special_id3": "2415"
       }
     }
   ]

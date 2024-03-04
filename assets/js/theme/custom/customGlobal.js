@@ -55,6 +55,9 @@ export default function(context) {
             }
 
             toogleFooterMobile();
+
+            /* Home */
+            customSpecialProduct(context);
         }
     }
 
@@ -449,5 +452,27 @@ export default function(context) {
                 }
             }
         });
+    }
+
+    function customSpecialProduct($context){
+        const context = $context;
+
+        var productId = $('.productBanner__item').data('special-product-id');
+
+        const options ={
+            template: 'custom/products/custom-special-product-tmp'
+        }
+
+        if(!$('.custom-spacial-product .productView').length){
+            utils.api.product.getById(productId, options, (err, response) => {
+
+                var scope = '.custom-spacial-product';
+
+                if(!$(scope).find('.productView').length){
+                    $(scope).html(response);
+                }
+            });
+
+        }
     }
 }

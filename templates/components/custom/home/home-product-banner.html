@@ -1,0 +1,39 @@
+<div class="home-product-banner">
+    <div class="container">
+        <div class="productBanner">
+            <div class="productBanner__col productBanner__left">
+                <h2 class="productBanner__heading">Video CONFERENCING</h2>
+                <p class="productBanner__desc">Seon Selmer Eu eeu Seu Be) Peles</p>
+                <a href="#" class="productBanner__button button">Shop Now</a>
+            </div>
+            <div class="productBanner__col productBanner__right productBanner__list">
+                <!-- Product ID 1 -->
+                {{#if theme_settings.custom_product_block_special_id1}}
+                    <div class="productBanner__item item--full" data-special-product-id="{{theme_settings.custom_product_block_special_id1}}" id="custom-special-block">
+                        <div class="custom-spacial-product">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, laudantium. Quo quas magni reprehenderit quia suscipit culpa, eum provident. Aliquam odit praesentium nulla natus! Ipsum ut numquam impedit beatae expedita.
+                        </div>
+                    </div>
+                {{/if}}
+
+                <!-- Product ID 2 -->
+                {{#if theme_settings.custom_product_block_special_id2}}
+                    <div class="productBanner__item" data-special-product-id="{{theme_settings.custom_product_block_special_id2}}" id="custom-special-block">
+                        <div class="custom-spacial-product">
+                            <div class="loadingOverlay"></div>
+                        </div>
+                    </div>
+                {{/if}}
+
+                <!-- Product ID 3 -->
+                {{#if theme_settings.custom_product_block_special_id3}}
+                    <div class="productBanner__item" data-special-product-id="{{theme_settings.custom_product_block_special_id3}}" id="custom-special-block">
+                        <div class="custom-spacial-product">
+                            <div class="loadingOverlay"></div>
+                        </div>
+                    </div>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</div>
