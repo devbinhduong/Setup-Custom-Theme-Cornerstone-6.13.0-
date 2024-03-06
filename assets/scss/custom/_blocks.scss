@@ -56,76 +56,87 @@
         }
 
         &__list {
+            display: flex;
+            flex-wrap: wrap;
+
             .productBanner__item {
                 background-color: #ffffff;
                 padding: 28px 55px 33px 17px;
-                max-height: 261px   ;
-                
-                .custom-spacial-product {
-                    .custom-productView {
-                        display: flex;
-                        flex-direction: row;
-                        align-items: center;
-                        margin-left: -20px;
-                        margin-right: -20px;
-                        padding-top: 0;
-                        
-                        .custom-productView-left {
-                            padding-left: 20px;
-                            padding-right: 20px;
-                            width: 50%;
-                            margin-bottom: 0;
-                            
-                            .productView-image {
-                                min-height: unset;
-                            }
-                            
-                            .productView-img-container {
-                                margin-top: 0;
-                                margin-bottom: 0;
+                // max-height: 261px;
+                width: 50%;
 
-                                &::after {
-                                    padding-bottom: 77.6%;
+                &.item--full {
+                    width: 100%;
+                }
+
+                &:not(.item--full) {
+                    padding: 0;
+                    .custom-special-product {
+                        .custom-productView {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            margin-left: -20px;
+                            margin-right: -20px;
+                            padding-top: 0;
+                            
+                            .custom-productView-left {
+                                padding-left: 20px;
+                                padding-right: 20px;
+                                width: 100%;
+                                margin-bottom: 0;
+                                
+                                .productView-image {
+                                    min-height: unset;
+                                }
+                                
+                                .productView-img-container {
+                                    margin-top: 0;
+                                    margin-bottom: 0;
+    
+                                    &::after {
+                                        padding-bottom: 77.6%;
+                                    }
                                 }
                             }
-                        }
-                        
-                        .custom-productView-right {
-                            width: 50%;
-                            padding-left: 20px;
-                            padding-right: 20px;
                             
-                            .productView-details {
+                            .custom-productView-right {
                                 width: 100%;
-                                padding: 0;
+                                padding-left: 20px;
+                                padding-right: 20px;
                                 
-                                .productView-product {
-                                    padding-bottom: 12px;
-                                    border-bottom: none;
+                                .productView-details {
+                                    width: 100%;
+                                    padding: 0;
                                     
-                                    .productView-title {
-                                        color: #444444;
-                                        font-size: 20px;
-                                        font-style: normal;
-                                        font-weight: 500;
-                                        line-height: 1.5;
-                                        text-transform: capitalize;
-                                        margin-top: 0;
-                                        margin-bottom: 7px;
+                                    .productView-product {
+                                        padding-bottom: 12px;
+                                        border-bottom: none;
                                         
-                                        > a {
-                                            text-decoration: none;
-                                        }
-                                    }
-                                    
-                                    .productView-price {
-                                        .price {
+                                        .productView-title {
                                             color: #444444;
                                             font-size: 20px;
                                             font-style: normal;
-                                            font-weight: 600;
-                                            line-height: 100%;
-                                            text-transform: uppercase;
+                                            font-weight: 500;
+                                            line-height: 1.5;
+                                            text-transform: capitalize;
+                                            margin-top: 0;
+                                            margin-bottom: 7px;
+                                            
+                                            > a {
+                                                text-decoration: none;
+                                            }
+                                        }
+                                        
+                                        .productView-price {
+                                            .price {
+                                                color: #444444;
+                                                font-size: 20px;
+                                                font-style: normal;
+                                                font-weight: 600;
+                                                line-height: 100%;
+                                                text-transform: uppercase;
+                                            }
                                         }
                                     }
                                 }

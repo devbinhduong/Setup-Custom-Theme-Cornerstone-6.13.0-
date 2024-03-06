@@ -3,7 +3,7 @@
         <div class="productView-image-wrapper">
             
             <div class="productView-nav">
-                {{#each product.images}}
+                {{#each (limit product.images 1)}}
                     <div>
                         <figure class="productView-image" data-fancybox="images" href="{{getImageSrcset this (cdn ../theme_settings.default_image_product) 1x=../theme_settings.zoom_size}}" 
                             data-image-gallery-main
@@ -46,7 +46,21 @@
             </div>
 
             <div class="productView-action">
-                <a href="{{#unless theme_settings.quick_addToCart}} {{add_to_cart_url}}{{/unless}}" data-event-type="product-click" data-button-type="add-cart" class="button button--transparent button--full custom-add-to-cart" data-product-id="{{product.id}}" data-wait-message="{{lang 'products.adding_to_cart'}}">{{lang 'products.add_to_cart'}}</a>
+                {{#if product.out_of_stock}}
+                    <a href="{{product.url}}" data-event-type="product-click" class="button button--full button--action button--outOfStock" data-product-id="{{product.id}}" disabled>{{product.out_of_stock_message}}</a>
+                {{else}}
+                    {{#if product.options}}
+                        {{#if theme_settings.custom_quick_shop}}
+                            <a href="#" data-event-type="product-click" class="button button--transparent button--quickShop button--full button--action" data-product-id="{{product.id}}">{{lang 'products.quick_shop'}}</a>
+                        {{else}}
+                            <a href="{{pruduct.url}}" data-event-type="product-click" class="button button--transparent button--full button--action" data-product-id="{{product.id}}">{{lang 'products.choose_options'}}</a>
+                        {{/if}}
+                    {{else}}
+                        {{#if product.can_purchase}}
+                            <a href="{{#unless theme_settings.quick_addToCart}} {{add_to_cart_url}}{{/unless}}" data-event-type="product-click" data-button-type="add-cart" class="button button--transparent button--full custom-add-to-cart" data-product-id="{{product.id}}" data-wait-message="{{lang 'products.adding_to_cart'}}">{{lang 'products.add_to_cart'}}</a>
+                        {{/if}}
+                    {{/if}}
+                {{/if}}
             </div>
         </div>
     </div>

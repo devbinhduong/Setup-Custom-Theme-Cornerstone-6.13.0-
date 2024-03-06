@@ -457,22 +457,26 @@ export default function(context) {
     function customSpecialProduct($context){
         const context = $context;
 
-        var productId = $('.productBanner__item').data('special-product-id');
+        // var productId = $('.productBanner__item').data('special-product-id');
 
-        const options ={
-            template: 'custom/products/custom-special-product-tmp'
-        }
+        let productIDList = document.querySelectorAll('.productBanner__item');
 
-        if(!$('.custom-spacial-product .productView').length){
+        for(let productID of productIDList) {
+            const productId = productID.getAttribute('data-special-product-id');
+
+            const options ={
+                template: 'custom/products/custom-special-product-tmp'
+            }
+    
             utils.api.product.getById(productId, options, (err, response) => {
-
+    
                 var scope = '.custom-spacial-product';
-
-                if(!$(scope).find('.productView').length){
-                    $(scope).html(response);
+                let productSpecial = productID.querySelector('.custom-special-product');
+                
+                if(productSpecial) {
+                    productSpecial.innerHTML = response;
                 }
             });
-
         }
     }
 }
