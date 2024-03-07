@@ -30,7 +30,7 @@ blog:
     {{> components/custom/home/home-product-banner }}
 
     <!-- Home Product New Section -->
-    <div class="sectionNew">
+    <div class="sectionNew" style="display: none;">
         <div class="container">
             <div class="sectionNew__wrapper">
                 <div class="sectionNew__left">
@@ -41,6 +41,249 @@ blog:
                         {{> components/products/new products=products.new columns=theme_settings.homepage_new_products_column_count}}
                     {{/if}}
                 </div>
+            </div>
+        </div>
+    </div>
+
+     <!-- Custom brand block -->
+     <div class="custom-block custom-block-brands custom-block--swipper">
+        <div class="container">
+            <div class="custom-block-row colums-5">
+                <div class="custom-block-item">
+                    <div class="img-box">
+                        <a href="#" class="animate-scale image">
+                        <img class="lazyload" src="https://www.philipmorrisdirect.co.uk/content/loading.svg" 
+                            data-src="https://cdn11.bigcommerce.com/s-nsheq/images/stencil/original/image-manager/dolby-brand.png" 
+                            alt="Dolby" 
+                            title="Dolby">
+                        </a>
+                    </div>
+                </div>
+                <div class="custom-block-item">
+                    <div class="img-box">
+                        <a href="#" class="animate-scale image">
+                        <img class="lazyload" src="https://www.philipmorrisdirect.co.uk/content/loading.svg" 
+                            data-src="https://cdn11.bigcommerce.com/s-nsheq/images/stencil/original/image-manager/dolbly-vol-brand.png" 
+                            alt="dolbly-vol" 
+                            title="dolbly-vol">
+                        </a>
+                    </div>
+                </div>
+                <div class="custom-block-item">
+                    <div class="img-box">
+                        <a href="#" class="animate-scale image">
+                        <img class="lazyload" src="https://www.philipmorrisdirect.co.uk/content/loading.svg" 
+                            data-src="https://cdn11.bigcommerce.com/s-nsheq/images/stencil/original/image-manager/poly-brand.png" 
+                            alt="poly" 
+                            title="poly">
+                        </a>
+                    </div>
+                </div>
+                <div class="custom-block-item">
+                    <div class="img-box">
+                        <a href="#" class="animate-scale image">
+                        <img class="lazyload" src="https://www.philipmorrisdirect.co.uk/content/loading.svg" 
+                            data-src="https://cdn11.bigcommerce.com/s-nsheq/images/stencil/original/image-manager/yealink-brand.png" 
+                            alt="yealink" 
+                            title="yealink">
+                        </a>
+                    </div>
+                </div>
+                <div class="custom-block-item">
+                    <div class="img-box">
+                        <a href="#" class="animate-scale image">
+                        <img class="lazyload" src="https://www.philipmorrisdirect.co.uk/content/loading.svg" 
+                            data-src="https://cdn11.bigcommerce.com/s-nsheq/images/stencil/original/image-manager/ever-brand.png" 
+                            alt="ever" 
+                            title="ever">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom block icon with text -->
+    <div class="custom-block custom-block-icon-with-text">
+        <div class="container">
+            <div class="custom-block-header text-center">
+                <h3 class="title">Shop our popular categories</h3>
+            </div>
+            <div class="custom-block-row colums-6">
+                <div class="custom-block-item">
+                    <div class="img-box">
+                        <a href="#" class="animate-scale image">
+                            <img class="lazyload" src="https://www.philipmorrisdirect.co.uk/content/loading.svg" 
+                            data-src="https://cdn11.bigcommerce.com/s-nsheq/images/stencil/original/image-manager/banner-cate-video.png" 
+                            alt="banner cate video" 
+                            title="banner cate video">
+                        </a>
+                    </div>
+                    <div class="content-box text-center">
+                        <a href="#">
+                            <span>VIDEO CONFERENCING</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="custom-block-item">
+                    <div class="img-box">
+                        <a href="#" class="animate-scale image">
+                            <img class="lazyload" src="https://www.philipmorrisdirect.co.uk/content/loading.svg" 
+                            data-src="https://cdn11.bigcommerce.com/s-nsheq/images/stencil/original/image-manager/banner-cate-av.png" 
+                            alt="banner cate av" 
+                            title="banner cate av">
+                        </a>
+                    </div>
+                    <div class="content-box text-center">
+                        <a href="#">
+                            <span>AV CART</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="custom-block-item">
+                    <div class="img-box">
+                        <a href="#" class="animate-scale image">
+                            <img class="lazyload" src="https://www.philipmorrisdirect.co.uk/content/loading.svg" 
+                            data-src="https://cdn11.bigcommerce.com/s-nsheq/images/stencil/original/image-manager/banner-cate-acc.png" 
+                            alt="banner cate acc" 
+                            title="banner cate acc">
+                        </a>
+                    </div>
+                    <div class="content-box text-center">
+                        <a href="#">
+                            <span>Accessories</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="custom-block-item">
+                    <div class="img-box">
+                        <a href="#" class="animate-scale image">
+                            <img class="lazyload" src="https://www.philipmorrisdirect.co.uk/content/loading.svg" 
+                            data-src="https://cdn11.bigcommerce.com/s-nsheq/images/stencil/original/image-manager/banner-cate-audio.png" 
+                            alt="banner Audio Conferencing" 
+                            title="banner Audio Conferencing">
+                        </a>
+                    </div>
+                    <div class="content-box text-center">
+                        <a href="#">
+                            <span>Audio Conferencing</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="custom-block-item">
+                    <div class="img-box">
+                        <a href="#" class="animate-scale image">
+                            <img class="lazyload" src="https://www.philipmorrisdirect.co.uk/content/loading.svg" 
+                            data-src="https://cdn11.bigcommerce.com/s-nsheq/images/stencil/original/image-manager/banner-cate-presen.png" 
+                            alt="banner Presentation Systems" 
+                            title="banner Presentation Systems">
+                        </a>
+                    </div>
+                    <div class="content-box text-center">
+                        <a href="#">
+                            <span>Presentation Systems</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="custom-block-item">
+                    <div class="img-box">
+                        <a href="#" class="animate-scale image">
+                            <img class="lazyload" src="https://www.philipmorrisdirect.co.uk/content/loading.svg" 
+                            data-src="https://cdn11.bigcommerce.com/s-nsheq/images/stencil/original/image-manager/banner-cate-video-phone.png" 
+                            alt="Banner Video Phones" 
+                            title="Banner Video Phones">
+                        </a>
+                    </div>
+                    <div class="content-box text-center">
+                        <a href="#">
+                            <span>Video Phones</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom block banner -->
+    <div class="custom-block custom-block-banner">
+        <div class="container container--full">
+            <div class="custom-block-content">
+                <div class="block-banner-item">
+                    <div class="img-box text-center">
+                        <a href="#" class="image-desktop">
+                            <img class="lazyload" src="https://www.philipmorrisdirect.co.uk/content/loading.svg" 
+                            data-src="https://cdn11.bigcommerce.com/s-nsheq/images/stencil/original/image-manager/pexels-julia-m-cameron.jpg" 
+                            alt="pexels julia m cameron" 
+                            title="pexels julia m cameron">
+                        </a>
+                        <a href="#" class="image-mobile">
+                            <img class="lazyload" src="https://www.philipmorrisdirect.co.uk/content/loading.svg" 
+                            data-src="https://cdn11.bigcommerce.com/s-nsheq/images/stencil/original/image-manager/pexels-julia-m-cameron-mb.jpg" 
+                            alt="pexels julia m cameron" 
+                            title="pexels julia m cameron">
+                        </a>
+                    </div>
+                    <div class="content-box text-left content-box--left">
+                        <h3 class="banner-title">Welcome to Video Conferencing Supply</h3>
+                        <p class="desc banner-text">We are the original video conferencing specialty store online since 2007 and have helped countless businesses and end-users alike find, implement, and utilize their video conferencing solutions.</p>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom block banner 2 -->
+    <div class="custom-block custom-block-banner">
+        <div class="container container--full">
+            <div class="custom-block-content">
+                <div class="block-banner-item">
+                    <div class="img-box text-center">
+                        <a href="#" class="image-desktop">
+                            <img class="lazyload" src="https://www.philipmorrisdirect.co.uk/content/loading.svg" 
+                            data-src="https://cdn11.bigcommerce.com/s-nsheq/images/stencil/original/image-manager/pexels-julia-m-cameron-2.jpg" 
+                            alt="pexels julia m cameron" 
+                            title="pexels julia m cameron">
+                        </a>
+                        <a href="#" class="image-mobile">
+                            <img class="lazyload" src="https://www.philipmorrisdirect.co.uk/content/loading.svg" 
+                            data-src="https://cdn11.bigcommerce.com/s-nsheq/images/stencil/original/image-manager/pexels-julia-m-cameron-2-mb.jpg" 
+                            alt="pexels julia m cameron" 
+                            title="pexels julia m cameron">
+                        </a>
+                    </div>
+                    <div class="content-box text-left background-black content-box--right">
+                        <h3 class="banner-title">Expert Manufacturer Certified Pre-Sales & Technical Support</h3>
+                        <p class="desc banner-text">We are the original video conferencing specialty store online since 2007 and have helped countless businesses and end-users alike find, implement, and utilize their video conferencing solutions.</p>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom block banner 3 -->
+    <div class="custom-block custom-block-banner">
+        <div class="container container--full">
+            <div class="custom-block-content">
+                <div class="block-banner-item">
+                    <div class="img-box text-center">
+                        <a href="#" class="image-desktop">
+                            <img class="lazyload" src="https://www.philipmorrisdirect.co.uk/content/loading.svg" 
+                            data-src="https://cdn11.bigcommerce.com/s-nsheq/images/stencil/original/image-manager/pexels-julia-m-cameron-3.jpg" 
+                            alt="pexels julia m cameron" 
+                            title="pexels julia m cameron">
+                        </a>
+                        <a href="#" class="image-mobile">
+                            <img class="lazyload" src="https://www.philipmorrisdirect.co.uk/content/loading.svg" 
+                            data-src="https://cdn11.bigcommerce.com/s-nsheq/images/stencil/original/image-manager/pexels-julia-m-cameron-3-mb.jpg" 
+                            alt="pexels julia m cameron" 
+                            title="pexels julia m cameron">
+                        </a>
+                    </div>
+                    <div class="content-box text-left background-white content-box--left">
+                        <h3 class="banner-title">Extended Service Plans</h3>
+                        <p class="desc banner-text">buy with confidence knowing our products are factory direct from an authorized dealer.</p>
+                    </div>
+                </div> 
             </div>
         </div>
     </div>
