@@ -888,7 +888,8 @@
         "custom_add_to_cart_popup": "mini",
         "custom_product_block_special_id1": "2413",
         "custom_product_block_special_id2": "2414",
-        "custom_product_block_special_id3": "2415"
+        "custom_product_block_special_id3": "2415",
+        "custom_featured_product_ids": "2413,2414,2415"
       }
     }
   ]

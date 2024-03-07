@@ -25,7 +25,6 @@ export default function(context) {
         if(check_JS_load) {
             check_JS_load = false;
             const wWidth = window.innerWidth;
-            console.log("JS is loaded");
 
             /* Add global function here */
             closeSidebar();
