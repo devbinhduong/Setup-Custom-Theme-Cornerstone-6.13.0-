@@ -12,11 +12,10 @@
 
     @media (min-width: 1025px) {
         position: absolute;
-        left: 50%;
+        left: unset;
         top: calc(100% + 17px);
-        right: auto;
+        right: 0;
         width: 320px;
-        transform: translateX(-50%);
         box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
         border-radius: 3px;
 
@@ -27,8 +26,8 @@
             border-right: solid transparent 10px;
             border-bottom: solid #fff 10px;
             top: -10px;
-            left: 50%;
-            transform: translateX(-50%);
+            left: unset;
+            right: 20px;
             height: 0;
             z-index: 6;
         }
@@ -39,11 +38,13 @@
     }
 
     @media (min-width: 1600px) {
-        left: -30px;
+        left: unset;
+        right: 0;
         transform: unset;
 
         &:before {
-            left: 32px;
+            left: unset;
+            right: 20px;
             transform: unset;
         }
     }

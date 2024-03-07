@@ -457,8 +457,6 @@ export default function(context) {
     function customSpecialProduct($context){
         const context = $context;
 
-        // var productId = $('.productBanner__item').data('special-product-id');
-
         let productIDList = document.querySelectorAll('.productBanner__item');
 
         for(let productID of productIDList) {

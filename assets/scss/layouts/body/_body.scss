@@ -36,6 +36,12 @@ body {
     }
 }
 
+.page {
+    @include grid-row(
+        $behavior: nest
+    );
+}
+
 .body {
     margin-bottom: 0;
     margin-top: 0;
@@ -51,4 +57,10 @@ body {
     padding-top: 50px;
     text-align: center;
     float: none;
+}
+
+.page-type-default {
+    .body {
+        background-color: #F3F6F5;
+    }
 }

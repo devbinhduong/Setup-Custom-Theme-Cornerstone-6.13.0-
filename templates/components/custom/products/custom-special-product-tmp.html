@@ -51,13 +51,13 @@
                 {{else}}
                     {{#if product.options}}
                         {{#if theme_settings.custom_quick_shop}}
-                            <a href="#" data-event-type="product-click" class="button button--transparent button--quickShop button--full button--action" data-product-id="{{product.id}}">{{lang 'products.quick_shop'}}</a>
+                            <a href="#" data-event-type="product-click" class="button button--action button--primary button--quickShop button--action" data-product-id="{{product.id}}">{{lang 'products.quick_shop'}}</a>
                         {{else}}
-                            <a href="{{pruduct.url}}" data-event-type="product-click" class="button button--transparent button--full button--action" data-product-id="{{product.id}}">{{lang 'products.choose_options'}}</a>
+                            <a href="{{pruduct.url}}" data-event-type="product-click" class="button button--action button--primary button--action" data-product-id="{{product.id}}">{{lang 'products.choose_options'}}</a>
                         {{/if}}
                     {{else}}
                         {{#if product.can_purchase}}
-                            <a href="{{#unless theme_settings.quick_addToCart}} {{add_to_cart_url}}{{/unless}}" data-event-type="product-click" data-button-type="add-cart" class="button button--transparent button--full custom-add-to-cart" data-product-id="{{product.id}}" data-wait-message="{{lang 'products.adding_to_cart'}}">{{lang 'products.add_to_cart'}}</a>
+                            <a href="{{#unless theme_settings.quick_addToCart}} {{add_to_cart_url}}{{/unless}}" data-event-type="product-click" data-button-type="add-cart" class="button button--action button--primary custom-add-to-cart" data-product-id="{{product.id}}" data-wait-message="{{lang 'products.adding_to_cart'}}">{{lang 'products.add_to_cart'}}</a>
                         {{/if}}
                     {{/if}}
                 {{/if}}
