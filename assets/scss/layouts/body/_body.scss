@@ -37,9 +37,8 @@ body {
 }
 
 .page {
-    @include grid-row(
-        $behavior: nest
-    );
+    @include grid-row($behavior: nest);
+    margin: 0;
 }
 
 .body {

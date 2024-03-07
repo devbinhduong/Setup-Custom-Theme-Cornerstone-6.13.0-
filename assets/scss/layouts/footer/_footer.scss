@@ -306,11 +306,11 @@
     }
 
     a {
-        color: stencilColor("color-textSecondary");
+        color: #ffffff;
         text-decoration: none;
 
         &:hover {
-            color: stencilColor("color-textSecondary--hover");
+            color: #ffffff;
         }
     }
 }
@@ -322,7 +322,7 @@
     margin-top: 15px;
 
     > .powered-by {
-        color: stencilColor("color-textSecondary");
+        color: #ffffff;
         font-size: $fontSize-root;
         line-height: 20px;
         margin: 0;
@@ -333,11 +333,11 @@
     }
 
     a {
-        color: stencilColor("color-textSecondary");
+        color: #ffffff;
         text-decoration: none;
 
         &:hover {
-            color: stencilColor("color-textSecondary--hover");
+            color: #ffffff;
         }
     }
 }
