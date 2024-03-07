@@ -29,6 +29,22 @@ blog:
     <!-- Home Banner Product Top -->
     {{> components/custom/home/home-product-banner }}
 
+    <!-- Home Product New Section -->
+    <div class="sectionNew">
+        <div class="container">
+            <div class="sectionNew__wrapper">
+                <div class="sectionNew__left">
+                    <h2 class="custom-heading">{{lang 'products.new' }}</h2>
+                </div>
+                <div class="sectionNew__right">
+                    {{#if products.new}}
+                        {{> components/products/new products=products.new columns=theme_settings.homepage_new_products_column_count}}
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
 {{/partial}}
 {{> layout/base}}

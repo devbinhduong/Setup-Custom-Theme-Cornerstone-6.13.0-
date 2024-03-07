@@ -12,6 +12,8 @@
 // -----------------------------------------------------------------------------
 
 .card {
+    border: 1px solid #AFAFAF;
+    
     @include smin-m {
 
         /* Card Image Swap */
@@ -167,7 +169,7 @@
 .card-figure {
     margin-top: $card-figure-marginTop;
     overflow: hidden;
-    padding: 3px;
+    padding: 10px;
     position: relative;
 
     &:hover {
@@ -179,6 +181,8 @@
     &__link {
         display: block;
         position: relative;
+        border: 1px solid #F3F6F5;
+        background-color: #F3F6F5;
     }
 }
 
@@ -268,9 +272,43 @@
 
 .card-body {
     text-align: center;
+    background-color: #ffffff;
+    padding: 16px 18px 28px 22px;
 
     @include breakpoint("small") {
         text-align: left;
+    }
+
+    .card-text {
+        color: #444444;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 20px;
+        text-transform: uppercase;
+
+        &[data-test-info-type="brandName"] {
+            display: none;
+        }
+
+        &[data-test-info-type="price"] {
+            font-size: 20px;
+        }
+    }
+
+    .card-title {
+        margin-bottom: 24px;
+        > a {
+            color: #444444;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1.5;
+            text-transform: capitalize;
+        }
+    }
+
+    .card-figcaption-bottom {
+        margin-top: 24px;
     }
 }
 
