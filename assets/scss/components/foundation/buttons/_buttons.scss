@@ -32,7 +32,7 @@
     @include breakpoint('small') {
         font-size: $fontSize-root;
         width: auto;
-        padding: 15px;
+        padding: 11px 20px;
     }
 
     svg {

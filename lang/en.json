@@ -517,7 +517,7 @@
             },
             "products": {
                 "new": {
-                    "heading": "New Products",
+                    "heading": "New Arrivals",
                     "intro": "The latest products feed contains the latest {limit} products added to {store}.",
                     "rss": "Latest {limit} New Products (RSS)",
                     "rss_atom": "Latest {limit} New Products (Atom)"

@@ -1,20 +1,38 @@
 <div class="custom-section featured-offer">
-    <div class="container">
-        <div class="custom-heading">
+    <div class="container container--1290">
+        <div class="custom-heading custom-animation" data-step-animate="1" data-section-load="animation">
             <h2 class="title text-center">
                 Our featured offers
             </h2>
         </div>
-        <div class="custom-content">
+        <div class="custom-content custom-animation" data-step-animate="2" data-section-load="animation">
             <div class="list-product-wrapper" data-slick='{
                 "arrows": true,
                 "mobileFirst": true,
-                "slidesToShow": 3,
+                "slidesToShow": 1,
                 "slidesToScroll": 1,
-                "autoplay": false
+                "autoplay": false,
+                "dots": false,
+                "responsive": [
+                    {
+                        "breakpoint": 800,
+                        "settings": {
+                            "slidesToShow": 3,
+                            "slidesToScroll": 1
+                        }
+                    },
+                    {
+                        "breakpoint": 550,
+                        "settings": {
+                            "slidesToShow": 2,
+                            "slidesToScroll": 1
+                        }
+                    }
+                ]
             }'>
                 {{#each (split theme_settings.custom_featured_product_ids ',')}}
-                <div class="list-product__item" data-special-product-id="{{this}}">
+                <div class="productBanner__item list-product__item"
+                    data-special-product-id="{{this}}">
                     <div class="custom-special-product">
                         <div class="loadingOverlay"></div>
                     </div>

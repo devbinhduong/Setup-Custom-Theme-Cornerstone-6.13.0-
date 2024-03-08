@@ -30,15 +30,19 @@ blog:
     {{> components/custom/home/home-product-banner }}
 
     <!-- Home Product New Section -->
-    <div class="sectionNew" style="display: none;">
+    <div class="sectionNew custom-section">
         <div class="container">
             <div class="sectionNew__wrapper">
-                <div class="sectionNew__left">
+                <div class="sectionNew__left custom-animation" data-step-animate="1" data-section-load="animation">
                     <h2 class="custom-heading">{{lang 'products.new' }}</h2>
+                    <div class="slick-arrow-wrapper">
+                        <div class="slick-arrow slick-prev">Prev</div>
+                        <div class="slick-arrow slick-next">Next</div>
+                    </div>
                 </div>
-                <div class="sectionNew__right">
+                <div class="sectionNew__right custom-animation" data-step-animate="2" data-section-load="animation">
                     {{#if products.new}}
-                        {{> components/products/new products=products.new columns=theme_settings.homepage_new_products_column_count}}
+                        {{> components/products/new custom_arrow=".sectionNew__wrapper" products=products.new columns=theme_settings.homepage_new_products_column_count}}
                     {{/if}}
                 </div>
             </div>
@@ -49,7 +53,7 @@ blog:
      <div class="custom-block custom-block-brands custom-block--swipper">
         <div class="container">
             <div class="custom-block-row colums-5">
-                <div class="custom-block-item">
+                <div class="custom-block-item custom-animation" data-step-animate="1" data-section-load="animation">
                     <div class="img-box">
                         <a href="#" class="animate-scale image">
                         <img class="lazyload" src="https://www.philipmorrisdirect.co.uk/content/loading.svg" 
@@ -59,7 +63,7 @@ blog:
                         </a>
                     </div>
                 </div>
-                <div class="custom-block-item">
+                <div class="custom-block-item custom-animation" data-step-animate="2" data-section-load="animation">
                     <div class="img-box">
                         <a href="#" class="animate-scale image">
                         <img class="lazyload" src="https://www.philipmorrisdirect.co.uk/content/loading.svg" 
@@ -69,7 +73,7 @@ blog:
                         </a>
                     </div>
                 </div>
-                <div class="custom-block-item">
+                <div class="custom-block-item custom-animation" data-step-animate="3" data-section-load="animation">
                     <div class="img-box">
                         <a href="#" class="animate-scale image">
                         <img class="lazyload" src="https://www.philipmorrisdirect.co.uk/content/loading.svg" 
@@ -79,7 +83,7 @@ blog:
                         </a>
                     </div>
                 </div>
-                <div class="custom-block-item">
+                <div class="custom-block-item custom-animation" data-step-animate="4" data-section-load="animation">
                     <div class="img-box">
                         <a href="#" class="animate-scale image">
                         <img class="lazyload" src="https://www.philipmorrisdirect.co.uk/content/loading.svg" 
@@ -89,7 +93,7 @@ blog:
                         </a>
                     </div>
                 </div>
-                <div class="custom-block-item">
+                <div class="custom-block-item custom-animation" data-step-animate="5" data-section-load="animation">
                     <div class="img-box">
                         <a href="#" class="animate-scale image">
                         <img class="lazyload" src="https://www.philipmorrisdirect.co.uk/content/loading.svg" 
@@ -106,11 +110,11 @@ blog:
     <!-- Custom block icon with text -->
     <div class="custom-block custom-block-icon-with-text">
         <div class="container">
-            <div class="custom-block-header text-center">
+            <div class="custom-block-header text-center custom-animation" data-step-animate="0" data-section-load="animation">
                 <h3 class="title">Shop our popular categories</h3>
             </div>
             <div class="custom-block-row colums-6">
-                <div class="custom-block-item">
+                <div class="custom-block-item custom-animation" data-step-animate="1" data-section-load="animation">
                     <div class="img-box">
                         <a href="#" class="animate-scale image">
                             <img class="lazyload" src="https://www.philipmorrisdirect.co.uk/content/loading.svg" 
@@ -125,7 +129,7 @@ blog:
                         </a>
                     </div>
                 </div>
-                <div class="custom-block-item">
+                <div class="custom-block-item custom-animation" data-step-animate="2" data-section-load="animation">
                     <div class="img-box">
                         <a href="#" class="animate-scale image">
                             <img class="lazyload" src="https://www.philipmorrisdirect.co.uk/content/loading.svg" 
@@ -140,7 +144,7 @@ blog:
                         </a>
                     </div>
                 </div>
-                <div class="custom-block-item">
+                <div class="custom-block-item custom-animation" data-step-animate="3" data-section-load="animation">
                     <div class="img-box">
                         <a href="#" class="animate-scale image">
                             <img class="lazyload" src="https://www.philipmorrisdirect.co.uk/content/loading.svg" 
@@ -155,7 +159,7 @@ blog:
                         </a>
                     </div>
                 </div>
-                <div class="custom-block-item">
+                <div class="custom-block-item custom-animation" data-step-animate="4" data-section-load="animation">
                     <div class="img-box">
                         <a href="#" class="animate-scale image">
                             <img class="lazyload" src="https://www.philipmorrisdirect.co.uk/content/loading.svg" 
@@ -170,7 +174,7 @@ blog:
                         </a>
                     </div>
                 </div>
-                <div class="custom-block-item">
+                <div class="custom-block-item custom-animation" data-step-animate="5" data-section-load="animation">
                     <div class="img-box">
                         <a href="#" class="animate-scale image">
                             <img class="lazyload" src="https://www.philipmorrisdirect.co.uk/content/loading.svg" 
@@ -185,7 +189,7 @@ blog:
                         </a>
                     </div>
                 </div>
-                <div class="custom-block-item">
+                <div class="custom-block-item custom-animation" data-step-animate="6" data-section-load="animation">
                     <div class="img-box">
                         <a href="#" class="animate-scale image">
                             <img class="lazyload" src="https://www.philipmorrisdirect.co.uk/content/loading.svg" 
@@ -209,7 +213,7 @@ blog:
         <div class="container container--full">
             <div class="custom-block-content">
                 <div class="block-banner-item">
-                    <div class="img-box text-center">
+                    <div class="img-box text-center custom-animation" data-step-animate="1" data-section-load="animation">
                         <a href="#" class="image-desktop">
                             <img class="lazyload" src="https://www.philipmorrisdirect.co.uk/content/loading.svg" 
                             data-src="https://cdn11.bigcommerce.com/s-nsheq/images/stencil/original/image-manager/pexels-julia-m-cameron.jpg" 
@@ -223,7 +227,7 @@ blog:
                             title="pexels julia m cameron">
                         </a>
                     </div>
-                    <div class="content-box text-left content-box--left">
+                    <div class="content-box text-left content-box--left custom-animation" data-step-animate="3" data-section-load="animation">
                         <h3 class="banner-title">Welcome to Video Conferencing Supply</h3>
                         <p class="desc banner-text">We are the original video conferencing specialty store online since 2007 and have helped countless businesses and end-users alike find, implement, and utilize their video conferencing solutions.</p>
                     </div>
@@ -240,7 +244,7 @@ blog:
         <div class="container container--full">
             <div class="custom-block-content">
                 <div class="block-banner-item">
-                    <div class="img-box text-center">
+                    <div class="img-box text-center custom-animation" data-step-animate="1" data-section-load="animation">
                         <a href="#" class="image-desktop">
                             <img class="lazyload" src="https://www.philipmorrisdirect.co.uk/content/loading.svg" 
                             data-src="https://cdn11.bigcommerce.com/s-nsheq/images/stencil/original/image-manager/pexels-julia-m-cameron-2.jpg" 
@@ -255,8 +259,9 @@ blog:
                         </a>
                     </div>
                     <div class="content-box text-left background-black content-box--right">
-                        <h3 class="banner-title">Expert Manufacturer Certified Pre-Sales & Technical Support</h3>
-                        <p class="desc banner-text">We are the original video conferencing specialty store online since 2007 and have helped countless businesses and end-users alike find, implement, and utilize their video conferencing solutions.</p>
+                        <h3 class="banner-title custom-animation" data-step-animate="2" data-section-load="animation">Expert Manufacturer Certified Pre-Sales & Technical Support</h3>
+                        <p class="desc banner-text custom-animation" data-step-animate="3" data-section-load="animation">We are the original video conferencing specialty store online since 2007 and have helped countless businesses and end-users alike find, implement, and utilize their video conferencing solutions.</p>
+                        <div class="button button--primary custom-animation" data-step-animate="4" data-section-load="animation">Learn More</div>
                     </div>
                 </div> 
             </div>
@@ -268,7 +273,7 @@ blog:
         <div class="container container--full">
             <div class="custom-block-content">
                 <div class="block-banner-item">
-                    <div class="img-box text-center">
+                    <div class="img-box text-center custom-animation" data-step-animate="1" data-section-load="animation">
                         <a href="#" class="image-desktop">
                             <img class="lazyload" src="https://www.philipmorrisdirect.co.uk/content/loading.svg" 
                             data-src="https://cdn11.bigcommerce.com/s-nsheq/images/stencil/original/image-manager/pexels-julia-m-cameron-3.jpg" 
@@ -283,13 +288,16 @@ blog:
                         </a>
                     </div>
                     <div class="content-box text-left background-white content-box--left">
-                        <h3 class="banner-title">Extended Service Plans</h3>
-                        <p class="desc banner-text">buy with confidence knowing our products are factory direct from an authorized dealer.</p>
+                        <h3 class="banner-title custom-animation" data-step-animate="2" data-section-load="animation">Extended Service Plans</h3>
+                        <p class="desc banner-text custom-animation" data-step-animate="3" data-section-load="animation">buy with confidence knowing our products are factory direct from an authorized dealer.</p>
+                        <div class="button button--primary custom-animation" data-step-animate="4" data-section-load="animation">Learn More</div>
                     </div>
                 </div> 
             </div>
         </div>
     </div>
+
+    {{> components/custom/home/home-recently-posts post=blog.recent_posts}}
 
 </div>
 {{/partial}}

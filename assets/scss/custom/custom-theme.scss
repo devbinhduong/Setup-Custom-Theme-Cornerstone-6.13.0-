@@ -210,7 +210,7 @@
             @media(min-width:921px){
                 left: 60px;
                 transform: translateY(-50%);
-                padding: 71px 30px 51px;
+                padding: 71px 30px 33px;
                 &.content-box--right{
                     left: auto;
                     right: 60px;
@@ -232,6 +232,7 @@
                 font-weight: 500;
                 color: #ffffff;
                 line-height: 1.5em;
+                margin-bottom: 34px;
             }
             &.background-white{
                 background:#ffffff;
@@ -252,7 +253,7 @@
             }
             @media(min-width: 1440px){
                 left: calc((100% - 1290px) / 2);
-                min-height: 400px;
+                min-height: 356px;
                 &.content-box--right{
                     left: auto;
                     right: calc((100% - 1290px) / 2);

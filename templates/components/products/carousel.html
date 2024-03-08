@@ -6,6 +6,10 @@
         "dots": false,
         "slidesToShow": 1,
         "slidesToScroll": 1,
+        {{#if custom_arrow}}
+        "nextArrow": "{{custom_arrow}} .slick-next",
+        "prevArrow": "{{custom_arrow}} .slick-prev",   
+        {{/if}}
         "slide": "[data-product-slide]",
         "responsive": [
             {

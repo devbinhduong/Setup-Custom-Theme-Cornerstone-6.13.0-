@@ -37,6 +37,15 @@
 
         .card-title {
             overflow-wrap: break-word;
+            --lineHeight : 30px;
+            --row: 3;
+            line-height: var(--lineHeight);
+            height: calc(var(--lineHeight) * var(--row));
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: var(--row);
+            -webkit-box-orient: vertical;
         }
     }
 }

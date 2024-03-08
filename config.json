@@ -229,7 +229,7 @@
     "spinner-borderColor-dark": "#999999",
     "spinner-borderColor-light": "#ffffff",
     "hide_content_navigation": false,
-    "optimizedCheckout-header-backgroundColor": "#f5f5f5",
+    "optimizedCheckout-header-backgroundColor": "#ffffff",
     "optimizedCheckout-show-backgroundImage": false,
     "optimizedCheckout-backgroundImage": "",
     "optimizedCheckout-backgroundImage-size": "1000x400",
@@ -283,7 +283,7 @@
     "optimizedCheckout-orderSummary-borderColor": "#dddddd",
     "optimizedCheckout-step-backgroundColor": "#757575",
     "optimizedCheckout-step-textColor": "#ffffff",
-    "optimizedCheckout-form-textColor": "#666666",
+    "optimizedCheckout-form-textColor": "#333333",
     "optimizedCheckout-formField-borderColor": "#cccccc",
     "optimizedCheckout-formField-textColor": "#333333",
     "optimizedCheckout-formField-shadowColor": "transparent",
@@ -596,7 +596,7 @@
         "spinner-borderColor-dark": "#999999",
         "spinner-borderColor-light": "#ffffff",
         "hide_content_navigation": true,
-        "optimizedCheckout-header-backgroundColor": "#f5f5f5",
+        "optimizedCheckout-header-backgroundColor": "#ffffff",
         "optimizedCheckout-show-backgroundImage": false,
         "optimizedCheckout-backgroundImage": "",
         "optimizedCheckout-backgroundImage-size": "1000x400",
@@ -650,7 +650,7 @@
         "optimizedCheckout-orderSummary-borderColor": "#dddddd",
         "optimizedCheckout-step-backgroundColor": "#757575",
         "optimizedCheckout-step-textColor": "#ffffff",
-        "optimizedCheckout-form-textColor": "#666666",
+        "optimizedCheckout-form-textColor": "#333333",
         "optimizedCheckout-formField-borderColor": "#cccccc",
         "optimizedCheckout-formField-textColor": "#333333",
         "optimizedCheckout-formField-shadowColor": "transparent",
@@ -889,7 +889,10 @@
         "custom_product_block_special_id1": "2413",
         "custom_product_block_special_id2": "2414",
         "custom_product_block_special_id3": "2415",
-        "custom_featured_product_ids": "2413,2414,2415"
+        "custom_featured_product_ids": "2416,2417,2418",
+        "home-recently-posts": true,
+        "home-recently-posts-title": "Articles & videos to help you choose",
+        "recent_blog_size": "390x270"
       }
     }
   ]
