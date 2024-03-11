@@ -1,5 +1,5 @@
 {
-  "name": "Cornerstone Custom Home Page Part 1",
+  "name": "Cornerstone Custom PDP Done Sticky ATC",
   "version": "6.13.0",
   "template_engine": "handlebars_v4",
   "meta": {
@@ -899,7 +899,8 @@
         "show_faq_tab": true,
         "show_faq_tab_type": "all",
         "show_faq_tab_link": "/faq-tab/",
-        "customAddToCartAction": "sidebar"
+        "customAddToCartAction": "sidebar",
+        "halo_sticky_add_to_cart_mobile": true
       }
     }
   ]

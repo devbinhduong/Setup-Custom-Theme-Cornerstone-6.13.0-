@@ -21,6 +21,9 @@ export default class ProductDetails extends ProductDetailsBase {
         this.imageGallery = new ImageGallery($('[data-image-gallery]', this.$scope));
         this.imageGallery.init();
         this.listenQuantityChange();
+        /* Sticky ATC */
+        this.listenQuantityChangeStickyATC($('#custom_sticky_addToCart'));
+
         this.$swatchOptionMessage = $('.swatch-option-message');
         this.swatchInitMessageStorage = {};
         this.swatchGroupIdList = $('[id^="swatchGroup"]').map((_, group) => $(group).attr('id'));
@@ -89,6 +92,25 @@ export default class ProductDetails extends ProductDetailsBase {
             if (this.addToCartValidator.areAll('valid')) {
                 this.addProductToCart(event, $form[0]);
             }
+        });
+
+        /* Sticky ATC */
+        // add to cart 2
+        const $form2 = $('form[data-cart-item-add-2]', $scope);
+        const $productOptionsElement2 = $('[data-product-option-change-2]', $form2);
+
+        $productOptionsElement2.on('change', event => {
+            this.productOptionsChanged2(event);
+            this.setProductVariant();
+            this.setProductVariant2();
+        });
+
+        $(document).on('click', '#form-action-addToCart2.atcButton', event => {
+            $form2.submit();
+        });
+
+        $form2.on('submit', event => {
+            this.addProductToCart(event, $form2[0], this.context);
         });
 
         // Update product attributes. Also update the initial view in case items are oos
@@ -232,6 +254,112 @@ export default class ProductDetails extends ProductDetailsBase {
             }
         }
     }
+
+    setProductVariant2() {
+        const unsatisfiedRequiredFields = [];
+        const options = [];
+
+        $.each($('[data-product-option-change-2] [data-product-attribute]'), (index, value) => {
+            const optionLabel = value.children[0].innerText;
+            const optionTitle = optionLabel.split(':')[0].trim();
+            const required = optionLabel.toLowerCase().includes('required');
+            const type = value.getAttribute('data-product-attribute');
+
+            if ((type === 'input-file' || type === 'input-text' || type === 'input-number') && value.querySelector('input').value === '' && required) {
+                unsatisfiedRequiredFields.push(value);
+            }
+
+            if (type === 'textarea' && value.querySelector('textarea').value === '' && required) {
+                unsatisfiedRequiredFields.push(value);
+            }
+
+            if (type === 'date') {
+                const isSatisfied = Array.from(value.querySelectorAll('select')).every((select) => select.selectedIndex !== 0);
+
+                if (isSatisfied) {
+                    const dateString = Array.from(value.querySelectorAll('select')).map((x) => x.value).join('-');
+                    options.push(`${optionTitle}:${dateString}`);
+
+                    return;
+                }
+
+                if (required) {
+                    unsatisfiedRequiredFields.push(value);
+                }
+            }
+
+            if (type === 'set-select') {
+                const select = value.querySelector('select');
+                const selectedIndex = select.selectedIndex;
+
+                if (selectedIndex !== 0) {
+                    options.push(`${optionTitle}:${select.options[selectedIndex].innerText}`);
+                    $(value.children[0]).find('[data-option-value]').text(select.options[selectedIndex].innerText);
+
+                    return;
+                }
+
+                if (required) {
+                    unsatisfiedRequiredFields.push(value);
+                }
+            }
+
+            if (type === 'set-rectangle' || type === 'set-radio' || type === 'swatch' || type === 'input-checkbox' || type === 'product-list') {
+                const checked = value.querySelector(':checked');
+                if (checked) {
+                    const getSelectedOptionLabel = () => {
+                        const productVariantslist = convertIntoArray(value.children);
+                        const matchLabelForCheckedInput = inpt => inpt.dataset.productAttributeValue === checked.value;
+                        return productVariantslist.filter(matchLabelForCheckedInput)[0];
+                    };
+                    if (type === 'set-rectangle' || type === 'set-radio' || type === 'product-list') {
+                        const label = isBrowserIE ? getSelectedOptionLabel().innerText.trim() : checked.labels[0].innerText;
+                        if (label) {
+                            options.push(`${optionTitle}:${label}`);
+                             $(value.children[0]).find('[data-option-value]').text(label);
+                        }
+                    }
+
+                    if (type === 'swatch') {
+                        const label = isBrowserIE ? getSelectedOptionLabel().children[0] : checked.labels[0].children[0];
+                        if (label) {
+                            options.push(`${optionTitle}:${label.title}`);
+                            $(value.children[0]).find('[data-option-value]').text(label.title);
+                        }
+                    }
+
+                    if (type === 'input-checkbox') {
+                        options.push(`${optionTitle}:Yes`);
+                    }
+
+                    return;
+                }
+
+                if (type === 'input-checkbox') {
+                    options.push(`${optionTitle}:No`);
+                }
+
+                if (required) {
+                    unsatisfiedRequiredFields.push(value);
+                }
+            }
+        });
+
+        let productVariant = unsatisfiedRequiredFields.length === 0 ? options.sort().join(', ') : 'unsatisfied';
+        const view = $('.productView');
+
+        if (productVariant) {
+            productVariant = productVariant === 'unsatisfied' ? '' : productVariant;
+            if (view.attr('data-event-type')) {
+                view.attr('data-product-variant', productVariant);
+            } else {
+                const productName = view.find('.productView-title')[0] ? view.find('.productView-title')[0].innerText.replace(/"/g, '\\$&') : this.$scope.find('.productView-title').text().replace(/"/g, '\\$&');
+                const card = $(`[data-name="${productName}"]`);
+                card.attr('data-product-variant', productVariant);
+            }
+        }
+    }
+
 
     /**
      * Checks if the current window is being run inside an iframe
@@ -392,6 +520,42 @@ export default class ProductDetails extends ProductDetailsBase {
 
         this.$scope.on('keyup', '.form-input--incrementTotal', () => {
             this.updateProductDetailsData();
+        });
+    }
+
+    listenQuantityChangeStickyATC($scope) {
+        $scope.on('click', '[data-quantity-change-2] button', event => {
+            event.preventDefault();
+            const $target = $(event.currentTarget);
+            const viewModel = this.getViewModel($scope);
+            const $input = viewModel.quantity.$input;
+            const quantityMin = parseInt($input.data('quantityMin'), 10);
+            const quantityMax = parseInt($input.data('quantityMax'), 10);
+
+            let qty = forms.numbersOnly($input.val()) ? parseInt($input.val(), 10) : quantityMin;
+            // If action is incrementing
+            if ($target.data('action') === 'inc') {
+                qty = forms.validateIncreaseAgainstMaxBoundary(qty, quantityMax);
+            } else if (qty > 1) {
+                qty = forms.validateDecreaseAgainstMinBoundary(qty, quantityMin);
+            }
+
+            // update hidden input
+            viewModel.quantity.$input.val(qty);
+            // update text
+            viewModel.quantity.$text.text(qty);
+            // perform validation after updating product quantity
+            this.addToCartValidator.performCheck();
+        });
+
+        // Prevent triggering quantity change when pressing enter
+        $scope.on('keypress', '#custom_sticky_addToCart .form-input--incrementTotal', event => {
+            // If the browser supports event.which, then use event.which, otherwise use event.keyCode
+            const x = event.which || event.keyCode;
+            if (x === 13) {
+                // Prevent default
+                event.preventDefault();
+            }
         });
     }
 

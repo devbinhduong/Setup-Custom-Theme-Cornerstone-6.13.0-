@@ -11,6 +11,7 @@ import videoGallery from './product/video-gallery';
 import { classifyForm } from './common/utils/form-utils';
 import modalFactory from './global/modal';
 import customBundleProducts from './custom/customBundleProducts';
+import customStickyAddToCart from './custom/customStickyAddToCart';
 
 export default class Product extends PageManager {
     constructor(context) {
@@ -49,6 +50,7 @@ export default class Product extends PageManager {
         this.toggleFAQTab();
         this.productTabsMobile();
         customBundleProducts($('.productView'), this.context);
+        customStickyAddToCart($('.productView'), this.context);
         /* Custom End */
 
         const $reviewForm = classifyForm('.writeReview-form');
