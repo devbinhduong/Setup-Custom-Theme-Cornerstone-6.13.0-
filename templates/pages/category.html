@@ -16,43 +16,57 @@ category:
 
 {{#partial "page"}}
 
-{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
-{{#if category.image}}
-    {{> components/common/responsive-img
-        image=category.image
-        fallback_size=theme_settings.zoom_size
-        lazyload=theme_settings.lazyload_mode
-        class="category-header-image"
-    }}
-{{/if}}
-{{#unless theme_settings.hide_category_page_heading }}
-    <h1 class="page-heading">{{category.name}}</h1>
-    {{{region name="category_below_header"}}}
-{{/unless}}
-{{{category.description}}}
-<div class="page">
-    {{#if category.faceted_search_enabled}}
-        <aside class="page-sidebar" id="faceted-search-container">
-            {{> components/category/sidebar}}
-        </aside>
-    {{else if category.subcategories}}
-        <aside class="page-sidebar" id="faceted-search-container">
-            {{> components/category/sidebar}}
-        </aside>
-    {{else if category.shop_by_price}}
-        {{#if theme_settings.shop_by_price_visibility}}
-             <aside class="page-sidebar" id="faceted-search-container">
-                {{> components/category/sidebar}}
-            </aside>
+
+<div class="container">
+    <div class="category-header">
+        <h1 class="category-title">Showing Results for <span class="category-result-filter">{{category.name}}</span></h1>
+        {{> components/custom/category/custom-view-as}}
+    </div>
+    <div class="custom-toolbar">
+        {{#if theme_settings.custom-category-sidebar}}
+            <div class="page-sidebar-mobile-wrapper hide-on-desktop">
+                <div class="page-sidebar-mobile">
+                    <span class="text">{{lang 'common.sidebar'}}</span>
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-sidebar"></use>
+                    </svg>
+                </div>
+            </div>
         {{/if}}
-    {{/if}}
+    </div>
+    <div class="page page-category page-listing">
+        {{#if theme_settings.custom-category-sidebar}}
+        <aside class="page-sidebar custom-sidebar" id="faceted-search-container">
+            <div class="page-sidebar-close hide-on-desktop">
+                <a href="#" class="close" aria-label="Icon Close Sidebar">
+                    <span class="icon icon--close">
+                        <svg>
+                            <use xlink:href="#icon-close"></use>
+                        </svg>
+                    </span>
+                </a>
+            </div>
 
-    <main class="page-content" id="product-listing-container">
-        {{> components/category/product-listing}}
-    </main>
+            <div class="custom-sidebar-header">
+                <span class="title">Filter</span>
+            </div>
 
-    <div class="page-region">
-        {{{region name="category_below_content"}}}
+            <div class="breadcrumb-wrapper hide-on-tablet">
+                {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+            </div>
+
+            {{> components/category/sidebar}}
+        </aside>
+        {{/if}}
+
+        <main class="page-content" id="product-listing-container"> 
+            {{#if category.products}}
+                {{> components/category/product-listing productsnew=products.new show_compare=category.show_compare}}
+            {{else}}
+                <p class="page-no-products">{{lang 'categories.no_products'}}</p>
+            {{/if}}
+            {{{region name="category_below_content"}}}
+        </main>
     </div>
 </div>
 

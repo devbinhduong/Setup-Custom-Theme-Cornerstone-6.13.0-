@@ -2,6 +2,7 @@ import { hooks } from '@bigcommerce/stencil-utils';
 import CatalogPage from './catalog';
 import compareProducts from './global/compare-products';
 import FacetedSearch from './common/faceted-search';
+import CustomProductDisplayMode from './custom/customProductDisplayMode';
 import { createTranslationDictionary } from '../theme/common/utils/translations-utils';
 
 export default class Category extends CatalogPage {
@@ -56,6 +57,8 @@ export default class Category extends CatalogPage {
         $('a.reset-btn').on('click', () => this.setLiveRegionsAttributes($('span.reset-message'), 'status', 'polite'));
 
         this.ariaNotifyNoProducts();
+        CustomProductDisplayMode();
+        this.renderFilterText();
     }
 
     ariaNotifyNoProducts() {
@@ -74,7 +77,7 @@ export default class Category extends CatalogPage {
             price_invalid_value: onInvalidPrice,
         } = this.validationDictionary;
         const $productListingContainer = $('#product-listing-container');
-        const $facetedSearchContainer = $('#faceted-search-container');
+        const $facetedSearchContainer = $('#faceted-search-container > nav');
         const productsPerPage = this.context.categoryProductsPerPage;
         const requestOptions = {
             config: {
@@ -94,13 +97,14 @@ export default class Category extends CatalogPage {
 
         this.facetedSearch = new FacetedSearch(requestOptions, (content) => {
             $productListingContainer.html(content.productListing);
-            $facetedSearchContainer.html(content.sidebar);
+            $facetedSearchContainer.html($(content.sidebar).html());
 
             $('body').triggerHandler('compareReset');
 
             $('html, body').animate({
                 scrollTop: 0,
             }, 100);
+            this.renderFilterText();
         }, {
             validationErrorMessages: {
                 onMinPriceError,
@@ -111,4 +115,28 @@ export default class Category extends CatalogPage {
             },
         });
     }
+
+    /* Custom Start */
+    renderFilterText() {
+        let filterList = document.querySelectorAll("#facetedSearch .facetLabel");
+        let resultText = document.querySelector(".category-result-filter");
+        const originalText = resultText.innerText;
+        let filterArray = [];
+        const facetedSearchRefineFilters = document.querySelector(".facetedSearch-refineFilters");
+
+        if (filterList.length > 0) {
+            for (let filterItem of filterList) {
+                filterArray.push((filterItem.innerText).trim());
+            }
+
+            let formattedString = filterArray.toString().replace(/,(?=[A-Z])/g, ', ');
+            resultText.innerText = formattedString;
+            facetedSearchRefineFilters.style.display = "block";
+        } else {
+            resultText.innerText = originalText;
+            facetedSearchRefineFilters.style.display = "none";
+        }
+
+    }
+    /* Custom End */
 }

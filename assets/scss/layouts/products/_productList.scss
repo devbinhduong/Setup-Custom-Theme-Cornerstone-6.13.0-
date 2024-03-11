@@ -8,11 +8,11 @@
 
 .productList {
     @include u-listBullets("none");
-    margin: spacing("half");
+    margin: 0px;
 
     .product {
         + .product {
-            margin-top: spacing("base") * 4;
+            margin-top: 30px;
         }
     }
 }

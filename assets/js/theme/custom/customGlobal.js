@@ -48,13 +48,12 @@ export default function(context) {
             authSidebarMobile();
             ajaxAddToCart(context);
             quickShop(context);
+            sidebarMobile();
 
             if (!document.body.classList.contains('page-type-login')) {
                 loginPopup();
             }
-
             toogleFooterMobile();
-
             /* Home */
             customSpecialProduct(context);
         }
@@ -284,7 +283,6 @@ export default function(context) {
 
     }
 
-
     function hoverMenu () {
         const menuItemList = document.querySelectorAll('.navPages-list:not(.navPages-list--user) > .navPages-item.has-dropdown');
 
@@ -475,5 +473,26 @@ export default function(context) {
                 }
             });
         }
+    }
+
+    function sidebarMobile() {
+        $('.page-sidebar-mobile').on('click', (event) => {
+            if ($(event.currentTarget).hasClass('is-open')) {
+                $(event.currentTarget).removeClass('is-open');
+                $('.page-sidebar').removeClass('is-open');
+                $('body').removeClass('openSidebar');
+            } else {
+                $(event.currentTarget).addClass('is-open');
+                $('.page-sidebar').addClass('is-open');
+                $('body').addClass('openSidebar');
+            }
+        });
+
+        $('.page-sidebar .page-sidebar-close').on('click', (event) => {
+            event.preventDefault();
+            $('.page-sidebar-mobile').removeClass('is-open');
+            $('.page-sidebar').removeClass('is-open');
+            $('body').removeClass('openSidebar');
+        });
     }
 }
