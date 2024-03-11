@@ -3,27 +3,25 @@
     data-slick='{
         "infinite": false,
         "mobileFirst": true,
+        "dots": false,
         "slidesToShow": 1,
         "slidesToScroll": 1,
-        "dots": true,
-        "arrows": false,
-        "slide": "[data-product-slide]",
+        "nextArrow": ".sectionNew__wrapper .slick-next",
+        "prevArrow": ".sectionNew__wrapper .slick-prev",   
         "responsive": [
             {
-                "breakpoint": 1024,
+                "breakpoint": 1600,
                 "settings": {
-                    "slidesToShow": {{ columns }},
+                    "slidesToShow": 3.3,
                     "slidesToScroll": 1,
-                    "arrows": true,
                     "dots": false
                 }
             },
             {
                 "breakpoint": 800,
                 "settings": {
-                    "slidesToShow": 3,
+                    "slidesToShow": 2.3,
                     "slidesToScroll": 1,
-                    "arrows": true,
                     "dots": false
                 }
             },
@@ -32,7 +30,6 @@
                 "settings": {
                     "slidesToShow": 2,
                     "slidesToScroll": 1,
-                    "arrows": true,
                     "dots": false
                 }
             }

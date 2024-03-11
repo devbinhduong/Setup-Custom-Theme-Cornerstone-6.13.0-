@@ -4,6 +4,7 @@ import { load } from 'webfontloader';
 import event from '../global/jquery-migrate/event';
 import { forEach } from 'lodash';
 
+import { defaultModal } from '../global/modal';
 import megaMenuEditor from './megaMenuEditor';
 import loginPopup from './loginPopup';
 import ajaxAddToCart from './ajaxAddToCart';
@@ -57,6 +58,13 @@ export default function(context) {
 
             /* Home */
             customSpecialProduct(context);
+
+            /* About Us Page */
+            aboutUsBrandSlider();
+            loadAnimateCount();
+            playVideoBanner();
+            companyHistorySlider();
+            aboutUsServiceSlider();
         }
     }
 
@@ -475,5 +483,197 @@ export default function(context) {
                 }
             });
         }
+    }
+    /* Slick Brand On About Us Page */
+    function aboutUsBrandSlider() {
+        $('.ourBrands__list')?.slick({
+            dots: false,
+            arrows: true,
+            infinite: false,
+            mobileFirst: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+
+            responsive: [
+                {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 5,
+                    },
+                },
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 4,
+                    },
+                },
+                {
+                    breakpoint: 767,
+                    settings: {
+                        slidesToShow: 3,
+                    },
+                },
+                {
+                    breakpoint: 551,
+                    settings: {
+                        slidesToShow: 2,
+                        dots: false,
+                        arrows: true,
+                    },
+                },
+            ],
+        });
+    }
+
+    function animateCount(target, start, end, duration) {
+        let range = end - start;
+        let current = start;
+        let increment = end > start ? 1 : -1;
+        let stepTime = Math.abs(Math.floor(duration / range));
+
+        let timer = setInterval(function() {
+            current += increment;
+            target.innerHTML = current;
+
+            if (current >= end) {
+                clearInterval(timer);
+            }
+
+        }, stepTime);
+    }
+
+    function loadAnimateCount() {
+        let countElements = document.querySelectorAll('.count-number-animation'),
+            sectionLoadAnimate = document.querySelector('[data-animation-count]');
+
+        if (!sectionLoadAnimate || !countElements) return;
+
+        let bounding = sectionLoadAnimate.getBoundingClientRect();
+
+        // Check the element is visible in view
+        if (bounding.top < window.innerHeight && bounding.bottom >= 0) {
+            for(let countElement of countElements) {
+                let endCount = parseInt(countElement.textContent, 10);
+                let startCount = 0;
+                let getThousandsNumber = 0;
+
+                // console.log('getThousandsNumber', getThousandsNumber);
+
+                if (endCount > 4000) {
+                    startCount = 4000;
+                }
+                
+                if(getThousandsNumber > 0) {
+                    startCount = getThousandsNumber;
+                }
+                
+                let duration = 2000;
+                animateCount(countElement, startCount, endCount, duration);
+
+                /* Remove data after loaded animation */
+                sectionLoadAnimate.removeAttribute('data-animation-count');
+            }
+        }
+    }
+
+    function playVideoBanner() {
+        const videoBannerButton = document.querySelector(".bannerTextVideo__button");
+
+        if(!videoBannerButton) return;
+
+        const modal = defaultModal();
+        const dataVideo = videoBannerButton.getAttribute("data-video-link");
+        const videoId = dataVideo.match(/[?&]v=([^&]+)/)[1];
+
+        if(!videoId) {
+            /* Hide videoBannerButton button */
+            videoBannerButton.style.display = "none";
+            return;
+        };
+
+        const videoIframe = `<iframe width="100%" height="auto" src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+
+        videoBannerButton.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            modal.open();
+            document.querySelector("#modal").classList.add('bannerTextVideo__modal')
+            modal.updateContent(videoIframe);
+        })
+    }
+
+    function companyHistorySlider() {
+        $('.companyHistory__list').slick({
+            centerMode: true,
+            centerPadding: '190px',
+            slidesToShow: 3,
+            arrows: false,
+            infinite: true,
+            autoplay: false,
+            autoplaySpeed: 2500,
+            responsive: [
+              {
+                breakpoint: 1400,
+                settings: {
+                  arrows: false,
+                  centerMode: true,
+                  centerPadding: '80px',
+                  slidesToShow: 2
+                }
+              },
+              {
+                breakpoint: 767,
+                settings: {
+                  arrows: true,
+                  centerMode: true,
+                  centerPadding: '75px',
+                  slidesToShow: 1
+                }
+              },
+              {
+                breakpoint: 551,
+                settings: {
+                  arrows: true,
+                  centerMode: true,
+                  centerPadding: '0',
+                  slidesToShow: 1
+                }
+              }
+            ]
+          });
+    }
+
+
+    /* Slick Service On About Us Page */
+    function aboutUsServiceSlider() {
+        $('.serviceSection__list')?.slick({
+            dots: false,
+            arrows: true,
+            infinite: false,
+            mobileFirst: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+
+            responsive: [
+                {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 4,
+                    },
+                },
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                    },
+                },
+                {
+                    breakpoint: 767,
+                    settings: {
+                        slidesToShow: 2,
+                    },
+                },
+            ],
+        });
     }
 }

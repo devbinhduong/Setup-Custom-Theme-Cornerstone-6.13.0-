@@ -42,7 +42,7 @@ blog:
                 </div>
                 <div class="sectionNew__right custom-animation" data-step-animate="2" data-section-load="animation">
                     {{#if products.new}}
-                        {{> components/products/new custom_arrow=".sectionNew__wrapper" products=products.new columns=theme_settings.homepage_new_products_column_count}}
+                        {{> components/products/new products=products.new customSlick=true}}
                     {{/if}}
                 </div>
             </div>

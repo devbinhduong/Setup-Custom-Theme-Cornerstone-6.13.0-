@@ -532,6 +532,10 @@
     background-color: #003A63 !important;
 }
 
+.bg-black {
+    background-color: #000000 !important;
+}
+
 .color-black {
     color: #000000 !important;
 }
@@ -610,4 +614,40 @@
             display: none !important;
         }
     }
+}
+
+
+.custom-page-heading {
+    line-height: 1.2;
+    letter-spacing: 0;
+    font-weight: 700;
+    color: #000000;
+    font-size: clamp(28px, 5.8vw, 58px);
+    margin-top: 0px;
+    margin-bottom: 50px;
+
+
+    @include smax-s {
+        text-align: center;
+    }
+}
+
+.custom-page-text {
+    color: #262626;
+    line-height: 1.625;
+    letter-spacing: 0;
+    font-size: clamp(14px, 1.3vw, 16px); 
+
+    @include smax-s {
+        text-align: center;
+    }
+}
+
+.custom-page-subTitle {
+    color: #262626;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 22px;
+    line-height: 1.5;
+    font-size: clamp(16px, 1.6vw, 22px);
 }

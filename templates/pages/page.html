@@ -1,8 +1,10 @@
 {{#partial "page"}}
 
-{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+{{#unless page.title '===' 'About Us'}}
+    {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+{{/unless}}
 
-<main class="page">
+<section class="page">
     {{#unless theme_settings.hide_page_heading }}
         <h1 class="page-heading">{{ page.title }}</h1>
     {{/unless}}
@@ -27,6 +29,499 @@
         {{/replace}}
     </div>
 
+    {{{region name="custom_page_region_1"}}}
+
+        <!-- Banner Top Section -->
+        <div class="bannerTop">
+            <div class="bannerTop__image-wrapper">
+                <a href="#" class="bannerTop__image">
+                    <img class="bannerTop__image--desktop" src="https://cdn11.bigcommerce.com/s-j1idkp65fd/images/stencil/original/image-manager/contact-us-banner-desktop.png" alt="About Us Banner">
+                    <img class="bannerTop__image--mobile" src="https://cdn11.bigcommerce.com/s-j1idkp65fd/images/stencil/original/image-manager/contact-us-banner-mb.png" alt="About Us Banner">
+                </a>
+            </div>
+            <div class="bannerTop__content-wrapper">
+                <div class="bannerTop__content bannerTop__content--left">
+                    <h3 class="bannerTop__heading uppercase custom-page-heading text-white custom-animation" data-step-animate="3" data-section-load="animation">About Us</h3>
+                    <p class="bannerTop__desc text-white custom-animation" data-step-animate="4" data-section-load="animation">
+                        Empowering Security, Enhancing Peace of Mind.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    <!-- Breadcrumb -->
+    {{#if page.title '===' 'About Us'}}
+        <div class="custom_breadcrumb text-center flex flex-center">
+            {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+        </div>
+    {{/if}}
+
+    {{{region name="custom_page_region_2"}}}
+    {{{region name="custom_page_region_3"}}}
+    {{{region name="custom_page_region_4"}}}
+    {{{region name="custom_page_region_5"}}}
+    {{{region name="custom_page_region_6"}}}
+    {{{region name="custom_page_region_7"}}}
+    {{{region name="custom_page_region_8"}}}
+    {{{region name="custom_page_region_9"}}}
+    {{{region name="custom_page_region_10"}}}
+
+
+    <!-- 2 Columns Section -->
+    <div class="aboutUsText">
+        <div class="container">
+            <h3 class="aboutUsText__heading uppercase text-center custom-page-heading custom-animation" data-step-animate="1" data-section-load="animation">ABOUT IP SECURITY DEPOT</h3>
+            <div class="aboutUsText__content">
+                <div class="content__row">
+                    <div class="content__col content__col--left custom-animation" data-step-animate="2" data-section-load="animation">
+                        <p class=" custom-page-text">
+                            <b>Our Founding:</b> In the dynamic landscape of digital security, IP Security Depot emerged from a singular vision: to simplify the complexity of securing premises with cutting-edge IP security solutions. Founded by a team of seasoned security professionals, our journey began with a commitment to not just offer technology, but to demystify it, ensuring that our customers can navigate the vast array of products with ease and confidence
+                        </p>
+                    </div>
+                    <div class="content__col content__col--right custom-animation" data-step-animate="3" data-section-load="animation">
+                        <p class="content__desc custom-page-text">
+                            <b>Our Mission:</b> At the heart of IP Security Depot lies a mission that goes beyond mere transactions. We are dedicated to transforming the experience of purchasing IP security products into a seamless journey. From expert pre-sales advice to unrivaled post-sales support, we are here to guide you at every step, ensuring that every solution we provide is tailored to meet your specific security needs. Our goal is to empower you with the knowledge and tools to protect what matters most, effortlessly.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex flex-center custom-animation" data-step-animate="4" data-section-load="animation">
+                    <a href="https://www.ipsecuritydepot.com/ip-cameras/" class="button button--primary uppercase content__button">Shop Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Brand Section -->
+    <div class="ourBrands">
+        <div class="container">
+            <div class="aboutUs__sectionTop aboutUS__sectionTop--revese-mobile">
+                <div class="ourBrands__desc custom-animation aboutUS__sectionTop--left" data-step-animate="1" data-section-load="animation">
+                    <p class="custom-page-text">
+                        We specialize in leading security brands like Axis, i-Pro, Digital Watchdog, Hanwha, and Hikvision, supported by our trained sales engineers and certified experts.
+                    </p>
+                </div>
+                <h3 class="ourBrands__heading uppercase text-center custom-page-heading custom-animation aboutUS__sectionTop--right" data-step-animate="1" data-section-load="animation">OUR BRANDS</h3>
+            </div>
+            
+            <div class="ourBrands__list custom-animation" data-step-animate="2" data-section-load="animation">
+                <div class="ourBrands__item">
+                    <a href="/axis/" class="custom-animation hover-image" data-step-animate="1" data-section-load="animation">
+                        <img class="lazyload" src="" alt="brand-section-image-1.png" data-src="https://www.ipsecuritydepot.com/product_images/uploaded_images/brand-section-image-1.png" />
+                    </a>
+                </div>
+                <div class="ourBrands__item">
+                    <a href="/i-pro/" class="custom-animation hover-image" data-step-animate="2" data-section-load="animation">
+                        <img class="lazyload" src="" alt="brand-section-image-2.png" data-src="https://www.ipsecuritydepot.com/product_images/uploaded_images/brand-section-image-2.png" />
+                    </a>
+                </div>
+                <div class="ourBrands__item">
+                    <a href="/digital-watchdog/" class="custom-animation hover-image" data-step-animate="3" data-section-load="animation">
+                        <img class="lazyload" src="" alt="brand-section-image-3.png" data-src="https://www.ipsecuritydepot.com/product_images/uploaded_images/brand-section-image-3.png" />
+                    </a>
+                </div>
+                <div class="ourBrands__item">
+                    <a href="/hanwha/" class="custom-animation hover-image" data-step-animate="4" data-section-load="animation">
+                        <img class="lazyload" src="" alt="brand-section-image-4.png" data-src="https://www.ipsecuritydepot.com/product_images/uploaded_images/brand-section-image-4.png" />
+                    </a>
+                </div>
+                <div class="ourBrands__item">
+                    <a href="/hikvision/" class="custom-animation hover-image" data-step-animate="5" data-section-load="animation">
+                        <img class="lazyload" src="" alt="brand-section-image-5.png" data-src="https://www.ipsecuritydepot.com/product_images/uploaded_images/brand-section-image-5.png" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Total Section -->
+    <div class="bannerWithText" data-animation-count>
+        <div class="container">
+            <div class="aboutUs__sectionTop">
+                <h3 class="bannerWithText__heading aboutUs__sectionTop--col uppercase custom-page-heading custom-animation aboutUS__sectionTop--left" data-step-animate="1" data-section-load="animation">
+                    By the Numbers: Our Journey of Trust and Expertise</h3>
+
+                <div class="bannerWithText__desc aboutUs__sectionTop--col custom-animation aboutUS__sectionTop--right" data-step-animate="2" data-section-load="animation">
+                    <p class="custom-page-subTitle">
+                        Over a Decade of Dedication, Thousands of Solutions, Countless Satisfied Clients.
+                    </p>
+                    <p class="custom-page-text">
+                        With years of unwavering commitment, IP Security Depot has curated an extensive portfolio, serving a vast clientele with unparalleled satisfaction. Our journey is measured not just in time, but in trust and transformative solutions.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bannerNumber">
+                <div class="bannerNumber__img">
+                    <a href="#" class="custom-animation hover-image1" data-step-animate="3" data-section-load="animation">
+                        <img alt="banner-number-section.png" src="https://www.ipsecuritydepot.com/product_images/uploaded_images/banner-number-section.png" />
+                    </a>
+
+                    <div class="bannerNumber__img-text bg-black uppercase">
+                        <span class="custom-page-subTitle text-white">
+                            Empowering security, one satisfied customer and solution at a time.
+                        </span>
+                    </div>
+                </div>
+                <div class="bannerNumber__number">
+                    <ul class="numberList">
+                        <li class="numberItem custom-animation" data-step-animate="4" data-section-load="animation">
+                            <h4 class="custom-page-heading"><span class="count-number-animation">5000</span>+</h4>
+                            <span class="custom-page-text">IP Security Products</span>
+                        </li>
+                        <li class="numberItem custom-animation" data-step-animate="5" data-section-load="animation">
+                            <h4 class="custom-page-heading"><span class="count-number-animation">10</span>+</h4>
+                            <span class="custom-page-text">years in business</span>
+                        </li>
+                        <li class="numberItem custom-animation" data-step-animate="6" data-section-load="animation">
+                            <h4 class="custom-page-heading"><span class="count-number-animation">99</span>%</h4>
+                            <span class="custom-page-text">CSAT Scores</span>
+                        </li>
+                        <li class="numberItem custom-animation" data-step-animate="7" data-section-load="animation">
+                            <h4 class="custom-page-heading"><span class="count-number-animation">1000</span>+</h4>
+                            <span class="custom-page-text">integration support hours annually</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Banner With Video Section -->
+    <div class="bannerTextVideo">
+        <div class="bannerTextVideo__col bannerTextVideo__left">
+            <img class="bannerTextVideo__banner bannerTextVideo__banner--desktop lazyload custom-animation" data-step-animate="1" data-section-load="animation" src="" data-src="https://www.ipsecuritydepot.com/product_images/uploaded_images/section-video-banner.png" alt="Section Video Banner Image">
+
+            <img class="bannerTextVideo__banner bannerTextVideo__banner--mobile lazyload custom-animation" data-step-animate="1" data-section-load="animation" src="" data-src="https://www.ipsecuritydepot.com/product_images/uploaded_images/section-video-banner-mb.png" alt="Section Video Banner Image">
+
+            <!-- Play Video Button -->
+            <a href="#" class="bannerTextVideo__button" data-video-link="https://www.youtube.com/watch?v=MKWQXk4WO9I">
+                <span class="icon icon--play-video-button">
+                    <svg><use xlink:href="#icon-play-video-button"></use></svg>
+                </span>
+            </a>
+        </div>
+        <div class="bannerTextVideo__col bannerTextVideo__right custom-animation" data-step-animate="2" data-section-load="animation">
+            <div class="bannerTextVideo__content">
+                <h3 class="custom-page-heading uppercase bannerTextVideo__heading">
+                    Secure Your World
+                </h3>
+                <h5 class="custom-page-subTitle bannerTextVideo__subTitle">
+                    Tailored Solutions for Your Safety
+                </h5>
+                <p class="custom-page-text bannerTextVideo__text">
+                    Our approach centers around you, understanding your unique security needs to recommend the perfect IP camera solutions. Ensuring your environment is not just secure, but also a sanctuary of safety, is our top priority.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- History -->
+    <div class="companyHistory">
+        <h3 class="custom-page-heading uppercase text-center companyHistory__heading custom-animation" data-step-animate="1" data-section-load="animation">Our Company History</h3>
+        <p class="custom-page-text text-center companyHistory__desc custom-animation" data-step-animate="2" data-section-load="animation">
+            Tracing our roots back, we've grown through innovation, dedication, and a deep commitment to security and customer satisfaction.
+        </p>
+
+        <div class="companyHistory__list custom-animation" data-step-animate="3" data-section-load="animation">
+            <a role="link" aria-hidden="true" class="companyHistory__item companyHistory__item--reverse">
+                <div class="item-top">
+                    <h4 class="custom-page-subTitle" style="-webkit-box-orient: vertical;">
+                        Foundation and Growth
+                    </h4>
+                    <p class="custom-page-text" style="-webkit-box-orient: vertical;">
+                        Born from our parent company founded in 1993, we became its specialized security company by 2014.
+                    </p>
+                </div>
+                <div class="item-bottom">
+                    <div class="hover-image item-image">
+                        <img class="lazyload" src="" data-src="https://www.ipsecuritydepot.com/product_images/uploaded_images/company-history-image-4.png" alt="Company History Image 4">
+                    </div>
+
+                    <div class="item-year">
+                        <span>1993 – 2014</span>
+                    </div>
+
+                    <div class="item-point">
+                        <span></span>
+                    </div>
+                </div>
+            </a>
+
+            <a role="link" aria-hidden="true" class="companyHistory__item">
+                <div class="item-top">
+                    <div class="hover-image item-image">
+                        <img class="lazyload" src="" data-src="https://www.ipsecuritydepot.com/product_images/uploaded_images/company-history-image-1.png" alt="Company History Image 1">
+                    </div>
+
+                    <div class="item-year">
+                        <span>2014 – 2019</span>
+                    </div>
+
+                    <div class="item-point">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="item-bottom">
+                    <h4 class="custom-page-subTitle" style="-webkit-box-orient: vertical;">
+                        Expanding Expertise Online
+                    </h4>
+                    <p class="custom-page-text" style="-webkit-box-orient: vertical;">
+                        As we honed our expertise, we embraced the digital era, propelling our security solutions into the online marketplace.
+                    </p>
+                </div>
+            </a>
+
+            <a role="link" aria-hidden="true" class="companyHistory__item companyHistory__item--reverse">
+                <div class="item-top">
+                    <h4 class="custom-page-subTitle" style="-webkit-box-orient: vertical;">
+                        Rapid Growth and Specialization
+                    </h4>
+                    <p class="custom-page-text" style="-webkit-box-orient: vertical;">
+                        From 2020 to today, we've seen consistent growth, focusing on specialized support and tailored product services for our customers.
+                    </p>
+                </div>
+                <div class="item-bottom">
+                    <div class="hover-image item-image">
+                        <img class="lazyload" src="" data-src="https://www.ipsecuritydepot.com/product_images/uploaded_images/company-history-image-5.png" alt="Company History Image 5">
+                    </div>
+
+
+                    <div class="item-year">
+                        <span>2020 to Today</span>
+                    </div>
+
+                    <div class="item-point">
+                        <span></span>
+                    </div>
+                </div>
+            </a>
+
+            <a role="link" aria-hidden="true" class="companyHistory__item">
+                <div class="item-top">
+                    <div class="hover-image item-image">
+                        <img class="lazyload" src="" data-src="https://www.ipsecuritydepot.com/product_images/uploaded_images/company-history-image-1.png" alt="Company History Image 1">
+                    </div>
+
+                    <div class="item-year">
+                        <span>2014 – 2019</span>
+                    </div>
+
+                    <div class="item-point">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="item-bottom">
+                    <h4 class="custom-page-subTitle" style="-webkit-box-orient: vertical;">
+                        Expanding Expertise Online
+                    </h4>
+                    <p class="custom-page-text" style="-webkit-box-orient: vertical;">
+                        As we honed our expertise, we embraced the digital era, propelling our security solutions into the online marketplace.
+                    </p>
+                </div>
+            </a>
+
+            <a role="link" aria-hidden="true" class="companyHistory__item companyHistory__item--reverse">
+                <div class="item-top">
+                    <h4 class="custom-page-subTitle" style="-webkit-box-orient: vertical;">
+                        Rapid Growth and Specialization
+                    </h4>
+                    <p class="custom-page-text" style="-webkit-box-orient: vertical;">
+                        From 2020 to today, we've seen consistent growth, focusing on specialized support and tailored product services for our customers.
+                    </p>
+                </div>
+                <div class="item-bottom">
+                    <div class="hover-image item-image">
+                        <img class="lazyload" src="" data-src="https://www.ipsecuritydepot.com/product_images/uploaded_images/company-history-image-5.png" alt="Company History Image 5">
+                    </div>
+
+
+                    <div class="item-year">
+                        <span>2020 to Today</span>
+                    </div>
+
+                    <div class="item-point">
+                        <span></span>
+                    </div>
+                </div>
+            </a>
+
+            <a role="link" aria-hidden="true" class="companyHistory__item">
+                <div class="item-top">
+                    <div class="hover-image item-image">
+                        <img class="lazyload" src="" data-src="https://www.ipsecuritydepot.com/product_images/uploaded_images/company-history-image-1.png" alt="Company History Image 1">
+                    </div>
+
+                    <div class="item-year">
+                        <span>2014 – 2019</span>
+                    </div>
+
+                    <div class="item-point">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="item-bottom">
+                    <h4 class="custom-page-subTitle" style="-webkit-box-orient: vertical;">
+                        Expanding Expertise Online
+                    </h4>
+                    <p class="custom-page-text" style="-webkit-box-orient: vertical;">
+                        As we honed our expertise, we embraced the digital era, propelling our security solutions into the online marketplace.
+                    </p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Service Section -->
+    <div class="serviceSection">
+        <div class="container">
+            <div class="aboutUs__sectionTop">
+                <h3 class="bannerWithText__heading aboutUs__sectionTop--col uppercase custom-page-heading custom-animation aboutUS__sectionTop--left" data-step-animate="1" data-section-load="animation">
+                    Why Choose IP
+                    Security Depot
+                </h3>
+
+                <div class="bannerWithText__desc aboutUs__sectionTop--col custom-animation aboutUS__sectionTop--right" data-step-animate="2" data-section-load="animation">
+                    <p class="custom-page-text">
+                        At IP Security Depot, we stand out for our unparalleled commitment to customer satisfaction, offering you a seamless and trustworthy shopping experience with every purchase.
+                    </p>
+                </div>
+            </div>
+
+            <div class="serviceSection__list">
+                <div class="serviceSection__col">
+                    <div class="serviceSection__item custom-animation" data-step-animate="4" data-section-load="animation">
+                        <div class="item-top">
+                            <div class="item-top__icon">
+                                <span class="icon icon--service-1">
+                                    <svg><use xlink:href="#icon-service-1"></use></svg>
+                                </span>
+                            </div>
+                            <div class="item-top__number">
+                                <span>01</span>
+                            </div>
+                        </div>
+                        <div class="item-bottom">
+                            <h4 class="serviceSection__heading">
+                                Expert  Support
+                            </h4>
+                            <p class="serviceSection__text custom-page-text">
+                                our certified and trained experts
+                                can help you find the optimal
+                                security solution or remotely
+                                support your technical team.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="serviceSection__col">
+                    <div class="serviceSection__item custom-animation" data-step-animate="5" data-section-load="animation">
+                        <div class="item-top">
+                            <div class="item-top__icon">
+                                <span class="icon icon--service-2">
+                                    <svg><use xlink:href="#icon-service-2"></use></svg>
+                                </span>
+                            </div>
+                            <div class="item-top__number">
+                                <span>02</span>
+                            </div>
+                        </div>
+                        <div class="item-bottom">
+                            <h4 class="serviceSection__heading">
+                                Industry-leading
+                                pricing
+                            </h4>
+                            <p class="serviceSection__text custom-page-text">
+                                owith over 5,000 security and
+                                surveillance products from the
+                                leading brands and the best prices
+                                with quantity discounts available. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="serviceSection__col serviceSection__col--target">
+                    <div class="serviceSection__item custom-animation" data-step-animate="6" data-section-load="animation">
+                        <div class="item-top">
+                            <div class="item-top__icon">
+                                <span class="icon icon--service-3">
+                                    <svg><use xlink:href="#icon-service-3"></use></svg>
+                                </span>
+                            </div>
+                            <div class="item-top__number">
+                                <span>03</span>
+                            </div>
+                        </div>
+                        <div class="item-bottom">
+                            <h4 class="serviceSection__heading">
+                                Fast Shipping
+                            </h4>
+                            <p class="serviceSection__text custom-page-text">
+                                Same-day shipping with most
+                                orders from our national network
+                                of warehouses. 
+                            </p>
+                        </div>
+
+                        <!-- Target icon -->
+                        <span class="icon icon-service-target">
+                            <svg><use xlink:href="#icon-service-target"></use></svg>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="serviceSection__col">
+                    <div class="serviceSection__item custom-animation" data-step-animate="7" data-section-load="animation">
+                        <div class="item-top">
+                            <div class="item-top__icon">
+                                <span class="icon icon--service-4">
+                                    <svg><use xlink:href="#icon-service-4"></use></svg>
+                                </span>
+                            </div>
+                            <div class="item-top__number">
+                                <span>04</span>
+                            </div>
+                        </div>
+                        <div class="item-bottom">
+                            <h4 class="serviceSection__heading">
+                                Secure & Flexible
+                                Payment Options
+                            </h4>
+                            <p class="serviceSection__text custom-page-text">
+                                we accept all major credit cards,
+                                wire transfer, crypto/bitcoin,
+                                ApplePay, GooglePay, and PayPal. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Text With Button -->
+    <div class="buttonText">
+        <div class="cotainer">
+            <div class="buttonText__wrapper">
+                <h3 class="buttonText__heading custom-page-heading text-center custom-animation" data-step-animate="1" data-section-load="animation">
+                    YOUR PROPERTY DESERVES
+                    FIRST-CLASS SECURITY
+                </h3>
+
+                <p class="buttonText__desc custom-page-text text-center custom-animation" data-step-animate="2" data-section-load="animation">
+                    We stand for quality. Give your property the protection is deserves. Shop for the highest quality
+                    surveillance solutions from the world’s most trusted manufacturers.
+                </p>
+
+                <div class="flex flex-center custom-animation" data-step-animate="3" data-section-load="animation">
+                    <a href="https://www.ipsecuritydepot.com/contact-us/" class="button button--primary buttonText__button uppercase">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     {{#if page.feed}}
         <ul>
             {{#each page.feed}}
@@ -37,8 +532,9 @@
             {{/each}}
         </ul>
     {{/if}}
-</main>
+</section>
 
 {{/partial}}
 
 {{> layout/base}}
+

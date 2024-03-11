@@ -64,27 +64,6 @@ export class MobileMenuToggle {
         this.$toggle.on('click', this.onToggleClick);
         this.$subMenus.on('click', this.onSubMenuClick);
 
-        // close menu mobile
-        $('#menu-mobile .themevale_close').on('click', function () {
-            $('.mobileMenu-toggle').trigger('click');
-            $('body').removeClass('has-activeNavPages');
-            $('.mobileMenu-toggle')
-                .removeClass('is-open')
-                .attr('aria-expanded', false);
-            // $('body').removeClass('has-activeNavPages');
-        });
-
-        $('.themevale_background').on('click', function () {
-            if ($('body').hasClass('has-activeNavPages')) {
-                $('.mobileMenu-toggle').trigger('click');
-                $('body').removeClass('has-activeNavPages');
-                $('.mobileMenu-toggle')
-                    .removeClass('is-open')
-                    .attr('aria-expanded', false);
-                // $('body').removeClass('has-activeNavPages');
-            }
-        });
-
         if (
             this.mediumMediaQueryList &&
             this.mediumMediaQueryList.addListener
