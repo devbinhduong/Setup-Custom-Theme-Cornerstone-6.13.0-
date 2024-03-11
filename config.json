@@ -898,7 +898,8 @@
         "custom_brand_sidebar": true,
         "show_faq_tab": true,
         "show_faq_tab_type": "all",
-        "show_faq_tab_link": "/faq-tab/"
+        "show_faq_tab_link": "/faq-tab/",
+        "customAddToCartAction": "sidebar"
       }
     }
   ]

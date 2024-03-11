@@ -420,7 +420,7 @@
         width: auto;
 
         @include smax-m {
-            margin-top: 12px;
+            margin-top: 24px;
         }
 
         .previewCartAction-checkout,
@@ -473,7 +473,7 @@
 
     @media (min-width: 1025px) {
         .previewCartList {
-            max-height: calc(100vh - 400px);
+            max-height: calc(100vh - 300px);
         }
 
         .previewCartItem-remove {

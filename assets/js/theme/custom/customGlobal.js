@@ -56,22 +56,25 @@ export default function(context) {
 
             toogleFooterMobile();
 
-            /* Home */
-            customSpecialProduct(context);
-
             /* About Us Page */
             aboutUsBrandSlider();
             loadAnimateCount();
             playVideoBanner();
             companyHistorySlider();
             aboutUsServiceSlider();
+
+            /* Product Home Banner Slick */
+            homeProductBannerSlider();
+
+            window.matchMedia('(max-width: 550px)').addEventListener('change', () => {
+                homeProductBannerSlider();
+            });
         }
     }
 
     function eventLoad(){
         /* Load when DOM ready */
         window.addEventListener('load', (e) =>{
-
             /* Global Slick Slider */
             const sectionSlicks = document.querySelectorAll('.section-slick');
             if(sectionSlicks.length > 0) {
@@ -84,10 +87,10 @@ export default function(context) {
                     }
                 }
             }
-
-            /* Load Section when scroll */
-            sectionLoad();
         });
+
+        /* Load Section when scroll */
+        sectionLoad();
 
         /* Load when scroll */
         window.addEventListener('scroll', debounceFn((e) => {
@@ -207,7 +210,9 @@ export default function(context) {
                         case 'animation':
                             customAnimate(section);
                             break;
-                        
+                        case 'home-product-banner':
+                            customSpecialProduct(context);
+                            break;
                         default:
                             break;
                     }
@@ -474,7 +479,6 @@ export default function(context) {
             }
     
             utils.api.product.getById(productId, options, (err, response) => {
-    
                 var scope = '.custom-spacial-product';
                 let productSpecial = productID.querySelector('.custom-special-product');
                 
@@ -673,5 +677,21 @@ export default function(context) {
                 },
             ],
         });
+    }
+
+    function homeProductBannerSlider() {
+        if (window.innerWidth > 550) {
+            $('.productBanner__list.slick-initialized').slick('unslick');
+
+        } else {
+            $('.productBanner__list').slick({
+                dots: false,
+                arrows: true,
+                infinite: false,
+                mobileFirst: true,
+                slidesToShow: 1.3,
+                slidesToScroll: 1
+            });
+        }
     }
 }
