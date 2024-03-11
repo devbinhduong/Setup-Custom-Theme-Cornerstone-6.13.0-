@@ -164,6 +164,9 @@
 }
 
 .button--icon {
+    &.button {
+        min-width: unset;
+    }
     svg {
         fill: stencilColor('button--icon-svg-color');
     }

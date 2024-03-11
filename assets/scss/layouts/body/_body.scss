@@ -8,7 +8,7 @@
 // =============================================================================
 body {
     &:not(.page-type-default) {
-        .header {
+        .header.is-sticky {
             box-shadow: 0 2px 8px 4px rgba(0, 0, 0, 0.05);
         }
     }

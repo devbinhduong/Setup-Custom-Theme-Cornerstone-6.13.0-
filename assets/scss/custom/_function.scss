@@ -453,7 +453,7 @@
 
         &.faq_collapsed {
             color: #ffffff;
-            background-color: #2E3034;
+            background-color: #F47B20;
 
             .icon-arrow {
                 &:before {
@@ -467,7 +467,7 @@
         @include smin-m {
             &:hover {
                 color: #ffffff;
-                background-color: #2E3034;
+                background-color: #F47B20;
 
                 .icon-arrow {
                     &:before {
@@ -1033,12 +1033,12 @@
 
     .hasOptions--selected {
         .custom-toggle-options {
-            color: $buttonStyle-primary-colorHover;
-            border-color: $color-textBase;
+            color: $buttonStyle-secondary-colorHover;
+            border-color: $buttonStyle-secondary-colorHover;
             background-color: $color-textBase;
 
             span {
-                color: $buttonStyle-primary-colorHover;
+                color: $buttonStyle-secondary-colorHover;
             }
         }
     }
@@ -1809,6 +1809,12 @@
 
             @media(min-width: 1025px) {
                 padding: 35px 0px 15px 0px;
+            }
+
+            .modal-close {
+                span:not(.aria-description--hidden) {
+                    font-size: 0;
+                }
             }
 
             &.is-open {

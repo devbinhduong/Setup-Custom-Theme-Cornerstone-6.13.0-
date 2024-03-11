@@ -503,30 +503,30 @@
 
 
 body.page-type-product {
-    * {
-        font-family: "Poppins", sans-serif;
-    }
-    .body {
-        @include smin-m {
-            padding-top: 42px;
-        }
-    }
-
     .breadcrumbs {
         margin-bottom: 18px;
     }
 
-
     .productView:not(.custom-quickShop) {
+        margin-left: 0;
+        margin-right: 0;
+        padding-top: 0;
+
         .custom-productView-left {
             @include smin-m {
-                max-width: 580px;
-                width: 43%;
+                max-width: 565px;
+                width: 45%;
             }
             .productView-images {
+                padding-left: 0;
+                padding-right: 0;
                 .productView-image {
                     border-color: #D8D8D8;
                     border-radius: 0;
+                }
+
+                .productView-img-container {
+                    border: 1px solid #dddddd;
                 }
 
                 .productView-thumbnail {
@@ -556,11 +556,11 @@ body.page-type-product {
 
                     .productView-img-container {
                         img {
-                            max-width: 490px;
+                            max-width: 500px;
                         }
 
                         &::after {
-                            padding-bottom: 125.962%;
+                            padding-bottom: 100%;
                         }
                     }
                 }
@@ -587,6 +587,9 @@ body.page-type-product {
 
                     .productView-brand {
                         margin-top: 16px;
+                        display: flex;
+                        flex-direction: column-reverse;
+                        align-items: flex-start;
 
                         a + a {
                             margin-top: 10px;
@@ -788,24 +791,17 @@ body.page-type-product {
 .productView__service {
     .productService {
         &__list {
-            --f-col: 3;
-            --f-gap: 6px;
             display: flex;
-            flex-wrap: wrap;
-            padding: 6px 3px;
-            background-color: #F3F3F3;
-            border-radius: 6px;
+            background-color: #f7f7f7;
+            padding: 20px 35px 23px 22px;
+            justify-content: space-between;
 
             @include smax-xs {
-                --f-col: 1;
+                flex-direction: column;
+                padding: 20px;
             }
         }
         &__item {
-            padding-left: calc(var(--f-gap) / 2);
-            padding-right: calc(var(--f-gap) / 2);
-            flex: 0 0 calc(100% / var(--f-col));
-            max-width: calc(100% / var(--f-col));
-
             @include smax-xs {
                 + .productService__item {
                     margin-top: 6px;
@@ -814,9 +810,7 @@ body.page-type-product {
         }
 
         &__content {
-            background-color: #ffffff;
             border-radius: 2px;
-            padding: 12px 16px;
             display:flex;
             align-items:center;
             justify-content:flex-start;
@@ -824,14 +818,24 @@ body.page-type-product {
             height: 100%;
 
             .item-icon {
-                width: 40px;
-                height: 40px;
+                width: 87px;
+                height: 87px;
                 border-radius: 50%;
-                border: 1px solid #f3f3f3;
+                border: 1px solid #F47B20;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 margin-top: 10px;
+
+                @include smax-m {
+                    width: 60px;
+                    height: 60px;
+                }
+
+                .icon {
+                    width: 40px;
+                    height: 40px;
+                }
 
                 .icon {
                     width: 20px;
@@ -847,7 +851,6 @@ body.page-type-product {
                 text-align: center;
                 margin-top: 8px;
                 text-transform: capitalize;
-                min-height: 48px;
             }
 
             .item-desc {

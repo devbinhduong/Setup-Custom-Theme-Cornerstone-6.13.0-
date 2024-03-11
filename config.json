@@ -1,5 +1,5 @@
 {
-  "name": "Cornerstone Custom PDP Done Sticky ATC",
+  "name": "Cornerstone Custom Product Page Part 1",
   "version": "6.13.0",
   "template_engine": "handlebars_v4",
   "meta": {
@@ -462,6 +462,7 @@
         "default_image_gift_certificate": "img/GiftCertificate.png",
         "body-font": "Google_Poppins_400",
         "headings-font": "Google_Poppins_600",
+        "headings-font2": "Google_Poppins_800",
         "fontSize-root": 16,
         "fontSize-h1": 28,
         "fontSize-h2": 25,
