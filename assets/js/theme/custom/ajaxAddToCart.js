@@ -13,9 +13,6 @@ export default function (context) {
         const waitMessage = $addToCartBtn.data('waitMessage');
         const originalBtnVal = $addToCartBtn.text();
 
-
-        console.log("waitMessage", waitMessage);
-        console.log("originalBtnVal", originalBtnVal);
         event.preventDefault();
 
         $addToCartBtn.text(waitMessage);

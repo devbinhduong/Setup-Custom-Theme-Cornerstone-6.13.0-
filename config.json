@@ -892,7 +892,13 @@
         "custom_featured_product_ids": "2416,2417,2418",
         "home-recently-posts": true,
         "home-recently-posts-title": "Articles & videos to help you choose",
-        "recent_blog_size": "390x270"
+        "recent_blog_size": "390x270",
+        "show_specification_tab": true,
+        "show_description_tab": true,
+        "custom_brand_sidebar": true,
+        "show_faq_tab": true,
+        "show_faq_tab_type": "all",
+        "show_faq_tab_link": "/faq-tab/"
       }
     }
   ]

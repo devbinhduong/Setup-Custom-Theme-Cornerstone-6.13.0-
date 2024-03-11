@@ -791,6 +791,7 @@
         "choose_an_option": "Please choose an option",
         "select_one": "Please select one",
         "description": "Description",
+        "specifications": "Specifications",
         "price_with_tax": "(Inc. {tax_label})",
         "price_without_tax": "(Ex. {tax_label})",
         "including_tax": "Including Tax",

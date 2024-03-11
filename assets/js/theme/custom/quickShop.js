@@ -13,7 +13,7 @@ export default function (context) {
         const productId = $(event.currentTarget).data('productId');
 
         modal.$modal.removeClass().addClass('modal modal--quickShop');
-        modal.open({ size: 'normal' });
+        modal.open({ size: 'small' });
 
         utils.api.product.getById(productId, { template: 'custom/products/quick-shop' }, (err, response) => {
             modal.updateContent(response);

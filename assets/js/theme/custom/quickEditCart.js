@@ -15,8 +15,6 @@ export default function (context) {
 	if(context.themeSettings.quickEditCart == true){	    
 		$(document).on('click', '[data-cart-edit-id]', event => {
 			event.preventDefault();
-
-            console.log("click edit");
 			
 			const $target = $(event.currentTarget),
 				productId = $target.data('cart-edit-id'),

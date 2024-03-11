@@ -445,12 +445,8 @@ export default class ProductDetails extends ProductDetailsBase {
 
             // Open preview modal and update content
             if (this.previewModal) {
-
-                console.log("context", this.context);
-
                 /* Custom cart Preview Mini Start */
                 if (this.context.themeSettings.custom_add_to_cart_popup === 'mini') {
-                    console.log("mini modal");
                     this.previewModal.$modal.removeClass().addClass('modal modal--preview modal--previewMini');
                 }
                 /* Custom cart Preview Mini End */

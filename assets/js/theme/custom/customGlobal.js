@@ -557,8 +557,6 @@ export default function(context) {
                 let startCount = 0;
                 let getThousandsNumber = 0;
 
-                // console.log('getThousandsNumber', getThousandsNumber);
-
                 if (endCount > 4000) {
                     startCount = 4000;
                 }

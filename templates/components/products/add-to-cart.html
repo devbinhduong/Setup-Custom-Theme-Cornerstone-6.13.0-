@@ -2,32 +2,31 @@
     {{#if product.show_quantity_input}}
         {{inject 'productQuantityErrorMessage'  (lang 'products.quantity_error_message')}}
         <div class="form-field form-field--increments">
-            <label class="form-label form-label--alternate"
-                   for="qty[]">{{lang 'products.quantity'}}</label>
                 <div class="form-increment" data-quantity-change>
-                    <button class="button button--icon" data-action="dec">
+                    <button class="button button--secondary button--icon" data-action="dec">
                         <span class="is-srOnly">{{lang 'products.quantity_decrease' name=product.title}}</span>
-                        <i class="icon" aria-hidden="true">
+                        <i class="icon">
                             <svg>
-                                <use href="#icon-keyboard-arrow-down"/>
+                                <use href="#icon-qty-minus"/>
                             </svg>
                         </i>
                     </button>
                     <input class="form-input form-input--incrementTotal"
-                           id="qty[]"
-                           name="qty[]"
-                           type="tel"
-                           value="{{#if product.min_purchase_quantity}}{{product.min_purchase_quantity}}{{else}}1{{/if}}"
-                           data-quantity-min="{{product.min_purchase_quantity}}"
-                           data-quantity-max="{{product.max_purchase_quantity}}"
-                           min="1"
-                           pattern="[0-9]*"
-                           aria-live="polite">
-                    <button class="button button--icon" data-action="inc">
+                        id="qty[]"
+                        name="qty[]"
+                        type="tel"
+                        value="{{#if product.min_purchase_quantity}}{{product.min_purchase_quantity}}{{else}}1{{/if}}"
+                        data-quantity-min="{{product.min_purchase_quantity}}"
+                        data-quantity-max="{{product.max_purchase_quantity}}"
+                        aria-label="Quantity"
+                        min="1"
+                        pattern="[0-9]*"
+                        aria-live="polite">
+                    <button class="button button--secondary button--icon" data-action="inc">
                         <span class="is-srOnly">{{lang 'products.quantity_increase' name=product.title}}</span>
-                        <i class="icon" aria-hidden="true">
+                        <i class="icon">
                             <svg>
-                                <use href="#icon-keyboard-arrow-up"/>
+                                <use href="#icon-qty-plus"/>
                             </svg>
                         </i>
                     </button>
@@ -42,22 +41,22 @@
         <p class="alertBox-column alertBox-message"></p>
     </div>
     {{#or customer (unless settings.hide_price_from_guests)}}
-        <div class="add-to-cart-buttons {{#if product.pre_order}}pre-order-buttons{{/if}}">
+        <div class="add-to-cart-buttons">
             <div class="form-action">
-                <input
-                        id="form-action-addToCart"
-                        data-wait-message="{{lang 'products.adding_to_cart'}}"
-                        class="button button--primary"
-                        type="submit"
-                        value="{{#if product.pre_order}}{{lang 'products.pre_order'}}{{else}}{{lang 'products.add_to_cart'}}{{/if}}"
-                >
+                <button id="form-action-addToCart" data-wait-message="{{lang 'products.adding_to_cart'}}" class="button button--tertiary">
+                    <span class="icon icon--addtocart-button">
+                        <svg><use xlink:href="#icon-shopping-cart-2"></use></svg>
+                    </span>
+                Add to Cart
+                </button>
                 <span class="product-status-message aria-description--hidden">{{lang 'products.adding_to_cart'}} {{lang 'category.add_cart_announcement'}}</span>
             </div>
-            {{#if this.with_wallet_buttons}}
+
+            {{#and (if this.with_wallet_buttons) (if theme_settings.show_wallet_button)}}
                 <div class="add-to-cart-wallet-buttons" data-add-to-cart-wallet-buttons>
                     {{> components/common/wallet-buttons}}
                 </div>
-            {{/if}}
+            {{/and}}
         </div>
     {{/or}}
 </div>

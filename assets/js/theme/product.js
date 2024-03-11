@@ -1,6 +1,8 @@
 /*
  Import all product specific js
  */
+
+ import utils from '@bigcommerce/stencil-utils';
 import PageManager from './page-manager';
 import Review from './product/reviews';
 import collapsibleFactory from './common/collapsible';
@@ -37,6 +39,15 @@ export default class Product extends PageManager {
         videoGallery();
 
         this.bulkPricingHandler();
+
+        /* Custom Start */
+        this.customProductTabs();
+        this.showBrandImage();
+        this.customRightTabContent();
+        this.productFAQTab();
+        this.toggleFAQTab();
+        this.productTabsMobile();
+        /* Custom End */
 
         const $reviewForm = classifyForm('.writeReview-form');
 
@@ -81,5 +92,178 @@ export default class Product extends PageManager {
         if (this.url.indexOf('#bulk_pricing') !== -1) {
             this.$bulkPricingLink.trigger('click');
         }
+    }
+
+    /* Custom Tabs */
+    customProductTabs() {
+        $('.productView-description .custom-product-tab').appendTo(
+            '.productView-description #tab-custom .tabContent'
+        );
+        $('#tab-custom .tabContent .icon-loading').hide();
+        if (
+            $('.productView-description #tab-custom .tabContent')
+                .text()
+                .trim() == ''
+        ) {
+            $('.productView-description .tab-custom').hide();
+        }
+    }
+
+    /* Get Brand Image On Product Page */
+    showBrandImage() {
+        const productBrand = document.querySelector('.productView-brand');
+
+        if (!productBrand) return;
+
+        let brandUrl = productBrand.querySelector('a').getAttribute('href');
+
+        fetch(brandUrl)
+            .then((response) => response.text())
+            .then((data) => {
+                const tempElement = document.createElement('div');
+                tempElement.innerHTML = data;
+
+                const brandImage = tempElement.querySelector(
+                    '.brand-image-container img'
+                );
+
+                if (brandImage) {
+                    const brandImageSrc = brandImage.getAttribute('data-src');
+
+                    if (brandImageSrc !== undefined) {
+                        const imageElement = `
+                        <a href="${brandUrl}">
+                        <img src="${brandImageSrc}" alt="${brandImage.getAttribute(
+                            'alt'
+                        )}">
+                        </a>
+                        `;
+                        productBrand.insertAdjacentHTML(
+                            'afterbegin',
+                            imageElement
+                        );
+                    }
+                }
+            });
+    }
+
+    
+    customRightTabContent() {
+        const customExpertTab = document.querySelector('.custom-expert-tab'),
+            customVideoTab = document.querySelector('.custom-video-tab');
+
+        if(!customExpertTab) {
+            document.querySelector('.rightTab.rightTab--grey').style.display = 'none';
+        }
+
+        if (!customVideoTab) {
+            document.querySelector('.rightTab.rightTab--video').style.display = 'none';
+        }
+
+        if(!customExpertTab && !customVideoTab) {
+            document.querySelector('.productView-desc__wrapper').classList.remove('has-right-col');
+            return;
+        }
+
+        const expertTabContent = document.querySelector('.rightTab-content--expert'),
+            videoTabContent = document.querySelector('.rightTab-content--video');
+        
+        /* Append custom expert tab to expertTabCotent */
+        if(expertTabContent) {
+            expertTabContent.appendChild(customExpertTab);
+        }
+
+        /* Append custom video tab to videoTabContent */
+        if(videoTabContent) {
+            videoTabContent.appendChild(customVideoTab);
+        }
+    }
+
+    /* FAQs Tab */
+    productFAQTab(){
+        if(this.context.themeSettings.show_faq_tab == true){
+            if(this.context.themeSettings.show_faq_tab_type == "all"){
+                const url = this.context.themeSettings.show_faq_tab_link;
+
+                const option = {
+                    template: 'custom/page/custom-page-template'
+                };
+
+                utils.api.getPage(url, option, (err, response) => {
+                    $(response).appendTo('#tab-faq-mobile');
+
+                    if ($('.productView-tab #tab-faq-mobile').text().trim() == '') {
+                        $('.productView-tab #tab-faq').hide();
+                    }
+                });
+
+                $('#tab-description').find('[data-faq-tab]').remove();
+
+            } else if(this.context.themeSettings.show_faq_tab_type == "custom"){
+                $('#tab-description').find('[data-faq-tab]').appendTo('#tab-faq-mobile');
+            }
+        }
+    }
+
+    /* FAQs tab toggle */
+    toggleFAQTab() {
+        $(document).on('click','.custom-faqs-content .card .title', event => {
+            event.preventDefault();
+            
+            var target = $(event.currentTarget);
+
+            $('.custom-faqs-content .card .title').not(target).removeClass('faq_collapsed');
+
+            if(target.hasClass('faq_collapsed')){
+                target.removeClass('faq_collapsed');
+            } else{
+                target.addClass('faq_collapsed');
+            }
+
+            $('.custom-faqs-content .card').each((index, element) => {
+                if($('.title', element).hasClass('faq_collapsed')){
+                    $(element).find('.faq_collapse').removeClass('faq_hidden');
+                } else{
+                    $(element).find('.faq_collapse').addClass('faq_hidden');
+                }
+            });
+        });
+    }
+
+    // Product Tabs Mobile
+    // -----------------------------------------------------------------------------
+    productTabsMobile() {
+        const $btnTabMobile = $('.tab-titleMobile');
+
+        $btnTabMobile.on('click', (e) => {
+            e.preventDefault();
+            const $target = $(e.currentTarget);
+            const idTab = $target.attr('href');
+            const thisTop = $('.productView-description').offset().top - 20;
+
+            if ($target.hasClass('is-active')) {
+                $target.removeClass('is-active');
+                $(idTab).removeClass('is-active').find('.tabContent').slideUp();
+            } else {
+                const $tabActiveMobile = $(
+                    '.productView-description .tabs-contents .tab-content.is-active'
+                );
+
+                $btnTabMobile.removeClass('is-active');
+                $target.addClass('is-active');
+                $tabActiveMobile
+                    .removeClass('is-active')
+                    .find('.tabContent')
+                    .slideUp();
+                $(idTab).addClass('is-active').find('.tabContent').slideDown();
+
+                $('body,html').animate(
+                    {
+                        scrollTop: thisTop,
+                    },
+                    1000
+                );
+            }
+        });
     }
 }
