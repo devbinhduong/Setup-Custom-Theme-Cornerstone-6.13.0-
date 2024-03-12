@@ -49,11 +49,11 @@ export default function(context) {
             authSidebarMobile();
             ajaxAddToCart(context);
             quickShop(context);
+            sidebarMobile();
 
             if (!document.body.classList.contains('page-type-login')) {
                 loginPopup();
             }
-
             toogleFooterMobile();
 
             /* About Us Page */
@@ -297,7 +297,6 @@ export default function(context) {
 
     }
 
-
     function hoverMenu () {
         const menuItemList = document.querySelectorAll('.navPages-list:not(.navPages-list--user) > .navPages-item.has-dropdown');
 
@@ -329,9 +328,11 @@ export default function(context) {
                     const dropdownOffset = dropdown2.getBoundingClientRect();
 
                     const isDropdownOverflow =
-                        dropdownOffset.right > window.innerWidth;
+                        dropdownOffset.right + 30 > window.innerWidth;
                     if (isDropdownOverflow) {
-                        dropdown2.style.left = '-100%';
+                        dropdown2.classList.add('has-drop-overflow-lv2');
+                    } else {
+                        dropdown2.classList.remove('has-drop-overflow-lv2');
                     }
                 }
             }
@@ -344,10 +345,12 @@ export default function(context) {
                 if (dropdown) {
                     const dropdownOffset = dropdown.getBoundingClientRect();
                     const isDropdownOverflow =
-                        dropdownOffset.right > window.innerWidth;
-
+                        dropdownOffset.right + 30 > window.innerWidth;
+                    
                     if (isDropdownOverflow) {
-                        dropdown.style.left = '-100%';
+                        dropdown.classList.add('has-drop-overflow-lv3');
+                    } else {
+                        dropdown.classList.remove('has-drop-overflow-lv3');
                     }
                 }
             }
@@ -693,5 +696,26 @@ export default function(context) {
                 slidesToScroll: 1
             });
         }
+    }
+
+    function sidebarMobile() {
+        $('.page-sidebar-mobile').on('click', (event) => {
+            if ($(event.currentTarget).hasClass('is-open')) {
+                $(event.currentTarget).removeClass('is-open');
+                $('.page-sidebar').removeClass('is-open');
+                $('body').removeClass('openSidebar');
+            } else {
+                $(event.currentTarget).addClass('is-open');
+                $('.page-sidebar').addClass('is-open');
+                $('body').addClass('openSidebar');
+            }
+        });
+
+        $('.page-sidebar .page-sidebar-close').on('click', (event) => {
+            event.preventDefault();
+            $('.page-sidebar-mobile').removeClass('is-open');
+            $('.page-sidebar').removeClass('is-open');
+            $('body').removeClass('openSidebar');
+        });
     }
 }
