@@ -1,5 +1,5 @@
 {
-  "name": "Cornerstone Custom - 12032024",
+  "name": "Cornerstone Custom Blog List - 12032024",
   "version": "6.13.0",
   "template_engine": "handlebars_v4",
   "meta": {
@@ -464,7 +464,7 @@
         "productthumb_size": "100x100",
         "thumb_size": "100x100",
         "zoom_size": "1280x1280",
-        "blog_size": "190x250",
+        "blog_size": "930x600",
         "default_image_brand": "img/BrandDefault.gif",
         "default_image_product": "img/ProductDefault.gif",
         "default_image_gift_certificate": "img/GiftCertificate.png",
@@ -909,7 +909,7 @@
         "show_faq_tab_type": "all",
         "show_faq_tab_link": "/faq-tab/",
         "customAddToCartAction": "sidebar",
-        "halo_sticky_add_to_cart_mobile": true
+        "custom_sticky_add_to_cart_mobile": true
       }
     }
   ]
