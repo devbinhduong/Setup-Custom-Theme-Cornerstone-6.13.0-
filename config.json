@@ -60,6 +60,7 @@
     "homepage_featured_products_column_count": 4,
     "homepage_top_products_column_count": 4,
     "homepage_blog_posts_count": 3,
+    "contactUs_map": true,
     "custom-category-sidebar": true,
     "show_category_banner": false,
     "custom-search-sidebar": true,
@@ -431,6 +432,7 @@
         "homepage_featured_products_column_count": 4,
         "homepage_top_products_column_count": 4,
         "homepage_blog_posts_count": 3,
+        "contactUs_map": true,
         "custom-category-sidebar": true,
         "show_category_banner": false,
         "custom-search-sidebar": true,
@@ -464,7 +466,7 @@
         "productthumb_size": "100x100",
         "thumb_size": "100x100",
         "zoom_size": "1280x1280",
-        "blog_size": "190x250",
+        "blog_size": "930x600",
         "default_image_brand": "img/BrandDefault.gif",
         "default_image_product": "img/ProductDefault.gif",
         "default_image_gift_certificate": "img/GiftCertificate.png",
@@ -909,9 +911,21 @@
         "show_faq_tab_type": "all",
         "show_faq_tab_link": "/faq-tab/",
         "customAddToCartAction": "sidebar",
-        "halo_sticky_add_to_cart_mobile": true,
         "show_shipping_tabs": true,
-        "shipping_tab_url": "/shipping-returns/"
+        "shipping_tab_url": "/shipping-returns/",
+        "custom_sticky_add_to_cart_mobile": true,
+        "img_banner_image_1": "image-banner-1.jpg",
+        "img_banner_imageURL_1": "#",
+        "img_banner_title_1": "New Camera 2024",
+        "img_banner_label_1": "SALE OFF",
+        "img_banner_value_1": "25%",
+        "img_banner_bg_color_1": "#F47B20",
+        "img_banner_image_2": "image-banner-2.jpg",
+        "img_banner_imageURL_2": "#",
+        "img_banner_title_2": "New Camera 2024",
+        "img_banner_label_2": "SALE OFF",
+        "img_banner_value_2": "25%",
+        "img_banner_bg_color_2": "#003A63"
       }
     }
   ]

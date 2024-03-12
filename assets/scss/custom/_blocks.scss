@@ -2176,3 +2176,198 @@
         }
     }
 }
+
+/* Contact Us Page */
+.page-type-page_contact_form {
+    .body {
+        padding-top: 0 !important;
+        padding-bottom: 80px !important;
+
+        @include smax-m {
+            padding-bottom: 50px !important;
+        }
+
+        @include smax-s {
+            padding-bottom: 30px !important;
+        }
+    }
+
+    .themevale_breadcrumb {
+        padding-top: 25px;
+        padding-bottom: 35px;
+
+        @include smax-m {
+            padding-bottom: 20px;
+            padding-top: 20px;
+        }
+
+        .page-heading {
+            margin-bottom: 0 !important;
+        }
+    }
+
+    .themevale_contact-us {
+        #contact-us-page {
+            >p:first-child {
+                margin-bottom: 0;
+            }
+
+            .form-label {
+                font-size: 12px;
+                font-weight: 500;
+                margin-bottom: 8px;
+                color: #232323;
+            }
+        }
+
+        #button-contactForm {
+            width: 205px;
+        }
+
+        .themevale_location {
+            margin-top: 50px;
+        }
+
+        .form-actions {
+            text-align: left;
+        }
+
+        @media (min-width: 768px) {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+
+            .themevale_form {
+                width: 65%;
+            }
+
+            .themevale_location {
+                width: 35%;
+                margin-top: 0px;
+                padding-left: 50px;
+            }
+        }
+
+        @media (min-width: 1281px) {
+            padding-top: 30px;
+            position: relative;
+
+            &:before {
+                content: '';
+                top: 0;
+                left: 0;
+                width: 40px;
+                height: 2px;
+                display: block;
+                position: absolute;
+                background-color: stencilColor('color-textHeading');
+            }
+
+            .themevale_form {
+                width: 790px;
+            }
+
+            .themevale_location {
+                padding-left: 11%;
+                width: calc(100% - 790px);
+
+                .title {
+                    font-size: 14px;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    color: #232323;
+                }
+
+                .content+.content {
+                    border-top: 1px solid #eaeaea;
+                    margin-top: 25px;
+                    padding-top: 25px;
+                }
+            }
+
+            #contact_question {
+                height: 210px;
+            }
+        }
+    }
+}
+
+// Image Banner Section 
+.section-image-banner {
+    padding-top: 60px;
+    .image-banner-list {
+        .image-banner-item {
+            position: relative;
+            .image-banner-item__image {
+                width: 100%;
+                position: relative;
+                height: 140px;
+                overflow: hidden;
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+            .image-banner-item__content {
+                position: absolute;
+                left: calc(var(--f-gap)/2);
+                top: 0;
+                width: fit-content;
+                height: 100%;
+                z-index: 1;
+                background-color: var(--bg-color);
+                padding: 19px 17px 17px;
+                color: #ffffff;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                flex-direction: column;
+                .content-title {
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 30px;
+                }
+                .content-body {
+                    .label {
+                        font-size: 14px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 1;
+                        width: 100%;
+                        display: inline-block;
+                    }
+                    .value {
+                        font-size: 40px;
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: 1;
+                    }
+                }
+                @include smin-xxxl {
+                    min-width: 197px;
+                }
+                @include smax-xs {
+                    padding: 12px;
+                    .content-title {
+                        font-size: 14px;
+                    }
+                    .content-body {
+                        .label {
+                            font-size: 14px;
+                        }
+                        .value {
+                            font-size: 30px;
+                        }
+                    }
+                }
+            }
+            @include smax-m {
+                + .image-banner-item {
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+}

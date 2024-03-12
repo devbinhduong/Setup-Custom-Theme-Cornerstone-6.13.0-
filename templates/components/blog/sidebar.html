@@ -1,0 +1,12 @@
+<nav>
+    <!-- recent post -->
+    {{> components/custom/sidebar/recent-post}}
+    <!-- slider product -->
+    {{#if products.featured}}
+        {{> components/custom/sidebar/featured-products products=products.featured}}
+    {{/if}}
+    <!-- advertisement image -->
+    {{> components/custom/sidebar/advertisement-image}}
+    <!-- advertisement text -->
+    {{> components/custom/sidebar/advertisement-content}}
+</nav>

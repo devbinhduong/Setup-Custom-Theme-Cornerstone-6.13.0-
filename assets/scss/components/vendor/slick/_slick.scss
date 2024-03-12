@@ -188,7 +188,7 @@ div.slick-slider {
 
 .carousel-tooltip {
     @include addFocusTooltip($attr: aria-label);
-    display: none;
+    display: none !important;
     height: 1px;
     margin-top: 10px;
     position: relative;
