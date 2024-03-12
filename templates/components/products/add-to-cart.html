@@ -43,7 +43,7 @@
     {{#or customer (unless settings.hide_price_from_guests)}}
         <div class="add-to-cart-buttons">
             <div class="form-action">
-                <button id="form-action-addToCart" data-wait-message="{{lang 'products.adding_to_cart'}}" class="button button--tertiary">
+                <button id="form-action-addToCart" data-wait-message="{{lang 'products.adding_to_cart'}}" class="button button--primary">
                     <span class="icon icon--addtocart-button">
                         <svg><use xlink:href="#icon-shopping-cart-2"></use></svg>
                     </span>
@@ -51,6 +51,8 @@
                 </button>
                 <span class="product-status-message aria-description--hidden">{{lang 'products.adding_to_cart'}} {{lang 'category.add_cart_announcement'}}</span>
             </div>
+
+            <a href="" name="addToQuote" class="button button--primary" id="addToQuote" data-type="main">Add to Quote</a>
 
             {{#and (if this.with_wallet_buttons) (if theme_settings.show_wallet_button)}}
                 <div class="add-to-cart-wallet-buttons" data-add-to-cart-wallet-buttons>

@@ -49,6 +49,9 @@ export default class Product extends PageManager {
         this.productFAQTab();
         this.toggleFAQTab();
         this.productTabsMobile();
+        this.productShippingTab();
+        this.toggleTitleRightCol();
+        
         customBundleProducts($('.productView'), this.context);
         customStickyAddToCart($('.productView'), this.context);
         /* Custom End */
@@ -267,6 +270,49 @@ export default class Product extends PageManager {
                     },
                     1000
                 );
+            }
+        });
+    }
+
+    /* Get Content Shipping Page */
+    productShippingTab() {
+        if (this.context.themeSettings.shipping_tab_url != '') {
+            var link_page = this.context.themeSettings.shipping_tab_url;
+            var descriptionTab = this.context.themeSettings.show_product_details_tabs;
+
+            $.ajax({
+               url:link_page,
+               type:'GET',
+               success: function(data){
+                    var content = $(data).find('.page-content').html();
+                    if (descriptionTab == true) {
+                        $('#tab-shipping .tabContent').html(content);
+                    }
+               }
+            });
+        }
+    }
+
+    /* Right Column Description */
+    toggleTitleRightCol() {
+        const $titleToggle = $('.rightTab-toggle');
+
+        if(!$titleToggle) return;
+
+        $titleToggle.on('click', (e) => {
+            e.preventDefault();
+
+            const $target = $(e.currentTarget);
+            const $rightTab = $target.parents('.rightTab');
+            const $rightTabContent = $rightTab.find('.rightTab-content');
+
+            $rightTab.toggleClass('is-open');
+
+            if ($rightTab.hasClass('is-open')) {
+                $rightTabContent.slideDown(400);
+            }
+            else {
+                $rightTabContent.slideUp(400);
             }
         });
     }

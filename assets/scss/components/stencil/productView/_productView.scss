@@ -374,14 +374,14 @@
 
         .productView-thumbnails {
             .slick-list {
-                margin-left: -10px;
-                margin-right: -10px;
+                margin-left: -11px;
+                margin-right: -11px;
             }
 
             .productView-thumbnail {
                 width: 25%;
-                padding-left: 10px;
-                padding-right: 10px;
+                padding-left: 11px;
+                padding-right: 11px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -552,7 +552,7 @@
                             content: '';
                             width: 7px;
                             height: 7px;
-                            background-color: #ed1c24;
+                            background-color: #003A63;
                             border-radius: 50%;
                             display: inline-block;
                             margin-right: 7px;
@@ -607,6 +607,8 @@
                     margin-bottom: 0;
                     border-radius: 20px;
                     width: fit-content;
+                    margin-right: 40px;
+                    
                     .form-increment {
                         display: flex;
                         align-items: center;
@@ -624,22 +626,34 @@
                 .add-to-cart-buttons {
                     margin: 0;
                     padding: 0;
-                    max-width: 249px;
-                    margin-left: 7px;
 
-                    @include smax-xs {
-                        margin-left: 0;
-                        margin-top: 5px;
+                    @include smax-l {
+                        margin-top: 20px;
+                    }
+
+                    .form-action {
+                        max-width: 252px;
+
+                        @include smax-xs {
+                            max-width: 100%;
+                        }
                     }
 
                     #form-action-addToCart {
                         border-radius: 20px;
-                        height: 54px;
-                        padding: 12px 65px;
+                        padding: 0;
                         font-weight: 400;
                         display: flex;
                         justify-content: center;
                         align-items: center;
+                        font-weight: 600;
+                        line-height: 125%;
+                        text-transform: uppercase;
+                        height: 56px;
+
+                        @include smax-m {
+                            height: 48px;
+                        }
 
                         > .icon {
                             position: relative;
@@ -653,13 +667,11 @@
                             background-color: transparent;
                         }
                     }
-
-                    .form-action {
-                        margin-top: 12px;
-                    }
                 }
             }
             div[data-product-option-change] {
+                margin-top: 22px;
+            
                 > .form-field {
                     text-align: left;
                 }

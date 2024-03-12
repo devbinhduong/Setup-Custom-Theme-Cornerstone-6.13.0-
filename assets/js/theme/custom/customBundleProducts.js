@@ -124,7 +124,7 @@ export default function($scope, context) {
                                 <span class="text"><span>Total price:</span></span>\
                                 <span class="price"></span>\
                             </div>\
-                            <a class="button button--primary custom-product-total-button" id="custom-addAll" href="#">Add All To Cart</a>\
+                            <a class="button button--primary custom-product-total-button flex-center flex" id="custom-addAll" href="#">Add All To Cart</a>\
                         </div>';
         }
 
@@ -486,9 +486,6 @@ export default function($scope, context) {
         } else {
             curr = $('.productView-product .productView-price > .price-section > .price.price--withoutTax', $scope).data('value-price');
         }
-
-        console.log("run totalPrice", curr);
-
 
         symbolChange = curr.replace(/[0-9]/g, "").replace(".", "").replace(",", "");
 

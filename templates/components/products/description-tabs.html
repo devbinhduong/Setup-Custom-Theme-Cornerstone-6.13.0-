@@ -32,22 +32,21 @@
             <a class="tab-title button button--secondary no-border productView-reviewTabLink" href="#tab-reviews"><span>{{lang 'products.reviews.header_2' total=product.reviews.total}}</span></a>
         </li>
     {{/all}}
-    {{#if theme_settings.show_shipping_tabs}}
-        <li class="tab">
-            <a class="tab-title" href="#tab-shipping" data-tab-load="{{theme_settings.show_shipping_tab_link}}" data-tab-check="true"><span>{{lang 'products.shipping_returns'}}</span></a>
-        </li>
-    {{/if}}
-
-    <!-- Mint Update 2 Tabs 04032024 -->
-
-    <!-- Q&A Tab -->
-    <li class="tab">
-        <a class="tab-title button button--secondary no-border" href="#tab-qanda" data-tab-load="{{theme_settings.show_shipping_tab_link}}" data-tab-check="true"><span>Q&A</span></a>
-    </li>
 
     <!-- Review App Tab -->
     <li class="tab">
         <a class="tab-title button button--secondary no-border" href="#tab-reviewApp" data-tab-load="{{theme_settings.show_shipping_tab_link}}" data-tab-check="true"><span>Reviews</span></a>
+    </li>
+
+    {{#if theme_settings.show_shipping_tabs}}
+        <li class="tab">
+            <a class="tab-title button button--secondary no-border" href="#tab-shipping" data-tab-load="{{theme_settings.show_shipping_tab_link}}" data-tab-check="true"><span>{{lang 'products.shipping_returns'}}</span></a>
+        </li>
+    {{/if}}
+
+    <!-- Q&A Tab -->
+    <li class="tab">
+        <a class="tab-title button button--secondary no-border" href="#tab-qanda" data-tab-load="{{theme_settings.show_shipping_tab_link}}" data-tab-check="true"><span>Q&A</span></a>
     </li>
 </ul>
 <div class="tabs-contents">

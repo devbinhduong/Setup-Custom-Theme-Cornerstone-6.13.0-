@@ -516,16 +516,21 @@
 
     .custom-block-header {
         .title {
-            font-weight: $fontWeight-bold;
-            color: $header-font-color;
-            letter-spacing: $letterSpacing-base;
-            margin: 0;
-            padding: 0 0 12px 0;
-            position: relative;
-            text-transform: capitalize;
-            text-align: left;
+            color: #444444;
+            font-size: 56px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 60px;
             text-transform: uppercase;
-            font-size: 40px;
+            text-align: left;
+
+            @include smax-m  {
+                font-size: 40px;
+            }
+
+            @include smax-s  {
+                font-size: 32px;
+            }
         }
 
         .desc {
