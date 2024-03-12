@@ -2291,3 +2291,83 @@
         }
     }
 }
+
+// Image Banner Section 
+.section-image-banner {
+    padding-top: 60px;
+    .image-banner-list {
+        .image-banner-item {
+            position: relative;
+            .image-banner-item__image {
+                width: 100%;
+                position: relative;
+                height: 140px;
+                overflow: hidden;
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+            .image-banner-item__content {
+                position: absolute;
+                left: calc(var(--f-gap)/2);
+                top: 0;
+                width: fit-content;
+                height: 100%;
+                z-index: 1;
+                background-color: var(--bg-color);
+                padding: 19px 17px 17px;
+                color: #ffffff;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                flex-direction: column;
+                .content-title {
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 30px;
+                }
+                .content-body {
+                    .label {
+                        font-size: 14px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 1;
+                        width: 100%;
+                        display: inline-block;
+                    }
+                    .value {
+                        font-size: 40px;
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: 1;
+                    }
+                }
+                @include smin-xxxl {
+                    min-width: 197px;
+                }
+                @include smax-xs {
+                    padding: 12px;
+                    .content-title {
+                        font-size: 14px;
+                    }
+                    .content-body {
+                        .label {
+                            font-size: 14px;
+                        }
+                        .value {
+                            font-size: 30px;
+                        }
+                    }
+                }
+            }
+            @include smax-m {
+                + .image-banner-item {
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+}
