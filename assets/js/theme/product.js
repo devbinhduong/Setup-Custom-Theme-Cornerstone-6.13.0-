@@ -12,6 +12,7 @@ import { classifyForm } from './common/utils/form-utils';
 import modalFactory from './global/modal';
 import customBundleProducts from './custom/customBundleProducts';
 import customStickyAddToCart from './custom/customStickyAddToCart';
+import customAskAnExpertPopup from './custom/customAskAnExpertPopup';
 
 export default class Product extends PageManager {
     constructor(context) {
@@ -54,6 +55,7 @@ export default class Product extends PageManager {
         
         customBundleProducts($('.productView'), this.context);
         customStickyAddToCart($('.productView'), this.context);
+        customAskAnExpertPopup(this.context);
         /* Custom End */
 
         const $reviewForm = classifyForm('.writeReview-form');

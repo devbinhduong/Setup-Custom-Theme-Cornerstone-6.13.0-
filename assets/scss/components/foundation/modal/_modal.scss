@@ -93,6 +93,50 @@
         &.modal--previewMini2{
             min-height: 130px;
         }
+
+        /* Ask An Expert Modal */
+        &.custom-ask-an-expert-popup{
+            .modal-close {
+                line-height: 1;
+                padding: 0;
+                position: absolute;
+                text-align: center;
+                z-index: zIndex("high");
+                top: 10px;
+                right: 10px;
+                font-size: 0;
+                color: $color-textBase;
+            
+                .icon {
+                    display: none;
+                    width: 17px;
+                    height: 17px;
+                    fill: $header-font-color;
+                }
+            
+                span {
+                    &:not(.aria-description--hidden) {
+                        display: block;
+                        width: 17px;
+                        height: 17px;
+                        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 612 612' id='icon-close' style='&%2310; fill: %23323232;&%2310;'%3E%3Cpolygon points='612,36.004 576.521,0.603 306,270.608 35.478,0.603 0,36.004 270.522,306.011 0,575.997 35.478,611.397 306,341.411 576.521,611.397 612,575.997 341.459,306.011 '/%3E%3C/svg%3E");
+                        background-repeat: no-repeat;
+                    }
+                }
+            
+                @media(min-width: 1025px) {
+                    top: 18px;
+                    right: 30px;
+                    transform: rotate(0);
+                    transition: opacity .1s ease, transform .3s ease;
+            
+                    &:hover {
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+            
+        }
     }
 }
 

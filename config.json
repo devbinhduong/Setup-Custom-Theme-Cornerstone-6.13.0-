@@ -1,5 +1,5 @@
 {
-  "name": "Cornerstone Custom Update 12032024 Part 1",
+  "name": "Cornerstone Custom Update 12032024 Done Ask An Expert",
   "version": "6.13.0",
   "template_engine": "handlebars_v4",
   "meta": {
@@ -925,7 +925,13 @@
         "img_banner_title_2": "New Camera 2024",
         "img_banner_label_2": "SALE OFF",
         "img_banner_value_2": "25%",
-        "img_banner_bg_color_2": "#003A63"
+        "img_banner_bg_color_2": "#003A63",
+        "custom_ask_an_expert": true,
+        "custom_ask_an_expert_pagelink": "/ask-an-expert/",
+        "custom_ask_an_expert_title": "Have Question?",
+        "custom_ask_an_expert_desc1": "Ask an Expert anything on Ip Security Depot",
+        "custom_ask_an_expert_desc2": "We will follow up with you via email within 24-36 hours",
+        "custom_ask_an_expert_desc3": "Please answer the following questionnaire"
       }
     }
   ]
