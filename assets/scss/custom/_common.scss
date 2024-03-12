@@ -257,3 +257,135 @@
         background: #555555;
     }
 }
+
+// Pagination
+.pagination {
+    margin-bottom: 130px;
+    margin-top: -16px;
+
+    .pagination-list {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+
+        .pagination-item {
+            margin-bottom: 24px;
+
+            .pagination-link {
+                font-size: 18px;
+                color: #909090;
+                padding: 0px;
+                width: 64px;
+                height: 64px;
+                border: 1px solid #909090;
+                border-radius: 6px;
+                transition: all .3s ease-in;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                @include smax-m {
+                    width: 56px;
+                    height: 56px;
+                }
+
+                &:hover {
+                    border-color: #F47B20;
+                    color: #F47B20;
+                }
+            }
+
+            &.pagination-item--current {
+                margin: 0;
+                border-radius: 6px;
+
+                .pagination-link {
+                    color: #ffffff;
+                    background-color: #F47B20;
+                    border-color: #F47B20;
+                }
+            }
+        }
+
+        .pagination-item--next,
+        .pagination-item--previous {
+            float: unset;
+
+            .icon {
+                width: 26px;
+                height: 26px;
+                margin: 0px;
+
+                svg {
+                    fill: #909090;
+                }
+            }
+
+            &:hover {
+                .icon {
+                    svg {
+                        fill: #F47B20;
+                    }
+                }
+            }
+        }
+
+        li {
+            margin-left: 22px !important;
+        }
+    }
+}
+
+// View as 
+.view-as-btn {
+    display: flex;
+    align-items: center;
+
+    .form-group {
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        border: 1px solid #afafaf;
+    }
+
+    .btn-view {
+        padding: 12px 0px;
+        width: 82px;
+        height: 46px;
+        vertical-align: top;
+        display: inline-block;
+        background-color: #fff;
+        transition: background 0.1s ease-in;
+
+        svg {
+            width: 100%;
+            height: 100%;
+            fill: #e2e4e8;
+            stroke: #e2e4e8;
+            pointer-events: none;
+        }
+
+        &.grid-view {
+            border-right: none;
+
+            svg {
+                transform: rotate(90deg);
+            }
+        }
+
+        &.current-view {
+            background-color: #F47B20;
+
+            svg {
+                color: #ffffff;
+            }
+        }
+
+        @include smax-s {
+            padding: 10px 0;
+            width: 40px;
+            height: 40px;
+        }
+    }
+}

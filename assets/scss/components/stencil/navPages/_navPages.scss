@@ -454,6 +454,16 @@
         }
     }
 
+    @include smin-m {
+        &.has-drop-overflow-lv2 {
+            left: -100% !important;
+        }
+    
+        &.has-drop-overflow-lv3 {
+            left: -100% !important;
+        }
+    }
+
     .navPages-action-moreIcon {
         @include smin-m {
             display: inline-block;

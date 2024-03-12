@@ -16,7 +16,7 @@
             </li>
         {{/if}}
         {{#each links}}
-            <li class="pagination-item {{#if this.number '==' ../current}}pagination-item--current{{/if}}">
+            <li class="pagination-item {{#if this.number '==' ../current}}pagination-item--current{{/if}} {{#and ../previous (if (add this.number 3) '<' ../current)}} u-hidden{{/and}}{{#and ../previous (if this.number '>' (add ../current 3))}} u-hidden{{/and}}">
                 <a class="pagination-link"
                    href="{{this.url}}"
                    {{#unless reload}}data-faceted-search-facet{{/unless}}
