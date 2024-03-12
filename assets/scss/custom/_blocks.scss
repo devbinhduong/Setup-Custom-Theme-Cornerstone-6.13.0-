@@ -2176,3 +2176,118 @@
         }
     }
 }
+
+/* Contact Us Page */
+.page-type-page_contact_form {
+    .body {
+        padding-top: 0 !important;
+        padding-bottom: 80px !important;
+
+        @include smax-m {
+            padding-bottom: 50px !important;
+        }
+
+        @include smax-s {
+            padding-bottom: 30px !important;
+        }
+    }
+
+    .themevale_breadcrumb {
+        padding-top: 25px;
+        padding-bottom: 35px;
+
+        @include smax-m {
+            padding-bottom: 20px;
+            padding-top: 20px;
+        }
+
+        .page-heading {
+            margin-bottom: 0 !important;
+        }
+    }
+
+    .themevale_contact-us {
+        #contact-us-page {
+            >p:first-child {
+                margin-bottom: 0;
+            }
+
+            .form-label {
+                font-size: 12px;
+                font-weight: 500;
+                margin-bottom: 8px;
+                color: #232323;
+            }
+        }
+
+        #button-contactForm {
+            width: 205px;
+        }
+
+        .themevale_location {
+            margin-top: 50px;
+        }
+
+        .form-actions {
+            text-align: left;
+        }
+
+        @media (min-width: 768px) {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+
+            .themevale_form {
+                width: 65%;
+            }
+
+            .themevale_location {
+                width: 35%;
+                margin-top: 0px;
+                padding-left: 50px;
+            }
+        }
+
+        @media (min-width: 1281px) {
+            padding-top: 30px;
+            position: relative;
+
+            &:before {
+                content: '';
+                top: 0;
+                left: 0;
+                width: 40px;
+                height: 2px;
+                display: block;
+                position: absolute;
+                background-color: stencilColor('color-textHeading');
+            }
+
+            .themevale_form {
+                width: 790px;
+            }
+
+            .themevale_location {
+                padding-left: 11%;
+                width: calc(100% - 790px);
+
+                .title {
+                    font-size: 14px;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    color: #232323;
+                }
+
+                .content+.content {
+                    border-top: 1px solid #eaeaea;
+                    margin-top: 25px;
+                    padding-top: 25px;
+                }
+            }
+
+            #contact_question {
+                height: 210px;
+            }
+        }
+    }
+}
