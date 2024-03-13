@@ -39,7 +39,6 @@ export default function(context) {
             /* Mega Menu Editor */
             megaMenuEditor(context);
             activeMenuMobile();
-            hoverMenu();
             setTimeout(() => {
                 handleDropdownMenu();
             }, 1000);
@@ -50,6 +49,7 @@ export default function(context) {
             ajaxAddToCart(context);
             quickShop(context);
             sidebarMobile();
+            openMenuDropdown();
 
             if (!document.body.classList.contains('page-type-login')) {
                 loginPopup();
@@ -295,24 +295,6 @@ export default function(context) {
             }
         }
 
-    }
-
-    function hoverMenu () {
-        const menuItemList = document.querySelectorAll('.navPages-list:not(.navPages-list--user) > .navPages-item.has-dropdown');
-
-        if(window.innerWidth > 1024 && menuItemList.length) {
-            menuItemList.forEach(menuItem => {
-                menuItem.addEventListener('mouseover', (e) => {
-                    document.body.classList.add('openMenuPC');
-                    menuItem.classList.add('animated');
-                });
-
-                menuItem.addEventListener('mouseleave', (e) => {
-                    document.body.classList.remove('openMenuPC');
-                    menuItem.classList.remove('animated');
-                });
-            });
-        }
     }
 
     /* Handle when dropdown menu overflow the viewport */
@@ -717,5 +699,27 @@ export default function(context) {
             $('.page-sidebar').removeClass('is-open');
             $('body').removeClass('openSidebar');
         });
+    }
+
+    function openMenuDropdown() {
+        const menuList = document.querySelectorAll('.navPages-list-custom .navPages-item.has-dropdown');
+
+        if (window.innerWidth > 1024) {
+            for (let menuItem of menuList) {
+                menuItem.addEventListener('click', (e) => {
+                    e.preventDefault();
+
+                    forEach(menuList, (item) => {
+                        if (item.classList.contains('is-open') && item !== menuItem) {
+                            item.classList.remove('is-open');
+                            item.classList.remove('animated');
+                        }
+                    });
+
+                    menuItem.classList.toggle('animated');
+                    menuItem.classList.toggle('is-open');
+                });
+            }
+        }
     }
 }

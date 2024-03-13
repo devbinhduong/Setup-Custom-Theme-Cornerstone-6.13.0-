@@ -814,6 +814,15 @@
                 }
             }
 
+            &.is-open {
+                >.navPage-subMenu {
+                    top: auto;
+                    opacity: 1;
+                    visibility: visible;
+                    pointer-events: auto;
+                }
+            }
+
             &.has-megamenu {
                 position: static;
 
@@ -865,13 +874,6 @@
                         bottom: -14px;
                         z-index: 1;
                     }
-                }
-
-                >.navPage-subMenu {
-                    top: auto;
-                    opacity: 1;
-                    visibility: visible;
-                    pointer-events: auto;
                 }
             }
         }
@@ -1065,6 +1067,11 @@
                     font-size: $fontSize-root;
                     font-weight: 400;
                     padding-left: 0;
+
+                    @include smin-m {
+                        padding-bottom: 18px;
+                        border-bottom: 1px solid #cccccc;
+                    }
 
                     >.text:not(.hover-link) {
                         &:before {

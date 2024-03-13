@@ -154,10 +154,6 @@ export default class megaMenuFunction {
                                     'max-width': param.cateAreaWidth
                                 });
 
-                                if (!subMegaMenu.find('.bottomMegamenu').length) {
-                                    subMegaMenu.append('<div class="bottomMegamenu custom-fadeInLeft" data-step-animate="0">' + param.bottomMegamenu + '</div>');
-                                }
-
                                 subMegaMenu.addClass('customScrollbar');
                             }
                         }

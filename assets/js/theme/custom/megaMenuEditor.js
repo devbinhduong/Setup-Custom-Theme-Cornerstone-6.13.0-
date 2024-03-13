@@ -111,57 +111,12 @@ export default function (context) {
 				`<div class="container">${settings.mega_menu_styleCustom_bottom}</div>`
 			}
 
-	        if (mega_menu_styleCustom_item1 == numberItem) {
-	            megaMenuFunction.menuItem(mega_menu_styleCustom_item1).setMegaMenu({
+	        if (numberItem) {
+	            megaMenuFunction.menuItem(numberItem).setMegaMenu({
 	                style: 'style custom',
-	                imageAreaWidth: settings.mega_menu_styleCustom_item1_imgWidth,
-	                cateAreaWidth: settings.mega_menu_styleCustom_item1_cateWidth,
-	                cateColumns: settings.mega_menu_styleCustom_item1_col,
-					imagesRight: 
-						`
-						${mega_menu_styleCustom_img_1}
-						${mega_menu_styleCustom_img_2}
-						`,
-					bottomMegamenu: mega_menu_styleCustom_bottom
-	            });
-	        } else if (mega_menu_styleCustom_item2 == numberItem) {
-	            megaMenuFunction.menuItem(mega_menu_styleCustom_item2).setMegaMenu({
-	                style: 'style custom',
-	                imageAreaWidth: settings.mega_menu_styleCustom_item2_imgWidth,
-	                cateAreaWidth: settings.mega_menu_styleCustom_item2_cateWidth,
-	                cateColumns: settings.mega_menu_styleCustom_item2_col,
-					imagesRight: 
-						`
-						${mega_menu_styleCustom_img_3}
-						${mega_menu_styleCustom_img_4}
-						`,
-					bottomMegamenu: mega_menu_styleCustom_bottom
-	            });
-	        } else if (mega_menu_styleCustom_item3 == numberItem) {
-	            megaMenuFunction.menuItem(mega_menu_styleCustom_item3).setMegaMenu({
-	                style: 'style custom',
-	                imageAreaWidth: settings.mega_menu_styleCustom_item3_imgWidth,
-	                cateAreaWidth: settings.mega_menu_styleCustom_item3_cateWidth,
-	                cateColumns: settings.mega_menu_styleCustom_item3_col,
-					imagesRight: 
-						`
-						${mega_menu_styleCustom_img_5}
-						${mega_menu_styleCustom_img_6}
-						`,
-					bottomMegamenu: mega_menu_styleCustom_bottom
-	            });
-	        } else if (mega_menu_styleCustom_item4 == numberItem) {
-	            megaMenuFunction.menuItem(mega_menu_styleCustom_item4).setMegaMenu({
-	                style: 'style custom',
-	                imageAreaWidth: settings.mega_menu_styleCustom_item4_imgWidth,
-	                cateAreaWidth: settings.mega_menu_styleCustom_item4_cateWidth,
-	                cateColumns: settings.mega_menu_styleCustom_item4_col,
-					imagesRight: 
-						`
-						${mega_menu_styleCustom_img_7}
-						${mega_menu_styleCustom_img_8}
-						`,
-					bottomMegamenu: mega_menu_styleCustom_bottom
+	                imageAreaWidth: "0%",
+	                cateAreaWidth: "100%",
+	                cateColumns: 5,
 	            });
 			} else {
 	            return;
