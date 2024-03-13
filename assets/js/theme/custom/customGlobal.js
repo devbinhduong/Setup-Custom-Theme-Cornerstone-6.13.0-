@@ -39,9 +39,6 @@ export default function(context) {
             /* Mega Menu Editor */
             megaMenuEditor(context);
             activeMenuMobile();
-            setTimeout(() => {
-                handleDropdownMenu();
-            }, 1000);
 
             /* Logion  / Register Modal */
             authPopup();
@@ -117,7 +114,6 @@ export default function(context) {
         window.addEventListener('resize', (e) => {
             searchFormMobile();
             activeMenuMobile();
-            handleDropdownMenu();
         });
     }
     eventLoad();
@@ -298,48 +294,6 @@ export default function(context) {
 
     }
 
-    /* Handle when dropdown menu overflow the viewport */
-    function handleDropdownMenu() {
-        if(window.innerWidth > 1024) {
-            /* Handle For Level 2 Dropdown */
-            const dropdownListLv2 = document.querySelectorAll(
-                '.navPages-item.has-dropdown:not(.hasMegamenu) > .navPage-subMenu-horizontal'
-            );
-
-            for (let dropdown2 of dropdownListLv2) {
-                if (dropdown2) {
-                    const dropdownOffset = dropdown2.getBoundingClientRect();
-
-                    const isDropdownOverflow =
-                        dropdownOffset.right + 30 > window.innerWidth;
-                    if (isDropdownOverflow) {
-                        dropdown2.classList.add('has-drop-overflow-lv2');
-                    } else {
-                        dropdown2.classList.remove('has-drop-overflow-lv2');
-                    }
-                }
-            }
-
-            /* Handle For Level 3 Dropdown */
-            const dropdownList = document.querySelectorAll(
-                '.navPages-item.has-dropdown:not(.hasMegamenu) .navPage-subMenu-item-child .navPage-subMenu-horizontal'
-            );
-            for (let dropdown of dropdownList) {
-                if (dropdown) {
-                    const dropdownOffset = dropdown.getBoundingClientRect();
-                    const isDropdownOverflow =
-                        dropdownOffset.right + 30 > window.innerWidth;
-                    
-                    if (isDropdownOverflow) {
-                        dropdown.classList.add('has-drop-overflow-lv3');
-                    } else {
-                        dropdown.classList.remove('has-drop-overflow-lv3');
-                    }
-                }
-            }
-        }
-    }
-
     function authPopup() {
         let authButton = document.querySelector("[data-login-form]");
 
@@ -452,9 +406,7 @@ export default function(context) {
         });
     }
 
-    function customSpecialProduct($context){
-        const context = $context;
-
+    function customSpecialProduct(){
         let productIDList = document.querySelectorAll('.productBanner__item');
 
         for(let productID of productIDList) {
@@ -466,7 +418,7 @@ export default function(context) {
     
             utils.api.product.getById(productId, options, (err, response) => {
                 var scope = '.custom-spacial-product';
-                let productSpecial = productID.querySelector('.custom-special-product');
+                let productSpecial = productID.querySelector('.custom-special-product2');
                 
                 if(productSpecial) {
                     productSpecial.innerHTML = response;

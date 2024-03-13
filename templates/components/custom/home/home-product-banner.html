@@ -1,4 +1,4 @@
-<div class="home-product-banner" data-section-load="home-product-banner">
+<div class="home-product-banner">
     <div class="container">
         <div class="productBanner">
             <div class="productBanner__col productBanner__left">
@@ -7,32 +7,13 @@
                 <div class="productBanner__button-wrapper custom-animation" data-section-load="animation" data-step-animate="3"><a href="#" class="productBanner__button button">Shop Now</a></div>
             </div>
             <div class="productBanner__col productBanner__right productBanner__list">
-                <!-- Product ID 1 -->
-                {{#if theme_settings.custom_product_block_special_id1}}
-                    <div class="productBanner__item item--full custom-animation" data-section-load="animation" data-step-animate="1" data-special-product-id="{{theme_settings.custom_product_block_special_id1}}">
+                {{#each (limit products.featured 3)}}
+                    <div class="productBanner__item{{#if @index '==' 0}} item--full{{/if}} custom-animation" data-section-load="animation" data-step-animate="1">
                         <div class="custom-special-product">
-                            <div class="loadingOverlay"></div>
+                            {{> components/custom/products/custom-feature-product-tmp product=this settings=settings theme_settings=../theme_settings customer=customer event="list" position=(add @index 1)}}
                         </div>
                     </div>
-                {{/if}}
-
-                <!-- Product ID 2 -->
-                {{#if theme_settings.custom_product_block_special_id2}}
-                    <div class="productBanner__item custom-animation" data-section-load="animation" data-step-animate="2" data-special-product-id="{{theme_settings.custom_product_block_special_id2}}">
-                        <div class="custom-special-product">
-                            <div class="loadingOverlay"></div>
-                        </div>
-                    </div>
-                {{/if}}
-
-                <!-- Product ID 3 -->
-                {{#if theme_settings.custom_product_block_special_id3}}
-                    <div class="productBanner__item custom-animation" data-section-load="animation" data-step-animate="3" data-special-product-id="{{theme_settings.custom_product_block_special_id3}}">
-                        <div class="custom-special-product">
-                            <div class="loadingOverlay"></div>
-                        </div>
-                    </div>
-                {{/if}}
+                {{/each}}
             </div>
         </div>
     </div>

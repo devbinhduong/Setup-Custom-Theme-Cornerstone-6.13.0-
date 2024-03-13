@@ -120,11 +120,11 @@
                         <button type="button" class="button button--small card-figcaption-button quickview" data-event-type="product-click" data-product-id="{{id}}">{{lang 'products.quick_view'}}</button>
                     {{/if}}
                 {{/unless}}
-                {{#if show_compare}}
+                {{#and show_compare theme_settings.show_card_compare}}
                     <label class="button button--small card-figcaption-button" for="compare-{{id}}">
                         {{lang 'products.compare'}} <input type="checkbox" name="products[]" value="{{id}}" id="compare-{{id}}" data-compare-id="{{id}}">
                     </label>
-                {{/if}}
+                {{/and}}
             </div>
 
             <div class="card-figcaption-bottom">

@@ -178,12 +178,12 @@ export default class Product extends PageManager {
             videoTabContent = document.querySelector('.rightTab-content--video');
         
         /* Append custom expert tab to expertTabCotent */
-        if(expertTabContent) {
+        if(expertTabContent && customExpertTab) {
             expertTabContent.appendChild(customExpertTab);
         }
 
         /* Append custom video tab to videoTabContent */
-        if(videoTabContent) {
+        if(videoTabContent && customVideoTab) {
             videoTabContent.appendChild(customVideoTab);
         }
     }
