@@ -107,8 +107,18 @@
 
         .navPage-subMenu-item-child {
             @include smin-m {
-                &.navPage-subMenu-all {
+                &.navPage-subMenu-all:not(.navPage-subMenu-all--lv1) {
                     display: none !important;
+                }
+
+                &.navPage-subMenu-all--lv1 {
+                    .navPage-subMenu-action{
+                        span  {
+                            text-transform: capitalize;
+                            font-size: 14px;
+                            font-weight: 500;
+                        }
+                    }
                 }
             }
         }

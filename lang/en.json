@@ -181,7 +181,7 @@
         "delete": "Delete",
         "public": "Public",
         "private": "Private",
-        "view_all": "View All",
+        "view_all": "Shop All",
         "all": "All",
         "paginator": {
             "page_of": "Page {current} of {total}"

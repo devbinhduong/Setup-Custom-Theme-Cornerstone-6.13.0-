@@ -50,6 +50,7 @@ export default function(context) {
             quickShop(context);
             sidebarMobile();
             openMenuDropdown();
+            stopPropagationSubMenu();
 
             if (!document.body.classList.contains('page-type-login')) {
                 loginPopup();
@@ -706,6 +707,7 @@ export default function(context) {
 
         if (window.innerWidth > 1024) {
             for (let menuItem of menuList) {
+
                 menuItem.addEventListener('click', (e) => {
                     e.preventDefault();
 
@@ -721,5 +723,20 @@ export default function(context) {
                 });
             }
         }
+    }
+
+    function stopPropagationSubMenu() {
+        const menuItems2 = document.querySelectorAll('.navPage-subMenu-item-child .navPage-subMenu-action');
+
+        if(!menuItems2) return;
+
+        if(window.innerWidth > 1024) {
+            for(let menuItem of menuItems2) {
+                menuItem.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                });
+            }
+        }
+
     }
 }
