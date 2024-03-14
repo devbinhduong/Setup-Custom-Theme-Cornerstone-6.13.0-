@@ -525,8 +525,8 @@
 
 /* Home Product New Section */
 .sectionNew {
-    padding-top: 120px;
-    padding-bottom: 120px;
+    padding-top: 60px;
+    padding-bottom: 76px;
 
     .container {
         padding-right: 0;
@@ -602,6 +602,12 @@
         width: 75%;
         @include smax-m {
             width: 100%;
+        }
+
+        .productCarousel {
+            .slick-track {
+                padding-bottom: 5px;
+            }
         }
     }
 }
@@ -952,10 +958,6 @@
         margin-bottom: 60px;
     }
 
-    &:not(.home-recently-posts--no-pt) {
-        padding-top: 120px;
-    }
-
     @include smax-m {
         padding-top: 60px;
     }
@@ -1001,7 +1003,6 @@
             .recentlyPost__list {
                 background: #fff;
                 padding: 0px;
-                box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.06);
 
                 .recentlyPost__item {
                     .item-image {

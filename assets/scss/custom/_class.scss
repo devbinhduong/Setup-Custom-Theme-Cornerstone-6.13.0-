@@ -555,6 +555,14 @@
 .custom-section {
     padding-bottom: 120px;
 
+    &.featured-offer {
+        padding-bottom: 80px;
+    }
+    &.home-recently-posts {
+        padding-top: 24px;
+        padding-bottom: 100px;
+    }
+
     @include smax-m {
         padding-bottom: 60px;
     }

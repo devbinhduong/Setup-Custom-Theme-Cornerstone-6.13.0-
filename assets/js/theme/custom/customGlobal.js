@@ -15,7 +15,7 @@ export default function(context) {
 
     var $header = $('header.header'),
         height_header = $header.outerHeight(),
-        height_top = height_header + $('.headerTop').outerHeight();
+        header_top_height = $('.headerTop').outerHeight();
 
     var scroll_position = $(window).scrollTop();
 
@@ -91,17 +91,12 @@ export default function(context) {
         sectionLoad();
 
         /* Load when scroll */
-        window.addEventListener('scroll', debounceFn((e) => {
-            if(themeSettings.show_sticky_header) {
-            }
-        }, 50));
-
-        $(window).on('scroll', debounceFn((e) => {
+        $(window).on('scroll', (e) => {
             const $target = $(e.currentTarget);
             const tScroll = $target.scrollTop();
 
             headerSticky(tScroll);
-        }, 50));
+        });
 
         /* Load when user action on site */
         ['keydown', 'mousemove', 'touchstart'].forEach(event => {
@@ -117,29 +112,6 @@ export default function(context) {
         });
     }
     eventLoad();
-
-    /* Debounce Function */
-    function debounceFn(func, wait, immediate) {
-        let timeout;
-    
-        return function () {
-            let context = this,
-                args = arguments;
-    
-            let later = function () {
-                timeout = null;
-                if (!immediate) func.apply(context, args);
-            };
-    
-            let callNow = immediate && !timeout;
-    
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-    
-            if (callNow) func.apply(context, args);
-        }
-    }
-    
 
     /* Hide all Sidebar */
     function hideAllSidebar() {
@@ -361,7 +333,7 @@ export default function(context) {
 
     function headerSticky(tScroll) {
         if (themeSettings.show_sticky_header) {
-            if (tScroll > height_top && tScroll < scroll_position) {
+            if (tScroll > header_top_height && tScroll < scroll_position) {
                 if (!$('.header-height').length) {
                     $header.before(
                         '<div class="header-height" style="height: ' +
@@ -374,7 +346,6 @@ export default function(context) {
             } else {
                 $header.removeClass('is-sticky');
                 $('.header-height').remove();
-
                 $header.css('animation-name', '');
             }
 
@@ -417,7 +388,6 @@ export default function(context) {
             }
     
             utils.api.product.getById(productId, options, (err, response) => {
-                var scope = '.custom-spacial-product';
                 let productSpecial = productID.querySelector('.custom-special-product2');
                 
                 if(productSpecial) {

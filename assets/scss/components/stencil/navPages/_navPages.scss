@@ -258,7 +258,6 @@
     @include smin-m {
         display: inline-block;
         padding: 0;
-        font-weight: fontWeight("bold");
 
         &.is-open {
             background-color: $navPage-subMenu-item--is-highlighted-background;

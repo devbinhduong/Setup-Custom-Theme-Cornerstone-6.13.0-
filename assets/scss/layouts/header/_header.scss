@@ -286,6 +286,14 @@
                             }
                         }
                     }
+
+                    .navUser-action {
+                        color: #222222;
+                        font-size: $fontSize-root;
+                        font-style: normal;
+                        font-weight: $fontWeight-medium;
+                        line-height: normal;
+                    }
                 }
 
                 @include smax-m {

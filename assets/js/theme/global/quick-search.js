@@ -36,7 +36,10 @@ export default function (context) {
 
             $quickSearchResults.removeClass('is-open');
             $quickSearchResultsCustom.removeClass('is-open');
-            document.body.classList.remove('openSearchDropdown');
+
+            if (context.quickSearchBefore) {
+                document.body.classList.remove('openSearchDropdown');
+            }
         }
     });
 
@@ -44,7 +47,10 @@ export default function (context) {
     $(document).on('click', '.quickResults-close', (e) => {
         e.preventDefault();
         $searchDropdown.removeClass('is-open');
-        document.body.classList.remove('openSearchDropdown');
+        
+        if (context.quickSearchBefore) {
+            document.body.classList.remove('openSearchDropdown');
+        }
     });
 
     // stagger searching for 1200ms after last input
@@ -89,7 +95,10 @@ export default function (context) {
         if (searchQuery.length < 3) {
             $quickSearchResults.removeClass('is-open');
             $quickSearchResultsCustom.addClass('is-open');
-            document.body.classList.add('openSearchDropdown');
+
+            if (context.quickSearchBefore) {
+                document.body.classList.add('openSearchDropdown');
+            }
             return;
         }
 
