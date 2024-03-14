@@ -256,7 +256,7 @@
                     }
 
                     img {
-                        object-fit:  cover;
+                        object-fit:  contain;
                     }
                 }
 
@@ -562,17 +562,30 @@
         .slick-arrow-wrapper {
             position: relative;
             min-height: 60px;
+
             @include smax-m {
-                width: 20%;
                 min-width: 130px;
+                margin-right: 15px;
             }
+
             .slick-arrow {
                 top: 0px;
                 transform: unset;
                 &.slick-next {
                     left: 80px;
+
                     @include smax-m {
-                        left: 60px;
+                        // left: 60px;
+                        left: unset;
+                        right: 0;
+                    }
+                }
+
+                &.slick-prev {
+
+                    @include smax-m {
+                        left: unset;
+                        right: 60px;
                     }
                 }
             }
@@ -583,23 +596,26 @@
     }
 
     &__left {
-        width: 25%;
+        width: auto;
         display: flex;
         flex-direction: column;
+        margin-right: 92px;
 
         @include smax-m {
             width: 100%;
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
+            margin-right: 0;
         }
         h2 {
-            max-width: 70%;
+            max-width: 238px;
         }
     }
 
     &__right {
-        width: 75%;
+        // width: 75%;
+        flex: 1;
         @include smax-m {
             width: 100%;
         }
@@ -936,15 +952,16 @@
         background: #F47B20;
         border-color: #F47B20;
         &.slick-next {
-                &::before {
-                    @include carousel-arrow-color("#ffffff", "next");
-                }
+            &::before {
+                @include carousel-arrow-color("#ffffff", "next");
             }
+        }
+
         &.slick-prev {
             &::before {
                 @include carousel-arrow-color("#ffffff", "prev");
             }
-            }
+        }
     }
     &.slick-disabled {
         pointer-events: none;

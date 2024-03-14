@@ -297,10 +297,6 @@
     margin-left: 0;
     font-size: $fontSize-root - 2;
 
-    @include smin-xs {
-        font-size: $fontSize-root;
-    }
-
     li + li {
         margin-top: 16px;
     }

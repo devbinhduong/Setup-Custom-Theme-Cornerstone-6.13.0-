@@ -358,6 +358,10 @@
         }
     }
 
+    &Bottom {
+        overflow: hidden;
+    }
+
     &.is-open {
         height: 100%;
 

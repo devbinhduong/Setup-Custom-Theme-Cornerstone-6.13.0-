@@ -175,6 +175,9 @@ export default function(context) {
                     const section = entry.target;
                     const sectionType = section.getAttribute('data-section-load');
 
+
+                    console.log("section", section);
+                    
                     switch(sectionType) {
                         case 'animation':
                             customAnimate(section);

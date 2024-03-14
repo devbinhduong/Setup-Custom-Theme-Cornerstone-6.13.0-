@@ -201,7 +201,17 @@
             @media(min-width:921px){
                 left: 60px;
                 transform: translateY(-50%);
-                padding: 71px 30px 33px;
+                padding: 28px 30px 33px;
+
+                &.content-box--custom {
+                    padding: 71px 30px 33px;
+                }
+
+                &.content-box--custom2 {
+                    padding: 28px 30px 60px;
+
+                }
+
                 &.content-box--right{
                     left: auto;
                     right: 60px;
@@ -214,6 +224,8 @@
                 margin: 0;
                 line-height: 1.2;
                 margin-bottom: 23px;
+                max-width: 647px;
+
                 @media(min-width: 768px){
                     font-size: 56px;
                 }
@@ -250,6 +262,15 @@
                     left: auto;
                     right: calc((100% - 1290px) / 2);
                 }
+            }
+
+            /* Mint Update Button */
+            .button {
+                min-height: 56px;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                min-width: 162px;
             }
         }
     }
