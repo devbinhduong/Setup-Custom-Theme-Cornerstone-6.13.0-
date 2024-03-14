@@ -64,7 +64,6 @@ export default function (context) {
 
         $('#contact_question').val(message);
 
-        console.log("message", message);
         $.ajax({
             type: 'POST',
             url: '/pages.php?action=sendContactForm',

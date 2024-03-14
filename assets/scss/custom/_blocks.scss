@@ -528,6 +528,11 @@
     padding-top: 60px;
     padding-bottom: 76px;
 
+    @include smax-m {
+        padding-top: 20px;
+        padding-bottom: 34px;
+    }
+
     .container {
         padding-right: 0;
         max-width: 100%;
@@ -556,9 +561,18 @@
     &__wrapper {
         display: flex;
         justify-content: space-between;
+
         .custom-heading {
+            max-width: 238px;
             margin-bottom: 41px;
+            
+            @include smax-m{
+                margin-bottom: 24px;
+                margin-top: 10px;
+                max-width: 100%;
+            }
         }
+
         .slick-arrow-wrapper {
             position: relative;
             min-height: 60px;
@@ -569,13 +583,16 @@
             }
 
             .slick-arrow {
-                top: 0px;
                 transform: unset;
+
+                @include smax-m {
+                    top: 3px;
+                }
+
                 &.slick-next {
                     left: 80px;
 
                     @include smax-m {
-                        // left: 60px;
                         left: unset;
                         right: 0;
                     }
@@ -608,9 +625,6 @@
             justify-content: space-between;
             margin-right: 0;
         }
-        h2 {
-            max-width: 238px;
-        }
     }
 
     &__right {
@@ -641,13 +655,7 @@
         margin-top: 0px;
         margin-bottom: 55px;
         @include smax-m {
-            margin-bottom: 44px;
-        }
-        @include smax-xs {
-            margin-bottom: 35px;
-        }
-        @include smax-xxs {
-            margin-bottom: 28px;
+            margin-bottom: 25px;
         }
     }
 }
@@ -973,6 +981,11 @@
 
     .custom-heading {
         margin-bottom: 60px;
+
+        @include smax-m {
+            margin-bottom: 25px;
+            margin-top: 8px;
+        }
     }
 
     @include smax-m {
@@ -2421,6 +2434,15 @@
 // Image Banner Section 
 .section-image-banner {
     padding-top: 60px;
+
+    @include smax-m {
+        padding-top: 40px;
+    }
+
+    @include smax-s {
+        padding-top: 20px;
+    }
+
     .image-banner-list {
         .image-banner-item {
             position: relative;
@@ -2489,7 +2511,7 @@
                     }
                 }
             }
-            @include smax-m {
+            @include smax-s {
                 + .image-banner-item {
                     margin-top: 20px;
                 }

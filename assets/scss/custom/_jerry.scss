@@ -71,7 +71,7 @@
         padding: 0px 15px;
         width: 50%;
     }
-    @media(min-width: 992px){
+    @media(min-width: 801px){
         &.colums-3{
             .custom-block-item{
                 width: 33.33333333%;
@@ -107,6 +107,9 @@
 .custom-block-brands{
     padding: 52px 0px 40px;
 
+    @include smax-m {
+    }
+
     .custom-block-row{
         background: #ffffff;
         align-items: center;
@@ -130,8 +133,18 @@
 // Custom block icon with text
 .custom-block-icon-with-text{
     padding: 40px 0px;
+
+    @include smax-m {
+        padding: 30px 0 0;
+    }
+
     .custom-block-header{
         padding: 35px 0px 35px;
+
+        @include smax-m {
+            padding-top: 0;
+        }
+
         .title{
             font-weight: 600;
             font-size: 30px;
@@ -141,6 +154,11 @@
     }
     .custom-block-item{
         padding-bottom: 12px;
+
+        @include smax-m {
+            margin-bottom: 30px;
+        }
+
         .img-box{
             img{
                 width: 100%;
@@ -148,6 +166,11 @@
         }
         .content-box{
             margin-top: 36px;
+
+            @include smax-m {
+                margin-top: 20px;
+            }
+
             a{
                 font-size: 20px;
                 font-weight: 600;
@@ -164,6 +187,11 @@
 // Custom Block Banner
 .custom-block-banner{
     padding: 40px 0px 60px;
+
+    @include smax-m {
+        padding: 30px 0;
+    }
+
     .block-banner-item{
         .img-box{
             img{
