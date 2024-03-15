@@ -409,13 +409,11 @@
 
     .productView-details {
         width: 52%;
-        padding-left: 30px;
-        padding-right: 30px;
+        padding-left: 0;
+        padding-right: 0;
 
         @include smax-m {
             width: 100%;
-            padding-left: 0;
-            padding-right: 0;
         }
 
         &.product-data {

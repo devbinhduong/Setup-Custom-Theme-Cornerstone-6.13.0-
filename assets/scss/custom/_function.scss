@@ -517,20 +517,12 @@
     .custom-block-header {
         .title {
             color: #444444;
-            font-size: 56px;
+            font-size: 40px;
             font-style: normal;
             font-weight: 600;
             line-height: 60px;
             text-transform: uppercase;
             text-align: left;
-
-            @include smax-m  {
-                font-size: 40px;
-            }
-
-            @include smax-s  {
-                font-size: 32px;
-            }
         }
 
         .desc {

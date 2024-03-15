@@ -135,8 +135,6 @@
                 .tab-title {
                     background-color: #000000;
                     color: #ffffff;
-                    text-transform: uppercase;
-                    font-weight: 600;
                     span {
                         color: #ffffff;
                     }
@@ -377,7 +375,7 @@
 
     .product-view-bottom {
         .section-productRelated {
-            padding-top: 60px;
+            padding-top: 45px;
 
             @include smax-s  {
                 padding-top: 0;
@@ -388,13 +386,20 @@
             }
             
             .productRelatedv__heading {
-                margin-bottom: 50px;
+                margin-bottom: 60px;
             }
         }
 
         .productCarousel {
+            margin: 0;
+
+            .productCarousel-slide {
+                padding: 0 15px;
+            }
+
             .slick-list {
                 padding-bottom: 20px;
+                margin: 0 -15px;
             }
         }
 
@@ -515,11 +520,24 @@ body.page-type-product {
     }
 
     .productView:not(.custom-quickShop) {
-        margin-left: 0;
-        margin-right: 0;
+        margin-left: -16px;
+        margin-right: -16px;
         padding-top: 0;
 
+        @include smax-m {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
         .custom-productView-left {
+            padding-left: 16px;
+            padding-right: 16px;
+
+            @include smax-m {
+                padding-left: 0;
+                padding-right: 0;
+            }
+
             @include smin-m {
                 max-width: 565px;
                 width: 45%;
@@ -575,8 +593,12 @@ body.page-type-product {
         }
 
         .custom-productView-right {
+            padding-left: 16px;
+            padding-right: 16px;
+
             @include smin-m {
-                width: 57%;
+                width: calc(100% - 565px);
+                min-width: 55%;
             }
             .productView-details {
                 @include smin-m {
@@ -801,8 +823,6 @@ body.page-type-product {
     .product-view-bottom {
         .section-productRelated {
             @include smin-m {
-                padding-top: 90px;
-
                 .productRelatedv__heading {
                     color: #444444;
                     font-size: 56px;
@@ -1097,6 +1117,8 @@ body.page-type-product {
 
         &.has-right-col {
             .productView-description {
+                height: fit-content;
+
                 @include smin-l {
                     max-width: calc(100% - 440px);
                 }
@@ -1167,10 +1189,32 @@ body.page-type-product {
             .tabs-contents {
                 padding-left: 10px;
                 padding-right: 10px;
-                padding-top: 30px;
+                padding-top: 10px;
 
                 p, a {
                     font-size: 16px;
+                    letter-spacing: 0;
+                    margin-bottom: 8px;
+                }
+
+                p + ul {
+                    margin-top: -8px;
+                }
+
+                ul {
+                    padding-left: 8px;
+
+                    li {
+                        list-style-type: disc;
+                    }
+
+                    ul {
+                        li {
+                            &::marker {
+                                font-size: 14px;
+                            }
+                        }
+                    }
                 }
 
                 .tab-content {

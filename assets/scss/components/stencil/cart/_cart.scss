@@ -94,7 +94,7 @@ $card-preview-zoom-bottom-offset:       6rem;
     display: block; // 1
     padding: $cart-item-spacing 0;
 
-    @include breakpoint("small") {
+    @include smin-s {
         @include clearfix;
         padding-left: grid-calc(3, $total-columns);
     }
@@ -131,7 +131,7 @@ $card-preview-zoom-bottom-offset:       6rem;
     text-align: center;
     width: grid-calc(4, $total-columns);
 
-    @include breakpoint("small") {
+    @include smin-s {
         // height: auto;
         margin-bottom: 0;
         margin-left: -(grid-calc(4, $total-columns));
@@ -163,7 +163,7 @@ $card-preview-zoom-bottom-offset:       6rem;
     height: $cart-thumbnail-height;
     padding-left: $cart-item-spacing;
 
-    @include breakpoint("small") {
+    @include smin-s {
         display: block;
         height: auto;
         margin-bottom: $cart-item-spacing;
@@ -180,7 +180,7 @@ $card-preview-zoom-bottom-offset:       6rem;
     clear: both;
     width: 100%;
 
-    @include breakpoint("small") {
+    @include smin-s {
         clear: none;
         float: left;
         overflow: hidden;
@@ -236,7 +236,7 @@ $card-preview-zoom-bottom-offset:       6rem;
     text-align: right;
     width: grid-calc(4, $total-columns);
 
-    @include breakpoint("small") {
+    @include smin-s {
         display: block;
         padding-left: $cart-item-spacing;
         text-align: left;
@@ -294,7 +294,7 @@ $card-preview-zoom-bottom-offset:       6rem;
     transition: background-color 0.15s ease;
     width: remCalc(18px);
 
-    @include breakpoint("small") {
+    @include smin-s {
         margin-left: spacing("base");
     }
 
@@ -317,7 +317,7 @@ $card-preview-zoom-bottom-offset:       6rem;
     text-align: right;
     width: 100%;
 
-    @include breakpoint("small") {
+    @include smin-s {
         float: right;
         width: grid-calc(9, $total-columns);
     }
@@ -367,7 +367,7 @@ $card-preview-zoom-bottom-offset:       6rem;
     color: stencilColor("color-textSecondary");
     width: grid-calc(4, $total-columns);
 
-    @include breakpoint("small") {
+    @include smin-s {
         width: grid-calc(6, $total-columns);
     }
 
@@ -381,7 +381,7 @@ $card-preview-zoom-bottom-offset:       6rem;
 .cart-total-value {
     text-align: left;
 
-    @include breakpoint("small") {
+    @include smin-s {
         text-align: right;
     }
 
@@ -521,7 +521,7 @@ $card-preview-zoom-bottom-offset:       6rem;
         display: block;
         margin-bottom: 0;
 
-        @include breakpoint("small") {
+        @include smin-s {
             display: inline-block;
             float: right;
         }
@@ -679,4 +679,37 @@ $card-preview-zoom-bottom-offset:       6rem;
     @extend %additionalCheckoutButtons;
     padding-bottom: spacing("single");
     padding-right: spacing("single");
+}
+
+
+/* Custom Start */
+[data-cart-totals] {
+    #add-shipping {
+        .estimator-form-label {
+            .form-label {
+                line-height: 44px;
+    
+                @include smax-xxs {
+                    font-size: 14px;
+                }
+            }
+    
+        }
+    
+        
+    }
+
+    .cart-total {
+        .cart-total-label {
+            @include smax-xxs {
+                padding-left: 0;
+
+                > strong {
+                    width: 100%;
+                    display: block;
+                    white-space: nowrap
+                }
+            }
+        }
+    }
 }

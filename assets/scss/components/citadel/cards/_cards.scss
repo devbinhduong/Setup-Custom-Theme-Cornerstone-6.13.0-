@@ -66,8 +66,11 @@
     .card-img-container {
         display: block;
         position: relative;
-        max-width: get-width(stencilString('productgallery_size'));
         @include lazy-loaded-padding('productgallery_size');
+
+        @include smin-m {
+            max-width: get-width(stencilString('productgallery_size'));
+        }
 
         &.card-img-container-2 {
             display: flex;
@@ -190,7 +193,10 @@
 .card-img-container {
 
     @include lazy-loaded-padding("productgallery_size");
-    max-width: get-width(stencilString("productgallery_size"));
+   
+    @include smin-m {
+        max-width: get-width(stencilString("productgallery_size"));
+    }
 }
 
 .card-figcaption {

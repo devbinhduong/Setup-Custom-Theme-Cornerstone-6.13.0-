@@ -171,12 +171,13 @@
                 margin-top: 20px;
             }
 
-            a{
+            a {
                 font-size: 20px;
                 font-weight: 600;
                 color: #000000;
                 text-decoration: none;
-                &:hover{
+
+                &:hover {
                     text-decoration: underline;
                 }
             }
@@ -196,48 +197,48 @@
         .img-box{
             img{
                 width: 100%;
-            }
-            .image-mobile{
-                display: none;
-            }
-            @media(max-width:850px){
-                .image-desktop{
-                    display: none;
-                }
-                .image-mobile{
-                    display: block;
+                
+                @include smin-m{
+                    min-height: 500px;
                 }
             }
         }
-        .content-box{
+        .content-box {
             z-index: 1;
-            padding: 35px 15px 30px;
+            padding: 30px 20px;
             width: 100%;
-            max-width: 740px;
-            max-height: 100%;
-            overflow-x: hidden;
-            overflow-y: auto;
-            height: auto;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
             background:#003A63;
-            @media(max-width:920px){
-                max-width: 90%;
-            }
-            @media(min-width:921px){
+            
+            @include smin-m {
+                max-width: 740px;
+                max-height: 100%;
+                overflow-x: hidden;
+                overflow-y: auto;
+                height: auto;
+                position: absolute;
+                top: 50%;
                 left: 60px;
                 transform: translateY(-50%);
                 padding: 28px 30px 33px;
 
+                @include smax-m {
+                    padding: 20px;
+                }
+
                 &.content-box--custom {
                     padding: 71px 30px 33px;
+
+                    @include smax-m {
+                        padding: 20px;
+                    }
                 }
 
                 &.content-box--custom2 {
                     padding: 28px 30px 60px;
-
+                    
+                    @include smax-m {
+                        padding: 20px;
+                    }
                 }
 
                 &.content-box--right{
@@ -245,8 +246,9 @@
                     right: 60px;
                 }
             }
+
             .banner-title{
-                font-size: 30px;
+                font-size: 56px;
                 color: #ffffff;
                 font-weight: 600;
                 margin: 0;
@@ -254,9 +256,15 @@
                 margin-bottom: 23px;
                 max-width: 647px;
 
-                @media(min-width: 768px){
-                    font-size: 56px;
+                @include smax-l {
+                    font-size: 40px;
                 }
+
+                @include smax-m {
+                    font-size: 30px;
+                    max-width: 100%;
+                }
+
             }
             .banner-text{
                 font-size: 18px;
@@ -265,25 +273,33 @@
                 line-height: 1.8;
                 margin-bottom: 34px;
                 max-width: 622px;
+
+                @include smax-m {
+                    margin-bottom: 20px;
+                    font-size: 16px;
+                    max-width: 100%;
+                    line-height: 1.4;
+                }
             }
-            &.background-white{
+
+            &.background-white {
                 background:#ffffff;
+                
                 .banner-text,
                 .banner-title{
                     color: #444444;
                 }
             }
-            &.background-black{
+
+            &.background-black {
                 background:#000000;
+
                 .banner-text,
                 .banner-title{
                     color: #ffffff;
                 }
             }
-            @media(max-width:1024px){
-                max-height: 390px;
-            }
-            @media(min-width: 1440px){
+            @media(min-width: 1440px) {
                 left: calc((100% - 1290px) / 2);
                 min-height: 356px;
                 &.content-box--right{
@@ -299,6 +315,10 @@
                 justify-content: center;
                 align-items: center;
                 min-width: 162px;
+
+                @include smax-m {
+                    min-height: unset;
+                }
             }
         }
     }
