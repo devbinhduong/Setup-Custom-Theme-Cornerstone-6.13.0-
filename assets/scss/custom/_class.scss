@@ -358,6 +358,10 @@
             }
         }
     }
+
+    &-inline {
+        display: inline-flex;
+    }
 }
 
 .block {

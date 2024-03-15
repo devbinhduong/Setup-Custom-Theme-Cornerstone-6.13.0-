@@ -1,0 +1,119 @@
+/* Mint Update Header Middle Icons */
+@include smin-m {
+    .headerMiddle {
+        .headerMiddle_item--center {
+            padding-left: 196px;
+            padding-right: 43px;
+            max-width: 100%;
+
+            @media (max-width: 1400px) {
+                padding-left: 37px;
+            }
+        }
+        
+        .headerMiddle_item--right {
+            .items {
+                .navUser-action {
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 20px;
+                    text-transform: uppercase;
+                    display: inline-flex;
+                    align-items: center;
+                    
+                    .navUser-icon {
+                        position: relative;
+                        width: 40px;
+                        height: 40px;
+                        min-width: 40px;
+                        background-color: #f3f3f3;
+                        border-radius: 50%;
+                        margin-right: 8px;
+                        display: inline-flex;
+                        justify-content: center;
+                        align-items: center;
+                        
+                        .icon {
+                            width: 20px;
+                            height: 20px;
+                            fill: transparent;
+                            margin: 0;
+                        }
+                    }
+                }
+
+                + .items {
+                    margin-left: 17px;
+                }
+                
+                &.item--cart {
+                    display: inline-flex;
+                    align-content: center;
+                    
+                    .navUser-action {
+                        border: none;
+                        background: transparent;
+                    }
+                    
+                    .icon {
+                        fill: #000000 !important;
+                    }
+                    
+                    .header-countPill {
+                        position: unset;
+                        display: inline-block;
+                        background-color: #FF7200;
+                        border-radius: 50%;
+                        color: #fff;
+                        font-size: 14px;
+                        font-weight: 500;
+                        height: 40px;
+                        line-height: 40px;
+                        margin-left: 10px;
+                        text-align: center;
+                        width: 40px;
+                    }
+                }
+            }
+        }
+    }
+
+    .quickResults-close {
+        right: 15px;
+        top: 5px;
+    }
+}
+
+@include smax-m {
+    .headerMiddle {
+        .cartMobile  {
+            font-size: 0;
+            position: relative;
+            
+            .navUser-item-cartIcon {
+                margin-right: 9px;
+                
+                .icon {
+                    fill: #000000 !important;
+                }
+            }
+
+            .countPill {
+                background-color: #FF7200;
+            }
+        }
+
+        .item--account {
+            .myAccountMobile  {
+                .navUser-icon {
+                    .icon {
+                        width: 25px;
+                        height: 25px;
+                        fill: transparent;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}

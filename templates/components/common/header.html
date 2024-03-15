@@ -69,6 +69,17 @@
             </div>
 
             <div class="headerMiddle_item headerMiddle_item--right text-right">
+                {{#if theme_settings.header_contact_text}}
+                    <div class="items item--contact hide-on-tablet">
+                        <a class="navUser-action flex-center-y hover-link" href="{{theme_settings.header_contact_link}}" aria-label="{{theme_settings.header_contact_text}}">
+                            <span class="navUser-icon flex-center-inline">
+                                <svg class="icon" aria-hidden="true"><use xlink:href="#icon-contact"></use></svg>
+                            </span>
+                            {{theme_settings.header_contact_text}}
+                        </a>
+                    </div>
+                {{/if}}
+
                 <div class="items item--account">
                     {{#if customer}}
                         <a class="navUser-action navUser-action--logged button button--transparent flex-center-y hover-link hide-on-tablet" href="{{urls.account.index}}" aria-label="{{customer.name}}" data-login-form>
@@ -78,6 +89,9 @@
                         {{> components/custom/custom-account-popup data="account-pc"}}
                     {{else}}
                         <a class="navUser-action flex-center-y hover-link hide-on-tablet" href="{{urls.auth.login}}" aria-label="{{lang 'account.title'}}" data-login-form>
+                            <span class="navUser-icon">
+                                <svg class="icon" aria-hidden="true"><use xlink:href="#icon-information"></use></svg>
+                            </span>
                             {{lang 'account.title'}}
                         </a>
 
@@ -87,20 +101,21 @@
                      <!-- Mobile -->
                      <a class="navUser-action myAccountMobile hide-on-desktop" {{#if customer}}href="{{urls.account.index}}"{{else}}href="{{urls.auth.login}}"{{/if}} data-login-form-mobile aria-label="{{lang 'account.title'}}">
                         <span class="navUser-icon">
-                            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-user"></use></svg>
+                            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-information"></use></svg>
                         </span>
                     </a>
                 </div>
 
                 <div class="items item--cart custom-cart">
                     <!-- Cart Icon for Desktop -->
-                    <a class="navUser-action hide-on-tablet"
+                    <a class="navUser-action hide-on-tablet hover-link"
                         data-cart-preview
                         href="{{urls.cart}}"
                         aria-label="{{lang 'cart.nav_aria_label'}}">
                         <span class="navUser-icon navUser-item-cartIcon">
-                            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-cart-header"></use></svg>
+                            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-shopping-cart"></use></svg>
                         </span>
+                        {{lang 'common.cart'}}
                     </a>
                     <span class="countPill{{#if cart.items}} countPill--positive{{/if}} cart-quantity hide-on-tablet header-countPill">{{cart.quantity}}</span>
                     <div class="dropdown-cart" id="cart-preview-dropdown" aria-hidden="true"></div>
@@ -108,9 +123,10 @@
                     <!-- Cart Icon for Mobile -->
                     <a class="navUser-action cartMobile hide-on-desktop" data-cart-preview2 href="/cart.php" aria-label="{{lang 'cart.nav_aria_label'}}">
                         <span class="navUser-icon navUser-item-cartIcon">
-                            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-cart-header"></use></svg>
+                            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-shopping-cart"></use></svg>
                             <span class="countPill cart-quantity header-countPill">{{#if cart.items}}{{cart.quantity}}{{else}}0{{/if}}</span>
                         </span>
+                        {{lang 'common.cart'}}
                     </a>
                 </div>
             </div>

@@ -596,6 +596,11 @@ body.page-type-product {
             padding-left: 16px;
             padding-right: 16px;
 
+            @include smax-m {
+                padding-left: 0;
+                padding-right: 0;
+            }
+
             @include smin-m {
                 width: calc(100% - 565px);
                 min-width: 55%;
@@ -877,13 +882,17 @@ body.page-type-product {
 
             @include smax-xs {
                 flex-direction: column;
-                padding: 20px;
+                padding: 8px;
+                background-color: #f3f3f3;
             }
         }
         &__item {
             @include smax-xs {
+                background-color: #ffffff;
+                padding: 12px 10px;
+
                 + .productService__item {
-                    margin-top: 6px;
+                    margin-top: 8px;
                 }
             }
         }
@@ -980,7 +989,7 @@ body.page-type-product {
             .rightTab {
                 border-radius: 12px;
                 background-color: #ffffff;
-                padding: 24px 15px 20px 24px;
+                padding: 24px 15px 20px 15px;
                 transition: all linear 0.3s;
 
                 .rightTab-title {
