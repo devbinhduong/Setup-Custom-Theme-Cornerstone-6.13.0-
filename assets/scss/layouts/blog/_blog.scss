@@ -519,11 +519,11 @@
             color: stencilColor('color-textHeading');
         }
 
-        .themevale_column.no-padding>.item & {
+        .custom_column.no-padding>.item & {
             border-right: none;
         }
 
-        .themevale_column.no-padding>.item:last-child & {
+        .custom_column.no-padding>.item:last-child & {
             border-right: 1px solid #e0e0e0;
         }
 

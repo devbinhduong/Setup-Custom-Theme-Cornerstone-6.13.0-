@@ -388,7 +388,7 @@ export default function(context) {
             }
     
             utils.api.product.getById(productId, options, (err, response) => {
-                let productSpecial = productID.querySelector('.custom-special-product2');
+                let productSpecial = productID.querySelector('.custom-special-product');
                 
                 if(productSpecial) {
                     productSpecial.innerHTML = response;

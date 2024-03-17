@@ -1,11 +1,11 @@
 {{#partial "page"}}
-<div class="themevale_map">
+<div class="custom_map">
     {{#if theme_settings.contactUs_map}}
     {{> components/custom/contact-us-map}}
     {{/if}}
 </div>
 <div class="container">
-    <div class="themevale_breadcrumb">
+    <div class="custom_breadcrumb">
         {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
         <h1 class="page-heading">{{page.title}}</h1>
     </div>
@@ -19,8 +19,8 @@
             </ul>
         </nav>
         {{/if}}
-        <div class="page-content themevale_contact-us">
-            <div class="themevale_form">
+        <div class="page-content custom_contact-us">
+            <div class="custom_form">
                 <div id="contact-us-page">
                     {{#if forms.contact.success}}
                     <div id="contact-us-success">{{{lang 'forms.contact_us.successful' shopPath=urls.home}}}</div>
@@ -30,7 +30,7 @@
                     {{/if}}
                 </div>
             </div>
-            <div class="themevale_location">
+            <div class="custom_location">
                 <h3 class="title">Please do get in touch!</h3>
                 <div class="content">
                     <div class="description">We'd love to hear from you - please use the form to send us your message.

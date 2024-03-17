@@ -131,12 +131,17 @@ export default class Category extends CatalogPage {
 
             let formattedString = filterArray.toString().replace(/,(?=[A-Z])/g, ', ');
             resultText.innerText = formattedString;
-            facetedSearchRefineFilters.style.display = "block";
+
+            if(facetedSearchRefineFilters){
+                facetedSearchRefineFilters.style.display = "block";
+            }
         } else {
             resultText.innerText = originalText;
-            facetedSearchRefineFilters.style.display = "none";
-        }
 
+            if(facetedSearchRefineFilters){
+                facetedSearchRefineFilters.style.display = "none";
+            }
+        }
     }
     /* Custom End */
 }

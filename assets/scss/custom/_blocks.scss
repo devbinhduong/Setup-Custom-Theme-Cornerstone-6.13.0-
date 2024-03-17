@@ -2331,7 +2331,7 @@
         }
     }
 
-    .themevale_breadcrumb {
+    .custom_breadcrumb {
         padding-top: 25px;
         padding-bottom: 35px;
 
@@ -2345,7 +2345,7 @@
         }
     }
 
-    .themevale_contact-us {
+    .custom_contact-us {
         #contact-us-page {
             >p:first-child {
                 margin-bottom: 0;
@@ -2363,7 +2363,7 @@
             width: 205px;
         }
 
-        .themevale_location {
+        .custom_location {
             margin-top: 50px;
         }
 
@@ -2376,11 +2376,11 @@
             align-items: flex-start;
             justify-content: flex-start;
 
-            .themevale_form {
+            .custom_form {
                 width: 65%;
             }
 
-            .themevale_location {
+            .custom_location {
                 width: 35%;
                 margin-top: 0px;
                 padding-left: 50px;
@@ -2402,11 +2402,11 @@
                 background-color: stencilColor('color-textHeading');
             }
 
-            .themevale_form {
+            .custom_form {
                 width: 790px;
             }
 
-            .themevale_location {
+            .custom_location {
                 padding-left: 11%;
                 width: calc(100% - 790px);
 
