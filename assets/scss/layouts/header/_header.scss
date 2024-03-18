@@ -290,11 +290,15 @@
                     }
 
                     .navUser-action {
-                        color: #222222;
+                        color: stencilColor("navUser-color");
                         font-size: $fontSize-root;
                         font-style: normal;
                         font-weight: $fontWeight-medium;
                         line-height: normal;
+
+                        &:hover {
+                            color: stencilColor("navUser-color-hover");
+                        }
                     }
                 }
 

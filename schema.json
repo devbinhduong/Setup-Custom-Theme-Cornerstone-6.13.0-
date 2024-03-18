@@ -611,187 +611,6 @@
       },
       {
         "type": "heading",
-        "content": "Logo"
-      },
-      {
-        "type": "select",
-        "label": "Logo Position",
-        "id": "logo-position",
-        "force_reload": true,
-        "options": [
-          {
-            "value": "right",
-            "label": "Right"
-          },
-          {
-            "value": "center",
-            "label": "Center"
-          },
-          {
-            "value": "left",
-            "label": "Left"
-          }
-        ]
-      },
-      {
-        "type": "imageDimension",
-        "label": "Logo Image Size",
-        "id": "logo_size",
-        "description": "Please specify a maximum image size for desktop display. We'll automatically scale down the image for smaller devices.",
-        "force_reload": true,
-        "options": [
-          {
-            "value": "244x60",
-            "label": "Optimized For Theme"
-          },
-          {
-            "value": "original",
-            "label": "Original As Uploaded"
-          },
-          {
-            "value": "custom",
-            "label": "Specify Dimensions"
-          }
-        ]
-      },
-      {
-        "type": "select",
-        "label": "Logo Font Size",
-        "id": "logo_fontSize",
-        "options": [
-          {
-            "value": 14,
-            "label": "14px"
-          },
-          {
-            "value": 16,
-            "label": "16px"
-          },
-          {
-            "value": 18,
-            "label": "18px"
-          },
-          {
-            "value": 20,
-            "label": "20px"
-          },
-          {
-            "value": 22,
-            "label": "22px"
-          },
-          {
-            "value": 24,
-            "label": "24px"
-          },
-          {
-            "value": 26,
-            "label": "26px"
-          },
-          {
-            "value": 28,
-            "label": "28px"
-          },
-          {
-            "value": 30,
-            "label": "30px"
-          },
-          {
-            "value": 32,
-            "label": "32px"
-          },
-          {
-            "value": 34,
-            "label": "34px"
-          },
-          {
-            "value": 36,
-            "label": "36px"
-          },
-          {
-            "value": 38,
-            "label": "38px"
-          },
-          {
-            "value": 40,
-            "label": "40px"
-          },
-          {
-            "value": 42,
-            "label": "42px"
-          },
-          {
-            "value": 44,
-            "label": "44px"
-          },
-          {
-            "value": 46,
-            "label": "46px"
-          },
-          {
-            "value": 48,
-            "label": "48px"
-          },
-          {
-            "value": 50,
-            "label": "50px"
-          },
-          {
-            "value": 52,
-            "label": "52px"
-          },
-          {
-            "value": 54,
-            "label": "54px"
-          },
-          {
-            "value": 56,
-            "label": "56px"
-          },
-          {
-            "value": 58,
-            "label": "58px"
-          },
-          {
-            "value": 60,
-            "label": "60px"
-          },
-          {
-            "value": 62,
-            "label": "62px"
-          },
-          {
-            "value": 64,
-            "label": "64px"
-          },
-          {
-            "value": 66,
-            "label": "66px"
-          },
-          {
-            "value": 68,
-            "label": "68px"
-          },
-          {
-            "value": 70,
-            "label": "70px"
-          },
-          {
-            "value": 72,
-            "label": "72px"
-          },
-          {
-            "value": 74,
-            "label": "74px"
-          }
-        ]
-      },
-      {
-        "type": "color",
-        "label": "Logo Text Color",
-        "id": "storeName-color"
-      },
-      {
-        "type": "heading",
         "content": "Utility Navigation"
       },
       {
@@ -804,21 +623,7 @@
         "label": "Text Hover Color",
         "id": "navUser-color-hover"
       },
-      {
-        "type": "color",
-        "label": "Cart Dropdown Background",
-        "id": "navUser-dropdown-backgroundColor"
-      },
-      {
-        "type": "color",
-        "label": "Cart Dropdown Border",
-        "id": "navUser-dropdown-borderColor"
-      },
-      {
-        "type": "color",
-        "label": "Cart Counter Background",
-        "id": "navUser-indicator-backgroundColor"
-      },
+      
       {
         "type": "heading",
         "content": "Main Navigation"
@@ -838,74 +643,12 @@
         "type": "color",
         "label": "Text Hover Color",
         "id": "navPages-color-hover"
-      },
-      {
-        "type": "color",
-        "label": "Dropdown Menu Background",
-        "id": "navPages-subMenu-backgroundColor"
-      },
-      {
-        "type": "color",
-        "label": "Dropdown Menu Border",
-        "id": "navPages-subMenu-separatorColor"
-      },
-      {
-        "type": "select",
-        "label": "Dropdown Menu Display Mode",
-        "id": "navigation_design",
-        "force_reload": true,
-        "options": [
-          {
-            "value": "simple",
-            "label": "Simple Menu Display Depth Of"
-          },
-          {
-            "value": "alternate",
-            "label": "Alternate Max Menu Display Depth"
-          }
-        ]
-      },
-      {
-        "type": "color",
-        "label": "QuickSearch Background",
-        "id": "dropdown--quickSearch-backgroundColor"
-      },
-      {
-        "type": "heading",
-        "content": "Social Media Icons"
-      },
-      {
-        "type": "paragraph",
-        "content": "Social Accounts Must BeSet"
-      },
-      {
-        "type": "checkbox",
-        "label": "Show Social Media Icons",
-        "force_reload": true,
-        "id": "social_icon_placement_top"
-      },
-      {
-        "type": "select",
-        "label": "Footer Placement",
-        "id": "social_icon_placement_bottom",
-        "force_reload": true,
-        "reference": "social_icon_placement_top",
-        "reference_default": false,
-        "options": [
-          {
-            "value": "bottom_none",
-            "label": "None"
-          },
-          {
-            "value": "bottom_right",
-            "label": "Right"
-          },
-          {
-            "value": "bottom_left",
-            "label": "Left"
-          }
-        ]
-      },
+      }
+    ]
+  },
+  {
+    "name": "Footer",
+    "settings": [
       {
         "type": "heading",
         "content": "Footer"
@@ -914,138 +657,443 @@
         "type": "color",
         "label": "Footer Background",
         "id": "footer-backgroundColor"
-      }
-    ]
-  },
-  {
-    "name": "Mega Menu",
-    "settings":[
+      },
       {
         "type": "heading",
-        "content": "Mega Menu"
-      },
-      {
-        "type": "checkbox",
-        "label": "Enable Mega Menu",
-        "id": "customMegamenu"
-      },
-      {
-        "type": "select",
-        "id": "customMegamenuType",
-        "force_reload": true,
-        "label": "Edit MegaMenu",
-        "options": [
-          {
-            "value": "Editor",
-            "label": "Theme Editor"
-          },
-          {
-            "value": "Source",
-            "label": "Theme Source"
-          }
-        ]
+        "content": "Footer Column 1"
       },
       {
         "type": "text",
-        "label": "Mega Menu Item 1 Position",
-        "id": "mega_menu_styleCustom_item1"
+        "label": "Footer Column 1 Heading",
+        "id": "footer_col1_heading"
       },
       {
         "type": "text",
-        "label": "Mega Menu Item 1 Image-1",
-        "id": "mega_menu_styleCustom_img1"
+        "label": "Footer Item 1 Text",
+        "id": "footer_col1_text1"
       },
       {
         "type": "text",
-        "label": "Mega Menu Item 1 Image-1 Link",
-        "id": "mega_menu_styleCustom_link1"
+        "label": "Footer Item 1 Link",
+        "id": "footer_col1_link1"
       },
       {
         "type": "text",
-        "label": "Mega Menu Item 1 Image-2",
-        "id": "mega_menu_styleCustom_img2"
+        "label": "Footer Item 2 Text",
+        "id": "footer_col1_text2"
       },
       {
         "type": "text",
-        "label": "Mega Menu Item 1 Image-2 Link",
-        "id": "mega_menu_styleCustom_link2"
+        "label": "Footer Item 2 Link",
+        "id": "footer_col1_link2"
       },
       {
         "type": "text",
-        "label": "Mega Menu Item 2 Position",
-        "id": "mega_menu_styleCustom_item2"
+        "label": "Footer Item 3 Text",
+        "id": "footer_col1_text3"
       },
       {
         "type": "text",
-        "label": "Mega Menu Item 2 Image-1",
-        "id": "mega_menu_styleCustom_img3"
+        "label": "Footer Item 3 Link",
+        "id": "footer_col1_link3"
       },
       {
         "type": "text",
-        "label": "Mega Menu Item 2 Image-1 Link",
-        "id": "mega_menu_styleCustom_link3"
+        "label": "Footer Item 4 Text",
+        "id": "footer_col1_text4"
       },
       {
         "type": "text",
-        "label": "Mega Menu Item 2 Image-2",
-        "id": "mega_menu_styleCustom_img4"
+        "label": "Footer Item 4 Link",
+        "id": "footer_col1_link4"
       },
       {
         "type": "text",
-        "label": "Mega Menu Item 2 Image-2 Link",
-        "id": "mega_menu_styleCustom_link4"
+        "label": "Footer Item 5 Text",
+        "id": "footer_col1_text5"
       },
       {
         "type": "text",
-        "label": "Mega Menu Item 3 Position",
-        "id": "mega_menu_styleCustom_item3"
+        "label": "Footer Item 5 Link",
+        "id": "footer_col1_link5"
+      },
+      {
+        "type": "heading",
+        "content": "Footer Column 2"
       },
       {
         "type": "text",
-        "label": "Mega Menu Item 3 Image-1",
-        "id": "mega_menu_styleCustom_img5"
+        "label": "Footer Column 2 Heading",
+        "id": "footer_col2_heading"
       },
       {
         "type": "text",
-        "label": "Mega Menu Item 3 Image-1 Link",
-        "id": "mega_menu_styleCustom_link5"
+        "label": "Footer Item 1 Text",
+        "id": "footer_col2_text1"
       },
       {
         "type": "text",
-        "label": "Mega Menu Item 3 Image-2",
-        "id": "mega_menu_styleCustom_img6"
+        "label": "Footer Item 1 Link",
+        "id": "footer_col2_link1"
       },
       {
         "type": "text",
-        "label": "Mega Menu Item 3 Image-2 Link",
-        "id": "mega_menu_styleCustom_link6"
-      },
-      
-
-      {
-        "type": "text",
-        "label": "Mega Menu Item 4 Position",
-        "id": "mega_menu_styleCustom_item4"
+        "label": "Footer Item 2 Text",
+        "id": "footer_col2_text2"
       },
       {
         "type": "text",
-        "label": "Mega Menu Item 4 Image-1",
-        "id": "mega_menu_styleCustom_img7"
+        "label": "Footer Item 2 Link",
+        "id": "footer_col2_link2"
       },
       {
         "type": "text",
-        "label": "Mega Menu Item 4 Image-1 Link",
-        "id": "mega_menu_styleCustom_link7"
+        "label": "Footer Item 3 Text",
+        "id": "footer_col2_text3"
       },
       {
         "type": "text",
-        "label": "Mega Menu Item 4 Image-2",
-        "id": "mega_menu_styleCustom_img8"
+        "label": "Footer Item 3 Link",
+        "id": "footer_col2_link3"
       },
       {
         "type": "text",
-        "label": "Mega Menu Item 4 Image-2 Link",
-        "id": "mega_menu_styleCustom_link8"
+        "label": "Footer Item 4 Text",
+        "id": "footer_col2_text4"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 4 Link",
+        "id": "footer_col2_link4"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 5 Text",
+        "id": "footer_col2_text5"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 5 Link",
+        "id": "footer_col2_link5"
+      },
+      {
+        "type": "heading",
+        "content": "Footer Column 3"
+      },
+      {
+        "type": "text",
+        "label": "Footer Column 3 Heading",
+        "id": "footer_col3_heading"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 1 Text",
+        "id": "footer_col3_text1"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 1 Link",
+        "id": "footer_col3_link1"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 2 Text",
+        "id": "footer_col3_text2"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 2 Link",
+        "id": "footer_col3_link2"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 3 Text",
+        "id": "footer_col3_text3"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 3 Link",
+        "id": "footer_col3_link3"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 4 Text",
+        "id": "footer_col3_text4"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 4 Link",
+        "id": "footer_col3_link4"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 5 Text",
+        "id": "footer_col3_text5"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 5 Link",
+        "id": "footer_col3_link5"
+      },
+      {
+        "type": "heading",
+        "content": "Footer Column 4"
+      },
+      {
+        "type": "text",
+        "label": "Footer Column 4 Heading",
+        "id": "footer_col3_heading"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 1 Text",
+        "id": "footer_col4_text1"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 1 Link",
+        "id": "footer_col4_link1"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 2 Text",
+        "id": "footer_col4_text2"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 2 Link",
+        "id": "footer_col4_link2"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 3 Text",
+        "id": "footer_col4_text3"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 3 Link",
+        "id": "footer_col4_link3"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 4 Text",
+        "id": "footer_col4_text4"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 4 Link",
+        "id": "footer_col4_link4"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 5 Text",
+        "id": "footer_col4_text5"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 5 Link",
+        "id": "footer_col4_link5"
+      },
+      {
+        "type": "heading",
+        "content": "Footer Column 5"
+      },
+      {
+        "type": "text",
+        "label": "Footer Column 5 Heading",
+        "id": "footer_col5_heading"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 1 Text",
+        "id": "footer_col5_text1"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 1 Link",
+        "id": "footer_col5_link1"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 2 Text",
+        "id": "footer_col5_text2"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 2 Link",
+        "id": "footer_col5_link2"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 3 Text",
+        "id": "footer_col5_text3"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 3 Link",
+        "id": "footer_col5_link3"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 4 Text",
+        "id": "footer_col5_text4"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 4 Link",
+        "id": "footer_col5_link4"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 5 Text",
+        "id": "footer_col5_text5"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 5 Link",
+        "id": "footer_col5_link5"
+      },
+      {
+        "type": "heading",
+        "content": "Footer Column 6"
+      },
+      {
+        "type": "text",
+        "label": "Footer Column 6 Heading",
+        "id": "footer_col6_heading"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 1 Text",
+        "id": "footer_col6_text1"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 1 Link",
+        "id": "footer_col6_link1"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 2 Text",
+        "id": "footer_col6_text2"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 2 Link",
+        "id": "footer_col6_link2"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 3 Text",
+        "id": "footer_col6_text3"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 3 Link",
+        "id": "footer_col6_link3"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 4 Text",
+        "id": "footer_col6_text4"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 4 Link",
+        "id": "footer_col6_link4"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 5 Text",
+        "id": "footer_col6_text5"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 5 Link",
+        "id": "footer_col6_link5"
+      },
+      {
+        "type": "heading",
+        "content": "Footer Column 7"
+      },
+      {
+        "type": "text",
+        "label": "Footer Column 7 Heading",
+        "id": "footer_col6_heading"
+      },
+      {
+        "type": "text",
+        "label": "Footer Column 7 Email",
+        "id": "footer_col7_email"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 1 Text",
+        "id": "footer_col7_text1"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 1 Link",
+        "id": "footer_col7_link1"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 2 Text",
+        "id": "footer_col7_text2"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 2 Link",
+        "id": "footer_col7_link2"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 3 Text",
+        "id": "footer_col7_text3"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 3 Link",
+        "id": "footer_col7_link3"
+      },
+      {
+        "type": "heading",
+        "content": "Footer Column 8"
+      },
+      {
+        "type": "text",
+        "label": "Footer Column 8 Heading",
+        "id": "footer_col6_heading"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 1 Text",
+        "id": "footer_col8_text1"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 1 Link",
+        "id": "footer_col8_link1"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 2 Text",
+        "id": "footer_col8_text2"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 2 Link",
+        "id": "footer_col8_link2"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 3 Text",
+        "id": "footer_col8_text3"
+      },
+      {
+        "type": "text",
+        "label": "Footer Item 3 Link",
+        "id": "footer_col8_link3"
       }
     ]
   },

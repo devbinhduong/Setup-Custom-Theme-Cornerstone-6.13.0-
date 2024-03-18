@@ -71,7 +71,7 @@
             <div class="headerMiddle_item headerMiddle_item--right text-right">
                 {{#if theme_settings.header_contact_text}}
                     <div class="items item--contact hide-on-tablet">
-                        <a class="navUser-action flex-center-y hover-link" href="{{theme_settings.header_contact_link}}" aria-label="{{theme_settings.header_contact_text}}">
+                        <a class="navUser-action flex-center-y hover-link" style="--underlineColor:{{theme_settings.navUser-color-hover}}" href="{{theme_settings.header_contact_link}}" aria-label="{{theme_settings.header_contact_text}}">
                             <span class="navUser-icon flex-center-inline">
                                 <svg class="icon" aria-hidden="true"><use xlink:href="#icon-contact"></use></svg>
                             </span>
@@ -82,13 +82,13 @@
 
                 <div class="items item--account">
                     {{#if customer}}
-                        <a class="navUser-action navUser-action--logged button button--transparent flex-center-y hover-link hide-on-tablet" href="{{urls.account.index}}" aria-label="{{customer.name}}" data-login-form>
+                        <a class="navUser-action navUser-action--logged button button--transparent flex-center-y hover-link hide-on-tablet" style="--underlineColor:{{theme_settings.navUser-color-hover}}" href="{{urls.account.index}}" aria-label="{{customer.name}}" data-login-form>
                             {{lang 'account.logged'}}
                         </a>
 
                         {{> components/custom/custom-account-popup data="account-pc"}}
                     {{else}}
-                        <a class="navUser-action flex-center-y hover-link hide-on-tablet" href="{{urls.auth.login}}" aria-label="{{lang 'account.title'}}" data-login-form>
+                        <a class="navUser-action flex-center-y hover-link hide-on-tablet" style="--underlineColor:{{theme_settings.navUser-color-hover}}" href="{{urls.auth.login}}" aria-label="{{lang 'account.title'}}" data-login-form>
                             <span class="navUser-icon">
                                 <svg class="icon" aria-hidden="true"><use xlink:href="#icon-information"></use></svg>
                             </span>
@@ -109,6 +109,7 @@
                 <div class="items item--cart custom-cart">
                     <!-- Cart Icon for Desktop -->
                     <a class="navUser-action hide-on-tablet hover-link"
+                        style="--underlineColor:{{theme_settings.navUser-color-hover}}"
                         data-cart-preview
                         href="{{urls.cart}}"
                         aria-label="{{lang 'cart.nav_aria_label'}}">

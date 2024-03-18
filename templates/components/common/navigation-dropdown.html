@@ -6,12 +6,12 @@
                     <span class="navPages-action-moreIcon" aria-hidden="true">
                         <svg class="icon"><use href="#icon-long-arrow-left" /></svg>
                     </span>
-                    <a class="text hover-link" href="{{url}}"><span>{{name}}</span></a>
+                    <a class="text hover-link" style="--underlineColor:{{theme_settings.navPages-color-hover}} href="{{url}}"><span>{{name}}</span></a>
                 </p>
             </li>
             <li class="navPage-subMenu-item-child navPages-action-end navPage-subMenu-all navPage-subMenu-all--lv1 custom-fadeInLeft" data-step-animate="0">
                 <a class="navPage-subMenu-action navPages-action navPages-action-lv1 no-subMenu" href="{{url}}">
-                    <span class="text hover-link">{{lang 'category.view_all.name' category=name}}</span>
+                    <span class="text hover-link" style="--underlineColor:{{theme_settings.navPages-color-hover}}>{{lang 'category.view_all.name' category=name}}</span>
                 </a>
             </li>
             {{#each children}}

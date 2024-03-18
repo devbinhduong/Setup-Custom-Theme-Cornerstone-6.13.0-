@@ -1,18 +1,13 @@
-<div class="heroCarousel-content{{#unless show_background}} heroCarousel-content--empty{{/unless}} {{#unless hasBackground '==' 'transparent'}} heroCarousel-content--notEmpty{{/unless}} heroCarousel-content--{{position}}">
+<div class="heroCarousel-content heroCarousel-content--left">
     {{#if heading}}
     	<h2 class="heroCarousel-title animated">{{{heading}}}</h2>
     {{/if}}
     {{#if text}}
     	<p class="heroCarousel-description animated">{{{text}}}</p>
     {{/if}}
-    {{#or (if button_text) (if customTextBtn)}}
+	{{#if button_text}}
     	<div class="heroCarousel-action animated">
-		    {{#if button_text}}
-		        <a class="button button--primary" href="{{url}}">{{button_text}}</a>
-		    {{/if}}
-		    {{#if customTextBtn}}
-		    	<a class=" button button--primary" href="{{customBtn}}">{{customTextBtn}}</a>
-		    {{/if}}
-    	</div>
-	{{/or}}
+			<a class="button button--primary" href="{{url}}">{{button_text}}</a>
+		</div>
+	{{/if}}
 </div>

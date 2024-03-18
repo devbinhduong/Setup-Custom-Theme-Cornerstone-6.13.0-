@@ -275,6 +275,16 @@
         color: stencilColor("navPages-color");
     }
 
+    &:hover {
+        span:not(.navPages-label) {
+            color: stencilColor('navPages-color-hover');
+        }
+
+        .hover-link::before {
+            background-color: stencilColor('navPages-color-hover');
+        }
+    }
+
     &.navPages-action-lv2 {
         span:not(.navPages-action-moreIcon) {
             font-size: $fontSize-root - 2px;
