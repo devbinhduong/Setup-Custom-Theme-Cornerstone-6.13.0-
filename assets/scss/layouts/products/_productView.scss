@@ -548,6 +548,10 @@ body.page-type-product {
                 .productView-image {
                     border-color: #D8D8D8;
                     border-radius: 0;
+                    
+                    @include smax-s {
+                        pointer-events: none;
+                    }
                 }
 
                 .productView-img-container {

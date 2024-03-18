@@ -118,7 +118,7 @@
                             }}
                         {{/if}}
                         {{#if imageMobile}}
-                            <img class="lazyload image-mobile" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{../../settings.store_hash}}/product_images/uploaded_images/{{imageMobile}}" alt="{{stencil_image.alt}}" title="{{stencil_image.alt}}">
+                            <img class="lazyload image-mobile" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{../settings.store_hash}}/product_images/uploaded_images/{{imageMobile}}" alt="{{stencil_image.alt}}" title="{{stencil_image.alt}}">
                         {{else}}
                             <img class="lazyload image-mobile" src="{{cdn 'img/loading.svg'}}" data-src="{{getImageSrcset stencil_image 1x=(default fallback_size '960w')}}" alt="{{stencil_image.alt}}" title="{{stencil_image.alt}}">
                         {{/if}}
