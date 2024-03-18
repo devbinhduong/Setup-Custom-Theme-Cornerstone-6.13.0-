@@ -117,3 +117,14 @@
         }
     }
 }
+
+/* Update Fix error Alert box */
+body.page-type-product{
+    .productView:not(.custom-quickShop) {
+        flex-wrap: wrap;
+
+        .alertBox  {
+            width: 100%;
+        }
+    }
+}

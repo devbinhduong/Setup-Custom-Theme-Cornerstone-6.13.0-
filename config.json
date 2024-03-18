@@ -1,5 +1,5 @@
 {
-  "name": "Cornerstone Custom Update 15032024 Part 1",
+  "name": "Cornerstone Custom Update 18032024",
   "version": "6.13.0",
   "template_engine": "handlebars_v4",
   "meta": {
@@ -448,7 +448,7 @@
         "show_product_quick_view": false,
         "show_copyright_footer": true,
         "show_product_details_tabs": true,
-        "show_product_reviews": true,
+        "show_product_reviews": false,
         "show_quick_payment_buttons": true,
         "show_custom_fields_tabs": false,
         "show_product_weight": false,
@@ -997,7 +997,8 @@
         "homepage_show_carousel_4_customtextlink3": "",
         "homepage_show_carousel_4_customlink3": "",
         "homepage_show_carousel_4_customtextbtn": "",
-        "homepage_show_carousel_4_custombtn": ""
+        "homepage_show_carousel_4_custombtn": "",
+        "show_card_compare": false
       }
     }
   ]

@@ -83,7 +83,7 @@
             </figcaption>
         </figure>
         <div class="card-body">
-            {{#and rating show_rating}}product.
+            {{#and rating product.show_rating}}
                 <p class="card-text" data-test-info-type="productRating">
                     <span class="rating--small">
                         {{> components/products/ratings rating_target=name rating=rating}}

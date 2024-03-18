@@ -310,7 +310,7 @@
     }
 
     @media (min-width: 1025px){
-        max-width: 450px;
+        max-width: 630px;
 
         &.heroCarousel-content--left{
             left: 30px;
@@ -350,327 +350,297 @@
     }
 }
 
-.heroCarousel-subtitle{
-    display: inline-block;
-    vertical-align: top;
-    width: 100%;
-    color: $carousel-title-color;
-    font-size: $fontSize-root - 2px;
-    line-height: $fontSize-root + 6;
-    line-height: 2;
-    margin: 0 0 10px 0;
-    position: relative;
-    text-transform: uppercase;
-    @media (min-width: 381px){
-        margin-bottom: 15px;
-    }
-    @media (min-width: 1025px){
-        margin-bottom: 18px;
-    }
-}
-
 .heroCarousel-title {
-    display: inline-block;
-    vertical-align: top;
-    width: 100%;
-    font-size: $fontSize-hero - 12px;
-    font-weight: $fontWeight-normal;
-    color: $carousel-title-color;
+    position: relative;
+    color: #ffffff;
+    font-size: 90px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100px; /* 111.111% */
     letter-spacing: 0;
-    line-height: 1.2;
-    margin: 0 0 10px 0;
+    padding-bottom: 6px;
 
-    @media (min-width: 321px){
-        font-size: 30px;
-    }
-    @media (min-width: 381px){
-        margin-bottom: 15px;
-    }
-
-    @media (min-width: 1025px){
-        font-size: 36px;
-        margin-bottom: 25px;
-    }
-
-    @media (min-width: 1600px){
-        margin-bottom: 30px;
-    }
-
-    @media (min-width: 1920px){
-        font-size: $fontSize-hero;
-    }
-}
-
-.heroCarousel-countdown{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 5px 0 15px 0;
-    font-size: 18px;
-    font-family: $fontFamily-headings;
-    font-weight: $fontWeight-medium;
-    line-height: $lineHeight-tiny;
-    color: $carousel-description-color;
-
-    .num{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-        align-content: center;
-        width: 50px;
-        height: 50px;
-        border: 1px solid $carousel-description-color;
-        border-radius: 50%;
-        text-align: center;
-
-        span{
-            display: block;
-            width: 100%;
-            font-size: $fontSize-root - 4px;
-            font-family: $fontFamily-sans;
-        }
-
-        + .num{
-            margin-left: 20px;
-        }
-    }
-
-    @media (min-width: 551px){
-        font-size: 20px;
-
-        .num{
-            width: 60px;
-            height: 60px;
-        }
-    }
-
-    @media (min-width: 992px){
-        font-size: 22px;
-
-        .num{
-            width: 72px;
-            height: 72px;
-
-            span{
-                font-size: $fontSize-root - 2px;
-            }
-        }
-    }
-
-    @media (min-width: 1025px){
-        margin-bottom: 45px;
-
-        font-size: 24px;
-
-        .num{
-            width: 75px;
-            height: 75px;
-        }
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 195px;
+        height: 2px;
+        background-color: #F47B20;
     }
 }
 
 .heroCarousel-description {
-    display: inline-block;
-    vertical-align: top;
-    margin: 0 0 10px 0;
-    color: $carousel-description-color;
-    @media (min-width: 381px) {
-        margin-bottom: 15px;
-    }
-    @media (min-width: 1025px) {
-        margin-bottom: 22px;
-    }
-}
-
-.heroCarousel-customLink{
-    display: block;
-    font-size: 0;
-    letter-spacing: 0;
-    margin: 0 0 10px 0;
-    padding: 0;
-
-    li{
-        display: inline-block;
-        vertical-align: top;
-        font-size: $fontSize-root;
-
-        a{
-            display: block;
-            padding: 10px;
-            color: $carousel-description-color;
-            line-height: $lineHeight-large;
-            transition: unset;
-        }
-
-        span{
-            display: inline-block;
-            vertical-align: top;
-            position: relative;
-
-            &:before{
-                content: '';
-                position: absolute;
-                left: 0;
-                width: 100%;
-                bottom: -1px;
-                height: 1px;
-                display: block;
-                background: $carousel-description-color;
-            }
-        }
-    }
-
-    @media (min-width: 551px){
-        li{
-            a{
-                padding: 0px 24px 15px 24px;
-            }
-
-            &:first-child{
-                a{
-                    padding-left: 0;
-                }
-            }
-        }
-    }
-
-    @media (min-width: 1025px){
-        li{
-            &:hover{
-                a{
-                    color: $color-textLink-hover;
-                }
-
-                span{
-                    &:before{
-                        background: $color-textLink-hover;
-                    }
-                }
-            }
-        }
-    }
-
-    @media (min-width: 1600px){
-        padding-bottom: 12px;
-    }
+    color: #ffffff;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    margin-bottom: 40px;
 }
 
 .heroCarousel-action {
-    margin: 10px 0 0 0;
-
     .button{
-        min-width: 200px;
+        min-width: 150px;
+        color: #ffffff;
+        font-family: "Outfit", sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding: 13px 20px 15px;
 
-        &.button--large{
-            min-width: 250px;
-        }
-        + .button{
-            margin-top: 10px;
+        &:hover {
+            color: #F47B20;
         }
     }
+}
 
-    @media (min-width: 551px){
-        margin: 18px 0 0 0;
-        .button{
-            + .button{
-                margin-left: 30px;
-                margin-top: 0;
+.heroCarousel-wrapper {
+    .heroCarousel {
+        &:not(.slick-initialized) {
+            .slick-dots {
+                display: none;
+            }
+        }
+
+        .slick-dots {
+            position: absolute;
+            top: 50%;
+            left: auto;
+            right: calc((100% - 1290px) / 2);
+            bottom: auto;
+            display: inline-block;
+            width: auto;
+            transform: translateY(-50%);
+
+            li {
+                width: auto;
+                height: auto;
+                display: block;
+                background-color: transparent;
+                margin: 0;
+
+                & + li {
+                    margin-top: 43px;
+                }
+
+                button {
+                    color: #736d6a;
+                    text-align: right;
+                    font-size: 17px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    border: none;
+                    width: 17px;
+                    height: 26px;
+
+                    .dot-stt {
+                        position: relative;
+                        display: inline-block;
+
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            left: 50%;
+                            top: 100%;
+                            transform: translateX(-50%);
+                            height: 43px;
+                            width: 1px; 
+                            background-color: #736d6a;
+                        }
+                    }
+
+                    [data-carousel-tooltip] {
+                        display: none;
+                    }
+                }
+
+                
+                &:last-child{
+                    button {
+                        .dot-stt {
+                            &::after {
+                                display: none;
+                            }
+                        
+                        }
+                    }
+                }
+
+                &.slick-active {
+
+                    button {
+                        color: #ffffff;
+                        background-color: transparent;
+                        &::before {
+                            background-color: #000000;
+                        }
+                    }
+
+                    .dot-stt {
+                        &::after {
+                            background-color: #ffffff;
+                        }
+                    }
+                }
+            }
+
+            @media(max-width: 1024px) {
+                top: 30%;
+                right: 10px;
+
+                li {
+                    &.slick-active {
+
+                        button::before {
+                            width: 20px !important;
+                            background-color: #000000;
+                        }
+
+                        .dot-stt {
+                            padding-right: 25px;
+                        }
+                    }
+                }
+            }
+
+            @media(max-width: 550px) {
+                top: 28%;
             }
         }
     }
 }
 
-.heroCarousel-custom{
+/* Custom Product  Carousel */
+.custom-homeCarouselFeature {
+    background: rgba(255, 255, 255, 0.30);
+    backdrop-filter: blur(10.350000381469727px);
     position: absolute;
-    top: 50%;
-    left: auto;
-    right: 15px;
-    min-width: unset!important;
-    width: 50px!important;
-    transform: translateY(-50%);
-    margin: 0!important;
-    display: none!important;
-    @include clearfix;
+    right: calc((100% - 1200px) / 2);
+    top: 167px;
+    padding: 30px 20px;
+    border-radius: 10px;
 
-    .slick-dots{
-        width: 50px;
-        position: relative;
-        top: unset;
-        bottom: unset;
-        left: unset;
-        right: unset;
+    .productView {
+        margin-left: 0;
+        margin-right: 0;
+        flex-direction: column;
+        max-width: 233px;
+        padding-top: 0;
 
-        li{
-            padding: 0;
+        .custom-productView-left {
             width: 100%;
-            height: auto;
-            margin: 0;
-            text-align: right;
+            padding: 0;
+            position: absolute;
+            top: -50px;
+            left: 0;
+            margin-bottom: 0;
 
-            + li{
-                margin-top: 15px;
-            }
-            .slick-dots-item {
-                border: none;
-                background: none;
-                color: $carousel-description-color;
-                border: none;
-                background: none;
-                width: auto;
-                height: auto;
-                font-size: $body-fontSize;
-                line-height: 26px;
-                &:before{
-                    content: '';
-                    background: $carousel-description-color;
-                    width: 100%;
-                    position: absolute;
-                    left: 0;
-                    bottom: -4px;
-                    height: 1px;
-                    display: none;
-                    top: auto;
-                }
-            }
-            &.slick-active {
-                .slick-dots-item {
-                    border: none;
-                    background: none;
-                    &:before{
-                        display: block;
+            .productView-image-wrapper {
+                max-width: 182px;
+                margin-left: auto;
+                margin-right: auto;
+
+                .productView-img-container {
+                    background-color: #ffffff;
+                    border-radius: 10px;
+                    &::after {
+                        padding-bottom: 77.47252747252747%;
                     }
                 }
             }
         }
-    }
 
-    @media (min-width: 551px){
-        display: block!important;
-    }
+        .custom-productView-middle {
+            margin-top: 85px;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #85807b;
+            padding-bottom: 10px;
 
-    @media (min-width: 1025px){
-        right: 30px;
+            .productView-price {
+                .price-section {
+                    &.rrp-price--withTax,
+                    &.rrp-price--withoutTax {
+                        display: none;
+                    }
 
-        &.heroCarousel-customRight{
-            right: auto;
-            left: 30px;
-        }
+                    .price {
+                        color: #F47B20;
+                        font-size: 20px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: 1.5;
+                        text-transform: capitalize;
+                    }
+                }
+            }
 
-        .slick-dots{
-            li{
-                + li{
-                    margin-top: 30px;
+            .productView-rating {
+                .icon--ratingFull {
+                    svg {
+                        fill: #FFB822;
+                    }
                 }
             }
         }
-    }
 
-    @include smin-xl{
-        right: calc((100% - 1290px)/ 2);
+        .custom-productView-right {
+            width: 100%;
 
-        &.heroCarousel-customRight{
-            left: calc((100% - 1290px)/ 2);
+            .productView-details {
+                width: 100%;
+
+                .productView-title {
+                    margin: 20px 0 16px;
+
+                    >a {
+                        color: #ffffff;
+                        font-size: 18px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 28px;
+                        text-transform: capitalize;
+                        text-decoration: none;
+                        white-space: pre-wrap;
+                        display: inline-block;
+                    }
+                }
+
+                .card-figcaption-bottom {
+                    .button {
+                        padding: 10px 15px !important;
+                        min-width: 144px;
+                        color: #003A63;
+                        font-family: "Outfit", sans-serif;
+                        font-size: 18px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 1;
+                        background-color: #ffffff;
+                        border-color: #ffffff;
+
+                        &::after {
+                            background-color: #003A63;
+                            border-color: #003A63;
+                        }
+
+                        &:hover {
+                            color: #ffffff;
+                        }
+
+                        .icon-shop-now-arrow {
+                            margin-left: 4px;
+                        }
+                    }
+                }
+            }
         }
     }
 }

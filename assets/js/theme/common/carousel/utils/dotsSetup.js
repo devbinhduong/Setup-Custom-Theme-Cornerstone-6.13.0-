@@ -18,5 +18,14 @@ export default ($dots, activeSlideIdx, slidesQuantity, { carouselArrowAndDotAria
         const $dotButton = $(dot).find('[data-carousel-dot]');
 
         tooltipSetup($dotButton.attr('aria-label', dotAriaLabel));
+
+
+        var dotSTT = idx;
+        dotSTT++;
+
+        $(dot).find('[data-carousel-dot]').attr('aria-label', dotAriaLabel);
+        if (!$(dot).find('[data-carousel-dot] .dot-stt').length) {
+            $(dot).find('[data-carousel-dot]').append('<span class="dot-stt">'+0+ +dotSTT+'</span>');
+        }
     });
 };
