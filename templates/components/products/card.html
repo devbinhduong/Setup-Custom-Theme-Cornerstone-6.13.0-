@@ -3,6 +3,7 @@
     {{#and (if images.length '>=' 2) (if theme_settings.custom_card_image_swap)}} card-hover{{/and}}"
     {{#if alternate}} card--alternate{{/if}}"
     data-test="card-{{id}}"
+    data-product-id="{{id}}"
     data-event-type="{{event}}"
     data-entity-id="{{id}}"
     data-position="{{position}}"
@@ -163,14 +164,49 @@
         {{#if brand.name}}
             <p class="card-text" data-test-info-type="brandName">{{brand.name}}</p>
         {{/if}}
-        <h3 class="card-title">
-            <a aria-label="{{> components/products/product-info}}"
-               href="{{url}}"
-               data-event-type="product-click"
-            >
-                {{name}}
-            </a>
-        </h3>
+    <div class="card-body-top">
+            <h3 class="card-title">
+                <a aria-label="{{> components/products/product-info}}"
+                href="{{url}}"
+                data-event-type="product-click"
+                >
+                    {{name}}
+                </a>
+            </h3>
+
+            <!-- Mint Start custom get card informatio -->
+            <div class="cardInfo">
+                {{#if sku}}
+                    <div class="cardInfo__item">
+                        <span class="item-name">SKU:</span>
+                        <span class="item-value">{{sku}}</span>
+                    </div>
+                {{/if}}
+
+                <div class="cardInfo__item">
+                    <span class="item-name">UPC:</span>
+                    <span class="item-value" data-card-upc></span>
+                </div>
+                
+                <div class="cardInfo__item">
+                    <span class="item-name">Condition:</span>
+                    <span class="item-value" data-card-condition></span>
+                </div>
+
+                {{#if availability}}
+                <div class="cardInfo__item">
+                    <span class="item-name">Availability:</span>
+                    <span class="item-value" data-card-availability>{{availability}}</span>
+                </div>
+                {{/if}}
+
+                <div class="cardInfo__item">
+                    <span class="item-name">Warranty:</span>
+                    <span class="item-value" data-card-warranty></span>
+                </div>
+            </div>
+
+        </div>
 
         <div class="card-text" data-test-info-type="price">
             {{#or customer (unless settings.hide_price_from_guests)}}

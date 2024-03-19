@@ -9,6 +9,7 @@ import megaMenuEditor from './megaMenuEditor';
 import loginPopup from './loginPopup';
 import ajaxAddToCart from './ajaxAddToCart';
 import quickShop from './quickShop';
+import customGetCardInfo from './customGetCardInfo';
 
 export default function(context) {
     const themeSettings = context.themeSettings;
@@ -67,6 +68,8 @@ export default function(context) {
             window.matchMedia('(max-width: 550px)').addEventListener('change', () => {
                 homeProductBannerSlider();
             });
+
+            customGetCardInfo(context);
         }
     }
 

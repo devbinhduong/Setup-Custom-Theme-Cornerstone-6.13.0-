@@ -113,7 +113,7 @@ export default class Category extends CatalogPage {
                 maxPriceNotEntered,
                 onInvalidPrice,
             },
-        });
+        }, this.context);
     }
 
     /* Custom Start */

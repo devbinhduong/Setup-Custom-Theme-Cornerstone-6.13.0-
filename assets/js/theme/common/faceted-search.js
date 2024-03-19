@@ -7,6 +7,8 @@ import collapsibleFactory from './collapsible';
 import { Validators } from './utils/form-utils';
 import nod from './nod';
 
+import customGetCardInfo from '../custom/customGetCardInfo';
+
 
 const defaultOptions = {
     accordionToggleSelector: '#facetedSearch .accordion-navigation, #facetedSearch .facetedSearch-toggle',
@@ -49,13 +51,15 @@ class FacetedSearch {
      *
      * let facetedSearch = new FacetedSearch(requestOptions, templatesDidLoad);
      */
-    constructor(requestOptions, callback, options) {
+    constructor(requestOptions, callback, options, context) {
         // Private properties
         this.requestOptions = requestOptions;
         this.callback = callback;
         this.options = _.extend({}, defaultOptions, options);
         this.collapsedFacets = [];
         this.collapsedFacetItems = [];
+
+        this.context = context;
 
         // Init collapsibles
         collapsibleFactory();
@@ -117,6 +121,8 @@ class FacetedSearch {
 
         // Bind events
         this.bindEvents();
+
+        customGetCardInfo(this.context);
     }
 
     updateView() {
