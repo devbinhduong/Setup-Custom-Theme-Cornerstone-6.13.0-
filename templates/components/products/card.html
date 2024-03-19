@@ -121,11 +121,6 @@
                         <button type="button" class="button button--small card-figcaption-button quickview" data-event-type="product-click" data-product-id="{{id}}">{{lang 'products.quick_view'}}</button>
                     {{/if}}
                 {{/unless}}
-                {{#and show_compare theme_settings.show_card_compare}}
-                    <label class="button button--small card-figcaption-button" for="compare-{{id}}">
-                        {{lang 'products.compare'}} <input type="checkbox" name="products[]" value="{{id}}" id="compare-{{id}}" data-compare-id="{{id}}">
-                    </label>
-                {{/and}}
             </div>
 
             <div class="card-figcaption-bottom">
@@ -164,7 +159,7 @@
         {{#if brand.name}}
             <p class="card-text" data-test-info-type="brandName">{{brand.name}}</p>
         {{/if}}
-    <div class="card-body-top">
+        <div class="card-body-top">
             <h3 class="card-title">
                 <a aria-label="{{> components/products/product-info}}"
                 href="{{url}}"
@@ -208,73 +203,100 @@
 
         </div>
 
-        <div class="card-text" data-test-info-type="price">
-            {{#or customer (unless settings.hide_price_from_guests)}}
-                {{> components/products/price price=price}}
-            {{else}}
-                {{> components/common/login-for-pricing}}
-            {{/or}}
-        </div>
-        {{> components/products/bulk-discount-rates}}
+        <div class="card-body-bottom">
+            <!-- Content for card list view -->
+            <div class="listView-content">
+                <p class="card-text" data-test-info-type="productRating">
+                    <span class="rating--small">
+                        {{> components/products/ratings rating_target=name rating=rating}}
+                    </span>
+                    {{#if num_reviews}}
+                        <span class="number-review">{{num_reviews}}{{#if num_reviews '>' 1}} reviews{{else}} review{{/if}}</span>
+                    {{/if}}
+                </p>
 
-        {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
-            {{#if show_cart_action}}
-                <div class="card-figcaption-bottom">
-                    {{#if has_options}}
-                        {{#if theme_settings.custom_quick_shop}}
-                            <a href="#" data-event-type="product-click" class="button button--transparent button--quickShop button--full button--action" data-product-id="{{id}}">{{lang 'products.quick_shop'}}</a>
-                        {{else}}
-                            <a href="{{url}}" data-event-type="product-click" class="button button--transparent button--full button--action" data-product-id="{{id}}">{{lang 'products.choose_options'}}</a>
-                        {{/if}}
-                    {{/if}}
-                    {{#if pre_order}}
-                        <a href="{{pre_order_add_to_cart_url}}" data-event-type="product-click" class="button button--transparent button--full button--action">{{lang 'products.pre_order'}}</a>
-                    {{/if}}
-                    {{#if add_to_cart_url }}
-                        <!-- Start Custom Quantity Card -->
-                        <div class="card-action-wrapper flex-between-center">
-                            {{#if theme_settings.show_card_quantity}}
-                                <div class="form-field form-field--increments">
-                                    <div class="form-increment" data-quantity-change>
-                                        <button class="button button--secondary button--icon" data-action="dec">
-                                            <span class="is-srOnly">{{lang 'products.quantity_decrease' name=product.title}}</span>
-                                            <i class="icon">
-                                                <svg>
-                                                    <use href="#icon-qty-minus"/>
-                                                </svg>
-                                            </i>
-                                        </button>
-                                        <input class="form-input form-input--incrementTotal card-form-incrementTotal"
-                                            name="qty[]"
-                                            type="tel"
-                                            value="{{#if product.min_purchase_quantity}}{{product.min_purchase_quantity}}{{else}}1{{/if}}"
-                                            data-quantity-min="{{product.min_purchase_quantity}}"
-                                            data-quantity-max="{{product.max_purchase_quantity}}"
-                                            aria-label="Quantity"
-                                            min="1"
-                                            pattern="[0-9]*"
-                                            aria-live="polite">
-                                        <button class="button button--secondary button--icon" data-action="inc">
-                                            <span class="is-srOnly">{{lang 'products.quantity_increase' name=product.title}}</span>
-                                            <i class="icon">
-                                                <svg>
-                                                    <use href="#icon-qty-plus"/>
-                                                </svg>
-                                            </i>
-                                        </button>
-                                    </div>
-                                </div>
+                <span class="card-free-shipping">Free shipping</span>
+            </div>
+
+            <div class="card-text" data-test-info-type="price">
+                {{#or customer (unless settings.hide_price_from_guests)}}
+                    {{> components/products/price price=price}}
+                {{else}}
+                    {{> components/common/login-for-pricing}}
+                {{/or}}
+            </div>
+            {{> components/products/bulk-discount-rates}}
+    
+            {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
+                {{#if show_cart_action}}
+                    <div class="card-figcaption-bottom">
+                        {{#if has_options}}
+                            {{#if theme_settings.custom_quick_shop}}
+                                <a href="#" data-event-type="product-click" class="button button--transparent button--quickShop button--full button--action" data-product-id="{{id}}">{{lang 'products.quick_shop'}}</a>
+                            {{else}}
+                                <a href="{{url}}" data-event-type="product-click" class="button button--transparent button--full button--action" data-product-id="{{id}}">{{lang 'products.choose_options'}}</a>
                             {{/if}}
-                            
-                            <a href="{{#unless theme_settings.quick_addToCart}} {{add_to_cart_url}}{{/unless}}" data-event-type="product-click" data-button-type="add-cart" class="button button--transparent button--full custom-add-to-cart" data-product-id="{{id}}" data-wait-message="{{lang 'products.adding_to_cart'}}">{{lang 'products.add_to_cart'}}</a>
-                        </div>
-                        <span class="product-status-message aria-description--hidden">{{lang 'category.add_cart_announcement'}}</span>
-                    {{/if}}
-                    {{#if out_of_stock_message }}
-                        <a href="{{url}}" data-event-type="product-click" class="button button--full button--action button--outOfStock" data-product-id="{{id}}" disabled>{{out_of_stock_message}}</a>
-                    {{/if}}
-                </div>
-            {{/if}}
-        {{/or}}
+                        {{/if}}
+                        {{#if pre_order}}
+                            <a href="{{pre_order_add_to_cart_url}}" data-event-type="product-click" class="button button--transparent button--full button--action">{{lang 'products.pre_order'}}</a>
+                        {{/if}}
+                        {{#if add_to_cart_url }}
+                            <!-- Start Custom Quantity Card -->
+                            <div class="card-action-wrapper flex-between-center">
+                                {{#if theme_settings.show_card_quantity}}
+                                    <div class="form-field form-field--increments">
+                                        <div class="form-increment" data-quantity-change>
+                                            <button class="button button--secondary button--icon" data-action="dec">
+                                                <span class="is-srOnly">{{lang 'products.quantity_decrease' name=product.title}}</span>
+                                                <i class="icon">
+                                                    <svg>
+                                                        <use href="#icon-qty-minus"/>
+                                                    </svg>
+                                                </i>
+                                            </button>
+                                            <input class="form-input form-input--incrementTotal card-form-incrementTotal"
+                                                name="qty[]"
+                                                type="tel"
+                                                value="{{#if product.min_purchase_quantity}}{{product.min_purchase_quantity}}{{else}}1{{/if}}"
+                                                data-quantity-min="{{product.min_purchase_quantity}}"
+                                                data-quantity-max="{{product.max_purchase_quantity}}"
+                                                aria-label="Quantity"
+                                                min="1"
+                                                pattern="[0-9]*"
+                                                aria-live="polite">
+                                            <button class="button button--secondary button--icon" data-action="inc">
+                                                <span class="is-srOnly">{{lang 'products.quantity_increase' name=product.title}}</span>
+                                                <i class="icon">
+                                                    <svg>
+                                                        <use href="#icon-qty-plus"/>
+                                                    </svg>
+                                                </i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                {{/if}}
+                                
+                                <a href="{{#unless theme_settings.quick_addToCart}} {{add_to_cart_url}}{{/unless}}" data-event-type="product-click" data-button-type="add-cart" class="button button--transparent button--full custom-add-to-cart" data-product-id="{{id}}" data-wait-message="{{lang 'products.adding_to_cart'}}">{{lang 'products.add_to_cart'}}</a>
+                            </div>
+                            <span class="product-status-message aria-description--hidden">{{lang 'category.add_cart_announcement'}}</span>
+                        {{/if}}
+                        {{#if out_of_stock_message }}
+                            <a href="{{url}}" data-event-type="product-click" class="button button--full button--action button--outOfStock" data-product-id="{{id}}" disabled>{{out_of_stock_message}}</a>
+                        {{/if}}
+                    </div>
+                {{/if}}
+            {{/or}}
+
+            <!-- Card Compare -->
+            {{#and show_compare theme_settings.show_card_compare}}
+            <div class="card-compare">
+                <label for="compare-{{id}}">
+                    <input type="checkbox" name="products[]" value="{{id}}" id="compare-{{id}}" data-compare-id="{{id}}">
+                    {{lang 'products.compare'}}
+                </label>
+            </div>
+            {{/and}}
+        </div>
+
     </div>
 </article>

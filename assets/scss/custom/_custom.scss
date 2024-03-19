@@ -118,19 +118,282 @@
     }
 }
 
-/* Update Fix error Alert box */
-// body.page-type-product{
-//     .productView:not(.custom-quickShop) {
-//         flex-wrap: wrap;
-
-//         .alertBox  {
-//             width: 100%;
-//         }
-//     }
-// }
-
 @include smax-s {
     .easyzoom-flyout {
         display: none !important;
+    }
+}
+
+/* Mint Status custom new product list layout */
+.page-listing {
+    .cardInfo {
+        .cardInfo__item {
+            font-weight: 500;
+            line-height: 1.2;
+            text-transform: capitalize;
+            color: stencilColor("color-primary");
+            font-size: 14px;
+            font-style: normal;
+
+            & + .cardInfo__item {
+                margin-top: 8px;
+            }
+
+            .item-name::before {
+                content: '';
+                width: 5px;
+                height: 5px;
+                background-color: #003A63;
+                border-radius: 50%;
+                display: inline-block;
+                margin-right: 7px;
+                -webkit-transform: translateY(-2px);
+                transform: translateY(-2px);
+            }
+
+            .item-value {
+                color: #909090;
+                font-weight: 400;
+            }
+        }
+    }
+
+    .productGrid {
+        .listView-content {
+            display: none;
+        }
+        .cardInfo {
+            margin-bottom: 20px;
+        }
+
+        .card-body-bottom {
+            .card-compare {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 12px;   
+            }
+        }
+    }
+
+    .productList {
+        .card {
+            .cardInfo {
+               @include smax-s {
+                text-align: left;
+               } 
+            }
+
+            .product-card-rating {
+                display: none;
+            }
+
+            .card-figure {
+                max-width: 270px !important;
+
+                @include smax-s {
+                    max-width: 100% !important;
+                }
+            }
+
+           .card-body {
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+                padding-bottom: 20px;
+                padding-right: 15px;
+
+                @include smax-s {
+                    flex-direction: column;
+                }
+
+                .card-body-top {
+                    max-width: 55%;
+
+                    @include smax-s {
+                        max-width: 100%;
+                    }
+
+                    .card-title {
+                        margin-bottom: 20px;
+                        > a {
+                            font-size: 28px;
+                            font-weight: 700;
+
+                            @include smax-m {
+                                font-size: 20px;
+                            }
+                        }
+                            
+                    }
+                }
+
+                .card-body-bottom {
+                    position: relative;
+                    max-width: 40%;
+                    padding-bottom: 24px;
+
+                    @include smax-s {
+                        max-width: 100%;
+                        padding-bottom: 0;
+                        margin-top: 20px;
+                    }
+
+                    .listView-content {
+                        p[data-test-info-type="productRating"] {
+                            flex-direction: column;
+                            align-items: flex-end;
+
+                            @include smax-s {
+                                align-items: flex-start;
+                            }
+                        }
+
+                        .icon {
+                            width: 16px;
+                            height: 16px;
+                        }
+
+                        .number-review {
+                            text-transform: none;
+                            font-weight: 400;
+                            font-size: 14px;
+                        }
+
+                        .card-free-shipping {
+                            margin-top: 15px;
+                            color: #646362;
+                            text-decoration: underline;
+                        }
+                    }
+                    
+                    [data-test-info-type="price"] {
+                        flex-direction: column;
+                        color: #000000;
+                        margin-top: 4px;
+                        align-items: flex-end;
+
+                        @include smax-s {
+                            align-items: flex-start;
+                            flex-direction: row;
+                            flex-wrap: wrap;
+                        }
+
+                        .price-section {
+                           .price {
+                            font-size: 40px;
+                            
+                            @include smax-m {
+                                font-size: 28px;
+                            }
+
+                           } 
+                        }
+
+                        .price-section.rrp-price--withoutTax .price, .price-section.non-sale-price--withoutTax .price {
+                            margin-top: 12px;
+                            display: inline-block;
+                        }
+                    }
+
+                    .card-figcaption-bottom {
+                        margin-top: 12px;
+
+                        .button {
+                            text-transform: uppercase;
+                            color: #ffffff;
+                            background-color: #FF7200;
+                            font-weight: 400;
+                            min-width: auto;
+
+                            @include smin-m {
+                                min-width: 210px;
+                            }
+
+                            &:hover {
+                                background-color: #ffffff;
+                                color: #FF7200;
+                            }
+
+                            &::after {
+                                background-color: #ffffff;
+                            }
+                        }
+                    }
+
+
+                    .card-free-shipping {
+                        display: block;
+                        text-align: right;
+
+                        @include smax-s {
+                            text-align: left;
+                        
+                        }
+                    }
+
+                    .card-compare {
+                        position: absolute;
+                        right: 0;
+                        bottom: -13px;
+                        
+                        @include smax-s {
+                            position: relative;
+                        }
+                    }
+                }
+           } 
+        }
+    }
+}
+
+.compare-link{
+    display: block;
+    position: fixed;
+    top: auto;
+    bottom: 130px;
+    right: 45px;
+    z-index: 100;
+    pointer-events: auto;
+    transform: translateY(-50%);
+    .button{
+        background: #ffffff;
+        overflow: unset;
+        border-color: #c5c5cf;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        overflow: hidden;
+
+        .countPill{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 4px;
+            display: inline-block;
+            vertical-align: middle;
+            height: 22px;
+            width: 22px;
+            line-height: 22px;
+            background-color: #FF7200;
+            border-radius: 50%;
+            text-align: center;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        &:hover {
+            .countPill {
+                background-color: #ffffff;
+                color: #FF7200;
+            }
+        }
+    }
+
+    .button{
+        display: none;
+
+        &.show{
+            display: block;
+        }
     }
 }
