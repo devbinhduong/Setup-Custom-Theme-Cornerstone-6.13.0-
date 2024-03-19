@@ -38,12 +38,6 @@
     right: 0;
     z-index: zIndex("lower");
 
-    @include smax-xxl {
-        &#menu {
-            margin-right: 100px;
-        }
-    }
-
     @include smin-m {
         background: transparent;
         display: block;
@@ -78,9 +72,9 @@
         font-size: 0; // 1
         overflow-y: visible;
         padding: 0;
-        text-align: center;
+        text-align: left;
         max-width: 100%;
-        width: auto;
+        width: 100%;
         margin: 0;
     }
 
@@ -218,6 +212,28 @@
         >a {
             padding: 15px 17px 14px;
             display: block;
+        }
+    }
+
+    &.navPages-action-lv1 {
+        > a > span,
+        > span {
+            color: stencilColor("navPages-lv1-color");
+
+            &::before {
+                background-color: stencilColor("navPages-lv1-color");
+            }
+        }
+
+        &:hover {
+            > a > span,
+            > span {
+                color: stencilColor("navPages-lv1-color-hover");
+
+                &::before {
+                    background-color: stencilColor("navPages-lv1-color-hover");
+                }
+            }
         }
     }
 
@@ -698,7 +714,9 @@
     .navPages-container {
         position: static;
         display: flex;
-        justify-content: center;
+        max-width: 1324px;
+        margin-left: auto;
+        margin-right: auto;
 
         .navPages-item {
             position: relative;

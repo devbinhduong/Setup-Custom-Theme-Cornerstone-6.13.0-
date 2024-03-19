@@ -76,8 +76,7 @@
 
                 <div class="custom-homeCarouselFeature">
                     {{#if @index '==' 0}}
-                    
-                    {{#get "0" featuredProduct}}
+                        {{#get "0" featuredProduct}}
                             {{> components/custom/products/custom-feature-product-tmp product=this settings=settings theme_settings=../../theme_settings customer=customer }}
                         {{/get}}
                     {{else}}

@@ -39,10 +39,6 @@
     z-index: 99;
     @include clearfix;
 
-    .page-type-default & {
-        background-color: #F3F6F5;
-    }
-
     @include smin-m {
         position: relative;
         display: flex;
@@ -113,17 +109,10 @@
             padding: 4px 0;
         }
 
-        .page-type-default & {
-            background-color: #F3F6F5;
-        }
-
         &_item {
             display: flex;
             justify-content: space-between;
             align-items: center;
-
-            &--left {
-            }
             
             &--center {
                 flex: 1;
@@ -362,6 +351,7 @@
 
     &Bottom {
         overflow: hidden;
+        background-color: #f7f7f7;
     }
 
     &.is-open {

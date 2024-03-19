@@ -142,7 +142,7 @@
         }
 
         .form {
-            margin-bottom: 72px;
+            margin-bottom: 16px;
             .form-prefixPostfix {
                 display: flex;
                 flex-direction: column;
@@ -256,6 +256,9 @@
     }
 
     .footer-icon-image {
+        img {
+            max-width: 320px;
+        }
         @include smax-xs {
             margin-top: 20px;
         }
@@ -280,7 +283,7 @@
     font-size: $fontSize-root - 2;
     font-weight: $fontWeight-bold;
     text-transform: inherit;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     font-family: $body-font-family;
     margin-top: 0;
     text-transform: uppercase;
@@ -298,7 +301,7 @@
     font-size: $fontSize-root - 2;
 
     li + li {
-        margin-top: 16px;
+        margin-top: 8px;
     }
 
     a {
@@ -313,8 +316,8 @@
 
 .footer-copyright {
     border-top: 1px solid rgba(255, 255, 255, 0.31);
-    padding-top: 30px;
-    padding-bottom: 36px;
+    padding-top: 20px;
+    padding-bottom: 24px;
     margin-top: 15px;
 
     > .powered-by {

@@ -291,7 +291,7 @@ export default function($scope, context) {
                 slidesToShow: 2,
                 slidesToScroll: 1,
                 mobileFirst: true,
-                infinite: false,
+                infinite: true,
                 responsive: [
                     {
                         breakpoint: 1025,

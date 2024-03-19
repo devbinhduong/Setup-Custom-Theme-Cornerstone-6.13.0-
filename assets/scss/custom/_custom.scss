@@ -159,9 +159,6 @@
     }
 
     .productGrid {
-        .listView-content {
-            display: none;
-        }
         .cardInfo {
             margin-bottom: 20px;
         }
@@ -240,6 +237,7 @@
                     }
 
                     .listView-content {
+                        display: block;
                         p[data-test-info-type="productRating"] {
                             flex-direction: column;
                             align-items: flex-end;
@@ -395,5 +393,11 @@
         &.show{
             display: block;
         }
+    }
+}
+
+.card {
+    .listView-content {
+        display: none;
     }
 }
