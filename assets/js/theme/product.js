@@ -278,7 +278,8 @@ export default class Product extends PageManager {
 
     /* Get Content Shipping Page */
     productShippingTab() {
-        if (this.context.themeSettings.shipping_tab_url != '') {
+        if (this.context.themeSettings.shipping_tab_url != ''&& this.context.themeSettings.show_shipping_tabs) {
+            console.log("run");
             var link_page = this.context.themeSettings.shipping_tab_url;
             var descriptionTab = this.context.themeSettings.show_product_details_tabs;
 

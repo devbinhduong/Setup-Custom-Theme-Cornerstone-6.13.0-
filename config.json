@@ -1,5 +1,5 @@
 {
-  "name": "Cornerstone Custom Done Product Listing New",
+  "name": "Cornerstone Done Custom Update 20032024",
   "version": "6.13.0",
   "template_engine": "handlebars_v4",
   "meta": {
@@ -526,7 +526,7 @@
         "button--default-borderColorActive": "#757575",
         "button--primary-color": "#ffffff",
         "button--primary-colorHover": "#ff7200",
-        "button--primary-colorActive": "#ff7200",
+        "button--primary-colorActive": "#ffffff",
         "button--primary-backgroundColor": "#ff7200",
         "button--primary-backgroundColorHover": "#ff7200",
         "button--primary-backgroundColorActive": "#ff7200",
@@ -876,7 +876,7 @@
         "footer_col6_text3": "Government Sales",
         "footer_col6_text4": "Shipping Policy",
         "footer_col6_text5": "",
-        "footer_col6_link1": "#",
+        "footer_col6_link1": "/about-us/",
         "footer_col6_link2": "#",
         "footer_col6_link3": "#",
         "footer_col6_link4": "#",
@@ -913,7 +913,7 @@
         "show_faq_tab_type": "all",
         "show_faq_tab_link": "/faq-tab/",
         "customAddToCartAction": "sidebar",
-        "show_shipping_tabs": true,
+        "show_shipping_tabs": false,
         "shipping_tab_url": "/shipping-returns/",
         "custom_sticky_add_to_cart_mobile": true,
         "img_banner_image_1": "image-banner-1.jpg",
@@ -943,7 +943,17 @@
         "homepage_show_carousel_3_mobile-image": "home-carousel-mb-1.jpg",
         "homepage_show_carousel_4_mobile-image": "home-carousel-mb-1.jpg",
         "show_card_compare": true,
-        "showCardInfo": true
+        "showCardInfo": true,
+        "show_product_shipping": false,
+        "home_image_banner": false,
+        "color-main": "#ff7200",
+        "color-second": "#003A63",
+        "back-to-top-bg": "#FF7200",
+        "back-to-top-border": "#FF7200",
+        "back-to-top-color": "#ffffff",
+        "back-to-top-bgHover": "#FF7200",
+        "back-to-top-borderHover": "#FF7200",
+        "back-to-top-colorHover": "#ffffff"
       }
     }
   ]

@@ -613,11 +613,9 @@
 
             .custom-product-item__wrapper {
                 position: relative;
-                border-radius: 8px;
                 background: #ffffff;
                 padding: 10px;
-                -webkit-box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.06);
-                box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.06);
+                border: 1px solid #AFAFAF;
             }
 
             .custom-product-image {
@@ -687,7 +685,6 @@
             position: relative;
             overflow: hidden;
             border: 1px solid #e5e5e5;
-            border-radius: 8px;
         }
 
         &-container {
@@ -2160,4 +2157,71 @@
     z-index: 102;
     opacity: 1;
     visibility: visible;
+}
+
+
+/* Back To Top */
+#back-to-top {
+    bottom: 30%;
+    right: 15px;
+    z-index: 999;
+    font-size: 0;
+    display: none;
+    cursor: pointer;
+    position: fixed;
+    overflow: hidden;
+    text-align: center;
+    border-radius: 0;
+    line-height: 1;
+    transition: all 0.3s ease;
+    color: stencilColor('back-to-top-color');
+    background-color: stencilColor('back-to-top-bg');
+    border: 1px solid stencilColor('back-to-top-border');
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+
+    @include smax-m {
+        width: 48px;
+        height: 48px;
+    }
+
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    .icon {
+        fill: stencilColor('back-to-top-color');
+        width: 20px;
+        height: 20px;
+        display: block;
+    }
+    &.is-visible {
+        display: block;
+    }
+    &:hover {
+        color: stencilColor('back-to-top-colorHover');
+        background-color: stencilColor('back-to-top-bgHover');
+        border: 1px solid stencilColor('back-to-top-borderHover');
+        .icon {
+            fill: stencilColor('back-to-top-colorHover');
+        }
+    }
+    @include breakpoint('large') {
+        right: 75px;
+        bottom: 140px;
+        .icon {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    &:hover {
+        .icon {
+            animation: slide-in-bottom 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+                both infinite;
+        }
+    }
 }

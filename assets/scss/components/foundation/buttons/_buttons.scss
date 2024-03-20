@@ -81,6 +81,17 @@
         width: 100%;
     }
 
+    /* Primary */
+    &.button--primary {
+        &:focus {
+            color: $buttonStyle-primary-colorActive !important;
+        }
+
+        &:hover {
+            color:  $buttonStyle-primary-borderColorActive !important;
+        }
+    }
+
     /* Secondary */
     &.button--secondary {
         border-color: $buttonStyle-secondary-borderColor;

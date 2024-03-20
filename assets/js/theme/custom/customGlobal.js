@@ -70,6 +70,8 @@ export default function(context) {
             });
 
             customGetCardInfo(context);
+
+            back_to_top();
         }
     }
 
@@ -663,5 +665,27 @@ export default function(context) {
             }
         }
 
+    }
+
+    /* Back To Top */
+    function back_to_top() {
+        var offset = $(window).height() / 2;
+        const backToTop = $('#back-to-top');
+
+        $(window).scroll(function () {
+            $(this).scrollTop() > offset
+                ? backToTop.addClass('is-visible')
+                : backToTop.removeClass('is-visible');
+        });
+
+        backToTop.on('click', function (event) {
+            event.preventDefault();
+            $('body,html').animate(
+                {
+                    scrollTop: 0,
+                },
+                1000
+            );
+        });
     }
 }

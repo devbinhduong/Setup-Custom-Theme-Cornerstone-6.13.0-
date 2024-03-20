@@ -215,28 +215,6 @@
         }
     }
 
-    &.navPages-action-lv1 {
-        > a > span,
-        > span {
-            color: stencilColor("navPages-lv1-color");
-
-            &::before {
-                background-color: stencilColor("navPages-lv1-color");
-            }
-        }
-
-        &:hover {
-            > a > span,
-            > span {
-                color: stencilColor("navPages-lv1-color-hover");
-
-                &::before {
-                    background-color: stencilColor("navPages-lv1-color-hover");
-                }
-            }
-        }
-    }
-
     &.has-subMenu {
         .navPages-list:not(.navPages-list-depth-max) & {
             display: flex;
@@ -337,6 +315,33 @@
     }
 }
 
+.navPages-item {
+    > .navPages-action {
+        &.navPages-action-lv1 {
+            > a > span,
+            > span {
+                color: stencilColor("navPages-lv1-color") !important;
+    
+                &::before {
+                    background-color: stencilColor("navPages-lv1-color");
+                }
+            }
+    
+            &:hover {
+                > a > span,
+                > span {
+                    color: stencilColor("navPages-lv1-color-hover") !important;
+    
+                    &::before {
+                        background-color: stencilColor("navPages-lv1-color-hover") !important;
+                    }
+                }
+            }
+    
+        }
+    }
+
+}
 .navPages-action--storeCredit {
     color: stencilColor("color-textSecondary");
 }

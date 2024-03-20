@@ -125,38 +125,39 @@
 }
 
 /* Mint Status custom new product list layout */
-.page-listing {
-    .cardInfo {
-        .cardInfo__item {
-            font-weight: 500;
-            line-height: 1.2;
-            text-transform: capitalize;
-            color: stencilColor("color-primary");
-            font-size: 14px;
-            font-style: normal;
+.cardInfo {
+    margin-bottom: 12px;
+    .cardInfo__item {
+        font-weight: 500;
+        line-height: 1.2;
+        text-transform: capitalize;
+        color: stencilColor("color-primary");
+        font-size: 14px;
+        font-style: normal;
 
-            & + .cardInfo__item {
-                margin-top: 8px;
-            }
+        & + .cardInfo__item {
+            margin-top: 8px;
+        }
 
-            .item-name::before {
-                content: '';
-                width: 5px;
-                height: 5px;
-                background-color: #003A63;
-                border-radius: 50%;
-                display: inline-block;
-                margin-right: 7px;
-                -webkit-transform: translateY(-2px);
-                transform: translateY(-2px);
-            }
+        .item-name::before {
+            content: '';
+            width: 5px;
+            height: 5px;
+            background-color: #003A63;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 7px;
+            -webkit-transform: translateY(-2px);
+            transform: translateY(-2px);
+        }
 
-            .item-value {
-                color: #909090;
-                font-weight: 400;
-            }
+        .item-value {
+            color: #909090;
+            font-weight: 400;
         }
     }
+}
+.page-listing {
 
     .productGrid {
         .cardInfo {
@@ -260,7 +261,7 @@
 
                         .card-free-shipping {
                             margin-top: 15px;
-                            color: #646362;
+                            color: #444444;
                             text-decoration: underline;
                         }
                     }
@@ -400,4 +401,132 @@
     .listView-content {
         display: none;
     }
+}
+
+/* Update Card Layout 20032024 */
+.card {
+    .card-figcaption-bottom {
+        .button {
+            .icon--addtocart-button {
+                transform: translateY(-2px);
+                svg {
+                    fill: #FF7200;
+
+                    .page-listing & {
+                        fill: none;
+                    }
+                }
+            }
+
+            &:hover {
+                .icon--addtocart-button {
+                    svg {
+                        .page-listing & {
+                            fill: #FF7200;
+                        }
+                    }
+                }
+            }
+        }
+    }
+  
+}
+
+#tab-specification {
+    .tabContent {
+        border: 1px solid #cccccc;
+        @include smax-m {
+            padding: 0;
+        }
+    }
+    .productView-info {
+        @include smax-m {
+            margin-top: 0;
+        }
+
+        .productView-info-item {
+            &.productView-info-item--row {
+                border-top: 1px solid #cccccc;
+                display: flex;
+
+                &:first-child{
+                    border-top: none;
+                    margin-top: 0;
+                }
+
+                &:nth-child(odd) {
+                    background: #EEEEEE;
+                }
+                
+                &:nth-child(even) {
+                    background: #ffffff;
+                }
+
+                .item--left {
+                    width: 35%;
+                    margin-bottom: 0;
+                    line-height: 30px;
+                    display: inline-block;
+                    padding: 8px 20px;
+                }
+
+                .item--right {
+                    width: 65%;
+                    padding: 8px 20px;
+                    display: inline-block;
+                    line-height: 30px;
+                    border-left: 1px solid #cccccc;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+/* Fix search product */
+@include smax-m {
+    #quickSearch {
+        .productGrid {
+            .product {
+                width: 50%;
+
+                @include smax-xxs {
+                    width: 100%;
+                }
+            }
+        }
+        .card {
+            margin-bottom: 20px;
+           .card-body {
+            padding: 8px;
+
+            .card-title{
+                text-align: left;
+                margin-bottom: 4px;
+
+                > a {
+                    font-size: 14px;
+                }
+            }
+
+            .price-section {
+               .price {
+                    font-size: 14px;
+               } 
+            }
+
+            .cardInfo {
+               display: none; 
+            }
+           } 
+           .card-figcaption-bottom {
+            margin-top: 8px;
+                .button {
+                     min-width: 100%;
+                     font-size: 12px;
+                }
+           }
+        }
+    }
+
 }
