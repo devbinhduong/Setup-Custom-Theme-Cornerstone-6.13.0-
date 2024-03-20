@@ -1,5 +1,5 @@
 {
-  "name": "Cornerstone Done Custom Update 20032024",
+  "name": "Cornerstone Done Custom Update Settings Part 1",
   "version": "6.13.0",
   "template_engine": "handlebars_v4",
   "meta": {
@@ -456,7 +456,7 @@
         "show_product_swatch_names": true,
         "product_list_display_mode": "list",
         "logo-position": "center",
-        "logo_size": "244x60",
+        "logo_size": "400x400",
         "logo_fontSize": 28,
         "brand_size": "190x250",
         "gallery_size": "300x300",
@@ -953,7 +953,38 @@
         "back-to-top-color": "#ffffff",
         "back-to-top-bgHover": "#FF7200",
         "back-to-top-borderHover": "#FF7200",
-        "back-to-top-colorHover": "#ffffff"
+        "back-to-top-colorHover": "#ffffff",
+
+        "home_brand_item1_link":"/dolby-audio-video-conferencing-equipment/",
+        "home_brand_item1_img":"dolby-voice.jpg",
+        "home_brand_item2_link":"/crestron/",
+        "home_brand_item2_img":"crestron.png",
+        "home_brand_item3_link":"/poly-video-conferencing-equipment/",
+        "home_brand_item3_img":"poly.jpg",
+        "home_brand_item4_link":"/yealink-video-conferencing-equipment/",
+        "home_brand_item4_img":"yealink.png",
+        "home_brand_item5_link":"/aver-video-conferencing-equipment/",
+        "home_brand_item5_img":"aver.jpg",
+
+        "home_icon_text_title": "Shop our popular categories",
+        "home_icon_text_item1_link": "#",
+        "home_icon_text_item1_img": "banner-cate-video.png",
+        "home_icon_text_item1_text": "VIDEO CONFERENCING",
+        "home_icon_text_item2_link": "#",
+        "home_icon_text_item2_img": "banner-cate-av.png",
+        "home_icon_text_item2_text": "AV CART",
+        "home_icon_text_item3_link": "#",
+        "home_icon_text_item3_img": "banner-cate-acc.png",
+        "home_icon_text_item3_text": "Accessories",
+        "home_icon_text_item4_link": "#",
+        "home_icon_text_item4_img": "banner-cate-audio.png",
+        "home_icon_text_item4_text": "Audio Conferencing",
+        "home_icon_text_item5_link": "#",
+        "home_icon_text_item5_img": "banner-cate-audio.png",
+        "home_icon_text_item5_text": "Presentation Systems",
+        "home_icon_text_item6_link": "#",
+        "home_icon_text_item6_img": "banner-cate-video-phone.png",
+        "home_icon_text_item6_text": "Video Phones"
       }
     }
   ]

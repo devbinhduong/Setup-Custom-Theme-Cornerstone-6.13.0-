@@ -477,10 +477,6 @@
 .header-logo-image-container {
     position: relative;
     width: 100%;
-
-    @include smin-m {
-        min-height: get-height(stencilString("logo_size"));
-    }
 }
 
 .header-logo-image-container::after {
@@ -494,7 +490,7 @@
     max-height: remCalc($header-height) - $header-logo-marginVertical * 2;
 
     @include smin-m {
-        max-height: none;
+        max-height: 57px;
     }
 }
 
