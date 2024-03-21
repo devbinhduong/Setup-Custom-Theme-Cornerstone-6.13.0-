@@ -525,8 +525,8 @@
 
 /* Home Product New Section */
 .sectionNew {
-    padding-top: 60px;
-    padding-bottom: 76px;
+    padding-top: 20px;
+    padding-bottom: 36px;
 
     @include smax-m {
         padding-top: 20px;
@@ -981,6 +981,7 @@
 
     .custom-heading {
         margin-bottom: 60px;
+        margin-top: 0;
 
         @include smax-m {
             margin-bottom: 25px;
@@ -1494,6 +1495,10 @@
 
                 &:last-child {
                     margin-bottom: 48px;
+
+                    @include smax-m {
+                        margin-bottom: 12px;
+                    }
                 }
 
                 @include smax-m {
@@ -2201,6 +2206,7 @@
             padding: 40px 16px 24px 30px;
             background-color: #ffffff;
             border-radius: 8px;
+            height: 100%;
 
             .icon-service-target {
                 position: absolute;
@@ -2279,6 +2285,14 @@
                     }
                 }
             }
+        }
+
+        .slick-track {
+            display: flex !important;
+        }
+
+        .slick-slide {
+            height: inherit !important;
         }
     }
 

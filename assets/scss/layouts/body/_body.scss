@@ -29,6 +29,12 @@ body {
         }
     }
 
+    &.page-type-product {
+        .body {
+            padding-bottom: 40px;
+        }
+    }
+
     .page-content--textCenter {
         .page-heading {
             text-align: center;

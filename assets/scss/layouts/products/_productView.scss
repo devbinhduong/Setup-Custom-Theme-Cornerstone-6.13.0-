@@ -375,7 +375,7 @@
 
     .product-view-bottom {
         .section-productRelated {
-            padding-top: 45px;
+            padding-top: 32px;
 
             @include smax-s  {
                 padding-top: 0;
@@ -626,7 +626,7 @@ body.page-type-product {
                     .productView-brand {
                         margin-top: 16px;
                         display: flex;
-                        flex-direction: row-reverse;
+                        flex-direction: row;
                         align-items: flex-start;
 
                         a + a {
@@ -875,17 +875,26 @@ body.page-type-product {
 .productView__service {
     .productService {
         &__list {
+            --f-col: 3;
+            --f-gap: 6px;
+            display: -ms-flexbox;
             display: flex;
-            padding: 20px 35px 23px 22px;
-            justify-content: space-between;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            padding: 6px 3px;
+            background-color: #f3f3f3;
 
             @include smax-xs {
                 flex-direction: column;
-                padding: 0;
+                padding: 8px;
             }
         }
         &__item {
-            max-width: 33.33%;
+            padding-left: calc(var(--f-gap) / 2);
+            padding-right: calc(var(--f-gap) / 2);
+            -ms-flex: 0 0 calc(100% / var(--f-col));
+            flex: 0 0 calc(100% / var(--f-col));
+            max-width: calc(100% / var(--f-col));
 
             @include smax-xs {
                 background-color: #ffffff;
@@ -899,12 +908,18 @@ body.page-type-product {
         }
 
         &__content {
+            background-color: #ffffff;
             border-radius: 2px;
-            display:flex;
-            align-items:center;
-            justify-content:flex-start;
-            flex-direction:column;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: column;
             height: 100%;
+
+            @include smax-s {
+                padding: 8px;
+            }
 
             .item-icon {
                 width: 87px;
@@ -959,6 +974,7 @@ body.page-type-product {
 .productView-desc__wrapper {
     display: flex;
     width: 100%;
+    margin-top: 20px;
     
     .productView-description {
         .custom-expert-tab,
@@ -1201,7 +1217,7 @@ body.page-type-product {
                 padding-right: 10px;
                 padding-top: 10px;
 
-                p, a {
+                p, a:not(.productView-askAnExpert-link) {
                     font-size: 16px;
                     letter-spacing: 0;
                     margin-bottom: 8px;

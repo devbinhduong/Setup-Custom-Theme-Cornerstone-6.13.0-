@@ -105,10 +105,7 @@
 
 // Custom Block Brand
 .custom-block-brands{
-    padding: 52px 0px 40px;
-
-    @include smax-m {
-    }
+    padding: 52px 0px 33px;
 
     .custom-block-row{
         background: #ffffff;
@@ -132,7 +129,7 @@
 
 // Custom block icon with text
 .custom-block-icon-with-text{
-    padding: 40px 0px;
+    padding: 0px 0px 25px;
 
     @include smax-m {
         padding: 30px 0 0;
@@ -207,7 +204,7 @@
             z-index: 1;
             padding: 30px 20px;
             width: 100%;
-            background:#003A63;
+            background:rgba(0, 58, 99, 0.8);
             
             @include smin-m {
                 max-width: 740px;
@@ -287,7 +284,7 @@
             }
 
             &.background-white {
-                background:#ffffff;
+                background:rgba(255, 255, 255, 0.8);
                 
                 .banner-text,
                 .banner-title{
@@ -296,7 +293,7 @@
             }
 
             &.background-black {
-                background:#000000;
+                background:rgba(0, 0, 0, 0.8);
 
                 .banner-text,
                 .banner-title{
