@@ -68,7 +68,7 @@ If you are making a change here or in price-range.html, you probably want to mak
                 {{price.non_sale_price_without_tax.formatted}}
             </span>
         </div>
-        <div class="price-section price-section--withoutTax">
+        <div class="price-section price-section--withoutTax{{#unless price.non_sale_price_without_tax}} default-price--withoutTax {{else}} sale-price--withoutTax{{/unless}}">
             <span class="price-label" {{#if price.non_sale_price_without_tax}}style="display: none;"{{/if}}>
                 {{theme_settings.pdp-price-label}}
             </span>
@@ -78,6 +78,15 @@ If you are making a change here or in price-range.html, you probably want to mak
                     fallback=(lang "page_builder.pdp-sale-price-label")
                 }}
             </span>
+
+             <!-- Mint start -->
+             {{#unless customer}}
+             <p class="price-sale-ATC">
+                 Add to Cart for Sale Price!
+             </p>
+             {{/unless}}
+             <!-- Mint end -->
+             
             <span data-product-price-without-tax class="price price--withoutTax{{#if price.with_tax}} price-section--minor{{/if}}" data-value-price="{{price.without_tax.formatted}}">{{price.without_tax.formatted}}</span>
             {{#if price.with_tax}}
                 <abbr title="{{lang 'products.excluding_tax'}}">{{lang 'products.price_without_tax' tax_label=price.tax_label}}</abbr>

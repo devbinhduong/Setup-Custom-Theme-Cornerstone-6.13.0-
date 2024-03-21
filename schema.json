@@ -529,12 +529,8 @@
     ]
   },
   {
-    "name": "Header And Footer",
+    "name": "Header",
     "settings": [
-      {
-        "type": "heading",
-        "content": "Header"
-      },
       {
         "type": "checkbox",
         "label": "Enable Header Sticky",
@@ -1117,76 +1113,283 @@
         "id": "homepage_show_carousel_arrows"
       },
       {
-        "type": "checkbox",
-        "label": "Show Carousel Play Pause Button",
-        "force_reload": true,
-        "id": "homepage_show_carousel_play_pause_button"
+        "type": "text",
+        "label": "Carousel Mobile Height",
+        "id": "homepage_show_carousel_height_mobile"
       },
       {
-        "type": "checkbox",
-        "label": "Allow Image To Stretch On",
-        "force_reload": true,
-        "id": "homepage_stretch_carousel_images"
+        "type": "text",
+        "label": "Carousel Mobile Image 1",
+        "id": "homepage_show_carousel_0_mobile-image"
       },
       {
-        "type": "color",
-        "label": "Content Background",
-        "id": "carousel-bgColor"
+        "type": "text",
+        "label": "Carousel Mobile Image 2",
+        "id": "homepage_show_carousel_1_mobile-image"
       },
       {
-        "type": "color",
-        "label": "Header Text",
-        "id": "carousel-title-color"
+        "type": "text",
+        "label": "Carousel Mobile Image 3",
+        "id": "homepage_show_carousel_2_mobile-image"
       },
       {
-        "type": "color",
-        "label": "Description Text",
-        "id": "carousel-description-color"
+        "type": "text",
+        "label": "Carousel Mobile Image 4",
+        "id": "homepage_show_carousel_3_mobile-image"
       },
       {
-        "type": "color",
-        "label": "Indicator",
-        "id": "carousel-dot-color"
+        "type": "text",
+        "label": "Carousel Mobile Image 5",
+        "id": "homepage_show_carousel_4_mobile-image"
       },
       {
-        "type": "color",
-        "label": "Indicator Active",
-        "id": "carousel-dot-color-active"
+        "type": "heading",
+        "content": "Section Home Brand"
       },
       {
-        "type": "color",
-        "label": "Indicator Background",
-        "id": "carousel-dot-bgColor"
+        "type": "text",
+        "label": "Brand Item 1 Link",
+        "id": "home_brand_item1_link"
       },
       {
-        "type": "color",
-        "label": "Arrow",
-        "id": "carousel-arrow-color"
+        "type": "text",
+        "label": "Brand Item 1 Image",
+        "id": "home_brand_item1_img"
       },
       {
-        "type": "color",
-        "label": "Arrow Background",
-        "id": "carousel-arrow-bgColor"
+        "type": "text",
+        "label": "Brand Item 2 Link",
+        "id": "home_brand_item2_link"
       },
       {
-        "type": "color",
-        "label": "Arrow Border",
-        "id": "carousel-arrow-borderColor"
+        "type": "text",
+        "label": "Brand Item 2 Image",
+        "id": "home_brand_item2_img"
       },
       {
-        "type": "color",
-        "label": "Play Pause Button Text",
-        "id": "carousel-play-pause-button-textColor"
+        "type": "text",
+        "label": "Brand Item 3 Link",
+        "id": "home_brand_item3_link"
       },
       {
-        "type": "color",
-        "label": "Play Pause Button Background",
-        "id": "carousel-play-pause-button-bgColor"
+        "type": "text",
+        "label": "Brand Item 3 Image",
+        "id": "home_brand_item3_img"
       },
       {
-        "type": "color",
-        "label": "Play Pause Button Border",
-        "id": "carousel-play-pause-button-borderColor"
+        "type": "text",
+        "label": "Brand Item 4 Link",
+        "id": "home_brand_item4_link"
+      },
+      {
+        "type": "text",
+        "label": "Brand Item 4 Image",
+        "id": "home_brand_item4_img"
+      },
+      {
+        "type": "text",
+        "label": "Brand Item 5 Link",
+        "id": "home_brand_item5_link"
+      },
+      {
+        "type": "text",
+        "label": "Brand Item 5 Image",
+        "id": "home_brand_item5_img"
+      },
+      {
+        "type": "heading",
+        "content": "Section Home Featured Categories"
+      },
+      {
+        "type": "text",
+        "label": "Section Heading",
+        "id": "home_icon_text_title"
+      },
+      {
+        "type": "text",
+        "label": "Item 1 Link",
+        "id": "home_icon_text_item1_link"
+      },
+      {
+        "type": "text",
+        "label": "Item 1 Image",
+        "id": "home_icon_text_item1_img"
+      },
+      {
+        "type": "text",
+        "label": "Item 1 Text",
+        "id": "home_icon_text_item1_text"
+      },
+      {
+        "type": "text",
+        "label": "Item 2 Link",
+        "id": "home_icon_text_item2_link"
+      },
+      {
+        "type": "text",
+        "label": "Item 2 Image",
+        "id": "home_icon_text_item2_img"
+      },
+      {
+        "type": "text",
+        "label": "Item 2 Text",
+        "id": "home_icon_text_item2_text"
+      },
+      {
+        "type": "text",
+        "label": "Item 3 Link",
+        "id": "home_icon_text_item3_link"
+      },
+      {
+        "type": "text",
+        "label": "Item 3 Image",
+        "id": "home_icon_text_item3_img"
+      },
+      {
+        "type": "text",
+        "label": "Item 3 Text",
+        "id": "home_icon_text_item3_text"
+      },
+      {
+        "type": "text",
+        "label": "Item 4 Link",
+        "id": "home_icon_text_item4_link"
+      },
+      {
+        "type": "text",
+        "label": "Item 4 Image",
+        "id": "home_icon_text_item4_img"
+      },
+      {
+        "type": "text",
+        "label": "Item 4 Text",
+        "id": "home_icon_text_item4_text"
+      },
+      {
+        "type": "text",
+        "label": "Item 5 Link",
+        "id": "home_icon_text_item5_link"
+      },
+      {
+        "type": "text",
+        "label": "Item 5 Image",
+        "id": "home_icon_text_item5_img"
+      },
+      {
+        "type": "text",
+        "label": "Item 5 Text",
+        "id": "home_icon_text_item5_text"
+      },
+      {
+        "type": "text",
+        "label": "Item 6 Link",
+        "id": "home_icon_text_item6_link"
+      },
+      {
+        "type": "text",
+        "label": "Item 6 Image",
+        "id": "home_icon_text_item6_img"
+      },
+      {
+        "type": "text",
+        "label": "Item 6 Text",
+        "id": "home_icon_text_item6_text"
+      },
+      {
+        "type": "heading",
+        "content": "Home Banner With Text 1"
+      },
+      {
+        "type": "text",
+        "label": "Banner Link",
+        "id": "home_banner1_link"
+      },
+      {
+        "type": "text",
+        "label": "Banner Image",
+        "id": "home_banner1_img"
+      },
+      {
+        "type": "text",
+        "label": "Banner Heading",
+        "id": "home_banner1_title"
+      },
+      {
+        "type": "input",
+        "label": "Banner Text",
+        "id": "home_banner1_text"
+      },
+      {
+        "type": "heading",
+        "content": "Home Banner With Text 2"
+      },
+      {
+        "type": "text",
+        "label": "Banner Link",
+        "id": "home_banner2_link"
+      },
+      {
+        "type": "text",
+        "label": "Banner Image",
+        "id": "home_banner2_img"
+      },
+      {
+        "type": "text",
+        "label": "Banner Heading",
+        "id": "home_banner2_title"
+      },
+      {
+        "type": "input",
+        "label": "Banner Text",
+        "id": "home_banner2_text"
+      },
+      {
+        "type": "text",
+        "label": "Banner Button",
+        "id": "home_banner2_button"
+      },
+      {
+        "type": "heading",
+        "content": "Home Section Featured Products"
+      },
+      {
+        "type": "text",
+        "label": "Section Heading",
+        "id": "home_featured_products_title"
+      },
+      {
+        "type": "text",
+        "label": "Section Product List IDs",
+        "id": "custom_featured_product_ids"
+      },
+      {
+        "type": "heading",
+        "content": "Home Banner With Text 3"
+      },
+      {
+        "type": "text",
+        "label": "Banner Link",
+        "id": "home_banner3_link"
+      },
+      {
+        "type": "text",
+        "label": "Banner Image",
+        "id": "home_banner3_img"
+      },
+      {
+        "type": "text",
+        "label": "Banner Heading",
+        "id": "home_banner3_title"
+      },
+      {
+        "type": "input",
+        "label": "Banner Text",
+        "id": "home_banner3_text"
+      },
+      {
+        "type": "text",
+        "label": "Banner Button",
+        "id": "home_banner3_button"
       },
       {
         "type": "heading",

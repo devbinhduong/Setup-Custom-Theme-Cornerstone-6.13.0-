@@ -47,7 +47,7 @@
                     <span class="icon icon--addtocart-button">
                         <svg><use xlink:href="#icon-shopping-cart-2"></use></svg>
                     </span>
-                Add to Cart
+                    {{#if product.pre_order}}{{lang 'products.pre_order'}}{{else}}{{lang 'products.add_to_cart'}}{{/if}}
                 </button>
                 <span class="product-status-message aria-description--hidden">{{lang 'products.adding_to_cart'}} {{lang 'category.add_cart_announcement'}}</span>
             </div>

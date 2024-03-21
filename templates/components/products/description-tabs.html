@@ -69,12 +69,12 @@
                         {{#and (if name '!=' 'countdown' ) (if name '!=' 'custom label')}}
                         {{#if name '!=' 'has-size-chart'}}
                             {{#startsWith '_' name}}
-                                {{#if name '!=' "__bundleid"}}
+                                {{#and (if name '!=' "__bundleid") (if name '!=' "__freeShipping")}}
                                     <div class="productView-info-item productView-info-item--row">
                                         <span class="productView-info-name item--left" data-custom-field-name="{{name}}">{{chop name}}:</span>
                                         <span class="productView-info-value item--right" data-custom-field-name="{{name}}">{{{ sanitize value}}}</span>
                                     </div>
-                                {{/if}}
+                                {{/and}}
                             {{/startsWith}}
                         {{/if}}
                         {{/and}}

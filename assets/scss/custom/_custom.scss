@@ -126,7 +126,10 @@
 
 /* Mint Status custom new product list layout */
 .cardInfo {
+    display: none;
     margin-bottom: 12px;
+    min-height: 116px;
+
     .cardInfo__item {
         font-weight: 500;
         line-height: 1.2;
@@ -177,6 +180,8 @@
     .productList {
         .card {
             .cardInfo {
+                display: block;
+
                @include smax-s {
                 text-align: left;
                } 
@@ -529,4 +534,50 @@
         }
     }
 
+}
+
+/* Mint Update All card the same height */
+.sectionNew {
+    .productCarousel {
+        .slick-track {
+            display: flex !important;
+
+            .slick-slide {
+                height: inherit !important;
+
+                .card {
+                    background-color: #ffffff;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+
+/* Mint Update  */
+#add-to-cart-wrapper {
+   .add-to-cart-buttons {
+    .form-action {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        max-width: 100% !important;
+
+        > .button {
+            max-width: 252px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            @include smax-xs {
+                min-height: 48px;
+                max-width: 100%;
+            }
+        }
+
+        #addToQuote {
+            margin-left: 0 !important;
+        }
+    } 
+   } 
 }

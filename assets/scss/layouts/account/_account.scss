@@ -75,3 +75,52 @@
         }
     }
 }
+
+
+/* Mint Start Custom */
+//
+// Recently Viewed
+// -----------------------------------------------------------------------------
+.page-type-account_recentitems {
+    .account {
+        .productList {
+            --f-col: 4;
+            --f-gap: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: calc(var(--f-gap) / -2);
+            margin-right: calc(var(--f-gap) / -2);
+
+            @include smax-l {
+                --f-col: 3;
+            }
+
+            @include smax-m {
+                --f-col: 2;
+            }
+
+            @include smax-xs {
+                --f-col: 1;
+            }
+        }
+        .product {
+            padding-left: calc(var(--f-gap) / 2);
+            padding-right: calc(var(--f-gap) / 2);
+            flex: 0 0 calc(100% / var(--f-col));
+            max-width: calc(100% / var(--f-col));
+            margin-bottom: var(--f-gap);
+
+            & +.product {
+                margin-top: 0;
+            }
+
+            .card {
+                margin-bottom: 0;
+            }
+            .card-compare {
+               text-align: center;
+               margin-top: 12px; 
+            }
+        }
+    }
+}

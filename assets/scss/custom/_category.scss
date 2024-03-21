@@ -8,6 +8,12 @@
     .page-listing {
         padding-bottom: 40px;
     }
+
+    .page-listing {
+        .pagination {
+            margin-top: 16px;
+        }
+    }
 }
 
 .category-header {
@@ -34,6 +40,18 @@
 
 #product-listing-container ul {
     margin-bottom: 0px;
+    display: flex;
+    flex-wrap: wrap;
+
+    .product {
+        margin-bottom: 24px;
+        width: 100%;
+    }
+
+    .card {
+        margin-bottom: 0;
+        height: 100%;
+    }
 }
 
 .custom-toolbar {

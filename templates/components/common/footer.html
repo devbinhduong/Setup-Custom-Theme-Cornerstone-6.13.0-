@@ -1,4 +1,4 @@
-{{#if banners.bottom}}
+{{#and banners.bottom theme_settings.show_banner_bottom}}
     <div class="banners" data-banner-location="bottom">
         {{#each (limit banners.bottom_metadata 1)}}
             <div class="banner" data-event-type="promotion" data-entity-id="{{this.id}}" data-name="{{this.banner-name}}" data-position="{{this.location}}" data-name="{{this.banner-name}}">
@@ -8,7 +8,7 @@
             </div>
         {{/each}}
     </div>
-{{/if}}
+{{/and}}
 <footer class="footer" role="contentinfo">
     <div class="container">
         <h2 class="footer-heading">{{lang 'footer.title'}}</h2>
@@ -22,35 +22,35 @@
                             {{#if theme_settings.footer_col1_text1}}
                                 <li>
                                     <a href="{{theme_settings.footer_col1_link1}}" class="hover-link" style="--underlineColor: #ffffff;">
-                                        {{theme_settings.footer_col1_text1}}
+                                        <span>{{theme_settings.footer_col1_text1}}</span>
                                     </a>
                                 </li>
                             {{/if}}
                             {{#if theme_settings.footer_col1_text2}}
                                 <li>
                                     <a href="{{theme_settings.footer_col1_link2}}" class="hover-link" style="--underlineColor: #ffffff;">
-                                        {{theme_settings.footer_col1_text2}}
+                                        <span></span>
                                     </a>
                                 </li>
                             {{/if}}
                             {{#if theme_settings.footer_col1_text3}}
                                 <li>
                                     <a href="{{theme_settings.footer_col1_link3}}" class="hover-link" style="--underlineColor: #ffffff;">
-                                        {{theme_settings.footer_col1_text3}}
+                                        <span>{{theme_settings.footer_col1_text3}}</span>
                                     </a>
                                 </li>
                             {{/if}}
                             {{#if theme_settings.footer_col1_text4}}
                                 <li>
                                     <a href="{{theme_settings.footer_col1_link4}}" class="hover-link" style="--underlineColor: #ffffff;">
-                                        {{theme_settings.footer_col1_text4}}
+                                        <span>{{theme_settings.footer_col1_text4}}</span>
                                     </a>
                                 </li>
                             {{/if}}
                             {{#if theme_settings.footer_col1_text5}}
                                 <li>
                                     <a href="{{theme_settings.footer_col1_link5}}" class="hover-link" style="--underlineColor: #ffffff;">
-                                        {{theme_settings.footer_col1_text5}}
+                                        <span>{{theme_settings.footer_col1_text5}}</span>
                                     </a>
                                 </li>
                             {{/if}}
@@ -62,35 +62,35 @@
                             {{#if theme_settings.footer_col2_text1}}
                                 <li>
                                     <a href="{{theme_settings.footer_col2_link1}}" class="hover-link" style="--underlineColor: #ffffff;">
-                                        {{theme_settings.footer_col2_text1}}
+                                        <span>{{theme_settings.footer_col2_text1}}</span>
                                     </a>
                                 </li>
                             {{/if}}
                             {{#if theme_settings.footer_col2_text2}}
                                 <li>
                                     <a href="{{theme_settings.footer_col2_link2}}" class="hover-link" style="--underlineColor: #ffffff;">
-                                        {{theme_settings.footer_col2_text2}}
+                                        <span>{{theme_settings.footer_col2_text2}}</span>
                                     </a>
                                 </li>
                             {{/if}}
                             {{#if theme_settings.footer_col2_text3}}
                                 <li>
                                     <a href="{{theme_settings.footer_col2_link3}}" class="hover-link" style="--underlineColor: #ffffff;">
-                                        {{theme_settings.footer_col2_text3}}
+                                        <span>{{theme_settings.footer_col2_text3}}</span>
                                     </a>
                                 </li>
                             {{/if}}
                             {{#if theme_settings.footer_col2_text4}}
                                 <li>
                                     <a href="{{theme_settings.footer_col2_link4}}" class="hover-link" style="--underlineColor: #ffffff;">
-                                        {{theme_settings.footer_col2_text4}}
+                                        <span>{{theme_settings.footer_col2_text4}}</span>
                                     </a>
                                 </li>
                             {{/if}}
                             {{#if theme_settings.footer_col2_text5}}
                                 <li>
                                     <a href="{{theme_settings.footer_col2_link5}}" class="hover-link" style="--underlineColor: #ffffff;">
-                                        {{theme_settings.footer_col2_text5}}
+                                        <span>{{theme_settings.footer_col2_text5}}</span>
                                     </a>
                                 </li>
                             {{/if}}
@@ -102,35 +102,35 @@
                             {{#if theme_settings.footer_col3_text1}}
                                 <li>
                                     <a href="{{theme_settings.footer_col3_link1}}" class="hover-link" style="--underlineColor: #ffffff;">
-                                        {{theme_settings.footer_col3_text1}}
+                                        <span>{{theme_settings.footer_col3_text1}}</span>
                                     </a>
                                 </li>
                             {{/if}}
                             {{#if theme_settings.footer_col3_text2}}
                                 <li>
                                     <a href="{{theme_settings.footer_col3_link2}}" class="hover-link" style="--underlineColor: #ffffff;">
-                                        {{theme_settings.footer_col3_text2}}
+                                        <span>{{theme_settings.footer_col3_text2}}</span>
                                     </a>
                                 </li>
                             {{/if}}
                             {{#if theme_settings.footer_col3_text3}}
                                 <li>
                                     <a href="{{theme_settings.footer_col3_link3}}" class="hover-link" style="--underlineColor: #ffffff;">
-                                        {{theme_settings.footer_col3_text3}}
+                                        <span>{{theme_settings.footer_col3_text3}}</span>
                                     </a>
                                 </li>
                             {{/if}}
                             {{#if theme_settings.footer_col3_text4}}
                                 <li>
                                     <a href="{{theme_settings.footer_col3_link4}}" class="hover-link" style="--underlineColor: #ffffff;">
-                                        {{theme_settings.footer_col3_text4}}
+                                        <span>{{theme_settings.footer_col3_text4}}</span>
                                     </a>
                                 </li>
                             {{/if}}
                             {{#if theme_settings.footer_col3_text5}}
                                 <li>
                                     <a href="{{theme_settings.footer_col3_link5}}" class="hover-link" style="--underlineColor: #ffffff;">
-                                        {{theme_settings.footer_col3_text5}}
+                                        <span>{{theme_settings.footer_col3_text5}}</span>
                                     </a>
                                 </li>
                             {{/if}}
@@ -147,35 +147,35 @@
                             {{#if theme_settings.footer_col4_text1}}
                                 <li>
                                     <a href="{{theme_settings.footer_col4_link1}}" class="hover-link" style="--underlineColor: #ffffff;">
-                                        {{theme_settings.footer_col4_text1}}
+                                        <span>{{theme_settings.footer_col4_text1}}</span>
                                     </a>
                                 </li>
                             {{/if}}
                             {{#if theme_settings.footer_col4_text2}}
                                 <li>
                                     <a href="{{theme_settings.footer_col4_link2}}" class="hover-link" style="--underlineColor: #ffffff;">
-                                        {{theme_settings.footer_col4_text2}}
+                                        <span>{{theme_settings.footer_col4_text2}}</span>
                                     </a>
                                 </li>
                             {{/if}}
                             {{#if theme_settings.footer_col4_text3}}
                                 <li>
                                     <a href="{{theme_settings.footer_col4_link3}}" class="hover-link" style="--underlineColor: #ffffff;">
-                                        {{theme_settings.footer_col4_text3}}
+                                        <span>{{theme_settings.footer_col4_text3}}</span>
                                     </a>
                                 </li>
                             {{/if}}
                             {{#if theme_settings.footer_col4_text4}}
                                 <li>
                                     <a href="{{theme_settings.footer_col4_link4}}" class="hover-link" style="--underlineColor: #ffffff;">
-                                        {{theme_settings.footer_col4_text4}}
+                                        <span>{{theme_settings.footer_col4_text4}}</span>
                                     </a>
                                 </li>
                             {{/if}}
                             {{#if theme_settings.footer_col4_text5}}
                                 <li>
                                     <a href="{{theme_settings.footer_col4_link5}}" class="hover-link" style="--underlineColor: #ffffff;">
-                                        {{theme_settings.footer_col4_text5}}
+                                        <span>{{theme_settings.footer_col4_text5}}</span>
                                     </a>
                                 </li>
                             {{/if}}
@@ -187,35 +187,35 @@
                             {{#if theme_settings.footer_col5_text1}}
                                 <li>
                                     <a href="{{theme_settings.footer_col5_link1}}" class="hover-link" style="--underlineColor: #ffffff;">
-                                        {{theme_settings.footer_col5_text1}}
+                                        <span>{{theme_settings.footer_col5_text1}}</span>
                                     </a>
                                 </li>
                             {{/if}}
                             {{#if theme_settings.footer_col5_text2}}
                                 <li>
                                     <a href="{{theme_settings.footer_col5_link2}}" class="hover-link" style="--underlineColor: #ffffff;">
-                                        {{theme_settings.footer_col5_text2}}
+                                        <span>{{theme_settings.footer_col5_text2}}</span>
                                     </a>
                                 </li>
                             {{/if}}
                             {{#if theme_settings.footer_col5_text3}}
                                 <li>
                                     <a href="{{theme_settings.footer_col5_link3}}" class="hover-link" style="--underlineColor: #ffffff;">
-                                        {{theme_settings.footer_col5_text3}}
+                                        <span>{{theme_settings.footer_col5_text3}}</span>
                                     </a>
                                 </li>
                             {{/if}}
                             {{#if theme_settings.footer_col5_text4}}
                                 <li>
                                     <a href="{{theme_settings.footer_col5_link4}}" class="hover-link" style="--underlineColor: #ffffff;">
-                                        {{theme_settings.footer_col5_text4}}
+                                        <span>{{theme_settings.footer_col5_text4}}</span>
                                     </a>
                                 </li>
                             {{/if}}
                             {{#if theme_settings.footer_col5_text5}}
                                 <li>
                                     <a href="{{theme_settings.footer_col5_link5}}" class="hover-link" style="--underlineColor: #ffffff;">
-                                        {{theme_settings.footer_col5_text5}}
+                                        <span>{{theme_settings.footer_col5_text5}}</span>
                                     </a>
                                 </li>
                             {{/if}}
@@ -227,35 +227,35 @@
                             {{#if theme_settings.footer_col6_text1}}
                                 <li>
                                     <a href="{{theme_settings.footer_col6_link1}}" class="hover-link" style="--underlineColor: #ffffff;">
-                                        {{theme_settings.footer_col6_text1}}
+                                        <span>{{theme_settings.footer_col6_text1}}</span>
                                     </a>
                                 </li>
                             {{/if}}
                             {{#if theme_settings.footer_col6_text2}}
                                 <li>
                                     <a href="{{theme_settings.footer_col6_link2}}" class="hover-link" style="--underlineColor: #ffffff;">
-                                        {{theme_settings.footer_col6_text2}}
+                                        <span>{{theme_settings.footer_col6_text2}}</span>
                                     </a>
                                 </li>
                             {{/if}}
                             {{#if theme_settings.footer_col6_text3}}
                                 <li>
                                     <a href="{{theme_settings.footer_col6_link3}}" class="hover-link" style="--underlineColor: #ffffff;">
-                                        {{theme_settings.footer_col6_text3}}
+                                        <span>{{theme_settings.footer_col6_text3}}</span>
                                     </a>
                                 </li>
                             {{/if}}
                             {{#if theme_settings.footer_col6_text4}}
                                 <li>
                                     <a href="{{theme_settings.footer_col6_link4}}" class="hover-link" style="--underlineColor: #ffffff;">
-                                        {{theme_settings.footer_col6_text4}}
+                                        <span>{{theme_settings.footer_col6_text4}}</span>
                                     </a>
                                 </li>
                             {{/if}}
                             {{#if theme_settings.footer_col6_text5}}
                                 <li>
                                     <a href="{{theme_settings.footer_col6_link5}}" class="hover-link" style="--underlineColor: #ffffff;">
-                                        {{theme_settings.footer_col6_text5}}
+                                        <span>{{theme_settings.footer_col6_text5}}</span>
                                     </a>
                                 </li>
                             {{/if}}
@@ -271,7 +271,7 @@
                             {{#if settings.address}}
                                 <li>
                                     <a href="http://maps.google.com/?q={{settings.address}}" class="hover-link" style="--underlineColor: #ffffff;">
-                                        {{settings.address}}
+                                        <span>{{settings.address}}</span>
                                     </a>
                                 </li>
                             {{/if}}
@@ -279,7 +279,7 @@
                             {{#if settings.phone_number}}
                                 <li>
                                     <a href="tel:{{settings.phone_number}}" class="hover-link" style="--underlineColor: #ffffff;">
-                                        {{settings.phone_number}}
+                                        <span>{{settings.phone_number}}</span>
                                     </a>
                                 </li>
                             {{/if}}
@@ -287,7 +287,7 @@
                             {{#if theme_settings.footer_col7_email}}
                                 <li>
                                     <a href="mailto:{{theme_settings.footer_col7_email}}" class="hover-link" style="--underlineColor: #ffffff;">
-                                        {{theme_settings.footer_col7_email}}
+                                        <span>{{theme_settings.footer_col7_email}}</span>
                                     </a>
                                 </li>
                             {{/if}}
@@ -295,21 +295,21 @@
                             {{#if theme_settings.footer_col7_text1}}
                                 <li>
                                     <a href="{{theme_settings.footer_col7_link1}}" class="hover-link" style="--underlineColor: #ffffff;">
-                                        {{theme_settings.footer_col7_text1}}
+                                        <span>{{theme_settings.footer_col7_text1}}</span>
                                     </a>
                                 </li>
                             {{/if}}
                             {{#if theme_settings.footer_col7_text2}}
                                 <li>
                                     <a href="{{theme_settings.footer_col7_link2}}" class="hover-link" style="--underlineColor: #ffffff;">
-                                        {{theme_settings.footer_col7_text2}}
+                                        <span>{{theme_settings.footer_col7_text2}}</span>
                                     </a>
                                 </li>
                             {{/if}}
                             {{#if theme_settings.footer_col7_text3}}
                                 <li>
                                     <a href="{{theme_settings.footer_col7_link3}}" class="hover-link" style="--underlineColor: #ffffff;">
-                                        {{theme_settings.footer_col7_text3}}
+                                        <span>{{theme_settings.footer_col7_text3}}</span>
                                     </a>
                                 </li>
                             {{/if}}
@@ -322,21 +322,21 @@
                             {{#if theme_settings.footer_col8_text1}}
                                 <li>
                                     <a href="{{theme_settings.footer_col8_link1}}" class="hover-link" style="--underlineColor: #ffffff;">
-                                        {{theme_settings.footer_col8_text1}}
+                                        <span>{{theme_settings.footer_col8_text1}}</span>
                                     </a>
                                 </li>
                             {{/if}}
                             {{#if theme_settings.footer_col8_text2}}
                                 <li>
                                     <a href="{{theme_settings.footer_col8_link2}}" class="hover-link" style="--underlineColor: #ffffff;">
-                                        {{theme_settings.footer_col8_text2}}
+                                        <span>{{theme_settings.footer_col8_text2}}</span>
                                     </a>
                                 </li>
                             {{/if}}
                             {{#if theme_settings.footer_col8_text3}}
                                 <li>
                                     <a href="{{theme_settings.footer_col8_link3}}" class="hover-link" style="--underlineColor: #ffffff;">
-                                        {{theme_settings.footer_col8_text3}}
+                                        <span>{{theme_settings.footer_col8_text3}}</span>
                                     </a>
                                 </li>
                             {{/if}}
@@ -366,12 +366,13 @@
                 <p class="powered-by text-center">Copyright @ <span class="uppercase">{{settings.store_name}}</span> {{moment format="YYYY"}}, All Rights Reserved</p>
             </div>
         {{/if}}
-
-        
-
     </div>
     {{{region name="ssl_site_seal--global"}}}
 </footer>
+
+<!-- Add To Quote App -->
+<script src="https://quote.freshclick.co.uk/assets/quote_product.js?2011030607" id="quote_script" data-store="gyawy2ubly"></script>
+<script src="https://quote.freshclick.co.uk/assets/quote_checkout.js?2011030607" id="quote_checkout_script" data-store="gyawy2ubly"></script>
 
 
 <!-- Back To Top -->

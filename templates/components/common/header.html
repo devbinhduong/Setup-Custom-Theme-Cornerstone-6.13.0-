@@ -75,15 +75,18 @@
                             <span class="navUser-icon flex-center-inline">
                                 <svg class="icon" aria-hidden="true"><use xlink:href="#icon-contact"></use></svg>
                             </span>
-                            {{theme_settings.header_contact_text}}
+                            <span>{{theme_settings.header_contact_text}}</span>
                         </a>
                     </div>
                 {{/if}}
 
                 <div class="items item--account">
                     {{#if customer}}
-                        <a class="navUser-action navUser-action--logged button button--transparent flex-center-y hover-link hide-on-tablet" style="--underlineColor:{{theme_settings.navUser-color-hover}}" href="{{urls.account.index}}" aria-label="{{customer.name}}" data-login-form>
-                            {{lang 'account.logged'}}
+                        <a class="navUser-action flex-center-y hover-link hide-on-table" style="--underlineColor:{{theme_settings.navUser-color-hover}}" href="{{urls.account.index}}" aria-label="{{customer.name}}" data-login-form>
+                            <span class="navUser-icon">
+                                <svg class="icon" aria-hidden="true"><use xlink:href="#icon-information"></use></svg>
+                            </span>
+                            <span>{{customer.name}}</span>
                         </a>
 
                         {{> components/custom/custom-account-popup data="account-pc"}}
@@ -92,7 +95,7 @@
                             <span class="navUser-icon">
                                 <svg class="icon" aria-hidden="true"><use xlink:href="#icon-information"></use></svg>
                             </span>
-                            {{lang 'account.title'}}
+                            <span>{{lang 'account.title'}}</span>
                         </a>
 
                         {{> components/custom/custom-login-popup data="login-pc" email_id="login_email" password_id="login_pass"}}
@@ -116,7 +119,7 @@
                         <span class="navUser-icon navUser-item-cartIcon">
                             <svg class="icon" aria-hidden="true"><use xlink:href="#icon-shopping-cart"></use></svg>
                         </span>
-                        {{lang 'common.cart'}}
+                        <span>{{lang 'common.cart'}}</span>
                     </a>
                     <span class="countPill{{#if cart.items}} countPill--positive{{/if}} cart-quantity hide-on-tablet header-countPill">{{cart.quantity}}</span>
                     <div class="dropdown-cart" id="cart-preview-dropdown" aria-hidden="true"></div>

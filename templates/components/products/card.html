@@ -219,7 +219,13 @@
                     {{/if}}
                 </p>
 
-                <span class="card-free-shipping">Free shipping</span>
+                {{#each custom_fields}}
+                    {{#if name '==' '__freeShipping'}}
+                       {{#if value '===' 'true'}}
+                            <span class="card-free-shipping">Free shipping</span>
+                       {{/if}} 
+                    {{/if}}
+                {{/each}}
             </div>
 
             <div class="card-text" data-test-info-type="price">

@@ -78,17 +78,19 @@
                     {{/if}}
                 </div>
 
-                <div class="custom-homeCarouselFeature">
-                    {{#if @index '==' 0}}
-                        {{#get "0" featuredProduct}}
-                            {{> components/custom/products/custom-feature-product-tmp product=this settings=settings theme_settings=../../theme_settings customer=customer }}
-                        {{/get}}
-                    {{else}}
-                        {{#get @index featuredProduct}}
-                            {{> components/custom/products/custom-feature-product-tmp product=this settings=settings theme_settings=../../theme_settings customer=customer }}
-                        {{/get}}
-                    {{/if}}
-                </div>
+                {{#if featuredProduct}}
+                    <div class="custom-homeCarouselFeature">
+                        {{#if @index '==' 0}}
+                            {{#get "0" featuredProduct}}
+                                {{> components/custom/products/custom-feature-product-tmp product=this settings=settings theme_settings=../../theme_settings customer=customer }}
+                            {{/get}}
+                        {{else}}
+                            {{#get @index featuredProduct}}
+                                {{> components/custom/products/custom-feature-product-tmp product=this settings=settings theme_settings=../../theme_settings customer=customer }}
+                            {{/get}}
+                        {{/if}}
+                    </div>
+                {{/if}}
             </div>
         {{/each}}
     </div>
