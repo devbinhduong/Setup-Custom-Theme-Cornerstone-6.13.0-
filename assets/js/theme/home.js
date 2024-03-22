@@ -7,14 +7,26 @@ export default class Home extends PageManager {
     }
 
     onReady() {
-        // this.customPaging();
+        this.productHomeCarousel();
+        this.customPaging();
     }
 
     customPaging(){
-        $('.heroCarousel--custom .slick-dots li').each(function(i){
+        $('.homeCarouselFeature__wrapper .slick-dots li').each(function(i){
             var slide = $(this).find('button').text();
-            console.log("alo", $(this).find('button'));
-            // $(this).find('button').text('0' + slide).addClass('slick-dots-item');
+            $(this).find('button').append('<span class="dot-stt">'+0+ +slide+'</span>');
         })
+    }
+
+    /* Product Home Carousel */
+    productHomeCarousel(){
+        $('.homeCarouselFeature')?.slick({
+            dots: true,
+            arrows: false,
+            infinite: false,
+            fade: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+        });
     }
 }

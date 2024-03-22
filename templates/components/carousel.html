@@ -16,24 +16,19 @@
             <div class="heroCarousel-slide {{#if ../theme_settings.homepage_stretch_carousel_images}}stretch{{/if}} {{#if @first}}heroCarousel-slide--first{{/if}}">
                 {{#if @index '==' 0}}
                     {{#if (merge this imageMobile=../theme_settings.homepage_show_carousel_0_mobile-image)}}{{/if}}
-                    {{#if (merge this featuredProduct=../products.featured)}}{{/if}}
                     
                 {{/if}}
                 {{#if @index '==' 1}}
                     {{#if (merge this customTextLink1=../theme_settings.homepage_show_carousel_1_customtextlink1)}}{{/if}}
-                    {{#if (merge this featuredProduct=../products.featured)}}{{/if}}
                 {{/if}}
                 {{#if @index '==' 2}}
                     {{#if (merge this customTextLink1=../theme_settings.homepage_show_carousel_2_customtextlink1)}}{{/if}}
-                    {{#if (merge this featuredProduct=../products.featured)}}{{/if}}
                 {{/if}}
                 {{#if @index '==' 3}}
                     {{#if (merge this imageMobile=../theme_settings.homepage_show_carousel_3_mobile-image)}}{{/if}}
-                    {{#if (merge this featuredProduct=../products.featured)}}{{/if}}
                 {{/if}}
                 {{#if @index '==' 4}}
                     {{#if (merge this imageMobile=../theme_settings.homepage_show_carousel_4_mobile-image)}}{{/if}}
-                    {{#if (merge this featuredProduct=../products.featured)}}{{/if}}
                 {{/if}}
                 <div class="heroCarousel-image-wrapper" style="--pb: {{multiply (divide image_height image_width) 100}}%">
                     <a class="heroCarousel-image" href="{{url}}" aria-label="{{#if this.alt_text.length '!=' 0}}{{this.alt_text}}{{else}}{{lang 'common.carousel_slide_number' slide_number=(add @index 1)}}{{/if}}" rel="preload" as="image">
@@ -77,21 +72,20 @@
                         {{/if}}
                     {{/if}}
                 </div>
-
-                {{#if featuredProduct}}
-                    <div class="custom-homeCarouselFeature">
-                        {{#if @index '==' 0}}
-                            {{#get "0" featuredProduct}}
-                                {{> components/custom/products/custom-feature-product-tmp product=this settings=settings theme_settings=../../theme_settings customer=customer }}
-                            {{/get}}
-                        {{else}}
-                            {{#get @index featuredProduct}}
-                                {{> components/custom/products/custom-feature-product-tmp product=this settings=settings theme_settings=../../theme_settings customer=customer }}
-                            {{/get}}
-                        {{/if}}
-                    </div>
-                {{/if}}
             </div>
         {{/each}}
     </div>
+
+    <!-- Home Product Carousel -->
+    {{#if products.featured}}
+    <div class="homeCarouselFeature__wrapper">
+        <div class="homeCarouselFeature">
+            {{#each (limit products.featured 3)}}
+                <div class="custom-homeCarouselFeature">
+                    {{> components/custom/products/custom-feature-product-tmp product=this settings=settings theme_settings=../../theme_settings customer=customer }}
+                </div>
+            {{/each}}
+        </div>
+    </div>
+    {{/if}}
 </div>
