@@ -3,6 +3,11 @@
     "name": "Global",
     "settings": [
       {
+        "type": "checkbox",
+        "label": "Disable Open DevTool",
+        "id": "disable_open_devtoll"
+      },
+      {
         "type": "heading",
         "content": "Background And Lines"
       },

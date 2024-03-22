@@ -72,6 +72,10 @@ export default function(context) {
             customGetCardInfo(context);
 
             back_to_top();
+            
+            if(context.themeSettings.disable_open_devtoll) {
+                deniUserAction();
+            }
         }
     }
 
@@ -687,5 +691,57 @@ export default function(context) {
                 1000
             );
         });
+    }
+    
+
+
+
+    function deniUserAction() {
+        /* Disable Open DevTool */
+        document.onkeydown = function (e) {
+            if (e.keyCode === 123) {
+                return false;
+            }
+
+            if (
+                e.ctrlKey &&
+                (e.keyCode === 67 ||
+                    e.keyCode === 73 ||
+                    e.keyCode === 86 ||
+                    e.keyCode === 86 ||
+                    e.keyCode === 117)
+            ) {
+                return false;
+            } else {
+                return true;
+            }
+        };
+
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+
+        /* Disable Select Element */
+        document.onselectstart = new Function('return false');
+    
+        /* Disable Copy */
+        document.oncopy = new Function('return false');
+
+        /* Clear All Site If User Open Devtools */
+        const threshold = 160;
+      
+        function checkWindowSize() {
+          let widthThreshold = window.outerWidth - window.innerWidth > threshold;
+          let heightThreshold = window.outerHeight - window.innerHeight > threshold;
+          return widthThreshold || heightThreshold;
+        }
+      
+        setInterval(() => {
+          if (checkWindowSize()) {
+             document.documentElement.innerHTML = '';
+             console.clear();
+             return '';
+          }
+        }, 100);
     }
 }
