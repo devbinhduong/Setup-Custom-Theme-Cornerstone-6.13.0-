@@ -434,6 +434,7 @@ export default function(context) {
                 }
                 $header.addClass('is-sticky');
                 $header.css('animation-name', 'fadeInDown');
+                console.log("test");
             } else {
                 $header.removeClass('is-sticky');
                 $('.header-height').remove();
